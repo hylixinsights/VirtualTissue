@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build a static, fixture-only GitHub Pages site from the reviewed offline player."""
+"""Build a static multi-tissue portal from reviewed recording players."""
 from pathlib import Path
-import gzip, hashlib, html, json, re, shutil
+import gzip, hashlib, html, json, re, shutil, argparse
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'site'
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--lymph-node-site',type=Path,required=True);args=parser.parse_args()
     catalog=json.loads((ROOT/'recordings/examples/index.json').read_text())
     assert [e['scenario']['id'] for e in catalog]==['etec','epec','ibd','baseline']
     episodes=SITE/'episodes';episodes.mkdir(exist_ok=True)
@@ -31,6 +32,15 @@ def main():
     source=re.sub(r'<!-- EPISODE_CARDS -->.*?<!-- /EPISODE_CARDS -->','<!-- EPISODE_CARDS -->',source,flags=re.S)
     source=source.replace('<!-- EPISODE_CARDS -->','<!-- EPISODE_CARDS -->'+''.join(cards)+'<!-- /EPISODE_CARDS -->')
     index.write_text(source)
+    gut=SITE/'gut/index.html';gut_source=gut.read_text()
+    gut_source=re.sub(r'<!-- EPISODE_CARDS -->.*?<!-- /EPISODE_CARDS -->','<!-- EPISODE_CARDS -->',gut_source,flags=re.S)
+    gut_cards=''.join(cards).replace('href="player.html','href="../player.html').replace('href="episodes/','href="../episodes/').replace('src="assets/','src="../assets/')
+    gut.write_text(gut_source.replace('<!-- EPISODE_CARDS -->','<!-- EPISODE_CARDS -->'+gut_cards+'<!-- /EPISODE_CARDS -->'))
+    ln=args.lymph_node_site.resolve();assert (ln/'catalog.json').is_file() and (ln/'index.html').is_file(), 'Build the pinned LN static site first'
+    ln_catalog=json.loads((ln/'catalog.json').read_text());entry=ln_catalog['recordings'][0]
+    lock=json.loads((SITE/'tissues.json').read_text())['lymph_node']
+    assert entry['sha256']==lock['recording_sha256'], 'LN recording differs from pinned portal manifest'
+    shutil.copytree(ln,SITE/'lymph-node',dirs_exist_ok=True)
     player=(ROOT/'player.html').read_text()
     # The original standalone player keeps connect-src 'none'. Only this hosted copy
     # may fetch public same-origin assets, with a catalog allowlist in replay.js.
@@ -41,7 +51,7 @@ def main():
     (SITE/'player.html').write_text(player)
     shutil.copyfile(ROOT/'docs/manual.html',SITE/'manual.html')
     (SITE/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://virtualtissue.org/sitemap.xml\n')
-    (SITE/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://virtualtissue.org/</loc></url><url><loc>https://virtualtissue.org/manual.html</loc></url></urlset>\n')
-    print('Built site/: four verified fixtures, offline player and manual. No live provider code added.')
+    (SITE/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://virtualtissue.org/</loc></url><url><loc>https://virtualtissue.org/manual.html</loc></url><url><loc>https://virtualtissue.org/gut/</loc></url><url><loc>https://virtualtissue.org/lymph-node/</loc></url><url><loc>https://virtualtissue.org/lymph-node/model.html</loc></url></urlset>\n')
+    print('Built portal: four unchanged Gut fixtures and one reviewed Jev LN recording. Static playback only.')
 
 if __name__=='__main__':main()
