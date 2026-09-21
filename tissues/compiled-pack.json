@@ -3,7 +3,7 @@
   "definition": {
     "format": "virtualtissue.pack.v1",
     "id": "human-ileum",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "title": "Human ileum \u00b7 individual cell experiment",
     "description": "An uncalibrated ileal cutaway with explicit cell identities, local sensing and constrained Jev decisions.",
     "host_adapter": "ileum-cutaway-v1",
@@ -14,6 +14,14 @@
     "manual_document": "../../manual_v3/Manual_v3.md",
     "manual_source": "../../manual_v3/model.json",
     "host_parameters": {},
+    "injury": {
+      "radius": 0.06,
+      "core_radius": 0.02,
+      "peak_cell_damage": 0.8,
+      "minimum_barrier_damage": 0.4,
+      "DAMP_per_damage": 0.3,
+      "evidence": "P: focal epithelial wound input; core severity, spatial taper and DAMP scaling are proposed, not calibrated. https://www.jci.org/articles/view/115741"
+    },
     "etec": {
       "bacteria_per_input": 24,
       "colonization_contact_min": 10,
@@ -18451,9 +18459,9 @@
       "extension": "tissues/ileum/extensions.json"
     }
   },
-  "manual_document_sha256": "eca62d5109890ff51b98b5d7160dbb3625b9577365ed1c25d3960d77d219c526",
+  "manual_document_sha256": "53ac9f60032d38ba92a9d7082f0bba22e920337b0eab391b7e3cdecd1e1f4a56",
   "source_pack": "tissues/ileum/pack.json",
   "rules_sha256": "94ce8f397a19a38a655a9e9805839d5b7ff303d75ae8fb57785d4da7a31e1299",
   "population_sha256": "cc33460f84d7359f6a9762c296850846aa887e65d445fb783b994c8c9aeff502",
-  "fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da"
+  "fingerprint": "6d85d2780c0d84369bcc9ff1db65312a931d7105ad77a427054326db5f7c4cb1"
 }

@@ -4,9 +4,39 @@
 
 .processes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}.processes button{text-align:left;display:flex;flex-direction:column;gap:7px;padding:16px;background:#f7f7ed;white-space:normal;min-width:0}.processes span{font-size:12px;color:#59736a}.processes strong{font-size:16px;color:#294d46}.processes small,.processNote{font-size:12px;line-height:1.5;color:#6b7c72}.processNote{padding:0 8px}.cellFate{border-left:3px solid #75b69d;padding:8px 12px;margin:12px 0;font-size:13px}.cellFate p{margin:8px 0;line-height:1.5}.presented{color:#37789a;font-weight:700}@media(max-width:760px){.processes{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-.player{max-width:1500px;margin:30px auto;padding:20px}.player .stage{height:650px}.player pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;font-size:13px}.player aside{min-width:0}.player input[type=range]{width:100%}.player h1{font-size:28px}#provenance{line-height:1.6}#error{color:#a33}.player .toolbar{flex-wrap:wrap}</style></head><body><div class="player"><h1>VirtualTissue · Offline player</h1><p>Open a saved experiment. This player reads recorded states and decisions; it cannot call Jev or run the simulation.</p><input id="file" type="file" accept=".gz,.json" hidden><button id="open">Open recording</button> <span id="filename">No recording selected</span><h2 id="title">Choose a recording</h2><p id="provenance"></p><p id="error" role="alert"></p><div class="toolbar"><button id="play" class="primary" disabled>Play</button><label>Frames per second <select id="speed"><option>1</option><option selected>2</option><option>5</option><option>10</option></select></label><button id="home">Home</button><button id="front">Front</button></div><input id="timeline" aria-label="Recording timeline" type="range" min="0" max="0" value="0"><div class="workspace"><main><div class="stage"><canvas id="world"></canvas><canvas id="overlay"></canvas><div class="hud"><span id="clock">REPLAY</span><span id="barrier"></span><span id="activeHud"></span></div></div></main><aside class="card"><h2>Individual cell</h2><pre id="inspector">Click a cell after opening a recording.</pre><h3>Recorded decision</h3><label>Decision history <select id="decisionHistory" disabled></select></label><pre id="decision"></pre><details><summary>Exact local snapshot and constraint checks</summary><pre id="constraints"></pre></details><details><summary>Executed physical effects</summary><pre id="effects"></pre></details></aside></div></div><script>(()=>{
+.tissueReadouts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:8px 0}.tissueReadouts button{text-align:left;font-size:12px;padding:12px;min-width:0}.tissueReadouts strong{display:block;font-size:18px;margin:5px 0;color:#244942}.tissueReadouts small{display:block;font-size:11px;font-weight:400;line-height:1.4}.signalNote{font-size:13px;line-height:1.5;margin:10px 0 14px;color:#42695e}@media(max-width:650px){.tissueReadouts{grid-template-columns:repeat(2,minmax(0,1fr))}.tissueReadouts strong{font-size:15px}}
+
+.player{max-width:1500px;margin:30px auto;padding:20px}.player .stage{height:650px}.player pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;font-size:13px}.player aside{min-width:0}.player input[type=range]{width:100%}.player h1{font-size:28px}#provenance{line-height:1.6}#error{color:#a33}.player .toolbar{flex-wrap:wrap}</style></head><body><div class="player"><h1>VirtualTissue · Offline player</h1><p>Open a saved experiment. This player reads recorded states and decisions; it cannot call Jev or run the simulation.</p><input id="file" type="file" accept=".gz,.json" hidden><button id="open">Open recording</button> <span id="filename">No recording selected</span><h2 id="title">Choose a recording</h2><p id="provenance"></p><p id="error" role="alert"></p><div class="toolbar"><button id="play" class="primary" disabled>Play</button><label>Frames per second <select id="speed"><option>1</option><option selected>2</option><option>5</option><option>10</option></select></label><button id="home">Home</button><button id="front">Front</button><label>Show <select id="signalSelect"><option value="all">All signals</option><option value="BARRIER_DAMAGE">Barrier damage</option><option value="CELL_DAMAGE">Cell damage</option><option value="LT">LT · ETEC toxin</option><option value="ST">ST · ETEC toxin</option><option value="DAMP">DAMP · damage signal</option><option value="CXCL8">CXCL8</option><option value="TNF">TNF</option><option value="none">Cells only</option></select></label></div><p id="signalNote" class="signalNote"></p><input id="timeline" aria-label="Recording timeline" type="range" min="0" max="0" value="0"><div class="workspace"><main><div class="stage"><canvas id="world"></canvas><canvas id="overlay"></canvas><div class="hud"><span id="clock">REPLAY</span><span id="barrier"></span><span id="activeHud"></span></div></div></main><aside class="card"><h2>Individual cell</h2><pre id="inspector">Click a cell after opening a recording.</pre><h3>Recorded decision</h3><label>Decision history <select id="decisionHistory" disabled></select></label><pre id="decision"></pre><details><summary>Exact local snapshot and constraint checks</summary><pre id="constraints"></pre></details><details><summary>Executed physical effects</summary><pre id="effects"></pre></details></aside></div></div><script>(()=>{
 "use strict";
 const __modules={};
+__modules["src/tissue-readouts.mjs"]=(()=>{
+// Read-only display helpers. Recorded states are the sole source of these values.
+const bounded=v=>Math.max(0,Math.min(1,Number.isFinite(v)?v:0));
+const cellDamage=c=>bounded(c.state?.damage??(1-c.health/100));
+const barrierDamage=(frame,c)=>{const slot=frame.slots?.find(s=>s.cell===c.id);return slot?bounded(1-slot.junction):null;};
+const formatReading=(value,percent=false)=>!Number.isFinite(value)?'Not applicable':percent?`${(value*100).toFixed(1)}%`:value===0?'0':Math.abs(value)<.0001?value.toExponential(2):value.toFixed(4);
+function tissueReadouts(frame){
+ const slots=frame.slots??[],cells=frame.cells??[];
+ return {injured:slots.filter(s=>s.junction<.98).length,barrierDamage:Math.max(0,...slots.map(s=>bounded(1-s.junction))),cellDamage:Math.max(0,...cells.map(cellDamage)),LT:Math.max(0,...cells.map(c=>c.unified?.local?.LT??0)),ST:Math.max(0,...cells.map(c=>c.unified?.local?.ST??0)),etec:frame.lab?.bacteria.some(b=>b.species==='ETEC')??false};
+}
+function signalExplanation(frame,signal='all'){
+ const r=tissueReadouts(frame);
+ if(signal==='LT'||signal==='ST'){
+  if(r[signal]>0)return `${signal}: ${formatReading(r[signal])} NCU peak epithelial exposure. Colored rings mark recorded local exposure; field brightness is a display scale.${!frame.fields?.[signal]?' This older recording has no toxin field map.':''}`;
+  return r.etec?`${signal} is still zero: ETEC must reach the epithelium and colonize before releasing toxin. Advance biological time; a paused or budget-limited run cannot progress.`:`${signal} is zero: this toxin is produced by ETEC. Tissue injury and EPEC do not introduce ${signal}.`;
+ }
+ if(signal==='BARRIER_DAMAGE')return `${r.injured} injured junctions; maximum barrier damage ${formatReading(r.barrierDamage,true)}. Red marks locate damaged junctions. Cell damage separately reports loss of cell health.`;
+ if(signal==='CELL_DAMAGE')return `Maximum cell damage ${formatReading(r.cellDamage,true)}. This measures loss of cell health, separately from junction damage. Injury does not imply immediate cell death.`;
+ if(signal==='DAMP')return 'DAMP is a local damage-signal proxy, separate from structural barrier damage. Direct tissue injury creates a local damage cue; cytokines still require cellular responses.';
+ return `Barrier injury: ${r.injured} junctions. Maximum cell damage ${formatReading(r.cellDamage,true)}. LT/ST appear only after local ETEC colonization. Click a readout to inspect its most affected cell.`;
+}
+function mostAffectedCell(frame,signal){
+ const score=c=>signal==='BARRIER_DAMAGE'?(barrierDamage(frame,c)??-1):signal==='CELL_DAMAGE'?cellDamage(c):(c.unified?.local?.[signal]??0);
+ return [...frame.cells].sort((a,b)=>score(b)-score(a))[0];
+}
+
+return {cellDamage,barrierDamage,formatReading,tissueReadouts,signalExplanation,mostAffectedCell};
+})();
 __modules["src/math.mjs"]=(()=>{
 /* Minimal column major linear algebra for the dependency free WebGL renderer. */
 const V3={
@@ -1018,6 +1048,8 @@ function cellDecision(c,frame,replay=false){
 return {cellDecision};
 })();
 __modules["src/renderer.mjs"]=(()=>{
+const {cellDamage}=__modules["src/tissue-readouts.mjs"];
+
 const {M4,V3,hexColor,mixColor}=__modules["src/math.mjs"];
 
 const {TYPES,ACTIONS,GRID,clamp,surface,surfaceNormal,sample,isEpi}=__modules["src/engine.mjs"];
@@ -1390,10 +1422,10 @@ class Diorama {
   const key=`${this.current.tick}:${this.current.revision??0}:${this.options.signals}:${this.current.sources.length}`;
   if(this.fieldKey!==key){
    this.fieldKey=key;const f=this.current.fields,name=this.options.signals;
-   const a=new Uint8Array(GRID.w*GRID.h*4),palette=this.current.mode==='manual'?{CCL2:[218,167,101],CXCL8:[85,206,173],MUCUS:[132,216,229],TNF:[211,145,188],SECRETORY_STIMULUS:[249,203,110],WATER:[81,193,223]}:{pathogen:[244,137,116],danger:[255,183,111],chemokine:[85,206,173],cytokine:[168,137,226]};
+   const a=new Uint8Array(GRID.w*GRID.h*4),palette=this.current.mode==='manual'?{CCL2:[218,167,101],CXCL8:[85,206,173],MUCUS:[132,216,229],TNF:[211,145,188],SECRETORY_STIMULUS:[249,203,110],WATER:[81,193,223],LT:[67,221,240],ST:[190,152,255],DAMP:[250,142,98],PAMP:[223,177,109]}:{pathogen:[244,137,116],danger:[255,183,111],chemokine:[85,206,173],cytokine:[168,137,226]};
    for(let i=0;i<GRID.w*GRID.h;i++){
     let rgb=[0,0,0],alpha=0;
-    const names=name==='all'?Object.keys(palette):name==='none'?[]:[name];
+    const names=name==='all'?Object.keys(palette):name==='none'?[]:[name].filter(k=>palette[k]);
     for(const k of names){const v=clamp(f[k]?.[i]??0);if(v>.003){const aa=Math.sqrt(v)*.70;for(let j=0;j<3;j++)rgb[j]+=palette[k][j]*aa;alpha+=aa;}}
     if(alpha>0)for(let j=0;j<3;j++)a[i*4+j]=rgb[j]/alpha;a[i*4+3]=Math.min(160,alpha*180);
    }
@@ -1430,6 +1462,27 @@ class Diorama {
    if(!this.currentById.get(p.id).sensing?.activation.active&&!this.currentById.get(p.id).unified?.active)continue;
    ct.strokeStyle='#EFBE69';ct.lineWidth=2.5;ct.beginPath();ct.arc(p.s.x,p.s.y,p.r+4,0,Math.PI*2);ct.stroke();
    ct.fillStyle='#EFBE69';ct.strokeStyle='#173F40';ct.lineWidth=1.5;ct.beginPath();ct.arc(p.s.x,p.s.y-p.r-5,3.5,0,Math.PI*2);ct.fill();ct.stroke();
+  }
+  this.diagnosticMarkers=[];
+  if(this.current.unified){
+   const layer=this.options.signals;
+   if(['all','BARRIER_DAMAGE'].includes(layer))for(const slot of this.current.slots){
+    const damage=Math.max(0,1-slot.junction);if(damage<=.02)continue;
+    const p=this.project(worldPos(slot.x,slot.y,.78));ct.strokeStyle='#FF8175';ct.lineWidth=3+damage*3;
+    ct.beginPath();ct.moveTo(p.x-5,p.y-6);ct.lineTo(p.x,p.y);ct.lineTo(p.x-3,p.y+6);ct.stroke();
+    const cellPoint=this.displayPoints.find(q=>q.id===slot.cell);
+    if(layer==='BARRIER_DAMAGE'&&cellPoint){
+     ct.setLineDash([9,5]);ct.beginPath();ct.arc(cellPoint.s.x,cellPoint.s.y,cellPoint.r+13,0,Math.PI*2);ct.stroke();ct.setLineDash([]);
+    }
+    this.diagnosticMarkers.push({cell:slot.cell,kind:'BARRIER_DAMAGE',value:damage});
+   }
+   if(['CELL_DAMAGE','LT','ST'].includes(layer))for(const p of this.displayPoints){
+    const c=this.currentById.get(p.id),value=layer==='CELL_DAMAGE'?cellDamage(c):(c.unified?.local?.[layer]??0);
+    if(value<=0)continue;
+    ct.strokeStyle=layer==='LT'?'#43DDF0':layer==='ST'?'#BE98FF':'#FF8175';ct.lineWidth=2+Math.min(1,layer==='CELL_DAMAGE'?value:value*15)*3;
+    ct.beginPath();ct.arc(p.s.x,p.s.y,p.r+11,0,Math.PI*2);ct.stroke();
+    this.diagnosticMarkers.push({cell:c.id,kind:layer,value});
+   }
   }
   const sel=this.displayPoints.find(p=>p.id===this.selected);
   if(sel){
@@ -1604,6 +1657,8 @@ const saveEpisode=async episode=>{
 return {EPISODE_LIMIT,compactFrame,EpisodeRecorder,encodeEpisode,validateEpisode,decodeEpisode,saveEpisode};
 })();
 __modules["src/player.mjs"]=(()=>{
+const {barrierDamage,cellDamage,formatReading,signalExplanation}=__modules["src/tissue-readouts.mjs"];
+
 const {Diorama}=__modules["src/renderer.mjs"];
 
 const {decodeEpisode}=__modules["src/episode.mjs"];
@@ -1613,7 +1668,7 @@ let episode=null,index=0,selected=null,playing=false,previous=0;
 const view=new Diorama($('world'),$('overlay'),p=>{if(p.cell!==undefined){selected=p.cell;view.selected=selected;inspect();}});view.options.faces=false;view.replay=true;
 function inspect(choice=null){
  const f=episode?.frames[index],c=f?.cells.find(c=>c.id===selected);
- $('inspector').textContent=c?`${c.id} · ${c.state.type} · ${c.state.viability}\n\nLocal inputs at ${f.time_min} min:\n${JSON.stringify(c.unified.local,null,2)}\n\n${c.unified.reasons.join('; ')||'Within local baseline.'}`:'Click a cell to inspect its recorded local view.';
+ $('inspector').textContent=c?`${c.id} · ${c.state.type} · ${c.state.viability}\n\nCell damage: ${formatReading(cellDamage(c),true)} · Barrier damage: ${formatReading(barrierDamage(f,c),true)}\n\nLocal inputs at ${f.time_min} min:\n${JSON.stringify(c.unified.local,null,2)}\n\n${c.unified.reasons.join('; ')||'Within local baseline.'}`:'Click a cell to inspect its recorded local view.';
  const last=c?.unified.last,rounds=episode?.rounds.filter(r=>last&&(r.epoch.time_min<last.time_min||r.epoch.time_min===last.time_min&&r.epoch.revision<=last.revision)&&r.observations.some(o=>o.cell_id===selected))??[];
  const chosen=Number.isInteger(choice)&&choice>=0&&choice<rounds.length?choice:rounds.length-1,round=rounds[chosen],observation=round?.observations.find(o=>o.cell_id===selected),question=round?.request.cells.find(q=>q.id===c?.visualIndex),answer=question?round.response.decisions[question.id]:null;
  $('decisionHistory').replaceChildren(...rounds.map((r,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${r.epoch.time_min} min · ${r.response.decisions[c.visualIndex].action}`;return o;}));$('decisionHistory').disabled=!rounds.length;$('decisionHistory').value=chosen;
@@ -1621,7 +1676,7 @@ function inspect(choice=null){
  $('constraints').textContent=observation?JSON.stringify(observation,null,2):'No decision snapshot for this cell yet.';
  $('effects').textContent=c?JSON.stringify(episode.transactions.filter(t=>t.plan.cell_id===c.id&&t.receipt.applied_at<=f.time_min),null,2):'Select a cell.';
 }
-function show(instant=true){const f=episode.frames[index];view.setFrame(f,instant);$('timeline').value=index;$('clock').textContent=`REPLAY · ${f.time_min} min`;$('barrier').textContent=`Barrier ${Math.round(f.metrics.barrier*100)}%`;$('activeHud').textContent=`${f.metrics.active} sensing change`;inspect();}
+function show(instant=true){const f=episode.frames[index];view.setFrame(f,instant);$('signalNote').textContent=signalExplanation(f,view.options.signals);$('timeline').value=index;$('clock').textContent=`REPLAY · ${f.time_min} min`;$('barrier').textContent=`Barrier ${Math.round(f.metrics.barrier*100)}%`;$('activeHud').textContent=`${f.metrics.active} sensing change`;inspect();}
 async function load(file){
  playing=false;$('play').textContent='Play';$('error').textContent='';
  try{const next=await decodeEpisode(await file.arrayBuffer());$('filename').textContent=file.name;episode=next;index=0;selected=null;view.selected=null;$('timeline').max=episode.frames.length-1;$('play').disabled=false;
@@ -1636,6 +1691,8 @@ $('timeline').oninput=()=>{if(!episode)return;playing=false;$('play').textConten
 $('home').onclick=()=>view.home();$('front').onclick=()=>view.front();
 function animate(now){if(episode)view.render(now);if(playing&&now-previous>1000/Number($('speed').value)){previous=now;if(index<episode.frames.length-1){index++;show(false);}else{playing=false;$('play').textContent='Play';}}requestAnimationFrame(animate);}requestAnimationFrame(animate);
 window.VirtualTissuePlayer={load,get episode(){return episode;},get index(){return index;},view};
+
+$('signalSelect').onchange=()=>{view.options.signals=$('signalSelect').value;view.fieldKey='';if(episode)$('signalNote').textContent=signalExplanation(episode.frames[index],view.options.signals);};
 
 return {};
 })();

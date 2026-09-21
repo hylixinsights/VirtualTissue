@@ -92,6 +92,13 @@ def compile_pack(path=None, output=None):
     for key,value in definition.get('host_parameters',{}).items():
         if key not in {'decision_interval_min','contact_radius','neighbor_radius','patch_radius','local_field_threshold','PAMP_leak_rate','DAMP_release_rate','cue_receptor_K','memory_tau_min','CCL2_output_rate','dendritic_sampling_depth'} or type(value) not in (int,float) or value<=0:
             raise ValueError('Unsupported host parameter override.')
+    injury=definition.get('injury',{})
+    for key in ['radius','core_radius','peak_cell_damage','minimum_barrier_damage','DAMP_per_damage']:
+        value=injury.get(key)
+        if type(value) not in (int,float) or not math.isfinite(value) or not 0<=value<=1:
+            raise ValueError('Invalid injury parameter: '+key)
+    if not 0<=injury['core_radius']<injury['radius']<=.5 or not 0<injury['peak_cell_damage']<1:
+        raise ValueError('Invalid injury radius or severity.')
     for key in ['bacteria_per_input','colonization_contact_min','LT_per_bacterium_min','ST_per_bacterium_min','receptor_K','water_per_cell_min']:
         if type(definition['etec'].get(key)) not in (int,float) or definition['etec'][key]<0: raise ValueError('Invalid ETEC parameter: '+key)
     if definition['etec']['receptor_K']<=0: raise ValueError('ETEC receptor_K must be positive.')

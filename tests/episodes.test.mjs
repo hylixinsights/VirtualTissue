@@ -33,3 +33,32 @@ test('removed inputs are rejected atomically and unsupported pathways are never 
  for(const c of t.cells)for(const row of t.candidates(c))if(!ACTIVE_PACK.manual.supported_actions.includes(row.action_id))assert.equal(row.allowed,false);
  assert.equal(t.registry.metadata.version,'3.0.0');
 });
+
+test('direct injury records strong local cell and barrier damage without inventing toxins',async()=>{
+ const {tissueReadouts,barrierDamage,signalExplanation,mostAffectedCell}=await import('../src/tissue-readouts.mjs');
+ const t=new UnifiedTissue();t.inject('injury',.5);const f=t.history.at(-1),r=tissueReadouts(f);
+ assert.equal(r.injured,6);assert.equal(r.barrierDamage,.8);assert.equal(r.cellDamage,.8);assert.equal(r.LT,0);assert.equal(r.ST,0);
+ assert.equal(barrierDamage(f,mostAffectedCell(f,'BARRIER_DAMAGE')),.8);
+ assert.match(signalExplanation(f,'LT'),/produced by ETEC/);assert.match(signalExplanation(f,'BARRIER_DAMAGE'),/6 injured junctions/);
+ const c=f.cells.find(c=>c.state.type==='fibroblast');assert.equal(barrierDamage(f,c),null);
+});
+test('ETEC toxins reach recorded apical field maps without changing physical state during display',async()=>{
+ const {GRID,surface}=await import('../src/engine.mjs');
+ const {tissueReadouts,signalExplanation}=await import('../src/tissue-readouts.mjs');
+ const t=new UnifiedTissue();t.inject('etec');await advance(t,40);
+ const f=t.history.at(-1);assert(tissueReadouts(f).LT>0);assert(tissueReadouts(f).ST>0);
+ for(const name of ['LT','ST']){
+  assert.equal(f.fields[name].length,GRID.w*GRID.h);assert(f.fields[name].some(v=>v>0));
+  f.fields[name].forEach((v,i)=>{assert(Number.isFinite(v)&&v>=0&&v<=1);const x=(i%GRID.w)/(GRID.w-1),y=Math.floor(i/GRID.w)/(GRID.h-1);if(y>=surface(x))assert.equal(v,0);});
+ }
+ const before=JSON.stringify(t.export());t.fields.display();tissueReadouts(f);signalExplanation(f,'LT');assert.equal(JSON.stringify(t.export()),before);
+ assert.match(signalExplanation(f,'LT'),/peak epithelial exposure/);
+});
+test('older recordings retain exact toxin readouts without inventing a missing field map',async()=>{
+ const {tissueReadouts,signalExplanation,formatReading}=await import('../src/tissue-readouts.mjs');
+ const index=JSON.parse(await readFile(new URL('../recordings/examples/index.json',import.meta.url)));
+ const e=await decodeEpisode(await readFile(new URL('../recordings/examples/'+index[0].file,import.meta.url)));
+ const f=structuredClone(e.frames.at(-1));delete f.fields.LT;
+ const before=JSON.stringify(f);assert(tissueReadouts(f).LT>0);assert.match(signalExplanation(f,'LT'),/older recording has no toxin field map/);assert.equal(JSON.stringify(f),before);
+ assert.equal(formatReading(.00000003),'3.00e-8');assert.equal(formatReading(0),'0');
+});

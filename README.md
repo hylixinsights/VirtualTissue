@@ -1,5 +1,9 @@
 # VirtualTissue / Cellville3D
 
+![VirtualTissue — local signals and individual cellular decisions](docs/assets/virtualtissue-hero.png)
+
+*Conceptual artwork; not a simulation screenshot.*
+
 A reproducible gut tissue simulation studio with individual Jev / TypeSafe AI
 choices, executable Manual v3 constraints, local sensing and complete offline
 recordings. The model is an **uncalibrated mechanistic demonstration**. AI choice
@@ -8,6 +12,19 @@ probabilities are not biological event rates.
 The four scenarios are **ETEC**, **EPEC**, **IBD-like innate injury** and **quiet
 baseline**. The studio has one manual-driven model. Quiet cells make no API calls;
 locally activated cells choose only from actions permitted by the manual.
+
+## Creator and credits
+
+**VirtualTissue was conceived and created by Helder Nakaya**, leader of
+[CSBL — Computational Systems Biology Laboratory](https://csbiology.org) and
+founder of [Hylix.app](https://hylix.app).
+
+Helder developed the entire project with **ChatGPT** and **Claude** as AI
+collaborators, from the original concept through implementation and refinement.
+The simulation uses **Jev from TypeSafe** for individual cellular decisions,
+constrained by the executable tissue manual and each cell's local observations.
+
+See [Credits](CREDITS.md) for attribution and the roles of the AI tools.
 
 ## Install and run
 
@@ -124,7 +141,7 @@ reference/kernel tests, not a user-selectable mode.
 python3 scripts/package_release.py
 ```
 
-Publish the contents of `dist/VirtualTissue-6.1.0/` into a new empty repository.
+Publish only the contents of `dist/VirtualTissue-6.1.1/` to the public repository.
 The export has a strict file allowlist, SHA-256 manifest, fixture-only recordings
 and no Git history, `.env`, private runs, caches or historical browser artifacts.
 Do not copy this working checkout wholesale. See the release guide for validation

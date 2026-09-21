@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use VirtualTissue, please cite this software and credit its creator, Helder Nakaya."
+type: software
+title: "VirtualTissue / Cellville3D"
+version: 6.1.1
+authors:
+  - family-names: Nakaya
+    given-names: Helder
+    affiliation: "Leader of CSBL; founder of Hylix.app"
+repository-code: "https://github.com/hylixinsights/VirtualTissue"
+url: "https://github.com/hylixinsights/VirtualTissue"
+abstract: "Conceived and created by Helder Nakaya, developed with ChatGPT and Claude, using Jev from TypeSafe for individual cellular decisions. An uncalibrated mechanistic tissue simulation with executable manual constraints and offline recordings."

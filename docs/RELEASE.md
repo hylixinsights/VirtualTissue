@@ -1,42 +1,41 @@
-# VirtualTissue 6.1.0 — Manual v3 release
+# VirtualTissue 6.1.1 — Focal injury and local signal visibility
 
-This release provides one manual-driven gut model, four scenarios, individual Jev
-choices and data-only offline playback. The existing approved cell meshes remain
-unchanged. New monocyte/DC meshes remain separate.
+VirtualTissue was conceived and created by **Helder Nakaya**, leader of
+[CSBL](https://csbiology.org) and founder of [Hylix.app](https://hylix.app).
+Helder developed the entire project with ChatGPT and Claude as AI collaborators,
+using Jev from TypeSafe for individual cellular decisions. See [Credits](../CREDITS.md).
 
-Changes include actionable, strict Choice validation; atomic malformed-response
-regressions across server, host and browser; Manual v3 with primary sources and an
-exact generated rule appendix; a shared supported-handler manifest; removal of the
-sugar perturbation and its mechanism; four regenerated fixture episodes; a local
-launcher without neighboring-project configuration; and a strict clean export.
+## Changes since 6.1.0
 
-No paid Jev call was used to prepare this release. Fixture behavior does not
-validate live model decisions. The physical model remains uncalibrated and the
-manual identifies omitted pathways. Original reference files remain unchanged
-because current reference tests and inherited physical host layers depend on them.
-Historical UI files, old verification reports and screenshots are excluded.
+- Tissue injury now directly reduces epithelial health within a local wound.
+  The core reaches health 20 and 80% cell damage; the effect tapers toward the
+  edge. Distant cells retain their original health. The profile is a documented,
+  configurable demonstration prior, not an experimentally calibrated severity.
+- Injury creates a local damage cue and uses existing manual repair/death gates
+  and clocks. It does not inject cytokines or enterotoxins, or kill instantly.
+- Applying Tissue injury focuses the damaged core and selects Cell damage.
+  Separate barrier, cell damage, LT and ST readouts expose the affected cells.
+- LT/ST fields and per-cell exposure rings are visible in the Studio and offline
+  player. Older recordings without toxin grids retain their recorded cell values.
+- Manual documentation and all four independent fixture recordings were updated.
+- Creator credits, software citation metadata and conceptual GitHub artwork were
+  added. The six original cell morphologies remain unchanged.
 
-## Export and first commit
+The complete offline suite passes 378 named checks, including real WebGL browser
+and offline-player tests. No paid Jev calls were used. These checks verify software
+behavior; the physical model remains uncalibrated. See [Verification](VERIFICATION.md).
 
-Run `python scripts/check_all.py` first, then `python scripts/package_release.py`.
-The generated folder and ZIP contain the same allowlisted files; the manifest
-records their SHA-256 values. The packager examines compressed fixture content as
-well as plain text and excludes private recordings and local configuration.
+## Prepare the GitHub release
 
-Copy only the contents of `dist/VirtualTissue-6.1.0/` to a new empty directory.
-Repeat installation/build/tests there before publication. The clean directory has
-no `.git`, so a new first commit contains no development history. Create an empty
-GitHub repository, then use its URL in place of the placeholder below:
+Run `python scripts/check_all.py`, then `python scripts/package_release.py`.
+The generated `dist/VirtualTissue-6.1.1/` folder and ZIP contain only allowlisted
+files, fixture recordings and a SHA-256 manifest. Publish that export only.
 
-```sh
-git init -b main
-git add .
-git commit -m "Release VirtualTissue 6.1.0 with Manual v3"
-git remote add origin YOUR_NEW_REPOSITORY_URL
-git push -u origin main
-```
+The existing `v6.1.0` tag identifies the previous version. Use the new `v6.1.1`
+tag for this update and attach `VirtualTissue-6.1.1.zip` when creating its GitHub
+release. The changes and creator-credit paragraphs above can be used as release
+notes. Build and packaging scripts do not publish releases.
 
-Publishing is a separate action. No repository, remote, commit or push is created
-by the build or export scripts. Never add the original working directory or its
-private `.env` and recordings. Keep the generated release manifest for integrity
-checks. A hash is not proof of authorship, licensing or scientific validity.
+The export excludes development history, private recordings, local `.env`, caches
+and generated test screenshots. Keep the manifest with the distribution. Its
+hashes check file integrity, not authorship, licensing or scientific validity.

@@ -1,3 +1,4 @@
+import {cellDamage} from './tissue-readouts.mjs';
 import {M4,V3,hexColor,mixColor} from './math.mjs';
 import {TYPES,ACTIONS,GRID,clamp,surface,surfaceNormal,sample,isEpi} from './engine.mjs';
 import {cellDecision} from './decision-callout.mjs';
@@ -367,10 +368,10 @@ export class Diorama {
   const key=`${this.current.tick}:${this.current.revision??0}:${this.options.signals}:${this.current.sources.length}`;
   if(this.fieldKey!==key){
    this.fieldKey=key;const f=this.current.fields,name=this.options.signals;
-   const a=new Uint8Array(GRID.w*GRID.h*4),palette=this.current.mode==='manual'?{CCL2:[218,167,101],CXCL8:[85,206,173],MUCUS:[132,216,229],TNF:[211,145,188],SECRETORY_STIMULUS:[249,203,110],WATER:[81,193,223]}:{pathogen:[244,137,116],danger:[255,183,111],chemokine:[85,206,173],cytokine:[168,137,226]};
+   const a=new Uint8Array(GRID.w*GRID.h*4),palette=this.current.mode==='manual'?{CCL2:[218,167,101],CXCL8:[85,206,173],MUCUS:[132,216,229],TNF:[211,145,188],SECRETORY_STIMULUS:[249,203,110],WATER:[81,193,223],LT:[67,221,240],ST:[190,152,255],DAMP:[250,142,98],PAMP:[223,177,109]}:{pathogen:[244,137,116],danger:[255,183,111],chemokine:[85,206,173],cytokine:[168,137,226]};
    for(let i=0;i<GRID.w*GRID.h;i++){
     let rgb=[0,0,0],alpha=0;
-    const names=name==='all'?Object.keys(palette):name==='none'?[]:[name];
+    const names=name==='all'?Object.keys(palette):name==='none'?[]:[name].filter(k=>palette[k]);
     for(const k of names){const v=clamp(f[k]?.[i]??0);if(v>.003){const aa=Math.sqrt(v)*.70;for(let j=0;j<3;j++)rgb[j]+=palette[k][j]*aa;alpha+=aa;}}
     if(alpha>0)for(let j=0;j<3;j++)a[i*4+j]=rgb[j]/alpha;a[i*4+3]=Math.min(160,alpha*180);
    }
@@ -407,6 +408,27 @@ export class Diorama {
    if(!this.currentById.get(p.id).sensing?.activation.active&&!this.currentById.get(p.id).unified?.active)continue;
    ct.strokeStyle='#EFBE69';ct.lineWidth=2.5;ct.beginPath();ct.arc(p.s.x,p.s.y,p.r+4,0,Math.PI*2);ct.stroke();
    ct.fillStyle='#EFBE69';ct.strokeStyle='#173F40';ct.lineWidth=1.5;ct.beginPath();ct.arc(p.s.x,p.s.y-p.r-5,3.5,0,Math.PI*2);ct.fill();ct.stroke();
+  }
+  this.diagnosticMarkers=[];
+  if(this.current.unified){
+   const layer=this.options.signals;
+   if(['all','BARRIER_DAMAGE'].includes(layer))for(const slot of this.current.slots){
+    const damage=Math.max(0,1-slot.junction);if(damage<=.02)continue;
+    const p=this.project(worldPos(slot.x,slot.y,.78));ct.strokeStyle='#FF8175';ct.lineWidth=3+damage*3;
+    ct.beginPath();ct.moveTo(p.x-5,p.y-6);ct.lineTo(p.x,p.y);ct.lineTo(p.x-3,p.y+6);ct.stroke();
+    const cellPoint=this.displayPoints.find(q=>q.id===slot.cell);
+    if(layer==='BARRIER_DAMAGE'&&cellPoint){
+     ct.setLineDash([9,5]);ct.beginPath();ct.arc(cellPoint.s.x,cellPoint.s.y,cellPoint.r+13,0,Math.PI*2);ct.stroke();ct.setLineDash([]);
+    }
+    this.diagnosticMarkers.push({cell:slot.cell,kind:'BARRIER_DAMAGE',value:damage});
+   }
+   if(['CELL_DAMAGE','LT','ST'].includes(layer))for(const p of this.displayPoints){
+    const c=this.currentById.get(p.id),value=layer==='CELL_DAMAGE'?cellDamage(c):(c.unified?.local?.[layer]??0);
+    if(value<=0)continue;
+    ct.strokeStyle=layer==='LT'?'#43DDF0':layer==='ST'?'#BE98FF':'#FF8175';ct.lineWidth=2+Math.min(1,layer==='CELL_DAMAGE'?value:value*15)*3;
+    ct.beginPath();ct.arc(p.s.x,p.s.y,p.r+11,0,Math.PI*2);ct.stroke();
+    this.diagnosticMarkers.push({cell:c.id,kind:layer,value});
+   }
   }
   const sel=this.displayPoints.find(p=>p.id===this.selected);
   if(sel){

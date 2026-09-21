@@ -1,3 +1,4 @@
+import {barrierDamage,formatReading,tissueReadouts,signalExplanation,mostAffectedCell} from './tissue-readouts.mjs';
 import {UnifiedTissue,parsePerturbation,HOST_ACTIONS,actionLabel} from './unified-host.mjs';
 import {ACTIVE_PACK,scenarioById} from './tissue-pack.mjs';
 import {EpisodeRecorder,saveEpisode} from './episode.mjs';
@@ -59,15 +60,19 @@ async function apply(){
   if(!Number.isInteger(duration)||duration<1||duration>10080||!Number.isInteger(limit)||limit<1||limit>10000){showError('Use 1–10080 biological minutes and 1–10000 API calls.');return;}
   targetMinutes=duration;callLimit=limit;recorder.data.metadata.requested_duration_min=duration;
  }if(!tissue.interventions.length)recorder.data.metadata.scenario={id:'custom',title:scenario.title,prompt:$('promptBox').value,inputs:scenario.kinds.map(kind=>({kind,x:scenario.x}))};tissue.applyPrompt(scenario);arrival={title:scenario.title,x:scenario.x,start:performance.now()};view.arrival=arrival;view.setFrame(displayed(),true);view.home();
- const first=displayed().cells.find(c=>c.unified.active);select(first?.id??null);update();
+ const directInjury=scenario.kinds.includes('injury');
+ const first=directInjury?mostAffectedCell(displayed(),'CELL_DAMAGE'):displayed().cells.find(c=>c.unified.active);
+ if(directInjury){$('signalSelect').value='CELL_DAMAGE';view.options.signals='CELL_DAMAGE';view.fieldKey='';if(first)view.focus(first);}
+ select(first?.id??null);update();
  if(status.configured){playing=true;controls();await step(1);}else{showError('Perturbation introduced and visible. Connect Jev above, then press Run for cellular responses.');await connection();}
 }
 function update(){
- const f=displayed(),m=f.metrics,a=f.lab.audit;
+ const f=displayed(),m=f.metrics,a=f.lab.audit,r=tissueReadouts(f);
+ $('barrierDamageValue').textContent=`${formatReading(r.barrierDamage,true)} · ${r.injured} junctions`;$('cellDamageValue').textContent=formatReading(r.cellDamage,true);$('ltValue').textContent=formatReading(r.LT);$('stValue').textContent=formatReading(r.ST);$('signalNote').textContent=signalExplanation(f,view.options.signals);
  $('clock').textContent=`${replayIndex===null?'LIVE':'REPLAY'} · ${elapsed(f.time_min)}`;$('barrier').textContent=`Barrier ${Math.round(m.barrier*100)}%`;$('activeHud').textContent=`${m.active} sensing change`;$('preparingHud').textContent=`${m.preparing} preparing`;
  const species=[...new Set(f.lab.bacteria.filter(b=>['free','attached'].includes(b.state)).map(b=>b.species??'EPEC'))].join(' + '),liveBacteria=a.bacteria.free+a.bacteria.attached,hasInput=liveBacteria||m.barrier<.999;
  $('sceneTitle').textContent=liveBacteria?'Pathogen in the tissue':m.barrier<.999?'Local barrier injury':'Steady state';
- $('sceneText').textContent=liveBacteria?`${species} present. Cyan rods: ETEC; orange rods: EPEC. Amber rings: local sensing. Green dots: actual secretion.`:m.barrier<.999?'Dark junction marks locate the injury. Responses begin only where cells detect local cues.':'No local activation cue is present. Routine transport and maintenance continue.';
+ $('sceneText').textContent=liveBacteria?`${species} present. Cyan rods: ETEC; orange rods: EPEC. Amber rings: local sensing. Green dots: actual secretion.`:m.barrier<.999?'Red junction marks locate the barrier injury. Responses begin only where cells detect local cues.':'No local activation cue is present. Routine transport and maintenance continue.';
  $('introduced').textContent=liveBacteria?`${a.bacteria.free} free · ${a.bacteria.attached} attached ${species}`:f.unified.prompt?.title??'Nothing yet';
  $('detected').textContent=`${m.active} sensing change · ${m.quiet} within baseline`;
  const ongoing=f.cells.flatMap(c=>c.manual.events.filter(e=>['running','paused','pending'].includes(e.status))),completed=f.acceptedTransactions;
@@ -96,7 +101,8 @@ function inspect(){
  const u=c.unified,last=u.last,ongoing=c.manual.events.filter(e=>['running','paused','pending'].includes(e.status));
  $('cellName').textContent=c.v5?.phenotype==='resident_like'?'Monocyte-derived macrophage':c.state.type==='dendritic'?'Dendritic cell':c.state.type==='inflammatory_monocyte'?'Monocyte':TYPES[c.type].name;$('cellIdentity').textContent=`${c.id} · ${c.state.type.replaceAll('_',' ')} · ${c.reserve?'vascular reserve':'tissue'}`;
  $('localState').textContent=!c.alive?'Dead cell · awaiting physical clearance':c.state.viability==='death_committed'?'Death committed · execution clock running':u.active?`Detects: ${u.reasons.join(' · ')}`:'Within baseline: no nearby activation cue.';$('localState').classList.toggle('quiet',!u.active);
- $('readings').innerHTML=Object.entries(u.local).map(([k,v])=>`<div><span>${esc(k)}</span><strong>${Number(v).toFixed(k==='pathogens'?0:4)}</strong></div>`).join('');
+ const labels={damage:'Cell damage',barrier_damage:'Barrier damage',LT:'LT · local apical',ST:'ST · local apical',DAMP:'DAMP · damage signal'};
+ $('readings').innerHTML=Object.entries({...u.local,barrier_damage:barrierDamage(f,c)}).map(([k,v])=>`<div><span>${esc(labels[k]??k)}</span><strong>${k==='pathogens'?v:formatReading(v,['damage','barrier_damage'].includes(k))}</strong></div>`).join('');
  $('cellFate').innerHTML=`<strong>${esc(c.state.viability.replaceAll('_',' '))} · health ${c.health.toFixed(1)}%</strong><p>${c.v5.distance_um.toFixed(1)} µm traveled · ${c.v5.antigens.length} antigen source(s) acquired · ${c.v5.presented.length} presented</p><p>Origin: ${esc(c.v5.origin.replaceAll('_',' '))}. ${c.v5.phenotype==='resident_like'?'Adapted to resident-like state; origin preserved.':c.state.type==='inflammatory_monocyte'?'Adaptation requires recruitment and sustained low alarm; allow days.':c.state.type==='dendritic'?'Surface antigen display follows actual uptake and processing. This tissue has no T-cell priming circuit.':isEpithelial(c)?`Manual death commitment requires ≥75% damage, then its own preparation clock.`:''}</p>`+(c.v5.presented.length?`<p class="presented">Presenting: ${c.v5.presented.map(a=>esc(a.source+' · '+a.id)).join(', ')}</p>`:'');
  $('decisionTitle').textContent=ongoing.length?`Preparing: ${actionLabel(ongoing[0].action_id)}`:last?`Jev chose: ${actionLabel(last.action)}`:u.active?'Local change detected':'Steady state';
  $('decisionText').textContent=last?`${last.model} · ${last.time_min} min. ${last.rejection?'Not started: '+last.rejection+'. ':''}${c.effect}`:u.active?'The manual is checking local inputs, resources and action eligibility. No Jev choice has been recorded yet.':'No Jev question is needed while this cell remains within its local baseline.';
@@ -117,7 +123,7 @@ $('playBtn').onclick=()=>{if(playing)stop();else{if(replayIndex!==null){replayIn
 $('stepBtn').onclick=()=>step(5);$('resetBtn').onclick=reset;$('inspectBtn').onclick=inspectResponding;
 $('homeBtn').onclick=()=>view.home();$('frontBtn').onclick=()=>view.front();$('zoomIn').onclick=()=>view.zoom=clamp(view.zoom*1.2,.72,2.7);$('zoomOut').onclick=()=>view.zoom=clamp(view.zoom/1.2,.72,2.7);
 $('focusBtn').onclick=()=>{const c=displayed().cells.find(c=>c.id===selected);if(c)view.focus(c);};
-$('signalSelect').onchange=()=>{view.options.signals=$('signalSelect').value;view.fieldKey='';};
+$('signalSelect').onchange=()=>{view.options.signals=$('signalSelect').value;view.fieldKey='';update();};
 $('historySlider').oninput=()=>{if(busy)return;stop();replayIndex=Number($('historySlider').value);view.replay=true;view.arrival=null;view.setFrame(displayed(),true);update();};
 $('liveBtn').onclick=()=>{if(busy)return;replayIndex=null;view.replay=false;view.setFrame(displayed(),true);update();};
 $('exportBtn').onclick=async()=>{if(busy)return;try{finishRecording(tissue.time_min>=targetMinutes?'complete':'partial',tissue.time_min>=targetMinutes?null:'Stopped by user');await saveEpisode(recorder.data);showError('');}catch(e){showError(e.message);}};
@@ -144,7 +150,7 @@ $('legend').innerHTML=identities.map(t=>`<button data-cell-type="${t.type}"><i s
 for(const b of $('legend').querySelectorAll('button'))b.onclick=()=>{const c=displayed().cells.find(c=>c.state.type===b.dataset.cellType&&c.alive);if(c){select(c.id);view.focus(c);}};
 $('rulebook').innerHTML=identities.map(t=>`<div class="ruleType"><h3>${esc(t.name)}</h3><p>${tissue.registry.cell_types[t.type].allowed_actions.filter(a=>HOST_ACTIONS.includes(a)).map(a=>esc(actionLabel(a))).join(' · ')}</p></div>`).join('');
 view.setFrame(displayed(),true);update();connection();
-window.Cellville={version:'6.1.0',get tissue(){return tissue;},get recorder(){return recorder;},view,step,apply,preview,select,reset,stop,get busy(){return busy;},get playing(){return playing;},setRenderPaused(v){renderPaused=v;}};
+window.Cellville={version:'6.1.1',get tissue(){return tissue;},get recorder(){return recorder;},view,step,apply,preview,select,reset,stop,get busy(){return busy;},get playing(){return playing;},setRenderPaused(v){renderPaused=v;}};
 function frame(now){if(!renderPaused)view.render(now);if(playing&&!busy&&now-lastUpdate>1000){lastUpdate=now;step(Number($('speedSelect').value));}requestAnimationFrame(frame);}requestAnimationFrame(frame);
 
 for(const b of document.querySelectorAll('[data-track]'))b.onclick=()=>{
@@ -153,3 +159,5 @@ for(const b of document.querySelectorAll('[data-track]'))b.onclick=()=>{
  if(rows.length){select(rows[0].id);view.focus(rows[0]);}
  $('processNote').textContent={movement:'Trails record actual displacement after Jev-selected motility. Neutrophils follow local CXCL8; monocytes follow CCL2. Resident macrophages are not assigned an invented chemotaxis program.',death:'Local injury accumulates. At ≥75% damage the manual can permit commitment; execution then follows automatically. Corpses remain visible until clearance. Infection alone does not guarantee death.',adaptation:'Recruited monocytes can adapt under sustained low alarm and permissive local context. The manual clock spans 1–7 biological days, and pauses if inflammation returns. Origin is preserved.',antigen:'Dendritic processes sample nearby bacteria. Only acquired antigen can enter processing and appear on the surface. Surface presentation does not mean a T cell has been activated.'}[kind];
 };
+
+for(const b of document.querySelectorAll('[data-readout]'))b.onclick=()=>{const key=b.dataset.readout;$('signalSelect').value=key;view.options.signals=key;view.fieldKey='';const c=mostAffectedCell(displayed(),key);if(c){select(c.id);view.focus(c);}update();};

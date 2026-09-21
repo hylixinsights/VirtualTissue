@@ -95,4 +95,15 @@ class ManualV3(unittest.TestCase):
         p=payload();p['cells'][0]['actions']=['WAIT','EPITHELIAL_IFN_RESPONSE']
         with self.assertRaises(ValueError):server.process_round(p,lambda _:self.fail('called provider'),unified=True)
 
+    def test_injury_profile_rejects_invalid_ranges_and_nonfinite_values(self):
+        for key,value in [('radius',0),('core_radius',.07),('peak_cell_damage',1),('peak_cell_damage',float('nan')),('DAMP_per_damage',True)]:
+            with self.subTest(key=key,value=value),tempfile.TemporaryDirectory(dir=ROOT/'tissues') as folder:
+                base=Path(folder);definition=copy.deepcopy(server.ACTIVE_PACK['definition'])
+                for resource in ['population','scenarios','manual_document','manual_source','registry']:
+                    definition[resource]=str((ROOT/'tissues/ileum'/definition[resource]).resolve())
+                definition['injury'][key]=value
+                (base/'pack.json').write_text(json.dumps(definition))
+                with self.assertRaisesRegex(ValueError,'injury|Nonfinite'):
+                    compile_pack(base/'pack.json',base/'compiled.json')
+
 if __name__=='__main__':unittest.main(verbosity=2)

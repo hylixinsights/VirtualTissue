@@ -26,13 +26,27 @@ export function parsePerturbation(text){
  if(!kinds.length&&/restore|resolution/.test(t))kinds.push('regulation');
  if(/^(please )?(stop|remove|withdraw)/.test(t))kinds.splice(0,kinds.length,'resolve');
  if(!kinds.length)return {valid:false,error:'Use a positive, explicit input: ETEC enters on the left; EPEC enters on the right; or focal IBD-like inflammation. CXCL8 is a cellular consequence, not a prompt input.'};
- const descriptions={etec:'24 ETEC bacteria enter locally. Colonization releases LT/ST; enterocytes can respond with ion and water secretion.',epec:'24 EPEC bacteria enter locally. Attaching-and-effacing injury requires contact.',ileitis:'A focal barrier lesion with impaired resolution; an innate challenge, not the full IBD disease.',injury:'A focal barrier injury. No cytokine is injected.',regulation:'Restore local resolution competence.',resolve:'Stop future bacterial replication; existing inputs remain.'};
+ const descriptions={etec:'24 ETEC bacteria enter locally. Colonization releases LT/ST; enterocytes can respond with ion and water secretion.',epec:'24 EPEC bacteria enter locally. Attaching-and-effacing injury requires contact.',ileitis:'A focal barrier lesion with impaired resolution; an innate challenge, not the full IBD disease.',injury:`A focal epithelial wound: up to ${Math.round(ACTIVE_PACK.definition.injury.peak_cell_damage*100)}% cell damage in the core, tapering toward the edge, with barrier damage. No cytokine or toxin is injected.`,regulation:'Restore local resolution competence.',resolve:'Stop future bacterial replication; existing inputs remain.'};
  return {valid:true,kinds,x,title:kinds.map(k=>k.toUpperCase()).join(' + '),description:kinds.map(k=>descriptions[k]).join(' ')};
 }
 class LocalFields extends CompartmentFields {
  constructor(){super();for(const k of ['PAMP','DAMP','CCL2','LT','ST']){this.values[k]=new Float64Array(this.w*this.h);this.ledger[k]={deposited:0,decayed:0,initial:0};}}
  deposit(field,index,amount){if(!['PAMP','DAMP','CCL2','LT','ST'].includes(field))return super.deposit(field,index,amount);assert(this.side[index]===(['LT','ST'].includes(field)?'apical':'basal')&&Number.isFinite(amount)&&amount>=0,'Invalid local cue deposition.');this.values[field][index]+=amount/this.volume;this.ledger[field].deposited+=amount;}
- display(){const base=Object.create(this);base.values=Object.fromEntries(Object.entries(this.values).filter(([k])=>!['PAMP','DAMP','CCL2','LT','ST'].includes(k)));const result=CompartmentFields.prototype.display.call(base);result.CCL2=Array.from({length:GRID.w*GRID.h},(_,i)=>{const x=(i%GRID.w)/(GRID.w-1),y=Math.floor(i/GRID.w)/(GRID.h-1);if(y<surface(x))return 0;const j=Math.min(this.h-1,Math.floor(y*this.h))*this.w+Math.min(this.w-1,Math.floor(x*this.w));return 1-Math.exp(-this.values.CCL2[j]*30);});return result;}
+ display(){
+  const base=Object.create(this);base.values=Object.fromEntries(Object.entries(this.values).filter(([k])=>!['PAMP','DAMP','CCL2','LT','ST'].includes(k)));
+  const result=CompartmentFields.prototype.display.call(base);
+  for(const name of ['PAMP','DAMP','CCL2','LT','ST']){
+   const side=['LT','ST'].includes(name)?'apical':'basal',scale=['LT','ST'].includes(name)?15:30;
+   result[name]=Array.from({length:GRID.w*GRID.h},(_,i)=>{
+    const x=(i%GRID.w)/(GRID.w-1),y=Math.floor(i/GRID.w)/(GRID.h-1);
+    if((y<surface(x)?'apical':'basal')!==side)return 0;
+    const j=Math.min(this.h-1,Math.floor(y*this.h))*this.w+Math.min(this.w-1,Math.floor(x*this.w));
+    return -Math.expm1(-this.values[name][j]*scale);
+   });
+  }
+  return result;
+ }
+
 }
 export class UnifiedTissue extends IleumTissue {
  constructor(seed=20260919,pack=ACTIVE_PACK){
@@ -230,9 +244,23 @@ export class UnifiedTissue extends IleumTissue {
    for(let i=0;i<n;i++){const bx=clamp(x+(this.labRandom()-.5)*.10,.02,.98);this.lab.bacteria.push({id:`etec-${this.lab.nextBacterium++}`,species:'ETEC',cohort,x:bx,y:surface(bx)-.055,state:'free',compartment:'apical',slot:null,owner:null,carrier:null,attachment:false,event:null,contactMinutes:0});}
    this.lab.bacterialBalance.introduced+=n;this.log('ETEC enters locally. Colonization and LT/ST release precede constrained cellular ion transport.','intervention');
   }else if(kind==='injury'){
-   assert(Number.isFinite(x),'Invalid intervention position.');x=clamp(x,.055,.945);this.revision++;
-   for(const s of this.slots)if(Math.abs(s.x-x)<.06)s.junction=Math.min(s.junction,.6);
-   this.interventions.push({...this.epoch(),kind,x});this.log('Focal barrier injury applied. No cytokine added.','intervention');this.recordFrame(true);
+   assert(Number.isFinite(x)&&strength===1,'Use a finite position and unit input.');x=clamp(x,.055,.945);this.revision++;
+   const profile=this.pack.definition.injury,affected=[];
+   for(const s of this.slots){
+    const distance=Math.abs(s.x-x);if(distance>=profile.radius)continue;
+    const c=this.cellById.get(s.cell);if(!alive(c))continue;
+    // External wound, not a cellular choice: strongest in the core, tapered at the edge.
+    const severity=profile.peak_cell_damage*Math.min(1,(profile.radius-distance)/(profile.radius-profile.core_radius));
+    const before=c.health;c.health=Math.min(before,100*(1-severity));
+    const added=(before-c.health)/100;
+    c.state.damage=clamp(1-c.health/100);c.state.viability=c.health<90?'injured':'viable';
+    s.junction=Math.min(s.junction,1-Math.max(profile.minimum_barrier_damage,severity));
+    this.lab.patches[c.slot].DAMP=clamp(this.lab.patches[c.slot].DAMP+added*profile.DAMP_per_damage);
+    c.nextDecisionAt=Math.min(c.nextDecisionAt,this.time_min);
+    affected.push({cell_id:c.id,damage_added:added});
+   }
+   this.interventions.push({...this.epoch(),kind,x,profile:copy(profile),affected});
+   this.log(`Focal tissue injury applied to ${affected.length} epithelial cells. Core health loss and barrier damage taper toward the edge. No cytokine or toxin added.`,'intervention');
   }else super.inject(kind,x,strength);
   this.recordFrame(true);
  }

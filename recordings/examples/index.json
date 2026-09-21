@@ -1,9 +1,9 @@
 [
   {
-    "file": "etec-23adbde7-f55b-418f-ac3f-b07737b9cb89.vt.json.gz",
-    "run_id": "23adbde7-f55b-418f-ac3f-b07737b9cb89",
+    "file": "etec-4a16afd7-11bf-4d88-88f4-762a93e1006b.vt.json.gz",
+    "run_id": "4a16afd7-11bf-4d88-88f4-762a93e1006b",
     "seed": 20260919,
-    "created_at": "2026-09-21T01:14:49.356Z",
+    "created_at": "2026-09-21T02:40:45.444Z",
     "provider": "fixture",
     "scenario": {
       "id": "etec",
@@ -21,7 +21,7 @@
     "requested_duration_min": 180,
     "frame_interval_min": 5,
     "status": "complete",
-    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "pack_fingerprint": "6d85d2780c0d84369bcc9ff1db65312a931d7105ad77a427054326db5f7c4cb1",
     "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
     "stop_reason": null,
     "duration_min": 180,
@@ -31,13 +31,13 @@
     "models": [
       "fixture-not-live-jev"
     ],
-    "bytes": 1309445
+    "bytes": 1423006
   },
   {
-    "file": "epec-de34882b-3796-4d4c-929f-f55abe7320ce.vt.json.gz",
-    "run_id": "de34882b-3796-4d4c-929f-f55abe7320ce",
+    "file": "epec-3f226d59-90e0-42e8-998d-535cc33397cf.vt.json.gz",
+    "run_id": "3f226d59-90e0-42e8-998d-535cc33397cf",
     "seed": 20260919,
-    "created_at": "2026-09-21T01:14:55.099Z",
+    "created_at": "2026-09-21T02:40:51.400Z",
     "provider": "fixture",
     "scenario": {
       "id": "epec",
@@ -55,7 +55,7 @@
     "requested_duration_min": 360,
     "frame_interval_min": 5,
     "status": "complete",
-    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "pack_fingerprint": "6d85d2780c0d84369bcc9ff1db65312a931d7105ad77a427054326db5f7c4cb1",
     "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
     "stop_reason": null,
     "duration_min": 360,
@@ -65,13 +65,13 @@
     "models": [
       "fixture-not-live-jev"
     ],
-    "bytes": 4665109
+    "bytes": 5285471
   },
   {
-    "file": "ibd-47cedf42-2bf7-477c-8bda-0fe4a27bc87a.vt.json.gz",
-    "run_id": "47cedf42-2bf7-477c-8bda-0fe4a27bc87a",
+    "file": "ibd-3c512e5f-377c-45c9-9ce4-e144e9c51d17.vt.json.gz",
+    "run_id": "3c512e5f-377c-45c9-9ce4-e144e9c51d17",
     "seed": 20260919,
-    "created_at": "2026-09-21T01:15:08.926Z",
+    "created_at": "2026-09-21T02:41:05.566Z",
     "provider": "fixture",
     "scenario": {
       "id": "ibd",
@@ -89,7 +89,7 @@
     "requested_duration_min": 360,
     "frame_interval_min": 5,
     "status": "complete",
-    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "pack_fingerprint": "6d85d2780c0d84369bcc9ff1db65312a931d7105ad77a427054326db5f7c4cb1",
     "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
     "stop_reason": null,
     "duration_min": 360,
@@ -99,13 +99,13 @@
     "models": [
       "fixture-not-live-jev"
     ],
-    "bytes": 5145180
+    "bytes": 5696379
   },
   {
-    "file": "baseline-1968b8e6-fa5f-48fc-b74f-6332ddba6733.vt.json.gz",
-    "run_id": "1968b8e6-fa5f-48fc-b74f-6332ddba6733",
+    "file": "baseline-c10fbb65-4d1a-44a7-8a27-aaa5ce641265.vt.json.gz",
+    "run_id": "c10fbb65-4d1a-44a7-8a27-aaa5ce641265",
     "seed": 20260919,
-    "created_at": "2026-09-21T01:15:27.815Z",
+    "created_at": "2026-09-21T02:41:24.705Z",
     "provider": "fixture",
     "scenario": {
       "id": "baseline",
@@ -118,7 +118,7 @@
     "requested_duration_min": 60,
     "frame_interval_min": 5,
     "status": "complete",
-    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "pack_fingerprint": "6d85d2780c0d84369bcc9ff1db65312a931d7105ad77a427054326db5f7c4cb1",
     "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
     "stop_reason": null,
     "duration_min": 60,
@@ -126,6 +126,6 @@
     "input_tokens": 0,
     "cell_questions": 0,
     "models": [],
-    "bytes": 257177
+    "bytes": 258978
   }
 ]

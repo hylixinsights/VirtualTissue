@@ -8,6 +8,8 @@ export function validatePack(pack){
  validateRegistry(pack.registry);
  if(!Array.isArray(pack.population)||pack.population.length<2||pack.population.length>500)throw new Error('Invalid population.');
  if(new Set(pack.population.map(c=>c.id)).size!==pack.population.length)throw new Error('Duplicate cell identity.');
+ const injury=pack.definition.injury;
+ if(!injury||!['radius','core_radius','peak_cell_damage','minimum_barrier_damage','DAMP_per_damage'].every(k=>Number.isFinite(injury[k])&&injury[k]>=0&&injury[k]<=1)||!(injury.core_radius<injury.radius&&injury.radius<=.5&&injury.peak_cell_damage>0&&injury.peak_cell_damage<1))throw new Error('Invalid injury parameters.');
  return pack;
 }
 export function scenarioById(id,pack=ACTIVE_PACK){

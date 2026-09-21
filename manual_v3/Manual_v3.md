@@ -1,6 +1,6 @@
 # Manual v3 — Gut tissue
 
-Version 3.0.0, application 6.1.0. Language: English. Target: an illustrative adult
+Version 3.0.0, application 6.1.1. Language: English. Target: an illustrative adult
 human ileal mucosal microdomain. This is a reproducible mechanistic demonstration,
 not a calibrated biological predictor. No parameter fitting or validation against
 human experimental trajectories has been performed.
@@ -154,6 +154,31 @@ outcome: adaptation takes days and death is conditional. Fixtures demonstrate
 software behavior and the file format, not live-Jev biological validity.
 
 ## Reviewed pathways and limits
+
+### Direct focal tissue injury input
+
+The Studio **Tissue injury** input imposes an external epithelial wound, separate
+from the four preset scenarios. Direct cell injury and junction disruption are
+motivated by mechanical wounding experiments in intestinal epithelial monolayers
+([Nusrat et al., 1992](https://www.jci.org/articles/view/115741)). This supports the
+qualitative wound concept only; it does not calibrate the following settings or
+implement the cell migration and restitution described in that study.
+
+The executable contract is `tissues/ileum/pack.json` → `injury`. Within a normalized
+horizontal half-width of 0.06 (18 µm), viable epithelial cells receive a target
+damage of 0.8 in the central half-width 0.02 (6 µm), tapering linearly to zero at
+the outer edge. Health becomes the lesser of existing health and
+`100 * (1 - target_damage)`. Junction damage is at least 0.4 within the footprint
+and at least the imposed cell damage. Cells outside that epithelial footprint,
+vascular reserves and terminal cells receive no direct injury. Reapplying the
+same wound cannot restore health or compound the initial dose beyond its target.
+
+New health loss adds a local patch DAMP proxy at 0.3 times the added damage, which
+then uses the existing basal release/transport. No cytokine, LT or ST is injected.
+All these numbers and the spatial profile are proposed demonstration priors (P),
+not measured human injury severity. The intervention records its profile and
+affected cell IDs. Repair and conditional death retain the existing individual
+manual decisions, gates and clocks; the wound does not kill cells immediately.
 
 | Pathway | Release decision | Scientific reason |
 | --- | --- | --- |

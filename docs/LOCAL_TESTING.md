@@ -6,6 +6,36 @@ Node.js 22+. `--skip-browser` is explicitly a partial check. All test transports
 are fixtures. Browser tests run the actual local adapter and WebGL renderer with
 synthetic upstream answers. No live Jev test is part of automation.
 
+## Inspecting injury and toxins
+
+If port 8000 is occupied, run `python3 server.py --port 0` and open the local
+address printed by the server. Reload the page after rebuilding or updating it.
+
+The four readouts above the tissue separate **Barrier damage** (junction loss),
+**Cell damage** (cell health loss), **LT** and **ST** (peak local epithelial
+exposure). Click a readout to select its display layer and most affected cell.
+Red broken rings locate damaged junctions; cyan and purple rings locate recorded
+LT and ST exposure. Field brightness is a display scale, not a concentration unit.
+
+After a fresh reset, introduce **Tissue injury** at 50%. The initial model state
+affects six epithelial cells: the core has health 20 and 80% cell damage, with
+less damage toward the edge. Barrier damage also peaks at 80%. Distant cells
+retain their original health; LT/ST stay zero. Select **Cell damage** to inspect
+the wound core or **Barrier damage** to inspect the junctions. These are proposed
+demonstration severities, not calibrated biological measurements. Later repair
+and conditional death require the existing manual decisions and clocks.
+
+For LT/ST, reset and introduce **ETEC**. Toxin appears after bacteria reach the
+epithelium and colonize; it is not added by Tissue injury or EPEC. Advance biological
+time and inspect the LT/ST readouts. A run stopped by its request cap cannot
+continue toward toxin production. In deterministic fixture checks, local toxin
+exposure was positive by 30 minutes; this is not a timing guarantee for live runs.
+
+For a no-key visual check, open `player.html`, load the bundled ETEC fixture and
+seek forward, then choose **LT**. Earlier recordings lack a toxin field grid;
+the updated player still draws exposure rings from their saved per-cell values
+and explicitly identifies the missing grid. No biology is recomputed on playback.
+
 ## Probability contract
 
 The official [Choice documentation](https://docs.typesafe.ai/primitives/choice)

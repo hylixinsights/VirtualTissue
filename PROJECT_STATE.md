@@ -1,4 +1,4 @@
-# VirtualTissue 6.1.0
+# VirtualTissue 6.1.1
 
 The active release is governed by Manual v3, with ETEC, EPEC, IBD-like innate injury
 and quiet baseline. Both server and host consume the same compiled pack. There

@@ -1,7 +1,7 @@
 {
   "format": "virtualtissue.pack.v1",
   "id": "human-ileum",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "title": "Human ileum \u00b7 individual cell experiment",
   "description": "An uncalibrated ileal cutaway with explicit cell identities, local sensing and constrained Jev decisions.",
   "host_adapter": "ileum-cutaway-v1",
@@ -12,6 +12,14 @@
   "manual_document": "../../manual_v3/Manual_v3.md",
   "manual_source": "../../manual_v3/model.json",
   "host_parameters": {},
+  "injury": {
+    "radius": 0.06,
+    "core_radius": 0.02,
+    "peak_cell_damage": 0.8,
+    "minimum_barrier_damage": 0.4,
+    "DAMP_per_damage": 0.3,
+    "evidence": "P: focal epithelial wound input; core severity, spatial taper and DAMP scaling are proposed, not calibrated. https://www.jci.org/articles/view/115741"
+  },
   "etec": {
     "bacteria_per_input": 24,
     "colonization_contact_min": 10,

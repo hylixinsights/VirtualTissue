@@ -36,6 +36,8 @@ async def main():
    check('Preset recording stops automatically at its biological duration',await page.evaluate('Cellville.tissue.time_min===40&&Cellville.recorder.closed&&!Cellville.playing'))
    check('ETEC has its own toxin-driven Jev choices',await page.evaluate('Cellville.tissue.lab.etecWater>0&&Cellville.tissue.decisions.some(d=>d.action==="EPITHELIAL_ION_SECRETION")'))
    check('Every live-adapter decision is retained in the recording',await page.evaluate('Cellville.recorder.data.decisions.length===Cellville.recorder.data.rounds.reduce((n,r)=>n+r.request.cells.length,0)'))
+   await page.locator('[data-readout="LT"]').click();await page.evaluate('Cellville.view.render(performance.now())')
+   check('ETEC readout locates actual epithelial toxin exposure and renders LT',float(await page.locator('#ltValue').inner_text())>0 and await page.evaluate('Cellville.view.options.signals==="LT"&&Cellville.view.diagnosticMarkers.some(m=>m.kind==="LT"&&m.value>0)&&Cellville.view.current.fields.LT.some(v=>v>0)'))
    await page.evaluate('Cellville.view.render(performance.now())');await page.screenshot(path=str(ROOT/'docs/studio_recording.png'),full_page=True)
    async with page.expect_download() as saved:await page.locator('#exportBtn').click()
    download=await saved.value;temp=Path(await download.path());saved_episode=await page.evaluate('Cellville.recorder.data.metadata.run_id')
@@ -52,6 +54,8 @@ async def main():
    check('Standalone player loads an exported episode directly from file',await player.evaluate(f'VirtualTissuePlayer.episode.metadata.run_id==={json.dumps(saved_episode)}&&typeof window.Cellville==="undefined"'))
    await player.locator('#speed').select_option('10');await player.locator('#play').click();await wait_value(player,'VirtualTissuePlayer.index>=3');await player.locator('#play').click();await player.locator('#timeline').evaluate("e=>{e.value=e.max;e.dispatchEvent(new Event('input'))}")
    check('Playback and seeking reach the stored final biological state',await player.locator('#clock').inner_text()=='REPLAY · 40 min')
+   await player.locator('#signalSelect').select_option('LT');await player.evaluate('VirtualTissuePlayer.view.render(performance.now())')
+   check('Offline player renders saved LT with no biological recomputation',await player.evaluate('VirtualTissuePlayer.view.diagnosticMarkers.some(m=>m.kind==="LT"&&m.value>0)') and 'peak epithelial exposure' in await player.locator('#signalNote').inner_text())
    # Click a real projected cell, rather than injecting inspector state.
    point=await player.evaluate("()=>{VirtualTissuePlayer.view.render(performance.now());const e=VirtualTissuePlayer.episode;const id=e.decisions.find(d=>d.action==='EPITHELIAL_ION_SECRETION').cell_id;return VirtualTissuePlayer.view.displayPoints.find(p=>p.id===id).s;}")
    box=await player.locator('#overlay').bounding_box();await player.mouse.click(box['x']+point['x'],box['y']+point['y'])

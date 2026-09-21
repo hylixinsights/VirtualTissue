@@ -27,7 +27,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '6.1.0'
+VERSION = '6.1.1'
 ENDPOINT = 'https://api.typesafe.ai/v1/systemone'
 CONTRACT = 'cellville.typesafe.choice.v1'
 ENV_NAMES = {
