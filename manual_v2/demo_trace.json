@@ -1,0 +1,56 @@
+{
+  "description": "Single cell event and finite flux smoke demonstration, not a simulated tissue",
+  "biological_time_minutes": 600,
+  "total_normalized_CXCL8_amount": 0.2632980364601162,
+  "events": [
+    {
+      "kind": "started",
+      "action": "EPITHELIAL_CXCL8_INDUCTION",
+      "time": 274.7404183596263,
+      "duration": 196.97531090667857
+    },
+    {
+      "kind": "completed",
+      "action": "EPITHELIAL_CXCL8_INDUCTION",
+      "time": 472
+    },
+    {
+      "kind": "started",
+      "action": "EPITHELIAL_CXCL8_INDUCTION",
+      "time": 558.5640322392535,
+      "duration": 159.12067458507596
+    }
+  ],
+  "final_cell": {
+    "id": "example_enterocyte",
+    "type": "enterocyte",
+    "viability": "viable",
+    "resources": {
+      "energy": 0.98,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1,
+      "cytotoxic": 1,
+      "pro_IL1B": 1
+    },
+    "outputs": {
+      "CXCL8": 0.5842069456117375
+    },
+    "competence": {
+      "CXCL8_output": true
+    },
+    "programs": {
+      "inflammation": 0.6
+    },
+    "memory": {
+      "alarm": 0.25
+    },
+    "cycle": {
+      "ready": true,
+      "completed_rounds": 0
+    },
+    "damage": 0
+  },
+  "software_only": true
+}

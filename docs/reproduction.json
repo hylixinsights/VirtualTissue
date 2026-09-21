@@ -1,0 +1,66 @@
+{
+  "experiment": "paired_stimulus_600_min",
+  "seed": 20260919,
+  "time_min": 600,
+  "rule_sha256": "db6bac825389a9d99957ddc425be355a1b50fd48571260e748f5e0b6f17078be",
+  "host_manifest_version": "cellville.manual-host.1.0.0",
+  "accepted": {
+    "EPITHELIAL_CXCL8_INDUCTION": 33,
+    "GOBLET_RELEASE": 53
+  },
+  "fields": {
+    "TNF": {
+      "deposited": 600.0000000000092,
+      "decayed": 557.2172641824623,
+      "initial": 0,
+      "present": 42.7827358175378,
+      "residual": 9.15179043659009e-12
+    },
+    "SECRETORY_STIMULUS": {
+      "deposited": 600.0000000000316,
+      "decayed": 557.2172641824623,
+      "initial": 0,
+      "present": 42.78273581753775,
+      "residual": 3.1597835459251655e-11
+    },
+    "CXCL8": {
+      "deposited": 4.172414730197726,
+      "decayed": 3.674508777349687,
+      "initial": 0,
+      "present": 0.4979059528480491,
+      "residual": -1.0158540675320182e-14
+    },
+    "MUCUS": {
+      "deposited": 5.299999999999997,
+      "decayed": 5.0180126410163375,
+      "initial": 0,
+      "present": 0.28198735898366195,
+      "residual": -2.275957200481571e-15
+    }
+  },
+  "counts": {
+    "alive": 100,
+    "present": 100,
+    "inTissue": 94,
+    "reserve": 6,
+    "recruited": 0,
+    "dead": 0,
+    "extruded": 0,
+    "cleared": 0,
+    "gaps": 0,
+    "barrier": 1,
+    "active": 12,
+    "inflammation": 0,
+    "byType": {
+      "enterocyte": 42,
+      "goblet": 8,
+      "fibroblast": 20,
+      "macrophage": 12,
+      "neutrophil": 10,
+      "nk": 8
+    }
+  },
+  "api_calls": 0,
+  "physics_sha256": "b0f1d2335d1c51b9dacaba00773514ae444c21d04ee2ea436221c74bd471610d",
+  "note": "Run IDs differ by design. Physics hash excludes run identity. Floating-point details may differ across JS engines; compare counts and mass residuals with tolerance."
+}

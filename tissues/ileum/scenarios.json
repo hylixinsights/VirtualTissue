@@ -1,0 +1,49 @@
+[
+  {
+    "id": "etec",
+    "title": "ETEC \u00b7 enterotoxin-driven secretion",
+    "prompt": "ETEC enters on the left",
+    "inputs": [
+      {
+        "kind": "etec",
+        "x": 0.25
+      }
+    ],
+    "duration_min": 180,
+    "description": "ETEC colonization and local LT/ST exposure. Follow the local toxin proxy and Jev-selected ion/water secretion; no attaching-and-effacing lesion is imposed."
+  },
+  {
+    "id": "epec",
+    "title": "EPEC \u00b7 attaching and effacing",
+    "prompt": "EPEC enters on the left",
+    "inputs": [
+      {
+        "kind": "epec",
+        "x": 0.25
+      }
+    ],
+    "duration_min": 360,
+    "description": "The existing EPEC contact model, retained separately from ETEC."
+  },
+  {
+    "id": "ibd",
+    "title": "IBD-like \u00b7 focal innate inflammation",
+    "prompt": "Focal IBD-like inflammation on the left",
+    "inputs": [
+      {
+        "kind": "ileitis",
+        "x": 0.25
+      }
+    ],
+    "duration_min": 360,
+    "description": "Focal barrier injury with reduced resolution competence. This is an innate inflammatory challenge, not a complete IBD model."
+  },
+  {
+    "id": "baseline",
+    "title": "Baseline \u00b7 no perturbation",
+    "prompt": "No perturbation",
+    "inputs": [],
+    "duration_min": 60,
+    "description": "A fresh steady-state control with no external cue and no required cellular inference."
+  }
+]

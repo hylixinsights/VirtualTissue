@@ -1,0 +1,1146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manual v3 constraint registry",
+  "type": "object",
+  "required": [
+    "metadata",
+    "units",
+    "evidence_labels",
+    "profiles",
+    "parameters",
+    "duration_models",
+    "cell_types",
+    "initial_presets",
+    "initialization",
+    "fields",
+    "features",
+    "actions",
+    "continuous_processes",
+    "references",
+    "measured_observations",
+    "host_contract",
+    "provider_contract",
+    "legacy_migration",
+    "simulation_scenarios",
+    "invariants",
+    "numerical_worked_examples",
+    "continuation_semantics",
+    "kernel_scope",
+    "physical_effects",
+    "feature_provenance_contract"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "predicate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^(cell|context|signals)\\.[A-Za-z0-9_.]+$"
+            },
+            "op": {
+              "enum": [
+                "eq",
+                "in",
+                "gte",
+                "gt",
+                "lte",
+                "lt"
+              ]
+            },
+            "param": {
+              "type": "string",
+              "enum": [
+                "zero",
+                "one",
+                "gate_low",
+                "gate_mid",
+                "gate_high",
+                "gate_signal",
+                "gate_store",
+                "damage_death_gate",
+                "resource_gate",
+                "memory_gate",
+                "max_ta_rounds",
+                "min_corpse_capacity",
+                "score_intercept",
+                "score_positive",
+                "score_negative",
+                "score_strong",
+                "rate_fast",
+                "rate_moderate",
+                "rate_slow",
+                "rate_rare",
+                "no_refractory",
+                "refractory_short",
+                "refractory_induction",
+                "refractory_degranulation",
+                "action_energy_cost",
+                "release_fraction",
+                "cytotoxic_store_cost",
+                "ingestion_cost",
+                "state_change_amount",
+                "death_signal_amount",
+                "output_rate",
+                "niche_output_rate",
+                "store_refill_rate",
+                "resource_recovery_rate",
+                "memory_tau",
+                "receptor_K",
+                "hill_n",
+                "chemotactic_speed",
+                "random_motility",
+                "tissue_thickness",
+                "grid_spacing",
+                "decision_step",
+                "field_diffusion_demo",
+                "field_half_life_demo",
+                "baseline_permeability",
+                "defect_permeability",
+                "mechanical_closure_gain",
+                "contact_distance_demo",
+                "local_context_radius",
+                "patch_width",
+                "patch_height",
+                "damage_repair_rate",
+                "matrix_degradation_rate",
+                "soluble_output_decay",
+                "ctla4_removal_fraction"
+              ]
+            },
+            "value": {}
+          },
+          "required": [
+            "path",
+            "op"
+          ],
+          "oneOf": [
+            {
+              "required": [
+                "param"
+              ],
+              "not": {
+                "required": [
+                  "value"
+                ]
+              }
+            },
+            {
+              "required": [
+                "value"
+              ],
+              "not": {
+                "required": [
+                  "param"
+                ]
+              }
+            }
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "all": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/predicate"
+              }
+            }
+          },
+          "required": [
+            "all"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "any": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/predicate"
+              }
+            }
+          },
+          "required": [
+            "any"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "enabled_by_default": {
+          "type": "boolean"
+        },
+        "cell_types": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "intestinal_stem",
+              "transit_amplifying",
+              "enterocyte",
+              "goblet",
+              "paneth",
+              "tuft",
+              "enteroendocrine",
+              "m_cell",
+              "best4",
+              "trophocyte",
+              "fibroblast",
+              "bmp_stroma",
+              "endothelial",
+              "pericyte",
+              "enteric_glia",
+              "resident_macrophage",
+              "inflammatory_monocyte",
+              "neutrophil",
+              "dendritic",
+              "th17",
+              "th1",
+              "regulatory_t",
+              "iel_cd8",
+              "nk",
+              "ilc3",
+              "plasma_iga",
+              "plasma_igg",
+              "repair_epithelial"
+            ]
+          },
+          "minItems": 1
+        },
+        "channel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exclusive_locks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required_host_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "gate": {
+          "$ref": "#/$defs/predicate"
+        },
+        "trigger": {
+          "$ref": "#/$defs/predicate"
+        },
+        "hazard": {
+          "type": "object",
+          "properties": {
+            "base_rate_ref": {
+              "type": "string",
+              "enum": [
+                "zero",
+                "one",
+                "gate_low",
+                "gate_mid",
+                "gate_high",
+                "gate_signal",
+                "gate_store",
+                "damage_death_gate",
+                "resource_gate",
+                "memory_gate",
+                "max_ta_rounds",
+                "min_corpse_capacity",
+                "score_intercept",
+                "score_positive",
+                "score_negative",
+                "score_strong",
+                "rate_fast",
+                "rate_moderate",
+                "rate_slow",
+                "rate_rare",
+                "no_refractory",
+                "refractory_short",
+                "refractory_induction",
+                "refractory_degranulation",
+                "action_energy_cost",
+                "release_fraction",
+                "cytotoxic_store_cost",
+                "ingestion_cost",
+                "state_change_amount",
+                "death_signal_amount",
+                "output_rate",
+                "niche_output_rate",
+                "store_refill_rate",
+                "resource_recovery_rate",
+                "memory_tau",
+                "receptor_K",
+                "hill_n",
+                "chemotactic_speed",
+                "random_motility",
+                "tissue_thickness",
+                "grid_spacing",
+                "decision_step",
+                "field_diffusion_demo",
+                "field_half_life_demo",
+                "baseline_permeability",
+                "defect_permeability",
+                "mechanical_closure_gain",
+                "contact_distance_demo",
+                "local_context_radius",
+                "patch_width",
+                "patch_height",
+                "damage_repair_rate",
+                "matrix_degradation_rate",
+                "soluble_output_decay",
+                "ctla4_removal_fraction"
+              ]
+            },
+            "intercept_ref": {
+              "type": "string",
+              "enum": [
+                "zero",
+                "one",
+                "gate_low",
+                "gate_mid",
+                "gate_high",
+                "gate_signal",
+                "gate_store",
+                "damage_death_gate",
+                "resource_gate",
+                "memory_gate",
+                "max_ta_rounds",
+                "min_corpse_capacity",
+                "score_intercept",
+                "score_positive",
+                "score_negative",
+                "score_strong",
+                "rate_fast",
+                "rate_moderate",
+                "rate_slow",
+                "rate_rare",
+                "no_refractory",
+                "refractory_short",
+                "refractory_induction",
+                "refractory_degranulation",
+                "action_energy_cost",
+                "release_fraction",
+                "cytotoxic_store_cost",
+                "ingestion_cost",
+                "state_change_amount",
+                "death_signal_amount",
+                "output_rate",
+                "niche_output_rate",
+                "store_refill_rate",
+                "resource_recovery_rate",
+                "memory_tau",
+                "receptor_K",
+                "hill_n",
+                "chemotactic_speed",
+                "random_motility",
+                "tissue_thickness",
+                "grid_spacing",
+                "decision_step",
+                "field_diffusion_demo",
+                "field_half_life_demo",
+                "baseline_permeability",
+                "defect_permeability",
+                "mechanical_closure_gain",
+                "contact_distance_demo",
+                "local_context_radius",
+                "patch_width",
+                "patch_height",
+                "damage_repair_rate",
+                "matrix_degradation_rate",
+                "soluble_output_decay",
+                "ctla4_removal_fraction"
+              ]
+            },
+            "terms": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "weight_ref": {
+                    "type": "string",
+                    "enum": [
+                      "zero",
+                      "one",
+                      "gate_low",
+                      "gate_mid",
+                      "gate_high",
+                      "gate_signal",
+                      "gate_store",
+                      "damage_death_gate",
+                      "resource_gate",
+                      "memory_gate",
+                      "max_ta_rounds",
+                      "min_corpse_capacity",
+                      "score_intercept",
+                      "score_positive",
+                      "score_negative",
+                      "score_strong",
+                      "rate_fast",
+                      "rate_moderate",
+                      "rate_slow",
+                      "rate_rare",
+                      "no_refractory",
+                      "refractory_short",
+                      "refractory_induction",
+                      "refractory_degranulation",
+                      "action_energy_cost",
+                      "release_fraction",
+                      "cytotoxic_store_cost",
+                      "ingestion_cost",
+                      "state_change_amount",
+                      "death_signal_amount",
+                      "output_rate",
+                      "niche_output_rate",
+                      "store_refill_rate",
+                      "resource_recovery_rate",
+                      "memory_tau",
+                      "receptor_K",
+                      "hill_n",
+                      "chemotactic_speed",
+                      "random_motility",
+                      "tissue_thickness",
+                      "grid_spacing",
+                      "decision_step",
+                      "field_diffusion_demo",
+                      "field_half_life_demo",
+                      "baseline_permeability",
+                      "defect_permeability",
+                      "mechanical_closure_gain",
+                      "contact_distance_demo",
+                      "local_context_radius",
+                      "patch_width",
+                      "patch_height",
+                      "damage_repair_rate",
+                      "matrix_degradation_rate",
+                      "soluble_output_decay",
+                      "ctla4_removal_fraction"
+                    ]
+                  }
+                },
+                "required": [
+                  "path",
+                  "weight_ref"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "base_rate_ref",
+            "intercept_ref",
+            "terms"
+          ],
+          "additionalProperties": false
+        },
+        "duration_ref": {
+          "type": "string",
+          "enum": [
+            "signal",
+            "granule",
+            "engulf",
+            "digest",
+            "induce",
+            "endothelial",
+            "crossing",
+            "injury_commitment",
+            "death_execution",
+            "extrusion",
+            "stem_cycle",
+            "ta_cycle",
+            "lineage_maturation",
+            "lymphocyte_induce",
+            "cytotoxic_contact",
+            "myeloid_adaptation",
+            "fibroblast_switch",
+            "matrix_episode",
+            "contact_regulation",
+            "epithelial_repair",
+            "antigen_processing",
+            "dc_maturation",
+            "lymphatic_exit",
+            "inflammasome",
+            "short_motion",
+            "antigen_transcytosis",
+            "epithelial_recovery",
+            "lytic_failure",
+            "etec_transport_response"
+          ]
+        },
+        "refractory_ref": {
+          "type": "string",
+          "enum": [
+            "zero",
+            "one",
+            "gate_low",
+            "gate_mid",
+            "gate_high",
+            "gate_signal",
+            "gate_store",
+            "damage_death_gate",
+            "resource_gate",
+            "memory_gate",
+            "max_ta_rounds",
+            "min_corpse_capacity",
+            "score_intercept",
+            "score_positive",
+            "score_negative",
+            "score_strong",
+            "rate_fast",
+            "rate_moderate",
+            "rate_slow",
+            "rate_rare",
+            "no_refractory",
+            "refractory_short",
+            "refractory_induction",
+            "refractory_degranulation",
+            "action_energy_cost",
+            "release_fraction",
+            "cytotoxic_store_cost",
+            "ingestion_cost",
+            "state_change_amount",
+            "death_signal_amount",
+            "output_rate",
+            "niche_output_rate",
+            "store_refill_rate",
+            "resource_recovery_rate",
+            "memory_tau",
+            "receptor_K",
+            "hill_n",
+            "chemotactic_speed",
+            "random_motility",
+            "tissue_thickness",
+            "grid_spacing",
+            "decision_step",
+            "field_diffusion_demo",
+            "field_half_life_demo",
+            "baseline_permeability",
+            "defect_permeability",
+            "mechanical_closure_gain",
+            "contact_distance_demo",
+            "local_context_radius",
+            "patch_width",
+            "patch_height",
+            "damage_repair_rate",
+            "matrix_degradation_rate",
+            "soluble_output_decay",
+            "ctla4_removal_fraction"
+          ]
+        },
+        "continuation": {
+          "type": "object",
+          "properties": {
+            "on_gate_loss": {
+              "enum": [
+                "cancel",
+                "pause",
+                "continue"
+              ]
+            },
+            "on_death": {
+              "enum": [
+                "cancel",
+                "continue"
+              ]
+            },
+            "recheck_predicate": {
+              "$ref": "#/$defs/predicate"
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "on_gate_loss",
+            "on_death",
+            "recheck_predicate"
+          ],
+          "additionalProperties": false
+        },
+        "costs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "amount_ref": {
+                "type": "string",
+                "enum": [
+                  "zero",
+                  "one",
+                  "gate_low",
+                  "gate_mid",
+                  "gate_high",
+                  "gate_signal",
+                  "gate_store",
+                  "damage_death_gate",
+                  "resource_gate",
+                  "memory_gate",
+                  "max_ta_rounds",
+                  "min_corpse_capacity",
+                  "score_intercept",
+                  "score_positive",
+                  "score_negative",
+                  "score_strong",
+                  "rate_fast",
+                  "rate_moderate",
+                  "rate_slow",
+                  "rate_rare",
+                  "no_refractory",
+                  "refractory_short",
+                  "refractory_induction",
+                  "refractory_degranulation",
+                  "action_energy_cost",
+                  "release_fraction",
+                  "cytotoxic_store_cost",
+                  "ingestion_cost",
+                  "state_change_amount",
+                  "death_signal_amount",
+                  "output_rate",
+                  "niche_output_rate",
+                  "store_refill_rate",
+                  "resource_recovery_rate",
+                  "memory_tau",
+                  "receptor_K",
+                  "hill_n",
+                  "chemotactic_speed",
+                  "random_motility",
+                  "tissue_thickness",
+                  "grid_spacing",
+                  "decision_step",
+                  "field_diffusion_demo",
+                  "field_half_life_demo",
+                  "baseline_permeability",
+                  "defect_permeability",
+                  "mechanical_closure_gain",
+                  "contact_distance_demo",
+                  "local_context_radius",
+                  "patch_width",
+                  "patch_height",
+                  "damage_repair_rate",
+                  "matrix_degradation_rate",
+                  "soluble_output_decay",
+                  "ctla4_removal_fraction"
+                ]
+              },
+              "accounting": {
+                "const": "reserve_at_start_consume_at_success_release_on_cancel"
+              }
+            },
+            "required": [
+              "path",
+              "amount_ref",
+              "accounting"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "completion_effects": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "op": {
+                    "const": "set"
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {}
+                },
+                "required": [
+                  "op",
+                  "path",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "op": {
+                    "const": "intent"
+                  },
+                  "kind": {
+                    "enum": [
+                      "antigen_presentation_update",
+                      "antigen_transfer",
+                      "apc_costimulation_reduction",
+                      "cancel_incompatible_events",
+                      "cargo_processing",
+                      "death_record",
+                      "division_transaction",
+                      "endothelial_adhesion_update",
+                      "engulf_transaction",
+                      "extrusion_transaction",
+                      "hormone_release",
+                      "iga_transport",
+                      "inflammasome_response",
+                      "junction_remodel",
+                      "lineage_transition",
+                      "lymphatic_exit_transaction",
+                      "lytic_death_transaction",
+                      "matrix_increment",
+                      "movement_step",
+                      "phenotype_relaxation",
+                      "phenotype_transition",
+                      "restitution_step",
+                      "stored_release",
+                      "target_hit",
+                      "tuft_output",
+                      "vascular_entry_transaction"
+                    ]
+                  },
+                  "arguments": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "op",
+                  "kind",
+                  "arguments"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "source_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "R01",
+                  "R02",
+                  "R03",
+                  "R04",
+                  "R05",
+                  "R06",
+                  "R07",
+                  "R08",
+                  "R09",
+                  "R10",
+                  "R11",
+                  "R12",
+                  "R13",
+                  "R14",
+                  "R15",
+                  "R16",
+                  "R17",
+                  "R18",
+                  "R19",
+                  "R20",
+                  "R21",
+                  "R22",
+                  "R23",
+                  "R24",
+                  "R25",
+                  "R26",
+                  "R27"
+                ]
+              }
+            },
+            "numerical_parameters": {
+              "const": "P"
+            },
+            "transfer_must_be_recorded": {
+              "const": true
+            },
+            "source_support": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string",
+                    "enum": [
+                      "R01",
+                      "R02",
+                      "R03",
+                      "R04",
+                      "R05",
+                      "R06",
+                      "R07",
+                      "R08",
+                      "R09",
+                      "R10",
+                      "R11",
+                      "R12",
+                      "R13",
+                      "R14",
+                      "R15",
+                      "R16",
+                      "R17",
+                      "R18",
+                      "R19",
+                      "R20",
+                      "R21",
+                      "R22",
+                      "R23",
+                      "R24",
+                      "R25",
+                      "R26",
+                      "R27"
+                    ]
+                  },
+                  "support": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "reference",
+                  "support"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "source_refs",
+            "numerical_parameters",
+            "transfer_must_be_recorded",
+            "source_support"
+          ],
+          "additionalProperties": false
+        },
+        "notes": {
+          "type": "string"
+        },
+        "initiation_policy": {
+          "enum": [
+            "hazard",
+            "automatic_when_eligible"
+          ]
+        },
+        "observation_contract": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "enabled_by_default",
+        "cell_types",
+        "channel",
+        "exclusive_locks",
+        "required_host_capabilities",
+        "gate",
+        "trigger",
+        "hazard",
+        "duration_ref",
+        "refractory_ref",
+        "continuation",
+        "costs",
+        "completion_effects",
+        "evidence",
+        "notes",
+        "initiation_policy",
+        "observation_contract"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "3.0.0"
+        },
+        "individual_cell_weight": {
+          "const": 1
+        },
+        "initial_cell_count": {
+          "const": 100
+        },
+        "fixed_population": {
+          "const": false
+        },
+        "is_biologically_calibrated": {
+          "const": false
+        },
+        "is_biologically_validated": {
+          "const": false
+        }
+      }
+    },
+    "units": {
+      "type": "object"
+    },
+    "evidence_labels": {
+      "type": "object"
+    },
+    "profiles": {
+      "type": "object"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "const": "P"
+          },
+          "calibrated": {
+            "const": false
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_context_only": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "R01",
+                "R02",
+                "R03",
+                "R04",
+                "R05",
+                "R06",
+                "R07",
+                "R08",
+                "R09",
+                "R10",
+                "R11",
+                "R12",
+                "R13",
+                "R14",
+                "R15",
+                "R16",
+                "R17",
+                "R18",
+                "R19",
+                "R20",
+                "R21",
+                "R22",
+                "R23",
+                "R24",
+                "R25",
+                "R26",
+                "R27"
+              ]
+            }
+          },
+          "source_supplies_value": {
+            "const": false
+          },
+          "sensitivity_range": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "required": [
+          "value",
+          "unit",
+          "evidence",
+          "calibrated",
+          "rationale",
+          "source_context_only",
+          "source_supplies_value"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "duration_models": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "distribution",
+          "unit",
+          "lower",
+          "mode",
+          "upper",
+          "evidence",
+          "calibrated",
+          "clock_origin",
+          "sampling"
+        ],
+        "properties": {
+          "distribution": {
+            "const": "triangular"
+          },
+          "unit": {
+            "const": "minute"
+          },
+          "lower": {
+            "type": "number",
+            "minimum": 0
+          },
+          "mode": {
+            "type": "number"
+          },
+          "upper": {
+            "type": "number"
+          },
+          "evidence": {
+            "const": "P"
+          },
+          "calibrated": {
+            "const": false
+          },
+          "source_context_only": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "R01",
+                "R02",
+                "R03",
+                "R04",
+                "R05",
+                "R06",
+                "R07",
+                "R08",
+                "R09",
+                "R10",
+                "R11",
+                "R12",
+                "R13",
+                "R14",
+                "R15",
+                "R16",
+                "R17",
+                "R18",
+                "R19",
+                "R20",
+                "R21",
+                "R22",
+                "R23",
+                "R24",
+                "R25",
+                "R26",
+                "R27"
+              ]
+            }
+          },
+          "source_supplies_distribution": {
+            "const": false
+          },
+          "clock_origin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "support_is_biological_bound": {
+            "const": false
+          },
+          "sampling": {
+            "const": "once_per_started_event"
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "cell_types": {
+      "type": "object"
+    },
+    "initial_presets": {
+      "type": "object"
+    },
+    "initialization": {
+      "type": "object"
+    },
+    "fields": {
+      "type": "object"
+    },
+    "features": {
+      "type": "object"
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "continuous_processes": {
+      "type": "array"
+    },
+    "references": {
+      "type": "object"
+    },
+    "measured_observations": {
+      "type": "array"
+    },
+    "host_contract": {
+      "type": "object"
+    },
+    "provider_contract": {
+      "type": "object"
+    },
+    "legacy_migration": {
+      "type": "object"
+    },
+    "simulation_scenarios": {
+      "type": "array"
+    },
+    "invariants": {
+      "type": "array"
+    },
+    "numerical_worked_examples": {
+      "type": "object"
+    },
+    "continuation_semantics": {
+      "type": "object"
+    },
+    "kernel_scope": {
+      "type": "object"
+    },
+    "physical_effects": {
+      "type": "array"
+    },
+    "feature_provenance_contract": {
+      "type": "object"
+    }
+  },
+  "$id": "https://virtualtissue.example/schemas/manual-v3-constraints.json"
+}

@@ -1,0 +1,131 @@
+[
+  {
+    "file": "etec-23adbde7-f55b-418f-ac3f-b07737b9cb89.vt.json.gz",
+    "run_id": "23adbde7-f55b-418f-ac3f-b07737b9cb89",
+    "seed": 20260919,
+    "created_at": "2026-09-21T01:14:49.356Z",
+    "provider": "fixture",
+    "scenario": {
+      "id": "etec",
+      "title": "ETEC · enterotoxin-driven secretion",
+      "prompt": "ETEC enters on the left",
+      "inputs": [
+        {
+          "kind": "etec",
+          "x": 0.25
+        }
+      ],
+      "duration_min": 180,
+      "description": "ETEC colonization and local LT/ST exposure. Follow the local toxin proxy and Jev-selected ion/water secretion; no attaching-and-effacing lesion is imposed."
+    },
+    "requested_duration_min": 180,
+    "frame_interval_min": 5,
+    "status": "complete",
+    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
+    "stop_reason": null,
+    "duration_min": 180,
+    "calls": 0,
+    "input_tokens": 0,
+    "cell_questions": 251,
+    "models": [
+      "fixture-not-live-jev"
+    ],
+    "bytes": 1309445
+  },
+  {
+    "file": "epec-de34882b-3796-4d4c-929f-f55abe7320ce.vt.json.gz",
+    "run_id": "de34882b-3796-4d4c-929f-f55abe7320ce",
+    "seed": 20260919,
+    "created_at": "2026-09-21T01:14:55.099Z",
+    "provider": "fixture",
+    "scenario": {
+      "id": "epec",
+      "title": "EPEC · attaching and effacing",
+      "prompt": "EPEC enters on the left",
+      "inputs": [
+        {
+          "kind": "epec",
+          "x": 0.25
+        }
+      ],
+      "duration_min": 360,
+      "description": "The existing EPEC contact model, retained separately from ETEC."
+    },
+    "requested_duration_min": 360,
+    "frame_interval_min": 5,
+    "status": "complete",
+    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
+    "stop_reason": null,
+    "duration_min": 360,
+    "calls": 0,
+    "input_tokens": 0,
+    "cell_questions": 2040,
+    "models": [
+      "fixture-not-live-jev"
+    ],
+    "bytes": 4665109
+  },
+  {
+    "file": "ibd-47cedf42-2bf7-477c-8bda-0fe4a27bc87a.vt.json.gz",
+    "run_id": "47cedf42-2bf7-477c-8bda-0fe4a27bc87a",
+    "seed": 20260919,
+    "created_at": "2026-09-21T01:15:08.926Z",
+    "provider": "fixture",
+    "scenario": {
+      "id": "ibd",
+      "title": "IBD-like · focal innate inflammation",
+      "prompt": "Focal IBD-like inflammation on the left",
+      "inputs": [
+        {
+          "kind": "ileitis",
+          "x": 0.25
+        }
+      ],
+      "duration_min": 360,
+      "description": "Focal barrier injury with reduced resolution competence. This is an innate inflammatory challenge, not a complete IBD model."
+    },
+    "requested_duration_min": 360,
+    "frame_interval_min": 5,
+    "status": "complete",
+    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
+    "stop_reason": null,
+    "duration_min": 360,
+    "calls": 0,
+    "input_tokens": 0,
+    "cell_questions": 3070,
+    "models": [
+      "fixture-not-live-jev"
+    ],
+    "bytes": 5145180
+  },
+  {
+    "file": "baseline-1968b8e6-fa5f-48fc-b74f-6332ddba6733.vt.json.gz",
+    "run_id": "1968b8e6-fa5f-48fc-b74f-6332ddba6733",
+    "seed": 20260919,
+    "created_at": "2026-09-21T01:15:27.815Z",
+    "provider": "fixture",
+    "scenario": {
+      "id": "baseline",
+      "title": "Baseline · no perturbation",
+      "prompt": "No perturbation",
+      "inputs": [],
+      "duration_min": 60,
+      "description": "A fresh steady-state control with no external cue and no required cellular inference."
+    },
+    "requested_duration_min": 60,
+    "frame_interval_min": 5,
+    "status": "complete",
+    "pack_fingerprint": "6b864e60b7a5ab21d768e304c711e3eec6bd7e8b49e3ab2375ef56c9808871da",
+    "integrity_note": "SHA-256 checks file integrity, not authorship or biological validation.",
+    "stop_reason": null,
+    "duration_min": 60,
+    "calls": 0,
+    "input_tokens": 0,
+    "cell_questions": 0,
+    "models": [],
+    "bytes": 257177
+  }
+]

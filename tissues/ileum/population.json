@@ -1,0 +1,5432 @@
+[
+  {
+    "id": "cell-000",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.04624547512675171,
+    "y": 0.46635355204926265,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-001",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.06810173785504121,
+    "y": 0.45380940469866915,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-002",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.08877937382648825,
+    "y": 0.43690616083533496,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-003",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.10808760887241116,
+    "y": 0.4162559393028354,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-004",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.1261409859288411,
+    "y": 0.3928663158334807,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-005",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.1432693960155727,
+    "y": 0.3677503777783577,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-006",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.1599103908062651,
+    "y": 0.34180490501388366,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-007",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.17657430479031447,
+    "y": 0.3158974038430239,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-008",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.1938820822041126,
+    "y": 0.2911034173147278,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-009",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.21264055215303043,
+    "y": 0.2692170914209455,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-010",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.23371942087594197,
+    "y": 0.25385345674090337,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-011",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.25671968606194173,
+    "y": 0.25090050228975114,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-012",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.27873052406785803,
+    "y": 0.2622241519367304,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-013",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.2981575236029005,
+    "y": 0.2825107294334326,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-014",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.31557336540247616,
+    "y": 0.30709586037789527,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-015",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.331789821712844,
+    "y": 0.33371512768754347,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-016",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.3473897002678337,
+    "y": 0.36126620451627445,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-017",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.36277494656802484,
+    "y": 0.3891256126619019,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-018",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.3782404030539893,
+    "y": 0.4168708294922539,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-019",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.3940268612374995,
+    "y": 0.4441482614898973,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-020",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.4103668863040377,
+    "y": 0.47057567241267656,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-021",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.42753620335104126,
+    "y": 0.4956153964180445,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-022",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.4459099333173925,
+    "y": 0.5183465543210709,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-023",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.46596801372386953,
+    "y": 0.537027715089555,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-024",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.4879940950393017,
+    "y": 0.5485315880373841,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-025",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.5111258791314286,
+    "y": 0.5492206731232525,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-026",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.5333784712999361,
+    "y": 0.5389103839130451,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-027",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.5537528750054359,
+    "y": 0.5211324826617767,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-028",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.5724622701154084,
+    "y": 0.4991150266767592,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-029",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.5899644526414668,
+    "y": 0.4746730087184113,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-030",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.6066180033748532,
+    "y": 0.4487519348798815,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-031",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.6226791175758362,
+    "y": 0.42188858403123564,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-032",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.6383598984441972,
+    "y": 0.3944547229720823,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-033",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.6538812679332258,
+    "y": 0.3667892930218035,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-034",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.6695170325334736,
+    "y": 0.33928972772180854,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-035",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.6856403993100165,
+    "y": 0.3125242773148542,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-036",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.70279003729508,
+    "y": 0.2874580296058816,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-037",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.7217356365182238,
+    "y": 0.2660115100232989,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-038",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.7432178937256502,
+    "y": 0.25223714747925163,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-039",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.7662868440452567,
+    "y": 0.2519023699845856,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-040",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.7879182353485288,
+    "y": 0.2650656518896711,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-041",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.8071229849398144,
+    "y": 0.2859170930876598,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-042",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.824674306689699,
+    "y": 0.3102646185054677,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-043",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.8414216905436442,
+    "y": 0.3360329912909001,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-044",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.8580207990097463,
+    "y": 0.3620473547490267,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-045",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.8750010409622211,
+    "y": 0.38742093433834995,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-046",
+    "morphology": "goblet",
+    "manual_type": "goblet",
+    "x": 0.892816118044337,
+    "y": 0.41127608872321764,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": true,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 1,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-047",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.91182701470595,
+    "y": 0.43262427230609235,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-048",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.932206946753286,
+    "y": 0.45043156191223893,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-049",
+    "morphology": "enterocyte",
+    "manual_type": "enterocyte",
+    "x": 0.9538330229586683,
+    "y": 0.463956603915,
+    "z": 0.23,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "ION_WATER": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": true,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true,
+      "ion_transport": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-050",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.41587399389594787,
+    "y": 0.842101389379696,
+    "z": 0.28593117345124486,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-051",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.28813360648229713,
+    "y": 0.4759192163154803,
+    "z": 0.3618742892425507,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-052",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.7118301087617873,
+    "y": 0.6563326231421629,
+    "z": 0.2735956466011703,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-053",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.8135246569477022,
+    "y": 0.571832154538404,
+    "z": 0.2789713590312749,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-054",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.08354177657514811,
+    "y": 0.7416053781383711,
+    "z": 0.20203939370810986,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-055",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.5816482864879071,
+    "y": 0.8477439400936664,
+    "z": 0.1400872061867267,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-056",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.8864991228654979,
+    "y": 0.48716892661592487,
+    "z": 0.2917394550144673,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-057",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.8848648209311067,
+    "y": 0.7627968276572779,
+    "z": 0.3545925401058049,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-058",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.17165990982204674,
+    "y": 0.6754390778914734,
+    "z": 0.2701764390617609,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-059",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.57331754559651,
+    "y": 0.6585908595687717,
+    "z": 0.3082485351618379,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-060",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.9371377707272768,
+    "y": 0.635135880293145,
+    "z": 0.33918418960645796,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-061",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.21525494819507002,
+    "y": 0.7904844358077519,
+    "z": 0.16786264319904148,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-062",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.4757054531946778,
+    "y": 0.733882922634839,
+    "z": 0.29507117293775087,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-063",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.11063624633476138,
+    "y": 0.8618150778499116,
+    "z": 0.18657065519131721,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-064",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.7858341892808676,
+    "y": 0.7245250844375873,
+    "z": 0.29160928929224617,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-065",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.40849920110777016,
+    "y": 0.690718365766313,
+    "z": 0.28245455178432166,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-066",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.6537103241682052,
+    "y": 0.7349410543926187,
+    "z": 0.30580030975863337,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-067",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.3810304117389023,
+    "y": 0.5279359200392743,
+    "z": 0.12618369008414448,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-068",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.2889142207801342,
+    "y": 0.7561061970447345,
+    "z": 0.1842420186661184,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-069",
+    "morphology": "fibroblast",
+    "manual_type": "fibroblast",
+    "x": 0.13208965944126247,
+    "y": 0.5560445522945437,
+    "z": 0.3313888086657971,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": true,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": true,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 1,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-070",
+    "morphology": "macrophage",
+    "manual_type": "resident_macrophage",
+    "x": 0.6975080433487892,
+    "y": 0.5302833280296086,
+    "z": 0.29970806105062364,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-071",
+    "morphology": "macrophage",
+    "manual_type": "resident_macrophage",
+    "x": 0.6978409721143544,
+    "y": 0.3986135192693372,
+    "z": 0.35093127134256064,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-072",
+    "morphology": "macrophage",
+    "manual_type": "resident_macrophage",
+    "x": 0.2128940414264798,
+    "y": 0.4404650220231311,
+    "z": 0.2972442184388638,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-073",
+    "morphology": "macrophage",
+    "manual_type": "resident_macrophage",
+    "x": 0.08822362141683697,
+    "y": 0.6462451334750678,
+    "z": 0.263713372675702,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-074",
+    "morphology": "macrophage",
+    "manual_type": "resident_macrophage",
+    "x": 0.9317297166958449,
+    "y": 0.8502391141897518,
+    "z": 0.10575044922530652,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-075",
+    "morphology": "macrophage",
+    "manual_type": "resident_macrophage",
+    "x": 0.2564574024267494,
+    "y": 0.6126428197161011,
+    "z": 0.3779617125820369,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-076",
+    "morphology": "macrophage",
+    "manual_type": "inflammatory_monocyte",
+    "x": 0.28,
+    "y": 0.34327618587818676,
+    "z": 0.17991733638569712,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "CCL2": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "CCL2_output": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4,
+      "CCL2": 4
+    }
+  },
+  {
+    "id": "cell-077",
+    "morphology": "macrophage",
+    "manual_type": "inflammatory_monocyte",
+    "x": 0.73,
+    "y": 0.33925988380752936,
+    "z": 0.17928447426296773,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "CCL2": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "CCL2_output": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4,
+      "CCL2": 4
+    }
+  },
+  {
+    "id": "cell-078",
+    "morphology": "macrophage",
+    "manual_type": "inflammatory_monocyte",
+    "x": 0.27,
+    "y": 0.94,
+    "z": 0.24274797247722746,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "CCL2": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "CCL2_output": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4,
+      "CCL2": 4
+    }
+  },
+  {
+    "id": "cell-079",
+    "morphology": "macrophage",
+    "manual_type": "inflammatory_monocyte",
+    "x": 0.74,
+    "y": 0.94,
+    "z": 0.1329859268013388,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0,
+      "CCL2": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": true,
+      "IL10_output": true,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "CCL2_output": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4,
+      "CCL2": 4
+    }
+  },
+  {
+    "id": "cell-080",
+    "morphology": "macrophage",
+    "manual_type": "dendritic",
+    "x": 0.25,
+    "y": 0.2751845124990637,
+    "z": 0.3102609613351524,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "antigen_processing": 0.7,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-081",
+    "morphology": "macrophage",
+    "manual_type": "dendritic",
+    "x": 0.75,
+    "y": 0.27554280594702624,
+    "z": 0.19627896056510508,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "antigen_processing": 0.7,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 12,
+      "IL10": 4
+    }
+  },
+  {
+    "id": "cell-082",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.77541618026793,
+    "y": 0.3341279056281479,
+    "z": 0.2732001099176705,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-083",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.34124642586335535,
+    "y": 0.623870628589789,
+    "z": 0.13850974027998747,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-084",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.6440083451569079,
+    "y": 0.5979846484740043,
+    "z": 0.1080989114008844,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-085",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.6474023035727441,
+    "y": 0.4661154432625965,
+    "z": 0.13954785441048445,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-086",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.15,
+    "y": 0.918,
+    "z": 0.27846164399757983,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-087",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.29000000000000004,
+    "y": 0.918,
+    "z": 0.3540741039346904,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-088",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.43000000000000005,
+    "y": 0.918,
+    "z": 0.30395092286169534,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-089",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.5700000000000001,
+    "y": 0.918,
+    "z": 0.33597539574839175,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-090",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.7100000000000001,
+    "y": 0.918,
+    "z": 0.311707124169916,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-091",
+    "morphology": "neutrophil",
+    "manual_type": "neutrophil",
+    "x": 0.8500000000000001,
+    "y": 0.918,
+    "z": 0.2069579616840929,
+    "reserve": true,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {},
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": true,
+      "vascular_entry": true,
+      "cytotoxicity": false,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-092",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.2868340345099568,
+    "y": 0.39757841036813807,
+    "z": 0.3014544585347176,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-093",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.8480781579576431,
+    "y": 0.6668836665724309,
+    "z": 0.2010677089262754,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-094",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.7590320335701106,
+    "y": 0.4877873442347505,
+    "z": 0.12669616132974626,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-095",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.33085283370688556,
+    "y": 0.8265017509203305,
+    "z": 0.16705502043478193,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-096",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.2583258291706443,
+    "y": 0.6885751638343379,
+    "z": 0.16371925724670292,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-097",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.5857522775419055,
+    "y": 0.7607023308300193,
+    "z": 0.3798362765926868,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-098",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.2002199177443981,
+    "y": 0.3616639562394572,
+    "z": 0.3278017379902304,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  },
+  {
+    "id": "cell-099",
+    "morphology": "nk",
+    "manual_type": "nk",
+    "x": 0.6030170181579888,
+    "y": 0.5333473125476783,
+    "z": 0.35465363402850925,
+    "reserve": false,
+    "health": 100,
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "cytotoxic": 1
+    },
+    "outputs": {
+      "CXCL8": 0,
+      "TNF": 0,
+      "IL10": 0
+    },
+    "competence": {
+      "TNFR": 1,
+      "CXCL8_output": false,
+      "TNF_response": false,
+      "local_secretory_stimulus": false,
+      "inflammatory_stroma": false,
+      "TNF_output": false,
+      "IL10_output": false,
+      "chemotaxis": false,
+      "vascular_entry": false,
+      "cytotoxicity": true,
+      "death_execution": true
+    },
+    "memory": {
+      "alarm": 0,
+      "TNF": 0,
+      "stromal_alarm": 0
+    },
+    "programs": {
+      "inflammation": 0,
+      "repair": 0.6,
+      "phagolysosome": 0.7,
+      "activation": 0,
+      "regulation": 0.6,
+      "survival": 0.6
+    },
+    "substrate": {
+      "CXCL8": 0,
+      "energy": 1,
+      "granules": 0,
+      "TNF": 0,
+      "IL10": 0
+    }
+  }
+]

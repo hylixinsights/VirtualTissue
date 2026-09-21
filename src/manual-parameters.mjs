@@ -1,0 +1,40 @@
+import {freezeSnapshot} from '../integration/manual_contract.mjs';
+
+export const MANUAL_HOST_MANIFEST = freezeSnapshot({
+  version:'cellville.manual-host.1.0.0', evidence:'P', calibrated:false,
+  source_kind:'proposed_prior', uncertainty:'Synthetic initialization, not observations or fitted human measurements.',
+  scope:'Reduced epithelial host on the legacy six-type visual roster; not the healthy manual preset.',
+  rule_hash:'db6bac825389a9d99957ddc425be355a1b50fd48571260e748f5e0b6f17078be',
+  preset:'legacy_visual_roster_reduced_epithelial_host', initial_cells:100,
+  initialization:{
+    epithelial:{viability:'viable',energy:1,CXCL8_capacity:0,alarm_memory:0,inflammation_program:0.6,
+      CXCL8_output_competence:true,TNFR_functional_competence:1,CXCL8_substrate:1,energy_substrate:1},
+    goblet:{local_secretory_stimulus_competence:true,granules:1,granule_substrate:1},
+    other_cells:{viability:'viable',energy:1,stores:{},outputs:{},competence:{},memory:{},programs:{},substrate:0,
+      role:'Visible and inactive. No macrophage subtype alias; no inferred receptor or output competence.'},
+    geometry_state:'All cells present and living; legacy structural junction=1, health=100; no wounds, extrusions, births or recruited entrants.',
+    event_history:'Empty; no pre-aged events.',fields:'All concentrations zero.',
+    competence_basis:'Explicit synthetic functional assignments for this demonstration, not inferred from candidate RNA programs.'
+  },
+  geometry:{width_um:300,height_um:200,thickness_um:10,grid_width:30,grid_height:20,dx_um:10,dy_um:10,
+    effective_voxel_volume_pL:1,orientation:'x right, y toward basal tissue; y < legacy surface(x) is apical.',
+    interface:'Stair-step closed face mask. No apical/basal exchange. This host does not implement epithelial permeability.',
+    display:'Original 16 × 10 toy world; visual depth is not transport depth.'},
+  normalization:{amount:'NAU (normalized amount unit)',concentration:'NCU (normalized concentration unit)',
+    equation:'1 NCU = 1 NAU / pL. Deposit amount / effective_voxel_volume_pL; total amount = sum(concentration × volume).',
+    granules:'1 normalized granule unit releases 1 NAU MUCUS.',substrate:'1 substrate unit supports 1 NAU CXCL8, 1 granule unit or 1 energy unit, in distinct finite pools.'},
+  transport:{D_um2_per_min:100,half_life_min:30,solver:'Conservative symmetric face flux, closed outer and compartment boundaries, exponential decay; CFL <= 0.45.',
+    MUCUS:'Scalar material proxy with shared P diffusion/decay. Not a resolved mucus layer.',
+    external_fields:'TNF is basal. SECRETORY_STIMULUS is an explicitly synthetic apical input, not an identified molecule.'},
+  interventions:{radius_um:45,source_rate_NAU_per_min:1,duration_min:600,
+    TNF:'External source only. Local receptor activity updates alarm memory through original receptorActivity and exactMemory.',
+    SECRETORY_STIMULUS:'External source only. Local receptor activity supplies signals.secretory_stimulus.',
+    remove:'Stop future external input; existing concentrations and memories decay.'},
+  processes:{step_min:1,output_rate_ref:'output_rate',capacity_decay_ref:'soluble_output_decay',
+    granule_refill_ref:'store_refill_rate',energy_recovery_ref:'resource_recovery_rate',memory_ref:'memory_tau',
+    substrate_replenishment:'No external replenishment. Energy and granules refill only from distinct finite initialized substrate pools.'},
+  visualization:{CXCL8_scale:1000,MUCUS_scale:80,TNF_scale:1,SECRETORY_STIMULUS_scale:1,
+    mapping:'Display opacity = 1-exp(-NCU × scale); physical amounts are never scaled to brighten the scene.'},
+  policy:'reference_hazards', tie_break:'Seeded independent tie stream; then stable cell/action identifiers.',
+  export:'Audit and retained visual replay, not a resumable checkpoint. Full interventions, event and transaction ledgers; latest 121 visual frames.'
+});

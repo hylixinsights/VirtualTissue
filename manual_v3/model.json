@@ -1,0 +1,48 @@
+{
+  "version": "3.0.0",
+  "language": "en",
+  "calibrated": false,
+  "validated": false,
+  "supported_actions": [
+    "EPITHELIAL_CXCL8_INDUCTION",
+    "GOBLET_RELEASE",
+    "JUNCTION_RESPONSE",
+    "EPITHELIAL_RECOVERY",
+    "STROMAL_ACTIVATION",
+    "STROMAL_CXCL8_INDUCTION",
+    "MYELOID_TNF_INDUCTION",
+    "MYELOID_IL10_INDUCTION",
+    "PHAGOCYTOSIS",
+    "EFFEROCYTOSIS",
+    "CARGO_PROCESSING",
+    "NEUTROPHIL_CHEMOTAXIS",
+    "LYMPHOCYTE_MOTILITY",
+    "VASCULAR_CROSSING",
+    "NK_CYTOTOXIC_HIT",
+    "DEATH_COMMITMENT",
+    "DEATH_EXECUTION",
+    "MONOCYTE_CHEMOTAXIS",
+    "MYELOID_CCL2_INDUCTION",
+    "MYELOID_ADAPTATION",
+    "DC_ANTIGEN_PROCESSING",
+    "EPITHELIAL_ION_SECRETION"
+  ],
+  "selection": "one independent Jev Choice per eligible locally activated cell; WAIT is legal; no hazard sampling for action selection",
+  "decision_interval_min": 5,
+  "unsupported_pathways": [
+    "explicit NF-kB dynamics",
+    "inflammasome assembly",
+    "IL1B maturation and release",
+    "type I interferon production and response",
+    "T-cell priming",
+    "adaptive clonal expansion",
+    "epithelial extrusion"
+  ],
+  "evidence_policy": "Primary sources support mechanisms only. All host thresholds, cell abundances, spatial radii and time distributions are proposed and uncalibrated.",
+  "registry_sha256": "280ed93bcc1a0ff33ebcbe0f78cde37300d3f893fdba606cbde24c27c5a7d265",
+  "derivation": {
+    "base": "manual_v2/virtual_tissue_rules_v2.json",
+    "base_sha256": "db6bac825389a9d99957ddc425be355a1b50fd48571260e748f5e0b6f17078be",
+    "extension": "tissues/ileum/extensions.json"
+  }
+}

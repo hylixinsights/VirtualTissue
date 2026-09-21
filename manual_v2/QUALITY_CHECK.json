@@ -1,0 +1,14 @@
+{
+  "artifact_version": "2.0.0",
+  "document_language": "English",
+  "rendered_page_count": 61,
+  "document_visual_review": "All 61 rendered pages inspected. No clipping, overlap, blank spill pages or unreadable tables observed.",
+  "registry_validation": "Passed JSON Schema 2020-12 validation and runtime semantic checks.",
+  "software_test_count": 43,
+  "software_failures": 0,
+  "smoke_test": "One synthetic enterocyte induction example; not a 100 cell tissue simulation.",
+  "biological_calibration_performed": false,
+  "empirical_datasets_processed": false,
+  "existing_simulator_html_modified": false,
+  "limitations": "Requires host physics, contact, recognition and population transaction modules. Numerical execution defaults are proposed demonstration priors."
+}

@@ -1,0 +1,33 @@
+{
+  "format": "virtualtissue.pack.v1",
+  "id": "human-ileum",
+  "version": "3.0.0",
+  "title": "Human ileum \u00b7 individual cell experiment",
+  "description": "An uncalibrated ileal cutaway with explicit cell identities, local sensing and constrained Jev decisions.",
+  "host_adapter": "ileum-cutaway-v1",
+  "renderer_adapter": "ileum-cutaway-v1",
+  "registry": "../../manual_v3/constraints.json",
+  "population": "population.json",
+  "scenarios": "scenarios.json",
+  "manual_document": "../../manual_v3/Manual_v3.md",
+  "manual_source": "../../manual_v3/model.json",
+  "host_parameters": {},
+  "etec": {
+    "bacteria_per_input": 24,
+    "colonization_contact_min": 10,
+    "LT_per_bacterium_min": 0.006,
+    "ST_per_bacterium_min": 0.006,
+    "receptor_K": 0.015,
+    "water_per_cell_min": 0.02,
+    "evidence": "P: proposed host rates, not experimentally calibrated. LT/cAMP and ST/cGMP are represented as distinct local inputs."
+  },
+  "recording": {
+    "frame_interval_min": 5,
+    "max_bytes": 134217728
+  },
+  "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7524150/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5038068/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9355178/"
+  ]
+}

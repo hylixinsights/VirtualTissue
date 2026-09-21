@@ -1,0 +1,3 @@
+# Development checks only. Playing the standalone HTML needs no packages.
+jsonschema==4.26.0
+playwright==1.63.0

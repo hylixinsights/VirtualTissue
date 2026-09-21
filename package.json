@@ -1,0 +1,17 @@
+{
+  "name": "virtualtissue",
+  "version": "6.1.0",
+  "private": true,
+  "description": "Manual-constrained individual Jev cells, tissue packs, complete recordings and offline playback",
+  "type": "module",
+  "scripts": {
+    "build": "python3 build.py",
+    "test": "node --test tests/v4_host.test.mjs tests/v5_biology.test.mjs tests/engine.test.mjs tests/manual_contract.test.mjs tests/manual_host.test.mjs tests/ileum_host.test.mjs tests/episodes.test.mjs",
+    "reproduce": "node scripts/reproduce.mjs",
+    "package": "python3 scripts/package_release.py",
+    "reproduce:ileum": "node scripts/reproduce_ileum.mjs --check",
+    "test:browser": "python3 tests/v4_browser.test.py && python3 tests/v5_browser.test.py",
+    "test:server": "python3 tests/test_v4_server.py",
+    "check:all": "python3 scripts/check_all.py"
+  }
+}

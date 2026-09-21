@@ -1,0 +1,84 @@
+{
+  "package": "Virtual Tissue Final v2",
+  "version": "2.0.0",
+  "created_date": "2026-09-19",
+  "hash_algorithm": "SHA256",
+  "manifest_scope": "All package files except this self referencing manifest.",
+  "files": [
+    {
+      "path": "INTEGRATION.md",
+      "bytes": 9368,
+      "sha256": "1bfa97f437696b1ed48a51403caf30b02eac6039e6b73cac471333a394eb2ae8"
+    },
+    {
+      "path": "Intestinal_Cell_Decision_Manual_v2.docx",
+      "bytes": 89821,
+      "sha256": "4022a299459e2e9f5295a862967af2583740ff5c4b225b0c8b5496acbdfdf2ad"
+    },
+    {
+      "path": "QUALITY_CHECK.json",
+      "bytes": 774,
+      "sha256": "0c1153b7d727a783947f25057fbfbddc8d5872cec8f1318621dea7dca3a7e9e5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1010,
+      "sha256": "fd481509f9d5ffef978d6f46d07229e9484cd59253e2809ad45f2dae114af390"
+    },
+    {
+      "path": "data_manifest.json",
+      "bytes": 5365,
+      "sha256": "1e93ffc812de3faf5af7eda39909d72c859bf8dff1a2613597633d5d43875436"
+    },
+    {
+      "path": "demo_trace.json",
+      "bytes": 1211,
+      "sha256": "6c933a57aa5b851944ced023c2ce1dfd5e2898fdf7bc0d9e31b8c3451c6a209c"
+    },
+    {
+      "path": "example_snapshot.json",
+      "bytes": 918,
+      "sha256": "a3cfda71da32df0357d2d0b65efe3b32fdb14547bd8ade7944e4480d532992da"
+    },
+    {
+      "path": "manual_content.json",
+      "bytes": 193781,
+      "sha256": "c8295cc2ec4ead62cc5bec8d77a3418e92f6222ea66466113f9f67f2ca9ea4ae"
+    },
+    {
+      "path": "package.json",
+      "bytes": 314,
+      "sha256": "fcea48bb8ac7b47d8aa79706519a01c51309cb192e45c0f1db7c708d311a7581"
+    },
+    {
+      "path": "run_demo.mjs",
+      "bytes": 2499,
+      "sha256": "fc394f7507045a5b7b7488a238ab7de71114d99da2e7f7f453f2d09908c648d8"
+    },
+    {
+      "path": "test_kernel.mjs",
+      "bytes": 13554,
+      "sha256": "5f91a04e863207aa57170c06edcef3b34ca774647f6c496a97aeac17b2ddf9f1"
+    },
+    {
+      "path": "test_report.json",
+      "bytes": 4662,
+      "sha256": "be9b625afa35bb0493d1dda2b8642b55a86a9388252a065dbea05436b2fc19d7"
+    },
+    {
+      "path": "virtual_tissue_kernel.mjs",
+      "bytes": 23789,
+      "sha256": "5a9cee2728deac1409cef53bbedd1723192eb8fb4587fd42101a9cba015f1b89"
+    },
+    {
+      "path": "virtual_tissue_rules_v2.json",
+      "bytes": 399776,
+      "sha256": "db6bac825389a9d99957ddc425be355a1b50fd48571260e748f5e0b6f17078be"
+    },
+    {
+      "path": "virtual_tissue_rules_v2.schema.json",
+      "bytes": 31350,
+      "sha256": "99767a2d639b96510cc31a5870a78d2948281a8a78034d2e95e18a91fc07ae91"
+    }
+  ]
+}

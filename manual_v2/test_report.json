@@ -1,0 +1,183 @@
+{
+  "suite": "Virtual tissue kernel contract tests",
+  "version": "2.0.0",
+  "runtime": "v22.16.0",
+  "date": "2026-09-19",
+  "passed": 43,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "registry references and roster contracts",
+      "passed": true
+    },
+    {
+      "name": "proposed parameters never represented as fitted",
+      "passed": true
+    },
+    {
+      "name": "research execution rejected",
+      "passed": true
+    },
+    {
+      "name": "mature enterocyte cannot start a stem cycle",
+      "passed": true
+    },
+    {
+      "name": "high score cannot override failed lineage or receptor gate",
+      "passed": true
+    },
+    {
+      "name": "missing receptor competence denies rather than assumes zero or presence",
+      "passed": true
+    },
+    {
+      "name": "missing score value is an explicit error",
+      "passed": true
+    },
+    {
+      "name": "absent physical capability rejects action",
+      "passed": true
+    },
+    {
+      "name": "human intracellular sensing cannot read luminal exposure",
+      "passed": true
+    },
+    {
+      "name": "mouse overlay disabled in human default",
+      "passed": true
+    },
+    {
+      "name": "new stem cycle cannot complete in two minutes",
+      "passed": true
+    },
+    {
+      "name": "historical duration cannot bypass the versioned prior",
+      "passed": true
+    },
+    {
+      "name": "an advanced historical cycle can complete shortly after time zero",
+      "passed": true
+    },
+    {
+      "name": "event duration sampled once and retained",
+      "passed": true
+    },
+    {
+      "name": "cycle completion does not receive a second initiation lottery",
+      "passed": true
+    },
+    {
+      "name": "lost niche pauses cycle without resetting it",
+      "passed": true
+    },
+    {
+      "name": "death cancels incompatible active cycle",
+      "passed": true
+    },
+    {
+      "name": "committed death execution is scheduled automatically",
+      "passed": true
+    },
+    {
+      "name": "cleared cells cannot act",
+      "passed": true
+    },
+    {
+      "name": "empty granule store cannot release",
+      "passed": true
+    },
+    {
+      "name": "two phagocytes cannot reserve one corpse",
+      "passed": true
+    },
+    {
+      "name": "target reservation survives ongoing contact and does not cancel itself",
+      "passed": true
+    },
+    {
+      "name": "contact loss cancels engulfment and releases reservations",
+      "passed": true
+    },
+    {
+      "name": "secretion and motility use separate action channels",
+      "passed": true
+    },
+    {
+      "name": "vascular entry requires reservoir origin and a crossing slot",
+      "passed": true
+    },
+    {
+      "name": "two cells cannot own one vascular crossing slot",
+      "passed": true
+    },
+    {
+      "name": "effects stay pending without an atomic host receipt",
+      "passed": true
+    },
+    {
+      "name": "completion is acknowledged only once",
+      "passed": true
+    },
+    {
+      "name": "old snapshot cannot spend already consumed stores again",
+      "passed": true
+    },
+    {
+      "name": "stored release emits the exact reserved store amount",
+      "passed": true
+    },
+    {
+      "name": "fixed hazards have algebraic timestep invariance",
+      "passed": true
+    },
+    {
+      "name": "Monte Carlo event probability matches the declared hazard",
+      "passed": true
+    },
+    {
+      "name": "all duration draws stay inside declared demonstration supports",
+      "passed": true
+    },
+    {
+      "name": "exposure memory has exact semigroup behavior",
+      "passed": true
+    },
+    {
+      "name": "receptor response uses competence and concentration rather than hidden distance",
+      "passed": true
+    },
+    {
+      "name": "secretory flux is rate times elapsed time and bounded by substrate",
+      "passed": true
+    },
+    {
+      "name": "diffusion preserves mass under closed boundaries",
+      "passed": true
+    },
+    {
+      "name": "diffusion with decay reproduces total half life",
+      "passed": true
+    },
+    {
+      "name": "unsafe predicate path is rejected without eval",
+      "passed": true
+    },
+    {
+      "name": "nonfinite input is rejected",
+      "passed": true
+    },
+    {
+      "name": "stale model response is rejected",
+      "passed": true
+    },
+    {
+      "name": "model cannot invent actions or set durations",
+      "passed": true
+    },
+    {
+      "name": "duplicate model decisions are rejected",
+      "passed": true
+    }
+  ],
+  "scope": "Software tests, using synthetic inputs and mock host receipts. Not validation of tissue mechanics, disease behavior, biological parameters or clinical prediction."
+}

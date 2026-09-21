@@ -1,0 +1,48 @@
+{
+  "tick": 0,
+  "revision": 0,
+  "time_min": 0,
+  "cell": {
+    "id": "example_enterocyte",
+    "type": "enterocyte",
+    "viability": "viable",
+    "resources": {
+      "energy": 1,
+      "phagocytic_capacity": 1
+    },
+    "stores": {
+      "granules": 1,
+      "cytotoxic": 1,
+      "pro_IL1B": 1
+    },
+    "outputs": {
+      "CXCL8": 0.79
+    },
+    "competence": {
+      "CXCL8_output": true
+    },
+    "programs": {
+      "inflammation": 0.6
+    },
+    "memory": {
+      "alarm": 0.25
+    },
+    "cycle": {
+      "ready": true,
+      "completed_rounds": 0
+    },
+    "damage": 0
+  },
+  "context": {
+    "target_id": "target_1",
+    "crossing_slot_id": "venule_1",
+    "species": "human",
+    "epithelial_surface": true
+  },
+  "signals": {},
+  "provenance": {
+    "source_kind": "proposed_prior",
+    "uncertainty": "unfitted demonstration fixture",
+    "scope": "one cell rule test, not measured tissue"
+  }
+}

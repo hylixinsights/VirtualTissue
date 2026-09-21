@@ -1,0 +1,3 @@
+// Test fixture only. Never selected as a fallback for a failed Jev request.
+const priority=['EPITHELIAL_ION_SECRETION','DEATH_COMMITMENT','DC_ANTIGEN_PROCESSING','PHAGOCYTOSIS','EFFEROCYTOSIS','CARGO_PROCESSING','VASCULAR_CROSSING','NEUTROPHIL_CHEMOTAXIS','MONOCYTE_CHEMOTAXIS','MYELOID_CCL2_INDUCTION','MYELOID_TNF_INDUCTION','EPITHELIAL_CXCL8_INDUCTION','GOBLET_RELEASE','MYELOID_ADAPTATION'];
+export const fixtureProvider=async r=>({...r,decisions:Object.fromEntries(r.cells.map(c=>{const action=priority.find(a=>c.actions.includes(a))??'WAIT';return [c.id,{action,weights:Object.fromEntries(c.actions.map(a=>[a,Number(a===action)])),confidence:1,source:'Jev'}];})),meta:{model:'fixture-not-live-jev',calls:0,inputTokens:0,fixture:true}});

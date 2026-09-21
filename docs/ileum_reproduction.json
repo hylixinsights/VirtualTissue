@@ -1,0 +1,176 @@
+{
+  "version": "3.3.0",
+  "extension": "cellville.ileum.1.0.0",
+  "evidence": "P",
+  "calibrated": false,
+  "api_calls": 0,
+  "note": "600-minute illustrative experiments, not fitted clinical outcomes. Run IDs excluded. Water residual tolerance 1e-8; bacterial count residual exactly zero. Same seed/parameters reproduce within the same JS runtime.",
+  "trials": [
+    {
+      "scenario": "epec",
+      "seed": 20260919,
+      "minutes": 600,
+      "metrics": {
+        "alive": 94,
+        "present": 97,
+        "inTissue": 97,
+        "reserve": 0,
+        "recruited": 6,
+        "dead": 3,
+        "extruded": 0,
+        "cleared": 3,
+        "gaps": 0,
+        "barrier": 0.4819663273654553,
+        "active": 16,
+        "inflammation": 8.684155504704822,
+        "byType": {
+          "enterocyte": 42,
+          "goblet": 8,
+          "fibroblast": 20,
+          "macrophage": 12,
+          "neutrophil": 10,
+          "nk": 8
+        }
+      },
+      "audit": {
+        "bacteria": {
+          "introduced": 24,
+          "born": 72,
+          "killed": 22,
+          "washed": 4,
+          "free": 1,
+          "attached": 69,
+          "internalized": 0,
+          "residual": 0
+        },
+        "water": {
+          "drawn": 0,
+          "retained": 0,
+          "absorbed": 0,
+          "out": 0,
+          "outRate": 0,
+          "reservoir": 100,
+          "residual": 0,
+          "systemResidual": 0
+        }
+      },
+      "events": {
+        "ILEUM_ADHESION": 80,
+        "ILEUM_VASCULAR_CROSSING": 6,
+        "ILEUM_APICAL_CROSSING": 4,
+        "ILEUM_PHAGOCYTOSIS": 24,
+        "ILEUM_CARGO_PROCESSING": 22,
+        "ILEUM_EFFEROCYTOSIS": 3
+      },
+      "rng_draws": 23335,
+      "physics_sha256": "e45354e5e4cef304cda39874537d68ddcc535ebf9b4ed0a8aa714bb664706651"
+    },
+    {
+      "scenario": "epec_control",
+      "seed": 20260919,
+      "minutes": 600,
+      "metrics": {
+        "alive": 100,
+        "present": 100,
+        "inTissue": 94,
+        "reserve": 6,
+        "recruited": 0,
+        "dead": 0,
+        "extruded": 0,
+        "cleared": 0,
+        "gaps": 0,
+        "barrier": 1,
+        "active": 0,
+        "inflammation": 0,
+        "byType": {
+          "enterocyte": 42,
+          "goblet": 8,
+          "fibroblast": 20,
+          "macrophage": 12,
+          "neutrophil": 10,
+          "nk": 8
+        }
+      },
+      "audit": {
+        "bacteria": {
+          "introduced": 24,
+          "born": 0,
+          "killed": 0,
+          "washed": 13,
+          "free": 11,
+          "attached": 0,
+          "internalized": 0,
+          "residual": 0
+        },
+        "water": {
+          "drawn": 0,
+          "retained": 0,
+          "absorbed": 0,
+          "out": 0,
+          "outRate": 0,
+          "reservoir": 100,
+          "residual": 0,
+          "systemResidual": 0
+        }
+      },
+      "events": {},
+      "rng_draws": 9106,
+      "physics_sha256": "35eab0e6a61363f4a2fe06b0a85fdc76283aa2bb5f408339848825e884e43722"
+    },
+    {
+      "scenario": "ileitis",
+      "seed": 20260919,
+      "minutes": 600,
+      "metrics": {
+        "alive": 94,
+        "present": 94,
+        "inTissue": 94,
+        "reserve": 0,
+        "recruited": 6,
+        "dead": 0,
+        "extruded": 0,
+        "cleared": 6,
+        "gaps": 0,
+        "barrier": 0.4468819041221297,
+        "active": 18,
+        "inflammation": 3.906266635307967,
+        "byType": {
+          "enterocyte": 42,
+          "goblet": 8,
+          "fibroblast": 20,
+          "macrophage": 12,
+          "neutrophil": 10,
+          "nk": 8
+        }
+      },
+      "audit": {
+        "bacteria": {
+          "introduced": 0,
+          "born": 0,
+          "killed": 0,
+          "washed": 0,
+          "free": 0,
+          "attached": 0,
+          "internalized": 0,
+          "residual": 0
+        },
+        "water": {
+          "drawn": 0,
+          "retained": 0,
+          "absorbed": 0,
+          "out": 0,
+          "outRate": 0,
+          "reservoir": 100,
+          "residual": 0,
+          "systemResidual": 0
+        }
+      },
+      "events": {
+        "ILEUM_VASCULAR_CROSSING": 6,
+        "ILEUM_EFFEROCYTOSIS": 6
+      },
+      "rng_draws": 80,
+      "physics_sha256": "b098b3d293ff4ed61b53849c8f659ed648f11a3c7345a6f35c0e5c73210322e5"
+    }
+  ]
+}

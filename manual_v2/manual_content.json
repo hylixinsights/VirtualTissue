@@ -1,0 +1,3871 @@
+{
+  "version": "2.0.0",
+  "pages": [
+    [
+      "Scope, status and how to use the package",
+      [
+        [
+          "p",
+          "This manual consolidates two supplied intestinal cell playbooks into one scientific specification and one executable rule registry. The target is an adult human ileal mucosal microdomain initialized with 100 individual cells. Each agent represents one cell, not a cohort. The initial population is not a conservation law: division, vascular entry, shedding, death and clearance change different population counts."
+        ],
+        [
+          "h",
+          "The two deliverables serve different purposes"
+        ],
+        [
+          "p",
+          "The manual explains biological scope, supporting experiments, spatial constraints, mathematical choices, time origins, uncertainty and validation. The JSON specifies predicates, candidate features, numerical demonstration parameters, action clocks, resource reservations and typed completion effects. The accompanying native JavaScript kernel executes the decision and event layer. Geometry, mechanics, recognition, spatial data initialization and physical completion transactions remain the responsibility of the host simulator."
+        ],
+        [
+          "h",
+          "Operational does not mean calibrated"
+        ],
+        [
+          "p",
+          "All runnable numerical values are explicitly proposed settings, P. No human secretion rate, receptor threshold, death hazard or spatial diffusion coefficient has been estimated from patient data here. No expression matrix, segmentation image or live imaging trajectory was fitted during this consolidation. The reference kernel therefore runs a demonstration profile and rejects research mode. A future calibrated version requires an external fit, its data provenance and independent validation, not a change to a display label."
+        ],
+        [
+          "h",
+          "A source does not license every number beside it"
+        ],
+        [
+          "p",
+          "A source supporting a receptor pathway may not support the selected threshold, delay, outcome probability or spatial range. An atlas supporting a fibroblast state may not support a causal conversion rule. This manual keeps source observations, transfer assumptions and numerical choices separate. The registry attaches references to each action and explicitly states whether their role is association or experimental context."
+        ],
+        [
+          "h",
+          "Minimum integration boundary"
+        ],
+        [
+          "p",
+          "Load the registry and validate it. Supply a physical and molecular snapshot with declared provenance. Evaluate eligible actions, sample initiation by channel, retain event clocks, and apply completed effects only through an acknowledged atomic transaction. Missing contact, target recognition, resources or host physics must reject the action. Missing information must not be replaced with an apparently plausible biological default."
+        ],
+        [
+          "p",
+          "The package contains software contract tests and a one cell integration demonstration. Neither is a fitted virtual intestine. Patient specific outcome prediction, pharmacology and pathogen replication kinetics are not implemented."
+        ]
+      ]
+    ],
+    [
+      "What was retained, added and corrected",
+      [
+        [
+          "p",
+          "The supplied documents agree on a useful central contract: cell identity restricts the action vocabulary; local context determines eligibility; an explicit clock separates initiation from completion; and each completed action changes the environment. The second document adds a clearer licence, trigger, kinetics and consequence structure, broader stromal and optional cell coverage, explicit exposure memory, and a useful separation between physical execution and a language model proposal. These features are retained. [S01, S02]"
+        ],
+        [
+          "table",
+          [
+            "Feature in the supplied material",
+            "Final disposition"
+          ],
+          [
+            [
+              "Four part action contract",
+              "Retained and expanded to include units, ownership of resources, cancellation, host capabilities and measurable completion."
+            ],
+            [
+              "Signaling and fate clocks",
+              "Retained, with separate initiation hazards and sampled completion durations. A clock is not resampled every tick."
+            ],
+            [
+              "Local, regional and contact sensing",
+              "Retained as transport and contact mechanisms. No cell reads a distant source identity or global infection map."
+            ],
+            [
+              "Secretory stores and exposure history",
+              "Retained. Basal flux, induced output capacity, stored release and replenishment are different processes."
+            ],
+            [
+              "Stromal diversity and rare cell extensions",
+              "Expanded into a 28 type dictionary. Specialized optional functions stay disabled when their host modules are absent."
+            ],
+            [
+              "LLM proposal followed by hard validation",
+              "Retained as an optional interface. The deterministic engine owns time, legality, resources and transactions."
+            ]
+          ],
+          [
+            2.25,
+            4.2
+          ]
+        ],
+        [
+          "h",
+          "The operational layer is substantially different from version 1"
+        ],
+        [
+          "p",
+          "Version 1 stored unknown coefficients as null and was not an executable specification. Version 2 supplies complete demonstration values, declarative predicates and a reference evaluator, while preserving the uncalibrated status. Missing host inputs still fail closed. The JSON can be loaded directly by the included kernel; it cannot add absent physics to an existing HTML simply by being imported."
+        ],
+        [
+          "h",
+          "A deliberate choice about independence"
+        ],
+        [
+          "p",
+          "Cells make autonomous decisions, but their outcomes are not statistically independent. They share fields, contact constraints and resource competition. Daughters can share a lineage component in their clocks. Mouse organoid live imaging supports correlated sister behavior and therefore argues against independent redraws of every daughter from an unrelated population. The human magnitude remains unestimated. [R11]"
+        ]
+      ]
+    ],
+    [
+      "Source audit: numerical and algorithmic claims",
+      [
+        [
+          "p",
+          "The second playbook assigns strong evidence tiers to many generic numbers and then asks readers to recheck those parameters. They are not imported as measured human constants. The table records the main reconciliation decisions so that changes are visible rather than silently replacing the source. [S02, sections 2, 4, 6 and 15]"
+        ],
+        [
+          "table",
+          [
+            "Source claim or shortcut",
+            "Final implementation and reason"
+          ],
+          [
+            [
+              "A 100 agent unit represents cells at 1:50 scale",
+              "Rejected for this task. Each agent represents one individual cell; omitted tissue contributes only through declared boundaries."
+            ],
+            [
+              "One softmax choice per cell per minute",
+              "Replaced by competing initiation hazards within channels. Separate secretion and motility channels can operate together."
+            ],
+            [
+              "Generic cytokine half lives and 50 to 100 µm ranges are tier A",
+              "Downgraded to explicit transport priors unless a matched experiment estimates them. The registry does not claim a measured CXCL8 range."
+            ],
+            [
+              "Exponential profile around any point source",
+              "Restricted to the appropriate geometry. A point source in two dimensions differs from a planar source and from a point source in three dimensions."
+            ],
+            [
+              "Every new cell cycle is followed by another full cycle refractory period",
+              "Rejected as double counting. The full cycle event already accounts for cycle time."
+            ],
+            [
+              "A fixed apoptosis latency is a universal biological limit",
+              "Rejected. Separate prior state, stimulus exposure, commitment, execution and disposal; timestamp each observation."
+            ],
+            [
+              "A fixed temperature makes healthy or inflamed tissue look right",
+              "Not used as biological calibration. Stochasticity is parameterized through hazards, inherited variation and explicit uncertainty."
+            ],
+            [
+              "A fixed 2D to 3D neighbor multiplier repairs geometry",
+              "Rejected. Contact area, topology and section uncertainty must be estimated or varied explicitly."
+            ]
+          ],
+          [
+            2.5,
+            3.95
+          ]
+        ],
+        [
+          "h",
+          "A hard computational bound is not automatically a hard biological bound"
+        ],
+        [
+          "p",
+          "The kernel enforces the declared duration support for a particular versioned demonstration. That prevents an untracked override from turning a full cycle into two minutes. It does not assert that the lower support is the shortest cycle possible in every human tissue. Revising a prior requires a new parameter version and sensitivity analysis, not a hidden exception in an animation handler."
+        ]
+      ]
+    ],
+    [
+      "Source audit: biological and causal claims",
+      [
+        [
+          "table",
+          [
+            "Source claim or shortcut",
+            "Final disposition"
+          ],
+          [
+            [
+              "Paneth contact determines symmetric versus asymmetric division",
+              "Rejected as a deterministic switch. Niche context and lineage history constrain daughter outcomes; contact is not a complete fate oracle. [R08, R10, R11]"
+            ],
+            [
+              "IL22 increases progenitor proliferation by a universal 20 percent",
+              "Removed. Regenerative and stem expansion restricting effects occur in different organoid contexts. No universal multiplier is supplied. [R12, R13]"
+            ],
+            [
+              "Mouse epithelial NAIP/NLRC4 rules are the human default",
+              "Separated into species and cell specific overlays. Human epithelial CASP4 evidence is distinct from human macrophage and mouse epithelial findings. [R22, R23, R27]"
+            ],
+            [
+              "Gasdermin pore formation is necessarily terminal death",
+              "Separated from terminal membrane failure. Membrane repair downstream of gasdermin activation has experimental support. [R24]"
+            ],
+            [
+              "Resident macrophages constitutively secrete IL10 by definition",
+              "Removed. Human resident macrophage phagocytosis does not require large inflammatory output, but identity does not guarantee any one cytokine output. [R17]"
+            ],
+            [
+              "Treg CTLA4 acts on CTLA4 in the opposing APC",
+              "Corrected to CTLA4 on the regulatory cell and CD80/CD86 on the opposing cell. [R26]"
+            ],
+            [
+              "Every mildly stressed epithelial cell is an NK or IEL target",
+              "Removed. Recognition and inhibitory context are explicit host contracts; stress alone is not sufficient."
+            ],
+            [
+              "IgG associated spatial modules guarantee failure of TNF blockade",
+              "Removed. Patient association is not a rule that predetermines an intervention outcome. [R03, R05]"
+            ],
+            [
+              "Inflammatory fibroblasts must sustain their own IL1B indefinitely",
+              "Not assumed. Candidate stromal amplification requires competent outputs, finite resources, memory and measured feedback. [R05, R18]"
+            ]
+          ],
+          [
+            2.5,
+            3.95
+          ]
+        ],
+        [
+          "p",
+          "The implementation also keeps DUOX2 as an intracellular or membrane associated epithelial program rather than a freely secreted cytokine. The human Paneth marker panel uses DEFA5, DEFA6 and LYZ. A mouse Reg3g program is not silently relabeled as a measured human protein output. Basal secretion may continue as a rate, while bursts deplete stores. These distinctions preserve the terminology and limits of the source contexts. [S01, S02; R01, R02]"
+        ]
+      ]
+    ],
+    [
+      "Evidence labels and parameter provenance",
+      [
+        [
+          "p",
+          "Evidence is attached to a claim, not to an entire paper or cell type. A single rule can combine an experimentally supported mechanism, an atlas supported recipient identity, a cross species transfer and a proposed numerical coefficient."
+        ],
+        [
+          "table",
+          [
+            "Label",
+            "Meaning",
+            "What it does not establish"
+          ],
+          [
+            [
+              "M",
+              "A mechanism or timing observation measured in the cited experimental system.",
+              "A universal human threshold, rate or duration outside that system."
+            ],
+            [
+              "A",
+              "A measured cell state, abundance association or spatial relationship.",
+              "Direction of causality, active secretion, receptor engagement or event timing."
+            ],
+            [
+              "T",
+              "A transfer between species, anatomical regions, assays, tissue depths or perturbation contexts.",
+              "Equivalence of the source and target systems."
+            ],
+            [
+              "P",
+              "An explicit implementation choice or numerical prior.",
+              "An experimentally fitted or validated biological value."
+            ]
+          ],
+          [
+            0.55,
+            2.8,
+            3.1
+          ]
+        ],
+        [
+          "h",
+          "Every number needs a defined role"
+        ],
+        [
+          "p",
+          "Record whether a number is an observation time, a lower detection limit, a fitted event duration, a rate constant, a normalized threshold, a solver tolerance or a display parameter. A sample collected after eight hours is not an eight hour execution timer. A positivity condition for a numerical diffusion solver is not a biological refractory period. A score threshold chosen for a demonstration must remain P even when the scored pathway is well established."
+        ],
+        [
+          "h",
+          "A minimum parameter record"
+        ],
+        [
+          "p",
+          "The JSON records value, units, evidence label, calibration status, rationale, sensitivity range and source context. It explicitly sets source_supplies_value to false for the distributed values. Duration records additionally define the clock origin, distribution, lower support, mode, upper support and whether the support is a biological bound. Here it is not. Action records distinguish source references for associations from references for mechanistic context."
+        ],
+        [
+          "h",
+          "Transfer ledger"
+        ],
+        [
+          "p",
+          "A future fitted rule should record organism, tissue region, disease state, treatment context, assay, sampling interval, donor count, endpoint and exclusion criteria. A mouse crypt measurement transferred to adult human ileum needs a T label even when its direction is credible. A colonic IBD spatial neighborhood does not become an ileal neighborhood merely because both contain macrophages."
+        ],
+        [
+          "h",
+          "Verification scope"
+        ],
+        [
+          "p",
+          "The reference register states which sources were inspected in this consolidation and which were retained from version 1. Existing accession identifiers are preserved as retrieval targets, not described as data downloaded or fitted here. A final methods manuscript should verify each used accession, sample subset, license and parameter against the exact data version actually analyzed."
+        ]
+      ]
+    ],
+    [
+      "Human datasets: identity and spatial organization",
+      [
+        [
+          "p",
+          "The data integration plan separates three tasks: identify cells, locate cells, and estimate dynamics. Dissociated RNA is useful for state annotation. Spatial RNA and targeted protein imaging constrain neighborhood and phenotype. Neither alone supplies every transition rate."
+        ],
+        [
+          "table",
+          [
+            "Resource and retrieval target",
+            "Use in this model",
+            "Restriction"
+          ],
+          [
+            [
+              "Elmentaite et al. [R01]. E MTAB accessions 9543, 9536, 9532, 9533 and 10386.",
+              "Choose adult ileal identities and regional programs.",
+              "Do not pool developmental ages and regions as one baseline. Exact accession strings are retained in the data manifest."
+            ],
+            [
+              "Hickey et al. [R02]. HuBMAP HBM692.JRZB.356; Dryad 10.5061/dryad.pk0p2ngrf.",
+              "Constrain anatomical organization, contacts and targeted protein phenotypes.",
+              "CODEX is a targeted panel, not a complete spatial proteome."
+            ],
+            [
+              "Li et al. [R06]. GSE312415 and GSE312420; Figshare 10.6084/m9.figshare.31595527.",
+              "IBD spatial assay comparison and candidate RNA and protein integration.",
+              "Check panel coverage, matched sample identity, platform differences and controlled access conditions."
+            ]
+          ],
+          [
+            2.1,
+            2.2,
+            2.15
+          ]
+        ],
+        [
+          "h",
+          "Initialization is a joint sample, not a bag of cell labels"
+        ],
+        [
+          "p",
+          "Select a donor and anatomical field before assigning cell states. Preserve local epithelial geometry, stromal positions, vascular interfaces and nearby immune populations. A synthetic mixture assembled independently from many unrelated donors is useful for software testing, but it should not be labeled a real patient microdomain. The supplied 100 cell presets are synthetic for precisely this reason."
+        ],
+        [
+          "h",
+          "Interpret zeros and neighbors conservatively"
+        ],
+        [
+          "p",
+          "Sparse receptor RNA does not establish surface receptor absence, and RNA abundance does not directly measure ligand secretion. A two dimensional section can miss contacts above or below the plane. A mixed spatial spot is not an individual agent until a justified deconvolution or segmentation model assigns it. Keep uncertain receptor competence and uncertain spatial adjacency separate from confirmed negatives."
+        ],
+        [
+          "h",
+          "Protein data do not remove all uncertainty"
+        ],
+        [
+          "p",
+          "A targeted antibody panel only supports the measured proteins, under its detection and segmentation model. Total protein and active protein are different observations. Phosphorylation, cleavage, pore formation, secretion and membrane accessibility may require different assays. Do not use the presence of CASP3 protein as a timestamp for completed apoptosis. These safeguards apply before scores enter the decision engine. [R02, R06]"
+        ]
+      ]
+    ],
+    [
+      "Human datasets: IBD states and perturbation context",
+      [
+        [
+          "table",
+          [
+            "Dataset",
+            "Role",
+            "Do not infer"
+          ],
+          [
+            [
+              "Martin et al. [R03], GSE134809.",
+              "Ileal Crohn associated inflammatory myeloid, T cell, stromal and IgG plasma cell states.",
+              "A deterministic anti TNF failure rule or a universal Crohn state present in every lesion."
+            ],
+            [
+              "Garrido Trigo et al. [R04], GSE214695, GSE235236 and GSE234713.",
+              "Colonic IBD single cell RNA, bulk RNA and spatial myeloid context.",
+              "Measured human ileal recruitment or death rates; transfer from colon remains explicit."
+            ],
+            [
+              "Kong et al. [R05], SCP2959, phs003943.v1.p1 and Zenodo 14509802.",
+              "Stricturing Crohn associated cell networks, spatial context and preexisting matrix state.",
+              "Time from one cytokine pulse to clinical stenosis, or whole wall mechanics from a mucosal patch."
+            ],
+            [
+              "Huelsz Prince et al. [R11], Zenodo 10.5281/zenodo.7197573.",
+              "Mouse organoid lineage and cell cycle trajectories for dynamic model development.",
+              "A human cycle distribution or complete in vivo intestinal mechanics."
+            ]
+          ],
+          [
+            2.1,
+            2.2,
+            2.15
+          ]
+        ],
+        [
+          "h",
+          "Bulk data have a separate role"
+        ],
+        [
+          "p",
+          "Use bulk time courses to constrain aggregate response direction and timing after accounting for changing cell composition. An increase in CXCL8 RNA could reflect stronger expression in an existing population, recruitment of another population, or both. A simulation should expose those mechanisms separately so that fitting does not convert a composition shift into a universal intracellular activation rule."
+        ],
+        [
+          "h",
+          "Disease initialization and disease emergence are different tests"
+        ],
+        [
+          "p",
+          "A Crohn associated preset can begin with inflammatory cell states and preexisting tissue damage. That tests how a network behaves from a patient associated condition. It does not demonstrate that the model explains disease initiation. Conversely, an acute injury simulation should not be forced to assemble the same module on a prescribed schedule. Chronic persistence is an outcome to examine, not a condition inserted into every feedback loop. [R03, R05]"
+        ],
+        [
+          "h",
+          "A reproducible extraction target"
+        ],
+        [
+          "p",
+          "For each selected field, export deidentified donor and sample keys, assay identity, anatomical site, disease and treatment metadata, cell coordinates, segmentation quality, type probabilities, measured markers, derived program scores and uncertainty. Save the observation model used to compare these data with simulated agents. No patient identifier is needed in a per cell decision request."
+        ]
+      ]
+    ],
+    [
+      "Geometry, individual agents and boundary accounting",
+      [
+        [
+          "p",
+          "The default anatomy is ileum because the intended architecture includes a crypt associated niche, a villus facing epithelial surface and Paneth cells. Colon requires different geometry and regional cell states. Microvilli are structures on individual epithelial cells, not extra cell agents. Store microvillus function as a property contributing to absorption. [R01, R02]"
+        ],
+        [
+          "h",
+          "A reduced microdomain, not a complete crypt and villus"
+        ],
+        [
+          "p",
+          "One hundred individual agents do not reconstruct an entire anatomically scaled crypt plus villus with all supporting cells. The explicit domain is a cropped microdomain embedded in a declared environment. Unmodeled tissue can contribute prescribed niche support, mechanical boundary conditions, luminal exposure, vascular availability or lymphatic exit. It must not secretly act as an additional population whose outputs appear without accounting."
+        ],
+        [
+          "h",
+          "Physical and screen coordinates are different"
+        ],
+        [
+          "p",
+          "The registry uses micrometers and minutes. The demonstration patch dimensions, grid spacing, effective thickness and contact distance are P. The renderer may stretch or magnify the drawing without changing physical distance. A cell drawn 30 pixels away cannot sense a ligand earlier because the camera zoomed. A contact graph should be derived from geometry and accessible surfaces rather than from centroid distance alone."
+        ],
+        [
+          "h",
+          "A useful minimum geometry"
+        ],
+        [
+          "p",
+          "The host supplies an oriented epithelial surface, apical and basal compartments, a basement membrane or support interface, lamina propria space, a vascular interface and reachable paths. A contact includes cell identity, contact area or length, membrane side, duration and uncertainty. Local crowding and tension can affect behavior only through modeled mechanical cues; cells do not count hidden cell labels in an arbitrary radius."
+        ],
+        [
+          "eq",
+          "N_living(next) = N_living + net births + entries − deaths − living exits"
+        ],
+        [
+          "eq",
+          "N_present(next) = N_present + net births + entries − all exits − clearances"
+        ],
+        [
+          "p",
+          "Death changes viability but may leave a corpse present. Engulfment or shedding changes presence later. A successful division normally creates one net additional living cell from one parent, while accounting for inherited material and growth. A vascular entry must be counted once even if several frames show the cell crossing."
+        ],
+        [
+          "h",
+          "What happens when the interface displays exactly 100 cells"
+        ],
+        [
+          "p",
+          "Use a moving observation window or a display selection from a larger simulated population. Do not delete an unrelated cell whenever another divides. Display limits are not biological homeostatic mechanisms."
+        ]
+      ]
+    ],
+    [
+      "The 100 cell presets and state representation",
+      [
+        [
+          "table",
+          [
+            "Compartment or subset",
+            "Healthy demonstration",
+            "Inflamed demonstration"
+          ],
+          [
+            [
+              "Stem, transit amplifying and Paneth cells",
+              "4, 8 and 4",
+              "4, 8 and 4"
+            ],
+            [
+              "Enterocytes and goblet cells",
+              "28 and 8",
+              "24 and 6"
+            ],
+            [
+              "Trophocytes, other fibroblasts and BMP stroma",
+              "4, 6 and 2",
+              "4, 6 and 2"
+            ],
+            [
+              "Endothelial cells and pericytes",
+              "4 and 2",
+              "4 and 2"
+            ],
+            [
+              "Resident macrophages, inflammatory monocytes and neutrophils",
+              "12, 0 and 0",
+              "8, 4 and 4"
+            ],
+            [
+              "Dendritic cells, Th17, Th1 and Tregs",
+              "2, 3, 2 and 4",
+              "2, 3, 2 and 4"
+            ],
+            [
+              "CD8 IELs, NK cells and ILC3",
+              "3, 1 and 1",
+              "3, 1 and 1"
+            ],
+            [
+              "IgA and IgG plasma cells",
+              "2 and 0",
+              "1 and 3"
+            ],
+            [
+              "Initial total",
+              "100",
+              "100"
+            ]
+          ],
+          [
+            3.05,
+            1.7,
+            1.7
+          ]
+        ],
+        [
+          "p",
+          "Every count above is P. These are deliberately constructed test mixtures, not fractions estimated from an atlas. The healthy preset contains previously primed tissue lymphocytes; it does not require all T cells to arrive after time zero. Optional specialized populations have no forced minimum representation. Pericytes in these presets are support placeholders unless their physical module is enabled."
+        ],
+        [
+          "h",
+          "Identity is not activation"
+        ],
+        [
+          "p",
+          "Separate stable broad lineage from subtype, inflammatory program, stress, repair, cycle phase and output competence. The state record stores viability, resources, secretory stores, intracellular cargo, receptor competence, exposure memory, active events, lineage history and uncertainty. A strong interferon response should not overwrite enterocyte identity. A phagocytic macrophage need not be assigned a strongly inflammatory state. [R04, R17]"
+        ],
+        [
+          "h",
+          "Initialization must include history"
+        ],
+        [
+          "p",
+          "Do not make every agent newly born, recently activated and fully stocked. Initialize age and partial cycle progress from a declared model. A previously started event needs its historical full duration and elapsed active time. An old epithelial cell can finish a cycle or shedding event soon after simulation start without having completed the entire process in that short interval. The example snapshot is a synthetic unit test input, not a measured cell."
+        ]
+      ]
+    ],
+    [
+      "Signals, access and neighborhood information",
+      [
+        [
+          "h",
+          "Three distinct routes"
+        ],
+        [
+          "p",
+          "Contact signals require accessible physical contact. Soluble signals require transport to the receptor bearing surface. Intracellular sensing requires compatible material or activity inside the cell. These are not interchangeable. A luminal pathogen field does not automatically activate a cytosolic sensor, and a soluble cytokine cannot substitute for a required immune synapse."
+        ],
+        [
+          "h",
+          "Niche support is not one freely diffusing Wnt field"
+        ],
+        [
+          "p",
+          "Mouse work supports a contact associated Wnt3 component in the crypt niche. Stromal populations can contribute other forms of support and BMP related context. The final model therefore distinguishes local membrane associated support, soluble or boundary supplied support and the physical niche. It does not infer symmetric daughter fate merely from the presence of one Paneth neighbor. [R08, R09, R10, R25]"
+        ],
+        [
+          "h",
+          "The cell does not receive an omniscient neighborhood summary"
+        ],
+        [
+          "p",
+          "The host may compute neighborhood descriptors for analysis, but only physically sensed components can influence decisions. A cell cannot know that there are exactly three infected cells 100 µm away unless a modeled route conveys information. The kernel accepts local receptor activities, direct contact information and mechanical cues. It does not accept pathogen coordinates as a chemotactic instruction."
+        ],
+        [
+          "h",
+          "Receptor competence is an explicit input"
+        ],
+        [
+          "p",
+          "Competence includes accessible receptor, necessary partners, downstream machinery and uncertainty. Candidate receptor programs in the cell dictionary are annotation guides, not mandatory expression in every cell. RNA dropout should be handled at initialization by a documented prior or by keeping the route unlicensed. It should not be silently converted into confirmed absence. Functional evidence can override an uncertain RNA measurement, but the provenance should show that decision."
+        ],
+        [
+          "h",
+          "Apical and basal fields remain distinct"
+        ],
+        [
+          "p",
+          "Every secretion event identifies a release compartment. Paneth antimicrobial cargo and goblet mucus enter a luminal or apical compartment. Epithelial chemokine output used for myeloid recruitment enters the accessible basal environment. Antibody transport requires substrate and a transport interface. An intact epithelial sheet may strongly restrict some species while allowing other transport mechanisms; one universal impermeable wall for all signals is also an approximation."
+        ],
+        [
+          "h",
+          "Mechanistic locality replaces a fixed detection radius"
+        ],
+        [
+          "p",
+          "Local concentration and gradient depend on production, diffusion, binding, uptake, clearance and boundaries. The 50 µm context radius in the registry is only an observational summary scale. It is not an experimentally established radius beyond which a cytokine becomes invisible."
+        ]
+      ]
+    ],
+    [
+      "Constraints as executable predicates",
+      [
+        [
+          "p",
+          "The decision engine checks legality before scoring. Every action is limited by lineage, current state, physical access, resources, relevant competence and the availability of the host module that executes its effect. A high score cannot compensate for a failed requirement."
+        ],
+        [
+          "h",
+          "Predicate structure"
+        ],
+        [
+          "p",
+          "The JSON uses all and any combinations of simple predicates. Each atomic predicate names a path, an operator and either a literal value or a parameter reference. Supported operators are eq, in, gte, gt, lte and lt. The evaluator does not execute arbitrary strings. Unsafe object paths and unsupported operators are rejected."
+        ],
+        [
+          "eq",
+          "{ \"path\": \"cell.stores.granules\", \"op\": \"gte\", \"param\": \"gate_store\" }"
+        ],
+        [
+          "p",
+          "This condition compares an available store with a versioned demonstration threshold. It does not mean that every real goblet cell has the same biological threshold. The reference value, 0.1 normalized store units, is P. Resource reservation subsequently prevents two simultaneous actions from spending the same material."
+        ],
+        [
+          "h",
+          "Missing is not zero"
+        ],
+        [
+          "p",
+          "A missing gate input denies the action. A missing or nonfinite score feature is an explicit error rather than an assumed zero. A missing host capability produces a diagnostic rejection reason. For example, a macrophage cannot engulf a corpse without the targets and phagocytosis capabilities, verified contact, an available target identifier and sufficient capacity. Rejection logs expose missing biology and missing software separately."
+        ],
+        [
+          "h",
+          "Initiation gates and continuation gates are not identical"
+        ],
+        [
+          "p",
+          "Initiation can require an unreserved target, a ready cycle or an available vascular slot. Once the event starts, it owns the reservation. Continuation must not cancel merely because that same target is now reserved by the event itself. The final registry removes those initiation only checks from the continuation predicate but retains contact, support and other sustained requirements. Other events still see the resource or target as unavailable."
+        ],
+        [
+          "h",
+          "The engine enforces a declared model, not all conceivable biology"
+        ],
+        [
+          "p",
+          "Mature enterocytes cannot divide in the default model. An optional repair state does not automatically bypass that restriction. Adding injury induced reprogramming requires a new lineage contract, appropriate evidence and a tested transition. Similarly, a named cell type does not authorize every cytokine output listed somewhere in the literature. Competence remains specific to the initialized state and experimental scope."
+        ]
+      ]
+    ],
+    [
+      "Scores, hazards and the meaning of a decision",
+      [
+        [
+          "p",
+          "A transcriptomic program score summarizes a measurement. It is not a probability and has no intrinsic unit of events per minute. The proposed engine uses such scores as candidate covariates in a separately calibrated event model."
+        ],
+        [
+          "eq",
+          "z(i,a) = b(a) + Σ w(a,j) × x(i,j)"
+        ],
+        [
+          "eq",
+          "h(i,a) = g(i,a) × h0(a) × sigmoid(z(i,a))"
+        ],
+        [
+          "p",
+          "The gate g is either zero or one. The score z is dimensionless. The baseline h0 has units per minute and bounds this particular logistic hazard. Positive weights increase propensity in the stated context; negative weights decrease it. A different link function or interaction structure is permissible after model comparison. The logistic form and all distributed coefficients are P, not formulas recovered from an IBD atlas."
+        ],
+        [
+          "h",
+          "A worked calculation from the demonstration settings"
+        ],
+        [
+          "p",
+          "Consider an eligible action with intercept −2, one positively weighted feature equal to 0.8 and weight 2. The score is −0.4. Its sigmoid is approximately 0.4013. With baseline hazard 0.03 per minute, the resulting initiation hazard is approximately 0.01204 per minute. In one minute the event probability is about 0.01197, not 0.4013. The larger number is the link value, not the probability of an action during an arbitrary tick."
+        ],
+        [
+          "eq",
+          "P(start within Δt) = 1 − exp(−h × Δt)"
+        ],
+        [
+          "h",
+          "Why a fixed per tick probability is wrong"
+        ],
+        [
+          "p",
+          "If a programmer gives a cell a 10 percent chance to act every frame, speeding up the renderer changes biological behavior. A rate with physical time units avoids that error. Constant hazard over a short interval is still an approximation when inputs change rapidly. Refine the biological step or integrate a time varying hazard when a coarse interval would miss the response dynamics."
+        ],
+        [
+          "h",
+          "What needs fitting"
+        ],
+        [
+          "p",
+          "The model needs an intercept, coefficient magnitudes, a hazard scale, the allowed feature range and any interactions. A sign supported by a perturbation does not identify the magnitude. A receptor threshold fitted in arbitrary normalized units cannot be interpreted as an EC50 in molar units. Donor and lineage effects should be fitted or explicitly sampled rather than hidden inside a global noise parameter."
+        ],
+        [
+          "h",
+          "No clinical interpretation"
+        ],
+        [
+          "p",
+          "These event propensities are for local simulated actions. They are not probabilities of Crohn progression, remission or response to a treatment. Such outcomes require separate definitions, cohorts and validation."
+        ]
+      ]
+    ],
+    [
+      "Competing actions and simultaneous channels",
+      [
+        [
+          "p",
+          "Some actions compete for one state transition. Other processes can coexist. The model uses separate channels for viability, cycle, lineage, movement, contact regulation, cargo processing and mediator specific induction. Locks and shared resources resolve incompatibilities between channels."
+        ],
+        [
+          "eq",
+          "H = Σ h(a)"
+        ],
+        [
+          "eq",
+          "P(any event in Δt) = 1 − exp(−H × Δt)"
+        ],
+        [
+          "eq",
+          "P(action a | an event) = h(a) / H"
+        ],
+        [
+          "p",
+          "For two eligible hazards of 0.02 and 0.01 per minute, H is 0.03. In one minute, the chance of either event is approximately 0.02955. Conditional on an event, the first action is selected with probability two thirds. Over 30 minutes with truly constant hazards, the chance of at least one initiation is approximately 0.59343. These are arithmetic examples, P, not biological estimates."
+        ],
+        [
+          "h",
+          "Sample a waiting time rather than forcing activity"
+        ],
+        [
+          "p",
+          "The reference kernel draws a waiting time from an exponential distribution with rate H. If it falls outside the decision interval, nothing starts. Otherwise it selects an action in proportion to its hazard. This provides a natural null outcome. There is no need to assign a large arbitrary softmax weight to doing nothing merely to prevent every cell from acting each minute."
+        ],
+        [
+          "h",
+          "Independent channels are still coupled"
+        ],
+        [
+          "p",
+          "A monocyte may induce CCL2 while migrating. Two induction programs may compete for the same synthesis budget. A cytotoxic contact can lock motility. A lineage commitment and cycle event share locks. A completed terminal death transition cancels incompatible work. The kernel evaluates candidates from a shared snapshot and rechecks permissions when reservations are acquired; it does not assume that every initially legal proposal can start."
+        ],
+        [
+          "h",
+          "Do not make a race out of iteration order"
+        ],
+        [
+          "p",
+          "The host should collect proposals from the same tissue snapshot, sort by proposed event time and resolve exact ties reproducibly. It should not let the first cell in an array secrete a mediator that instantly triggers the last cell during the same sensing pass. A stable cell ordering and seed policy aid reproducibility, but structural checks for order dependence are still necessary."
+        ],
+        [
+          "h",
+          "Completion is not another decision lottery"
+        ],
+        [
+          "p",
+          "Once a full cycle has run and the physical completion requirements are satisfied, the model does not ask the cell to win a second division lottery. Completion remains pending if the host cannot accommodate daughters. That is a physical transaction problem, not a reason to redraw the full cycle."
+        ]
+      ]
+    ],
+    [
+      "Memory, receptor activity and hysteresis",
+      [
+        [
+          "p",
+          "A cell can respond differently to a brief pulse and a sustained exposure even when the current concentration is the same. The model therefore stores a normalized memory of accessible receptor activity, rather than only the latest field value."
+        ],
+        [
+          "eq",
+          "a = competence × c^n / (K^n + c^n)"
+        ],
+        [
+          "eq",
+          "dm/dt = (a − m) / τ"
+        ],
+        [
+          "eq",
+          "m(next) = a + (m(now) − a) × exp(−Δt / τ)"
+        ],
+        [
+          "p",
+          "The final expression is exact for constant activity during the interval. The default n is one, not an assumed universal Hill coefficient of two. K is a concentration scale only in the chosen normalized units. It becomes a physical affinity or response constant only when the underlying model and measurements justify that interpretation."
+        ],
+        [
+          "h",
+          "A worked exposure history"
+        ],
+        [
+          "p",
+          "With activity one, initial memory zero and τ equal to 60 minutes, memory is approximately 0.3935 after 30 minutes and 0.6321 after 60 minutes. When activity returns to zero, the stored memory decays exponentially. These P settings permit a sustained exposure gate without inventing a minimum human cytokine exposure from a single RNA snapshot."
+        ],
+        [
+          "h",
+          "Hysteresis is not arbitrary permanence"
+        ],
+        [
+          "p",
+          "Use distinct activation and deactivation conditions when supported, or let induced output capacity decay over time. The registry prevents an already high output capacity from being repeatedly induced every tick. Induction may resume after capacity declines and the relevant refractory and exposure requirements are met. A fibroblast does not remain inflammatory forever simply because that makes a chronic animation look convincing."
+        ],
+        [
+          "h",
+          "State variables must describe different processes"
+        ],
+        [
+          "p",
+          "Keep receptor activity, pathway state, exposure memory, transcriptional capacity, stored protein and extracellular mediator separate. A declining extracellular concentration need not immediately erase an induced program. Conversely, an activated transcriptomic program does not create an unlimited protein store. Receptor desensitization and negative feedback require additional states when included; they are not implied by using a sigmoid."
+        ],
+        [
+          "h",
+          "What the reference kernel provides"
+        ],
+        [
+          "p",
+          "The exactMemory and receptorActivity functions implement these arithmetic contracts with finite input checks. They do not estimate receptor density or infer competence from RNA. The host supplies normalized activities with provenance. Changing the memory time constant or the score normalization must be part of the parameter version because either change alters initiation behavior."
+        ]
+      ]
+    ],
+    [
+      "Event clocks, phase history and duration distributions",
+      [
+        [
+          "p",
+          "Every event has an origin, a sampled duration, elapsed active time, a continuation policy and a completion record. The same duration is retained when the cell is redrawn on screen or a model provider is queried again. Pausing preserves progress; cancellation releases reservations and records a reason."
+        ],
+        [
+          "h",
+          "The triangular distribution is an engineering prior"
+        ],
+        [
+          "p",
+          "Each duration is described by lower support a, mode m and upper support b, in minutes. Its mean is (a + m + b) / 3. The supports are not confidence intervals or measured biological limits. They expose the range used by this demonstration and can be replaced by empirical, lognormal, gamma or survival models when data identify those distributions."
+        ],
+        [
+          "eq",
+          "For u < (m − a)/(b − a): T = a + √[u(b − a)(m − a)]"
+        ],
+        [
+          "eq",
+          "Otherwise: T = b − √[(1 − u)(b − a)(b − m)]"
+        ],
+        [
+          "p",
+          "The full stem cycle prior is 1080, 1440 and 2160 minutes. Its mean is 1560 minutes, or 26 hours. The mode is 24 hours, not the mean. The transit amplifying prior is 720, 1080 and 1800 minutes, whose mean is 20 hours. Neither distribution was fitted to human ileum. The mouse organoid mean of 16.2 hours is a distinct observation. [R11]"
+        ],
+        [
+          "h",
+          "Initial age is not a fresh duration draw"
+        ],
+        [
+          "p",
+          "For an event already underway, supply its historical full duration and elapsed active time. The remaining time is full duration minus elapsed active time, conditional on that event still being active. In an ideal stationary renewal process sampled at a random time, longer intervals are overrepresented. A length weighted interval distribution followed by a conditional age draw is more appropriate than assigning every cell a new interval. An expanding lineage or migrating tissue needs its own age model; stationary renewal assumptions are not universal."
+        ],
+        [
+          "h",
+          "Pausing and interruption"
+        ],
+        [
+          "p",
+          "The default cell cycle can pause when niche or checkpoint requirements fail. It can be cancelled by terminal death. Entry into S phase is not represented as a guarantee that mitosis must finish regardless of DNA damage. Differentiation locks restrict concurrent default choices, but functional maturation still takes time and needs support. Optional reprogramming is a separate model extension, not a reversal generated by a language model."
+        ],
+        [
+          "h",
+          "Two minutes after initialization"
+        ],
+        [
+          "p",
+          "A cell with 1439 minutes already completed in a recorded 1440 minute cycle may finish after one simulated minute. A newly initiated cell may not complete that same full cycle in one minute. The tests distinguish these cases explicitly."
+        ]
+      ]
+    ],
+    [
+      "Transport calculations and their limits",
+      [
+        [
+          "p",
+          "The mediator environment is a mass balance problem. The source papers motivate particular senders, receivers and contexts. They do not supply a single measured diffusion coefficient or half life for every cytokine in human ileal tissue. The final transport values are therefore P."
+        ],
+        [
+          "eq",
+          "∂c/∂t = D∇²c − ∇·(v c) − k c − U(c) + Q"
+        ],
+        [
+          "p",
+          "D is an effective diffusion coefficient, v a transport velocity, k a first order loss rate, U uptake and Q sources. Binding to matrix or cell surfaces may require additional free and bound states. A membrane ligand belongs on a contact graph rather than in this soluble equation unless a shed form is explicitly modeled."
+        ],
+        [
+          "eq",
+          "k = ln(2) / t_half"
+        ],
+        [
+          "eq",
+          "λ = √(D/k)"
+        ],
+        [
+          "eq",
+          "t_MSD = x² / (2dD)"
+        ],
+        [
+          "p",
+          "With the demonstration D of 100 µm² per minute and half life of 30 minutes, k is approximately 0.02310 per minute and λ approximately 65.79 µm. In two dimensions the mean squared displacement timescale over 50 µm is 6.25 minutes. These numbers illustrate dimensional consistency. They are not a measured CXCL8 travel time or a sharply bounded detection radius."
+        ],
+        [
+          "h",
+          "Geometry changes the spatial solution"
+        ],
+        [
+          "p",
+          "For a homogeneous medium with first order loss, a one dimensional steady profile away from a planar source has an exponential dependence on distance. A three dimensional point source additionally has a 1/r geometric factor. A two dimensional point source involves a modified Bessel function. Thus a single exponential around every source in any mesh is not a universal solution. Near source regularization, boundaries and finite cell dimensions also matter."
+        ],
+        [
+          "h",
+          "A diffusion equation has no strict arrival front"
+        ],
+        [
+          "p",
+          "Ideal diffusion has a mathematically nonzero tail at arbitrarily short times. Biological detectability depends on concentration, receptor response, noise and integration. The model should therefore enforce concentration dependent sensing and exposure history, not interpret λ as a hard sensing cutoff or report the first infinitesimal tail as a meaningful cellular response."
+        ],
+        [
+          "h",
+          "Uniform grid helper versus full tissue solver"
+        ],
+        [
+          "p",
+          "The supplied helper covers diffusion and first order decay on an equal volume two dimensional grid with closed outer boundaries. It does not implement epithelial permeability, matrix binding, blood perfusion or directed luminal flow. Actions needing those processes require corresponding host capabilities."
+        ]
+      ]
+    ],
+    [
+      "Units, field stability and compartment interfaces",
+      [
+        [
+          "h",
+          "Amounts and concentrations cannot be mixed"
+        ],
+        [
+          "p",
+          "A source releases an amount per time. The field stores concentration. Depositing source amount into a grid voxel therefore requires its volume or the declared effective volume of a two dimensional section. For a grid with 10 µm spacing and 10 µm thickness, the effective voxel volume is 1000 µm³, equal to one picoliter. As a dimensional illustration, 600 molecules in that volume correspond to approximately 0.996 nM. These geometric choices are P, not a measured epithelial extracellular volume."
+        ],
+        [
+          "eq",
+          "c = amount / volume"
+        ],
+        [
+          "eq",
+          "amount added per update = secretion rate × elapsed time"
+        ],
+        [
+          "h",
+          "A stable numerical update"
+        ],
+        [
+          "p",
+          "For explicit diffusion on a rectangular two dimensional grid, a sufficient positivity condition is D Δt (2/Δx² + 2/Δy²) ≤ 1. The reference helper uses substeps with a factor no greater than 0.9 and applies first order decay exponentially. With D equal to 100 µm² per minute, 10 µm spacing and a one minute biological interval, one explicit field step is too large. The helper subdivides it. A display frame never sets the physical diffusion coefficient."
+        ],
+        [
+          "h",
+          "Check refinement, not just positivity"
+        ],
+        [
+          "p",
+          "A stable calculation can still be inaccurate. Compare field resolution, diffusion substeps and biological decision intervals separately. Confirm nonnegative values and the expected total mass balance under closed boundaries, sources, uptake and decay. Do not silently clip large negative concentrations to zero, since that can hide an unstable solver and introduce mass errors."
+        ],
+        [
+          "eq",
+          "interface transfer = permeability × area × (c_left − c_right) × Δt"
+        ],
+        [
+          "p",
+          "This interface relation is a proposed linear permeability model, not a universal epithelial transport law. Transfer must be bounded by donor availability and recorded on both sides. Active transport, saturable uptake or selective barriers may require other laws. A barrier threshold such as 0.7 should not instantaneously open every molecular route unless it is an explicit, tested engineering approximation."
+        ],
+        [
+          "h",
+          "Binding and identifiability"
+        ],
+        [
+          "p",
+          "A short apparent spatial range can arise from slow diffusion, rapid decay, uptake, binding or geometry. A static profile alone may identify a combined length scale without uniquely identifying each component. Fit multiple measurements or retain multiple parameter sets. Identical rendered gradients can conceal different biological transport models."
+        ],
+        [
+          "h",
+          "No untracked concentration claims"
+        ],
+        [
+          "p",
+          "The runnable profile uses normalized concentrations and amounts. Do not label them pg/mL or nM in the interface until source rates, volume, uptake and loss are consistently calibrated."
+        ]
+      ]
+    ],
+    [
+      "Resources, action effects and atomic transactions",
+      [
+        [
+          "p",
+          "Each action reserves the material it needs before it starts. Reservations reduce availability to other actions but do not immediately remove total inventory. Successful completion consumes the reservation and applies the corresponding effect once. Cancellation releases the reservation. A failed physical transaction leaves all changes pending."
+        ],
+        [
+          "h",
+          "Stored release example"
+        ],
+        [
+          "p",
+          "A goblet release can reserve 0.1 normalized granule units and 0.02 normalized energy units. On successful completion, the host emits exactly the reserved store amount into the declared apical compartment and consumes that amount from the store. The final registry does not multiply the emitted amount by another fraction while consuming the entire reservation. Repeated updates cannot emit the same packet twice."
+        ],
+        [
+          "h",
+          "New synthesis is different from stored release"
+        ],
+        [
+          "p",
+          "Induction changes an output capacity after its clock. Continuous secretion then consumes a declared synthesis substrate at a finite rate. Store replenishment requires material supply and time. A basal flux is allowed without repeatedly starting a new induction event. The reference boundedFlux function computes the lesser of the requested amount and available substrate. It does not invent substrate or infer a physical protein production rate."
+        ],
+        [
+          "h",
+          "Target ownership"
+        ],
+        [
+          "p",
+          "Engulfment requires one owner of a particular accessible target. A second macrophage cannot consume the same corpse while the first event is underway. Contact loss can cancel the event and release the target. A successful engulfment retires the extracellular target and creates appropriate intracellular cargo. Processing and microbial killing remain distinct; ingestion is not proof of sterilization. [R17]"
+        ],
+        [
+          "h",
+          "Physical outcomes are typed intents"
+        ],
+        [
+          "p",
+          "The kernel returns a completion plan containing state assignments, reserved costs and typed physical intents. The host checks geometry, target ownership, destination access and resource totals, then applies the entire plan atomically. An acknowledgment includes the transaction identifier, application time and advanced tissue revision. Without that receipt, effects remain pending. Repeated acknowledgment does not duplicate the event."
+        ],
+        [
+          "h",
+          "Mass and capacity have different meanings"
+        ],
+        [
+          "p",
+          "A phagocytic capacity variable represents an operational occupancy budget, not grams of matter. Its debit must still be matched to intracellular cargo and later restoration. Cell mass, antibody amount and extracellular mediator amount need their own ledgers if they are modeled. Do not claim molecular mass conservation from a test of normalized capacity arithmetic."
+        ],
+        [
+          "h",
+          "Death and cleanup are separate transactions"
+        ],
+        [
+          "p",
+          "Terminal death cancels incompatible ongoing work. A dead cell may remain present until extrusion or clearance. Disappearance, release of intracellular cargo and changes in barrier function depend on the selected physical event, not on a generic deletion command."
+        ]
+      ]
+    ],
+    [
+      "Measured timing anchors and what they support",
+      [
+        [
+          "table",
+          [
+            "Observation retained from the evidence",
+            "Permitted inference",
+            "Not permitted"
+          ],
+          [
+            [
+              "Paneth antimicrobial release within minutes in mouse crypt preparations. [R07]",
+              "A rapid action can release existing cargo.",
+              "New synthesis and packaging are completed within the same interval; exact human delay is known."
+            ],
+            [
+              "STAT3 assessed after a 20 minute IL22 pulse. [R12]",
+              "A pathway readout can be measured on a short timescale.",
+              "An entire epithelial cell cycle or organoid regeneration takes 20 minutes."
+            ],
+            [
+              "Human organoid growth assessed on day 6. [R12]",
+              "A later tissue growth endpoint can constrain a growth model.",
+              "Every response must wait exactly six days to start."
+            ],
+            [
+              "Mean full cell cycle of 16.2 hours in mouse intestinal organoids. [R11]",
+              "A quantitative dynamic anchor exists in that experimental system.",
+              "Every human stem cell or progenitor has the same cycle."
+            ],
+            [
+              "Human neutrophil and organoid extrusion readouts at an eight hour endpoint. [R16]",
+              "A context specific immune contribution to epithelial extrusion can be modeled and tested.",
+              "Eight hours is a universal delay from receptor activation to extrusion."
+            ],
+            [
+              "Junctional remodeling during mouse epithelial shedding. [R15]",
+              "Extrusion can be coordinated with neighboring barrier rearrangement.",
+              "All shedding leaves a persistent gap, or a universal event duration was fitted here."
+            ]
+          ],
+          [
+            2.35,
+            2.05,
+            2.05
+          ]
+        ],
+        [
+          "h",
+          "Observation windows should remain in the observation model"
+        ],
+        [
+          "p",
+          "An experiment may measure cytokine at six hours and image extrusion every few minutes. Fit the simulated measurements at those same observation times. Do not assign the sampling interval as the duration of each hidden cellular event. Multiple initiations can contribute to one endpoint, and an observed completed event may have begun before the imaging window."
+        ],
+        [
+          "h",
+          "Use primary kinetics when a specific action matters"
+        ],
+        [
+          "p",
+          "If the main scientific question concerns apoptosis timing, a general epithelial atlas is insufficient. Select a matched dynamic experiment with an active death readout, the relevant stimulus, an explicit time origin and measurable execution or disposal. The same requirement applies to neutrophil transit, goblet replenishment and fibroblast state reversal. No universal hard time table is claimed in this version."
+        ]
+      ]
+    ],
+    [
+      "Demonstration clocks I",
+      [
+        [
+          "p",
+          "All values below are proposed triangular duration supports in minutes, shown as lower / mode / upper. They are not human reference ranges, confidence intervals or estimated universal limits. Source context informs which process is represented; it does not supply these numerical distributions."
+        ],
+        [
+          "table",
+          [
+            "Event duration identifier",
+            "Minutes",
+            "Clock origin"
+          ],
+          [
+            [
+              "signal",
+              "1 / 10 / 30",
+              "Onset of a newly initiated supported pathway response"
+            ],
+            [
+              "granule",
+              "1 / 5 / 15",
+              "Release from an existing and reserved store"
+            ],
+            [
+              "engulf",
+              "2 / 10 / 30",
+              "Verified contact and exclusive target reservation"
+            ],
+            [
+              "digest",
+              "30 / 120 / 480",
+              "After intracellular cargo acquisition; completion alone does not establish microbial killing"
+            ],
+            [
+              "induce",
+              "30 / 120 / 360",
+              "Supported new synthesis program begins, not every minute of an already active program"
+            ],
+            [
+              "endothelial",
+              "30 / 120 / 480",
+              "New endothelial adhesion program begins"
+            ],
+            [
+              "crossing",
+              "5 / 15 / 45",
+              "After vascular adhesion and reservation of a crossing slot"
+            ],
+            [
+              "injury commitment",
+              "60 / 240 / 720",
+              "New, deliberately unprimed persistent injury pathway"
+            ],
+            [
+              "death execution",
+              "15 / 45 / 120",
+              "Operational terminal death commitment"
+            ],
+            [
+              "extrusion",
+              "5 / 15 / 60",
+              "Coordinated extrusion begins; closure success remains mechanical"
+            ],
+            [
+              "stem cycle",
+              "1080 / 1440 / 2160",
+              "Start of a full new stem cell cycle"
+            ],
+            [
+              "ta cycle",
+              "720 / 1080 / 1800",
+              "Start of a full new progenitor cycle"
+            ],
+            [
+              "lineage maturation",
+              "1440 / 2880 / 5760",
+              "Restricted progenitor commitment, before acquisition of mature function"
+            ],
+            [
+              "lymphocyte induce",
+              "60 / 240 / 720",
+              "Previously primed lymphocyte receives a competent activation cue"
+            ]
+          ],
+          [
+            1.65,
+            1.35,
+            3.45
+          ]
+        ],
+        [
+          "p",
+          "The clock advances in active biological time. Gate loss can pause or cancel according to the action contract. Completion can remain pending when host mechanics or ownership checks fail. An already initialized event retains its historical duration and elapsed time. No provider response can modify a running duration."
+        ]
+      ]
+    ],
+    [
+      "Demonstration clocks II",
+      [
+        [
+          "p",
+          "All values below are proposed triangular duration supports in minutes, shown as lower / mode / upper. They are not human reference ranges, confidence intervals or estimated universal limits. Source context informs which process is represented; it does not supply these numerical distributions."
+        ],
+        [
+          "table",
+          [
+            "Event duration identifier",
+            "Minutes",
+            "Clock origin"
+          ],
+          [
+            [
+              "cytotoxic contact",
+              "5 / 15 / 45",
+              "Recognized target is contacted; target death is a separate event"
+            ],
+            [
+              "myeloid adaptation",
+              "1440 / 4320 / 10080",
+              "Sustained permissive adaptation context"
+            ],
+            [
+              "fibroblast switch",
+              "360 / 1440 / 4320",
+              "Sustained inflammatory stromal input"
+            ],
+            [
+              "matrix episode",
+              "4320 / 10080 / 30240",
+              "Local remodeling episode; not the time to a stricture"
+            ],
+            [
+              "contact regulation",
+              "5 / 30 / 120",
+              "CTLA4 positive regulatory cell contacts a CD80/CD86 positive APC"
+            ],
+            [
+              "epithelial repair",
+              "15 / 120 / 360",
+              "Wound edge restitution begins; division not required"
+            ],
+            [
+              "antigen processing",
+              "60 / 180 / 720",
+              "Uptake of newly acquired antigen"
+            ],
+            [
+              "dc maturation",
+              "120 / 360 / 1440",
+              "Competent dendritic activation"
+            ],
+            [
+              "lymphatic exit",
+              "60 / 240 / 1440",
+              "Reachable lymphatic route has been established"
+            ],
+            [
+              "inflammasome",
+              "5 / 20 / 90",
+              "Compatible intracellular sensing, not luminal exposure alone"
+            ],
+            [
+              "short motion",
+              "1 / 3 / 10",
+              "A local motility episode begins"
+            ],
+            [
+              "antigen transcytosis",
+              "5 / 30 / 120",
+              "Apical uptake by an M cell in follicle associated epithelium"
+            ],
+            [
+              "epithelial recovery",
+              "360 / 1440 / 4320",
+              "Sustained removal of the activating context"
+            ],
+            [
+              "lytic failure",
+              "5 / 20 / 90",
+              "Operational loss of membrane repair capacity with active lytic execution"
+            ]
+          ],
+          [
+            1.65,
+            1.35,
+            3.45
+          ]
+        ],
+        [
+          "p",
+          "The clock advances in active biological time. Gate loss can pause or cancel according to the action contract. Completion can remain pending when host mechanics or ownership checks fail. An already initialized event retains its historical duration and elapsed time. No provider response can modify a running duration."
+        ]
+      ]
+    ],
+    [
+      "Stem cells and transit amplifying progenitors",
+      [
+        [
+          "h",
+          "Intestinal stem cell"
+        ],
+        [
+          "p",
+          "Use a crypt associated identity supported by a panel such as LGR5, OLFM4 and ASCL2, not by one mandatory detected transcript. Niche position and local support matter. Mouse niche and lineage experiments inform the mechanism; human atlases define regional identity. [R01, R08, R09, R10, R11]"
+        ],
+        [
+          "p",
+          "The default renewal event requires viable identity, resources, a ready cycle, sufficient niche support and passed checkpoints. Its score increases with niche support and decreases with damage. ISC_CYCLE includes the full sampled cycle; the host must accommodate daughters and account for their inherited state and material. The same progenitor can instead enter a licensed lineage maturation event, with shared locks preventing simultaneous division and differentiation."
+        ],
+        [
+          "p",
+          "Paneth contact does not assign symmetric division deterministically. Daughters inherit a recorded lineage context; additional stochasticity is explicit. A short IL22 response does not automatically accelerate this cycle. Loss of support may pause progress rather than delete the cell. Validate completed divisions and lineage retention, not only LGR5 expression. [R12, R13]"
+        ],
+        [
+          "h",
+          "Transit amplifying cell"
+        ],
+        [
+          "p",
+          "Identify the proliferative epithelial compartment from molecular state and physical location. The annotation does not timestamp the next mitosis. Human state data and mouse cycle trajectories support different parts of this definition. [R01, R02, R11]"
+        ],
+        [
+          "p",
+          "TA_CYCLE requires a ready cycle, checkpoints, resources and a finite renewal policy. The demonstration maximum of five completed rounds is P, not a universal lineage law. Absorptive, goblet associated and Paneth associated maturation are separate outcomes, permitted only when the host provides target specific lineage competence and niche context. Contact dependent Notch input changes a candidate score; it does not solve every epithelial fate choice. [R20]"
+        ],
+        [
+          "p",
+          "The cell cannot proliferate, complete differentiation and acquire a full mature granule pool in one update. Compare lineage output, completed cycle intervals, spatial confinement and maturation markers. Injury induced reentry from a mature state requires an additional contract rather than changing the type label to gain a division licence."
+        ]
+      ]
+    ],
+    [
+      "Enterocytes and goblet cells",
+      [
+        [
+          "h",
+          "Enterocyte"
+        ],
+        [
+          "p",
+          "Use an absorptive epithelial program with regional markers such as ALPI, FABP1 and APOA4. Store apical orientation, basal support, junctional contacts and a microvillus function property. Atlas identity and spatial organization do not measure an individual death or secretion hazard. [R01, R02]"
+        ],
+        [
+          "p",
+          "The default cell maintains absorption and barrier contribution through host continuous functions. Accessible alarm exposure can initiate CXCL8 output capacity after a synthesis clock. TNF responsive junction remodeling, IL22 associated defence induction, reversible recovery and wound edge restitution are distinct actions. Each needs its own competence and host capability. There is no direct instruction to recruit a neutrophil or to die simply because TNF is high."
+        ],
+        [
+          "p",
+          "LIVE_EXTRUSION coordinates a viable epithelial cell and its neighbors. Death commitment and execution are separate. The mature enterocyte cannot divide in this default model. Validate coverage, junction continuity, permeability and loss or recovery of absorptive function, not only a transcript score. Reduced brush border function should not instantly delete the whole cell. [R15, R16]"
+        ],
+        [
+          "h",
+          "Goblet cell"
+        ],
+        [
+          "p",
+          "Use a secretory epithelial identity, including MUC2 in an appropriate marker panel. A low transcript measurement is not a direct measure of an empty protein store, and neither establishes that the cell has died. [R01, R02]"
+        ],
+        [
+          "p",
+          "GOBLET_RELEASE requires a competent local stimulus, luminal surface access, resources and a nonempty granule store. It reserves a finite cargo amount and releases it once through the host transaction. Basal mucus supply, bursts, replenishment and the resulting mucus material layer are separate functions. The exact refill time and stimulus threshold remain proposed rather than inferred from the atlas."
+        ],
+        [
+          "p",
+          "Neighbor loss may permit restitution without division. A mature goblet cell does not become an enterocyte merely because the renderer needs a replacement. Quantify stored cargo, emitted mucus, local access of luminal material and cell survival independently. The scalar mucus field in the demonstration is not a measured rheological mucus model."
+        ]
+      ]
+    ],
+    [
+      "Paneth cells and repair associated epithelium",
+      [
+        [
+          "h",
+          "Paneth cell"
+        ],
+        [
+          "p",
+          "Use human DEFA5, DEFA6 and LYZ as part of a contextual Paneth identity panel. Position the cell in a compatible crypt niche. Mouse preparations support rapid stored antimicrobial release, while niche studies support a separate local support function. [R01, R07, R08, R09]"
+        ],
+        [
+          "p",
+          "PANETH_RELEASE reserves existing cargo and directs it to the apical compartment. Empty stores reduce release capacity but do not imply cell death. Niche support is maintained through a separate bounded host process, with a contact associated Wnt3 component where appropriate. Antimicrobial release and stem support must not be multiplied together into one all purpose Paneth health score."
+        ],
+        [
+          "p",
+          "Long residence does not make the cell immune to injury. The default does not let a Paneth cell divide or chemotax through the lamina propria. A genotype or autophagy hypothesis may alter a specified capability, but not every Crohn run receives a fixed Paneth defect. Validate local release, store depletion, survival and recipient niche effects separately."
+        ],
+        [
+          "h",
+          "Repair associated epithelial state"
+        ],
+        [
+          "p",
+          "This optional entry records a proposed injury associated state, not proof that any CLU positive cell is a functional stem cell. Its origin, lineage history and renewal competence require experimental definition. The supplied sources motivate epithelial plasticity as an extension but do not fit its rate here. [S01, S02; R01, R10]"
+        ],
+        [
+          "p",
+          "Keep the cell within its epithelial lineage. It may receive supported repair, alarm, barrier and viability actions if the corresponding modules are enabled. Default proliferative licences are not granted merely by assigning a repair label. A future reprogramming action should specify an eligible origin, a commitment assay, a maturation interval, a destination niche and observed functional renewal."
+        ],
+        [
+          "p",
+          "This conservative handling prevents a large wound from being repaired by instantaneous identity changes. First test closure by surviving cell movement and geometry. Then test whether a separately supported regenerative population is needed. The inability of an unimplemented extension to close a wound is a model limitation, not proof that the omitted mechanism is indispensable in all tissues."
+        ]
+      ]
+    ],
+    [
+      "Crypt niche and BMP producing stromal cells",
+      [
+        [
+          "h",
+          "Crypt niche fibroblast or trophocyte"
+        ],
+        [
+          "p",
+          "A human niche supporting state can be initialized from spatial and molecular evidence. The GREM1, RSPO3 and CD81 panel is a candidate annotation, informed partly by mouse mesenchymal experiments. It is not a guaranteed one to one translation of every atlas subtype. [R02, R25]"
+        ],
+        [
+          "p",
+          "The cell provides explicitly modeled support to nearby progenitors or to a declared niche field. Contact topology and soluble access determine recipients. Inflammatory activation is a separate program requiring competence and sustained cues. Conversion does not instantly erase all niche output unless a measured mechanism or a clearly labeled scenario specifies that loss."
+        ],
+        [
+          "p",
+          "The demonstration does not infer that crypt failure must occur exactly one or two days after this cell is lost. Fit recipient cycle and survival consequences to a matched perturbation. Record which support is generated by explicit cells and which is supplied at the boundary, so compensation is visible rather than hidden."
+        ],
+        [
+          "h",
+          "BMP producing stroma"
+        ],
+        [
+          "p",
+          "Use a location appropriate stromal identity with support for BMP related output. Mouse work distinguishes niche supportive mesenchyme from other BMP associated sources, but a colonic S2 label should not automatically be treated as a human villus tip telocyte. [R02, R25]"
+        ],
+        [
+          "p",
+          "The host supplies the physical source location and a ligand specific output process. Recipient BMP activity can reduce renewal propensity in an eligible progenitor while contributing to positional differentiation context. The action dictionary keeps inflammatory and matrix programs available only when the state is competent. A fixed function of normalized height is a P boundary approximation, not a measured cellular secretion law."
+        ],
+        [
+          "p",
+          "Validate the spatial relationship between source cells, recipient pathway activity and proliferation. Do not use high BMP as a command that every mature cell at the top of the drawing must die immediately. The source geometry and renewal consequences need separate tests. [R21]"
+        ]
+      ]
+    ],
+    [
+      "Lamina propria fibroblasts and endothelium",
+      [
+        [
+          "h",
+          "Lamina propria fibroblast"
+        ],
+        [
+          "p",
+          "Keep niche support, inflammatory output, matrix production and contractile behavior as separable programs. Spatial IBD and stricturing data support heterogeneous stromal states; OSM work supplies an experimental inflammatory circuit. [R02, R05, R18]"
+        ],
+        [
+          "p",
+          "STROMAL_ACTIVATION requires competent inflammatory signaling and sustained memory. Its score can include local OSM, active IL1B and TNF inputs. Mediator specific induction then creates bounded CXCL8, CCL2 or IL6 output capacity where licensed. The cell is not assumed to produce mature IL1B or to become permanently inflammatory after one pulse."
+        ],
+        [
+          "p",
+          "MATRIX_REMODELING is disabled until matrix and mechanics modules exist. Active signaling, substrate supply, deposition, degradation and stiffness are distinct variables. A collagen transcript increase is not instant fibrosis. Short simulations should initialize preexisting matrix rather than claim to generate an intestinal stricture from one local episode. [R05]"
+        ],
+        [
+          "h",
+          "Vascular endothelial cell"
+        ],
+        [
+          "p",
+          "Place the agent on a connected vascular interface with distinct blood and tissue sides. The four explicit endothelial cells represent a local interface, not a complete perfused vessel. A macrophage TNF, endothelial TNFR2 and ICAM1 circuit supports spatial recruitment permission in its experimental contexts. [R19]"
+        ],
+        [
+          "p",
+          "ENDOTHELIAL_ACTIVATION creates an adhesion competent state after a proposed induction clock. VASCULAR_CROSSING belongs to an existing reservoir leukocyte and requires verified adhesion, a reachable route and an available crossing slot. The cell cannot appear at the chemokine source. Homeostatic trafficking may use a preexisting permissive interface rather than requiring a new inflammatory pulse for every entry."
+        ],
+        [
+          "p",
+          "Validate adhesion, passage, entry position and downstream movement separately. The interface must still reject crossing when no physical route exists, even with a large chemokine signal. Drug target perturbations require receptor specific models; an idealized disabled adhesion gate is not a fitted simulation of any clinical drug."
+        ]
+      ]
+    ],
+    [
+      "Resident and recruited inflammatory myeloid cells",
+      [
+        [
+          "h",
+          "Resident like macrophage"
+        ],
+        [
+          "p",
+          "Human intestinal macrophage experiments support substantial phagocytic and bactericidal behavior with restrained inflammatory cytokine output. This does not mandate constitutive IL10 secretion from every resident cell. Use a tissue adapted program and spatial context rather than a universal M1 versus M2 label. [R04, R17]"
+        ],
+        [
+          "p",
+          "EFFEROCYTOSIS reserves a contacted corpse; PHAGOCYTOSIS reserves accessible microbial material. CARGO_PROCESSING subsequently releases capacity according to a separate intracellular model. Inflammatory or regulatory cytokine induction requires specific output competence and an appropriate activation context. Successful cleanup can remove extracellular damage sources without issuing a global anti inflammatory command."
+        ],
+        [
+          "p",
+          "Track contact, uptake, cargo, processing, microbial survival, corpse persistence and secreted protein separately. The default priority emerges from channel rates and availability rather than a rule that every contact forces cytokine release. Processing completion alone does not prove microbial killing."
+        ],
+        [
+          "h",
+          "Inflammatory monocyte or macrophage"
+        ],
+        [
+          "p",
+          "Initialize a recruited origin and an inflammatory program from the chosen patient or experimental context. Candidate outputs differ across states; one generic inflammatory macrophage should not automatically secrete every mediator. Spatial and single cell IBD evidence supports heterogeneity, not one universal conversion rate. [R03, R04]"
+        ],
+        [
+          "p",
+          "Candidate induction routes include TNF, CCL2, OSM and IL23, with explicit competence. IL1B priming is separate from processing and active release. Human macrophage inflammasome findings must not be substituted for the human epithelial sensing contract. [R27] MYELOID_ADAPTATION requires sustained permissive context and retains recruited origin even when a resident like program develops."
+        ],
+        [
+          "p",
+          "CCL2 guided movement requires local receptor competence and a traversable route. The demonstration does not impose a universal six hour earliest arrival or a fixed threefold clearance defect. Compare recruitment, adaptation and output using matched sampling windows and independent protein measurements."
+        ]
+      ]
+    ],
+    [
+      "Neutrophils and dendritic cells",
+      [
+        [
+          "h",
+          "Neutrophil"
+        ],
+        [
+          "p",
+          "Use a neutrophil annotation supported by a marker panel, protein or morphology where possible. A cell is either explicitly infiltrated at initialization or enters through the vascular reservoir. Spatial myeloid evidence and vascular recruitment studies constrain different parts of this representation. [R04, R19]"
+        ],
+        [
+          "p",
+          "The cell can follow an accessible CXCL8 associated gradient, engulf a contacted target, process cargo and release a finite local granule packet. Local proliferation is not licensed. Receptor desensitization, chemoattractant hierarchies and swarming are optional extensions requiring their own state and transport rules; the current kernel does not claim to implement them merely by drawing convergent motion."
+        ],
+        [
+          "p",
+          "Human neutrophil IL1B contributed to epithelial extrusion in an infected organoid setting. That provides one conditional route, not an instruction to extrude all stressed cells. [R16] Age and context influence survival in a fitted model; the default does not delete every neutrophil at one universal lifespan. NET formation and lytic death are not silently equated or enabled."
+        ],
+        [
+          "h",
+          "Conventional dendritic cell"
+        ],
+        [
+          "p",
+          "Separate dendritic identity from macrophage identity and retain subtype uncertainty. CD1C, FCER1A and presentation genes may guide annotation, but no single marker proves the full functional state. A generic human cDC2 is not defined as obligatorily CD103 positive. [R01, R03]"
+        ],
+        [
+          "p",
+          "The cell acquires accessible material, processes it and presents a defined antigen through host antigen machinery. New uptake is not instant presentation. DC_EXIT requires a reachable lymphatic route, appropriate migration competence and a prepared state. The completion transaction removes or transfers the agent with population accounting."
+        ],
+        [
+          "p",
+          "The current local model does not implement naive T cell priming, germinal center reactions or a guaranteed return wave. An external adaptive module may supply such processes with measured delays and conditional outcomes. It must not turn every exiting DC into a predetermined Th17, Treg or plasma cell wave on day five."
+        ]
+      ]
+    ],
+    [
+      "Previously primed helper T cells",
+      [
+        [
+          "h",
+          "Th17 associated cell"
+        ],
+        [
+          "p",
+          "This entry represents a previously primed or tissue adapted helper state, not a naive cell awaiting specification. IL17 related markers and cytokine competence should be assigned within the selected human dataset and context. Crohn associated state data and epithelial cytokine experiments support different parts of the proposed circuit. [R03, R14]"
+        ],
+        [
+          "p",
+          "TH17_IL17_INDUCTION requires a verified activation route and IL17A output competence. A conventional antigen driven route needs compatible presentation and contact. A bystander route needs a separately supported receptor contract. IL23 exposure does not instantly generate a mature Th17 lineage from an arbitrary lymphocyte. The reference clock concerns new output in an already eligible state."
+        ],
+        [
+          "p",
+          "Continuous cytokine output can persist at a finite rate while the cell remains viable and supplied. It does not require the cell to emit a new discrete packet every tick or become obligatorily silent for a generic refractory period. New induction, output decay, secretion rate and motility are separate variables."
+        ],
+        [
+          "h",
+          "Th1 associated cell"
+        ],
+        [
+          "p",
+          "Initialize an appropriate previously primed helper program with candidate IFNG competence, for example using TBX21 and CXCR3 in a broader panel. These markers do not establish current secretion or antigen specificity. [R03, R14]"
+        ],
+        [
+          "p",
+          "TH1_IFNG_INDUCTION follows a verified activation event and an explicit synthesis clock. Recipient cells respond only through their own competence and accessible IFNG field. A macrophage does not become maximally inflammatory merely because a Th1 labeled neighbor exists. The same helper cell can move if the route and channel rules permit it, subject to contacts needed for the particular activation mechanism."
+        ],
+        [
+          "p",
+          "Validate encounter history, induced protein output, recipient activity and tissue consequences separately. Local helper proliferation is not enabled in this version because its activation and cycle model is not specified. A future clonal expansion module should inherit lineage and antigen history rather than introducing unrelated cells as random replacements."
+        ]
+      ]
+    ],
+    [
+      "Regulatory T cells and CD8 intraepithelial lymphocytes",
+      [
+        [
+          "h",
+          "Regulatory T cell"
+        ],
+        [
+          "p",
+          "Use a regulatory program and appropriate functional context rather than treating FOXP3 RNA as a direct suppression coefficient. Human spatial data can constrain localization. Contact regulation has a distinct experimental mechanism: CTLA4 on the regulatory cell can remove CD80/CD86 from the opposing cell. [R01, R06, R26]"
+        ],
+        [
+          "p",
+          "TREG_CONTACT_REGULATION requires a verified target contact, CTLA4 competence, relevant target ligands and activation. Its completion changes target costimulation through a bounded host transaction. TREG_IL10_INDUCTION is a separate soluble route requiring output competence; recipient response is not automatic. No fixed universal 100 µm suppression radius is imposed."
+        ],
+        [
+          "p",
+          "Moving a Treg in the simulation changes its contact opportunities and accessible soluble signals, not a global suppression field attached to its label. Compare local activation, pathogen control and collateral damage rather than assuming that less inflammation is always a better outcome."
+        ],
+        [
+          "h",
+          "Conventional CD8 IEL"
+        ],
+        [
+          "p",
+          "The default is a conservative, previously primed conventional CD8 intraepithelial lymphocyte model. It does not represent every αβ, γδ or unconventional IEL program. Atlas identity and spatial position identify a candidate population but do not estimate its killing hazard. [R01, R02]"
+        ],
+        [
+          "p",
+          "IEL_CYTOTOXIC_HIT requires contact, host verified TCR target recognition, cytotoxic competence and a finite store. A delivered hit is not guaranteed target death. The target follows its own damage, repair and execution contract. NKG2D associated stress recognition alone does not replace the conventional TCR gate in this default model."
+        ],
+        [
+          "p",
+          "The cell cannot read hidden intracellular infection variables that have no presentation or surface signal. Contact duration, delivered cargo, target response and completed death are separate observations. The host must account for disengagement, target movement and store recovery before serial target attacks can be interpreted quantitatively."
+        ]
+      ]
+    ],
+    [
+      "NK cells and ILC3",
+      [
+        [
+          "h",
+          "NK cell"
+        ],
+        [
+          "p",
+          "Keep NK identity distinct from T cell identity even when they share cytotoxic machinery. The dictionary uses a contextual NKG7, KLRD1 and GNLY panel, while recognition competence is supplied separately. A transcript panel is not a complete activating and inhibitory receptor model. [R01, R02]"
+        ],
+        [
+          "p",
+          "NK_CYTOTOXIC_HIT requires physical contact, a host verified balance of activating and inhibitory signals, adequate effector competence and available cytotoxic cargo. It does not use TCR specificity, nor does it treat low target health as sufficient recognition. NK_IFNG_INDUCTION requires its own verified activation and output competence."
+        ],
+        [
+          "p",
+          "The proposed contact clock ends in a delivered hit rather than immediate deletion of the target. Host target susceptibility and death timing remain separate. A numerical setting chosen to preserve an attractive epithelial image is not a fitted killing rate. Quantify contacts, hits, target deaths, inhibited encounters and resource depletion."
+        ],
+        [
+          "h",
+          "ILC3"
+        ],
+        [
+          "p",
+          "The single ILC3 in the synthetic preset is one agent, not an estimate of population diversity. Candidate IL1 and IL23 responsiveness and IL22 output require a compatible initialized state. This is distinct from direct sensing of every pathogen in the lumen. [R01]"
+        ],
+        [
+          "p",
+          "ILC3_IL22_INDUCTION requires verified activation and output competence. The resulting field can engage an eligible epithelial response after transport and receptor processing. The epithelial defence program, progenitor behavior and organoid growth are separate consequences. Experimental IL22 findings do not justify a universal stem or progenitor proliferation bonus. [R12, R13]"
+        ],
+        [
+          "p",
+          "Validate source output, recipient activity and downstream function independently. An IL22 removal experiment may have different net effects with different epithelial states and damage contexts. The simulation should not encode worsening barrier function as an unavoidable outcome merely because IL22 is labeled protective."
+        ]
+      ]
+    ],
+    [
+      "Antibody producing plasma cells",
+      [
+        [
+          "h",
+          "IgA plasma cell"
+        ],
+        [
+          "p",
+          "Initialize an existing antibody class and specificity. A plasma cell identity indicates secretory potential, but the antibody amount, antigen specificity and survival support remain model inputs. Human intestinal atlases provide cell context; they do not fit the continuous secretion rate used here. [R01, R02]"
+        ],
+        [
+          "p",
+          "The optional antibody process produces a bounded amount into the lamina propria. Apical secretory IgA requires a compatible polymeric substrate and epithelial transport. IGA_TRANSCYTOSIS is disabled unless antibody and epithelial transport capabilities are implemented. The host must conserve transported substrate and distinguish the destination from the original compartment."
+        ],
+        [
+          "p",
+          "No new clone, affinity maturation or class switching is generated inside a minute by changing a cell label. A missing antibody module leaves this route inactive rather than depositing protective IgA into the mucus automatically. Compare antibody amount and location with a measured transport or secretion assay before interpreting a change in microbial access."
+        ],
+        [
+          "h",
+          "IgG plasma cell"
+        ],
+        [
+          "p",
+          "Ileal Crohn and stricturing Crohn datasets support IgG plasma cell associated inflammatory neighborhoods. That association helps define initialization and candidate interactions; it does not prove that every IgG producing cell causes persistent inflammation. [R03, R05]"
+        ],
+        [
+          "p",
+          "The cell has an existing antibody identity and bounded output. A recipient Fc receptor pathway requires relevant immune complexes, accessible receptor competence and a defined activation contract. IgG concentration alone is not an automatic IL1B stimulus. The present local model does not implement antigen binding, immune complex formation or antibody affinity unless the host supplies those modules."
+        ],
+        [
+          "p",
+          "The distinction matters for intervention tests. Removing TNF while maintaining the initial cellular module does not justify hard coding persistent disease, nor does removing an IgG cell guarantee resolution. Compare alternative network assumptions and preserve the observation that the original human association is not a fitted causal rate law."
+        ]
+      ]
+    ],
+    [
+      "Optional epithelial sensors and antigen transport",
+      [
+        [
+          "h",
+          "Tuft cell and enteroendocrine cell"
+        ],
+        [
+          "p",
+          "These optional entries preserve a route to future perturbations without making every rare cell an active source in the default bacterial or Crohn demonstration. Their broad identities can be anchored in intestinal atlases. Specific sensing, receptor expression and secreted products require additional subtype and perturbation evidence. [R01]"
+        ],
+        [
+          "p",
+          "TUFT_TYPE2_SIGNAL is disabled until the host implements a verified type 2 stimulus and output route. It does not assume that any bacterial exposure is a tuft stimulus. EEC_HORMONE_RELEASE requires a declared endocrine subtype output, a compatible nutrient stimulus and a finite store. One endocrine cell should not simultaneously produce every named gut hormone merely because it is labeled enteroendocrine."
+        ],
+        [
+          "p",
+          "These actions are extension contracts, not calibrated effects on stem proliferation, vascular behavior or immunity. Their default inactivity documents a limitation. Adding a hormone or alarmin requires its recipient competence, transport, resource budget, kinetics and a measurable downstream function."
+        ],
+        [
+          "h",
+          "M cell"
+        ],
+        [
+          "p",
+          "An M cell belongs to a compatible follicle associated epithelial context with a receiving compartment. It should not be placed in every small crypt and villus patch simply to represent antigen transport. Atlas evidence identifies candidate populations; transport rates remain unestimated. [R01]"
+        ],
+        [
+          "p",
+          "M_CELL_TRANSCYTOSIS is disabled unless antigen and epithelial transport modules are available. A permitted event transfers accessible apical material to the receiving pocket without requiring a generic barrier rupture. The target antigen or object must remain traceable through the transaction."
+        ],
+        [
+          "p",
+          "Absence of this optional cell does not prove that the model has excluded every physiological route of antigen sampling. Dendritic and macrophage handling, epithelial transport and other routes require their own scoped implementations. Do not use a missing M cell as a reason to invent a barrier defect whenever antigen presentation is needed."
+        ]
+      ]
+    ],
+    [
+      "Optional support cells and regional epithelial states",
+      [
+        [
+          "h",
+          "BEST4 associated absorptive cell"
+        ],
+        [
+          "p",
+          "This is an optional regional annotation using a contextual BEST4, OTOP2 and CA7 panel. Its presence and position should come from the selected region and dataset, not from a rule that every microdomain must contain one representative. [R01, R02]"
+        ],
+        [
+          "p",
+          "The dictionary preserves the identity and applicable generic epithelial safeguards. It does not claim to implement quantitatively correct pH or ion transport. Those functions require a transport model, substrates, membrane orientation and measurements. A molecularly named cell should not be assigned an arbitrary physiological bonus merely to make it visibly distinct."
+        ],
+        [
+          "p",
+          "Until those functions are added, count its optional role as unimplemented. Do not merge it silently with a generic enterocyte for a question specifically about that subset."
+        ],
+        [
+          "h",
+          "Pericyte and enteric glial cell"
+        ],
+        [
+          "p",
+          "Pericytes can be placed at a vascular interface using a contextual RGS5, CSPG4 and PDGFRB panel. Enteric glial identity can be represented with an appropriate SOX10, S100B and PLP1 context. The atlas supplies candidate identity and location, not quantitative permeability or neuroimmune control in this microdomain. [R01, R02]"
+        ],
+        [
+          "p",
+          "Two pericytes are included as support placeholders in the synthetic presets, but a contractile or vascular permeability effect needs a dedicated host module. Enteric glial outputs and recipient effects remain optional. The present version does not assign a fixed improvement in barrier integrity simply because a glial agent exists nearby."
+        ],
+        [
+          "p",
+          "For either extension, specify the sensed cue, output mechanism, target competence, event duration or continuous rate, resource cost and independent readout. If that evidence is missing, preserve an inactive capability rather than a generic beneficial multiplier. This is a smaller claim than simulating the complete stromal and neural environment, and it is the claim supported by this package."
+        ]
+      ]
+    ],
+    [
+      "Perturbations without predetermined outcomes",
+      [
+        [
+          "h",
+          "Homeostasis and localized barrier injury"
+        ],
+        [
+          "p",
+          "Begin with explicit niche support, a declared vascular reservoir, baseline cell histories and bounded turnover. A localized injury changes an environmental condition or a documented subset of cells. The scenario may remove a known number of epithelial agents, but must record whether they are dead, shed or outside the observed domain. It must not script which macrophage acts or which target dies next."
+        ],
+        [
+          "h",
+          "Infection associated host response"
+        ],
+        [
+          "p",
+          "The default human overlay distinguishes luminal exposure from intracellular sensing. Human epithelial findings are not replaced by a mouse epithelial circuit. The optional mouse overlay is disabled in the adult human preset. The supplied package does not model pathogen replication, evolutionary change or calibrated invasion kinetics; pathogen related variables are declared scenario or host inputs. [R16, R22, R23]"
+        ],
+        [
+          "h",
+          "Crohn associated states"
+        ],
+        [
+          "p",
+          "Use matched patient associated states when available, with site, treatment and disease context. Otherwise retain the synthetic label. Do not define Crohn disease as acute infection that never clears. A chronic state can reflect altered initial cellular programs, matrix and barrier conditions or external inputs, but its persistence should be measured across simulations rather than guaranteed by a permanent inflammatory flag. [R03, R05]"
+        ],
+        [
+          "h",
+          "Local matrix extension"
+        ],
+        [
+          "p",
+          "Initialize preexisting matrix where it is relevant. Enabling matrix remodeling requires deposition, degradation and mechanical feedback. A mucosal microdomain does not contain all layers necessary to model whole wall narrowing. Report local matrix change, not clinical stenosis, unless an additional multiscale model is fitted and validated. [R05]"
+        ],
+        [
+          "h",
+          "Mechanism ablation is not drug pharmacology"
+        ],
+        [
+          "p",
+          "Turning off a receptor route tests a modeled causal dependency. Setting a field to zero is an idealized perturbation, not a drug exposure model. Receptor occupancy, soluble and membrane targets, tissue penetration, dosing and off target effects are outside the supplied package. No rule makes early TNF removal successful or late removal unsuccessful by definition. The associations motivating the network cannot be reused as a mandatory simulated outcome. [R03, R18]"
+        ],
+        [
+          "h",
+          "Perturb only what the scenario names"
+        ],
+        [
+          "p",
+          "Record every external field injection, injury, reservoir change and parameter override with time, location, magnitude and provenance. Do not secretly alter repair rates to ensure resolution. Pair scenarios using the same initial state and compatible random number streams when estimating mechanistic differences."
+        ]
+      ]
+    ],
+    [
+      "Calibration: from observations to estimable parameters",
+      [
+        [
+          "p",
+          "Fit parameters in stages. First constrain geometry, observation coverage and initial composition. Then fit baseline turnover and movement. Next fit a small timed perturbation with measured events or protein outputs. Only then combine the broader patient associated inflammatory network. Fitting all hazards, durations, secretion strengths and transport coefficients to one final spatial image is generally not identifiable."
+        ],
+        [
+          "h",
+          "Event and duration likelihoods"
+        ],
+        [
+          "eq",
+          "log L(event history) = Σ log h(event time) − ∫ H(t) dt"
+        ],
+        [
+          "p",
+          "This point process expression applies to observed initiations under a specified hazard model. Completion durations need a separate likelihood. Right censored events contribute survival probabilities; interval censored events contribute probability over the observation window. A death first observed between two frames is not an exact death time. An agent absent from a later section may have moved, died or been missed by segmentation."
+        ],
+        [
+          "h",
+          "Separate biological variation from measurement error"
+        ],
+        [
+          "p",
+          "Model donor, anatomical site, batch, lineage and measurement uncertainty explicitly. Hold out donors rather than random cells from the same donor. A clone or neighborhood must not leak into both fitting and evaluation as though its cells were independent subjects. Human spatial measurements and organoid live imaging may require linked but nonidentical parameter sets. [R01, R02, R11]"
+        ],
+        [
+          "h",
+          "What a static snapshot can constrain"
+        ],
+        [
+          "p",
+          "A snapshot can constrain state frequencies, spatial arrangements and distributions of measured markers under an observation model. Multiple combinations of initiation rates and residence times can produce similar frequencies. A pseudotime ordering or latent embedding is not a calibrated clock. Dynamic data, perturbation contrasts and external measurements help resolve those alternatives."
+        ],
+        [
+          "h",
+          "Program score mapping"
+        ],
+        [
+          "p",
+          "Normalize programs within appropriate cell types and technical contexts, then calibrate across donors. Do not set a hazard equal to an AUCell score, ligand receptor score or language model confidence. Evaluate the mapping using held out event or protein outcomes. Where data only support direction, retain a range of coefficient values rather than reporting a precise fitted coefficient."
+        ],
+        [
+          "h",
+          "Parameter uncertainty is an output"
+        ],
+        [
+          "p",
+          "Store posterior samples, bootstrap fits or an explicit plausible parameter ensemble. Repeat simulations across those parameter sets as well as random seeds. If a conclusion changes with the prior family or a modest transport change, report that dependence. A visually plausible single run is not evidence that the parameter vector is uniquely correct."
+        ]
+      ]
+    ],
+    [
+      "Validation targets, falsification and sensitivity",
+      [
+        [
+          "h",
+          "Validate the smallest causal loop first"
+        ],
+        [
+          "p",
+          "A first biological benchmark should contain a defined injury or signaling perturbation, a known observation schedule and a limited set of measurable consequences. For example, evaluate whether an epithelial induction, vascular permission and leukocyte crossing sequence reproduces measured ordering without assigning lesion coordinates directly to the leukocyte. Recruitment and crossing should remain distinguishable. [R19]"
+        ],
+        [
+          "table",
+          [
+            "Question",
+            "Observation to compare",
+            "Failure that matters"
+          ],
+          [
+            [
+              "Did the cell divide?",
+              "Completed mitosis or lineage trace with elapsed full cycle.",
+              "MKI67 used as a completed division timestamp."
+            ],
+            [
+              "Did the cell die or extrude?",
+              "Active death readout, morphology, membrane state and location.",
+              "Every extrusion labeled apoptosis; every dead cell instantly deleted."
+            ],
+            [
+              "Was a mediator produced?",
+              "Protein output, location and sampling time.",
+              "Ligand RNA treated as a calibrated secretion rate."
+            ],
+            [
+              "Did the barrier recover?",
+              "Coverage, junctions, transport and wound geometry.",
+              "A repair score closes a gap without physical rearrangement."
+            ],
+            [
+              "Was a spatial relation reproduced?",
+              "Matched segmentation, marker panel and neighborhood statistics.",
+              "A visually similar UMAP treated as evidence of correct dynamics."
+            ]
+          ],
+          [
+            1.65,
+            2.45,
+            2.35
+          ]
+        ],
+        [
+          "h",
+          "Mechanistic checks should permit failure"
+        ],
+        [
+          "p",
+          "Remove secretory stores and immediate stored release should stop, while future synthesis may still occur. Disable an adhesion route and crossing should fail through that route even if chemotactic fields remain. Remove a required target contact and engulfment should cancel or pause according to its contract. These tests examine dependencies without imposing the final tissue outcome."
+        ],
+        [
+          "h",
+          "Numerical and structural sensitivity"
+        ],
+        [
+          "p",
+          "Vary decision interval, field resolution, domain dimensions, effective thickness, boundary distance, cell number and initialization. Preserve density and physical scaling when comparing different agent counts. Rare cell placement can dominate a 100 cell realization, so ensemble variability is essential. Compare alternative mechanisms that explain the same endpoint, rather than only tuning weights in one assumed network."
+        ],
+        [
+          "h",
+          "The distributed tests have a narrower scope"
+        ],
+        [
+          "p",
+          "The package includes 43 passing software tests covering constraints, clocks, reservations, arithmetic, stale responses and simple field conservation. They use synthetic states and mock host receipts. They do not validate epithelial mechanics, real tissue homeostasis, Crohn progression, pathogen dynamics or clinical intervention outcomes. A reference implementation passing its own tests is a starting point, not a biological result."
+        ]
+      ]
+    ],
+    [
+      "Integration with the existing virtual tissue application",
+      [
+        [
+          "p",
+          "The inspected application material contains a limited cell action menu and a batch decision interface with tick, revision and cells. The newer contract preserves a batch boundary but separates action legality, initiation probability, event time and physical effect. It does not overwrite either supplied HTML file. [S03, S04]"
+        ],
+        [
+          "h",
+          "Load and validate"
+        ],
+        [
+          "p",
+          "Import virtual_tissue_kernel.mjs as an ES module and load virtual_tissue_rules_v2.json. Validate the JSON against its schema during development and run validateRegistry for cross references at runtime. Declare only the host capabilities actually implemented. Passing every capability name without implementing it defeats the contract."
+        ],
+        [
+          "h",
+          "Build one immutable sensing snapshot"
+        ],
+        [
+          "p",
+          "A snapshot contains a stable cell identifier, type, tick, tissue revision, biological time in minutes, cell state, local signals and host context. Receptor competence and physical context need explicit provenance. The host should compute shared fields and contacts before constructing snapshots. A rendering frame or a remote response does not advance biological time."
+        ],
+        [
+          "h",
+          "Plan, start and advance"
+        ],
+        [
+          "p",
+          "The kernel proposes event initiations within a chosen interval. The host resolves proposals globally by time and reservations, then calls start to revalidate legality. It advances ongoing events using current continuation context. The duration is sampled once. At completion the kernel produces a transaction plan, not a command that bypasses physics."
+        ],
+        [
+          "h",
+          "Apply and acknowledge"
+        ],
+        [
+          "p",
+          "The host checks target and geometry constraints, applies state changes, consumes reserved resources, updates counts and fields, increments revision and acknowledges the transaction. Failed transactions change nothing and remain pending until retried or explicitly cancelled. A completed event must not be applied twice. A stale snapshot cannot spend the same store again."
+        ],
+        [
+          "h",
+          "Required host modules"
+        ],
+        [
+          "p",
+          "The host owns contact detection, epithelial mechanics, barrier permeability, intracellular sensing variables, immune recognition, target objects, vascular geometry, population changes and measurement rendering. The rule package can be used without optional modules: dependent actions then remain unavailable with an explicit reason. It is therefore directly loadable, but not a universal drop in replacement for any tissue simulator."
+        ],
+        [
+          "h",
+          "Fast local verification"
+        ],
+        [
+          "p",
+          "Run node test_kernel.mjs, then node run_demo.mjs inside the package directory. The second command demonstrates delayed output induction in one synthetic epithelial cell. It is deliberately not presented as a 100 cell tissue run. The integration guide documents the API and the missing host responsibilities."
+        ]
+      ]
+    ],
+    [
+      "Legacy actions, provider contracts and safe operation",
+      [
+        [
+          "table",
+          [
+            "Existing label",
+            "Final treatment"
+          ],
+          [
+            [
+              "recrutar_neutrofilo",
+              "Map only to eligible epithelial CXCL8 induction. Entry still requires the vascular route."
+            ],
+            [
+              "secretar_muco and secretar_muco_forte",
+              "Use one finite store release contract. Intensity changes require an explicit budget parameter."
+            ],
+            [
+              "extrusao_apoptotica",
+              "Reject an automatic mapping. Separate reversible injury, death execution and coordinated extrusion."
+            ],
+            [
+              "alarme_il18",
+              "Require a species and cell specific sensing, processing and release contract."
+            ],
+            [
+              "secretar_citocina",
+              "Require a named mediator, output competence and release compartment."
+            ],
+            [
+              "matar_celula_estressada",
+              "Require verified NK or T cell recognition. Stress alone is insufficient."
+            ]
+          ],
+          [
+            2.3,
+            4.15
+          ]
+        ],
+        [
+          "p",
+          "These changes are a migration specification based on inspected application snippets, not a claim that the existing HTML has been patched or fully tested. The application may need additional state fields, new cell types, event logs and physics handlers before an action can be enabled. [S03, S04]"
+        ],
+        [
+          "h",
+          "Optional language model proposals"
+        ],
+        [
+          "p",
+          "A provider receives only the eligible vocabulary and a compact local snapshot. It may select among permitted options or explain an already computed event. It cannot invent actions, change durations, alter hazards from a confidence score or update the tissue directly. The response carries the original tick and revision, and its choices are rechecked at commit. The legacy application may need an adapter to echo or attach these fields."
+        ],
+        [
+          "h",
+          "Confidence is not a rate"
+        ],
+        [
+          "p",
+          "A semantic score about plausible behavior is not a measured event probability per minute. Keep a deterministic local fallback and a fixed numerical event model. A model used only for narration can describe logged events without being part of the causal simulation. No external model API is invoked by this package."
+        ],
+        [
+          "h",
+          "Privacy and reproducibility"
+        ],
+        [
+          "p",
+          "Use deidentified data and avoid sending patient metadata to external providers. Version the registry, schema, host engine, source datasets, observation model, random seeds and overrides. Log rejected actions as well as completed ones. Numerical stability errors should stop or explicitly degrade the simulation, not be hidden by clipping or silent resets."
+        ],
+        [
+          "h",
+          "Maintenance contract"
+        ],
+        [
+          "p",
+          "New evidence can change a receptor route, state annotation or clock prior. Each change should identify the affected actions, test failures, calibration impact and migration path. The original source remains in the audit trail even when the implemented interpretation changes."
+        ]
+      ]
+    ],
+    [
+      "How to read the operational action catalogue",
+      [
+        [
+          "p",
+          "The following catalogue is generated from the same JSON used by the reference kernel. Action identifiers, cell eligibility, clocks, hazard scales, costs and source references therefore remain aligned with the machine readable specification. The full nested predicates and effects are in the JSON; the catalogue explains the central contract in a form suitable for scientific review."
+        ],
+        [
+          "h",
+          "An action record has nine distinct responsibilities"
+        ],
+        [
+          "p",
+          "It identifies the cell states that may act, the host capability required, the current gate, the trigger, the score and hazard, the event duration, shared locks and costs, continuation behavior and the completion effect. These are distinct even when a short user interface label hides them behind one button. A button labeled release alarm must not bypass an induction clock or create a protein that has no processing route."
+        ],
+        [
+          "h",
+          "Reading a source reference"
+        ],
+        [
+          "p",
+          "An atlas reference indicates support for state or spatial context. A mechanistic reference supports the cited experimental relationship. Neither supplies the numerical hazard scale printed in the catalogue. All distributed hazard scales, thresholds, costs and duration distributions are P. Actions with no adequate mechanistic reference remain explicit implementation abstractions rather than being attributed to an unrelated paper."
+        ],
+        [
+          "h",
+          "Reading a capability requirement"
+        ],
+        [
+          "p",
+          "A capability such as epithelial_mechanics, immune_recognition or antibody names work that must be implemented by the host. It is not an assertion that the reference kernel performs that work. Completion effects are typed intents. A run cannot be described as executing cytotoxic recognition if the host merely sets the corresponding boolean to true for every stressed target."
+        ],
+        [
+          "h",
+          "Reading a duration"
+        ],
+        [
+          "p",
+          "The catalogue names a duration model whose full support is given earlier. The clock starts when that action is initiated, not necessarily when the tissue was first perturbed. An external stimulus, a field change, receptor activation and event initiation can be separated by transport, sensing, integration and stochastic waiting. A single latency from injury to visible output should be decomposed before fitting."
+        ],
+        [
+          "h",
+          "Reading a completion"
+        ],
+        [
+          "p",
+          "A change in output capacity is not yet an extracellular amount. A delivered hit is not completed target death. An engulfed object is not necessarily killed. A lineage transition requires functional maturation and appropriate host placement. A completed event with failed geometry remains pending or is explicitly cancelled according to policy; it is not silently retried with a shorter clock."
+        ],
+        [
+          "h",
+          "Practical calibration order"
+        ],
+        [
+          "p",
+          "Start with one cell type and one measurable action. Fit its gate assumptions, event initiation and duration to an appropriate experiment. Add recipients and transport only after the isolated response is checked. The catalogue is broad enough for expansion, but enabling every action at once would make the first calibration problem harder to identify."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 1 to 4",
+      [
+        [
+          "h",
+          "ISC_CYCLE"
+        ],
+        [
+          "p",
+          "Complete a full stem cycle. Eligible types: intestinal_stem. Channel: cycle. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq viable; cell.resources.energy gte 0.2; cell.cycle.ready eq true; context.niche_support gte 0.5; context.checkpoints_pass eq true."
+        ],
+        [
+          "small",
+          "Timing: stem_cycle, 1080 / 1440 / 2160 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: context.niche_support positive; cell.damage negative. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: division_transaction. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: division, epithelial_mechanics. Evidence context: R08, R10, R11."
+        ],
+        [
+          "h",
+          "TA_CYCLE"
+        ],
+        [
+          "p",
+          "Complete a full progenitor cycle. Eligible types: transit_amplifying. Channel: cycle. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq viable; cell.resources.energy gte 0.2; cell.cycle.ready eq true; context.checkpoints_pass eq true; cell.cycle.completed_rounds lt 5."
+        ],
+        [
+          "small",
+          "Timing: ta_cycle, 720 / 1080 / 1800 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: context.niche_support positive; cell.damage negative. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: division_transaction. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: division, epithelial_mechanics. Evidence context: R11."
+        ],
+        [
+          "h",
+          "DIFFERENTIATE_ENTEROCYTE"
+        ],
+        [
+          "p",
+          "Absorptive differentiation. Eligible types: intestinal_stem, transit_amplifying. Channel: lineage. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq viable; cell.resources.energy gte 0.2; cell.cycle.ready eq true; context.lineage_permitted.enterocyte eq true; context.checkpoints_pass eq true."
+        ],
+        [
+          "small",
+          "Timing: lineage_maturation, 1440 / 2880 / 5760 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: context.notch_contact positive; context.differentiation_support positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: lineage_transition. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: lineage. Evidence context: R01, R20."
+        ],
+        [
+          "h",
+          "DIFFERENTIATE_GOBLET"
+        ],
+        [
+          "p",
+          "Goblet associated differentiation. Eligible types: intestinal_stem, transit_amplifying. Channel: lineage. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq viable; cell.resources.energy gte 0.2; cell.cycle.ready eq true; context.lineage_permitted.goblet eq true; context.checkpoints_pass eq true."
+        ],
+        [
+          "small",
+          "Timing: lineage_maturation, 1440 / 2880 / 5760 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: context.notch_contact negative; context.differentiation_support positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: lineage_transition. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: lineage. Evidence context: R01, R20."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 5 to 8",
+      [
+        [
+          "h",
+          "DIFFERENTIATE_PANETH"
+        ],
+        [
+          "p",
+          "Paneth associated differentiation. Eligible types: intestinal_stem, transit_amplifying. Channel: lineage. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq viable; cell.resources.energy gte 0.2; cell.cycle.ready eq true; context.lineage_permitted.paneth eq true; context.checkpoints_pass eq true."
+        ],
+        [
+          "small",
+          "Timing: lineage_maturation, 1440 / 2880 / 5760 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: context.notch_contact negative; context.differentiation_support positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: lineage_transition. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: lineage. Evidence context: R01, R20."
+        ],
+        [
+          "h",
+          "EPITHELIAL_CXCL8_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce epithelial chemokine output. Eligible types: All eligible epithelial types. Channel: induction_cxcl8. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.CXCL8_output eq true; context.epithelial_surface eq true; cell.memory.alarm gte 0.25; cell.outputs.CXCL8 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.memory.alarm positive; cell.programs.inflammation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.CXCL8 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R01, R04."
+        ],
+        [
+          "h",
+          "EPITHELIAL_DEFENCE_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce epithelial defence program. Eligible types: All eligible epithelial types. Channel: induction_defence. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL22_response eq true; signals.IL22 gte 0.15; cell.programs.defence lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: signals.IL22 positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.programs.defence becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: epithelial_function. Evidence context: R12, R13."
+        ],
+        [
+          "h",
+          "EPITHELIAL_RESTITUTION"
+        ],
+        [
+          "p",
+          "Restitution at a wound edge. Eligible types: All eligible epithelial types. Channel: mechanics. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.wound_edge eq true; context.viable_closing_neighbors eq true; context.basement_access eq true."
+        ],
+        [
+          "small",
+          "Timing: epithelial_repair, 15 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: context.gap_size_normalized positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: restitution_step. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: epithelial_mechanics, barrier. Evidence context: R15."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 9 to 12",
+      [
+        [
+          "h",
+          "JUNCTION_RESPONSE"
+        ],
+        [
+          "p",
+          "Reversible inflammatory junction remodeling. Eligible types: All eligible epithelial types. Channel: junctions. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.competence.TNF_response eq true; cell.memory.TNF gte 0.25."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.memory.TNF positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: junction_remodel. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: barrier. Evidence context: R15, R23."
+        ],
+        [
+          "h",
+          "EPITHELIAL_RECOVERY"
+        ],
+        [
+          "p",
+          "Recover a reversible inflammatory state. Eligible types: All eligible epithelial types. Channel: phenotype. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; signals.alarm lte 0.2; cell.memory.alarm lte 0.2."
+        ],
+        [
+          "small",
+          "Timing: epithelial_recovery, 360 / 1440 / 4320 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: cell.programs.repair positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: phenotype_relaxation. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: phenotype. Evidence context: R01, R04."
+        ],
+        [
+          "h",
+          "GOBLET_RELEASE"
+        ],
+        [
+          "p",
+          "Release stored mucus. Eligible types: goblet. Channel: exocytosis. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.stores.granules gte 0.1; context.epithelial_surface eq true; cell.competence.local_secretory_stimulus eq true; signals.secretory_stimulus gte 0.15."
+        ],
+        [
+          "small",
+          "Timing: granule, 1 / 5 / 15 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: signals.secretory_stimulus positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: stored_release. Resources: cell.stores.granules reserves 0.1; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: stores, field_transport. Evidence context: R01."
+        ],
+        [
+          "h",
+          "PANETH_RELEASE"
+        ],
+        [
+          "p",
+          "Release stored amp. Eligible types: paneth. Channel: exocytosis. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.stores.granules gte 0.1; context.epithelial_surface eq true; cell.competence.local_secretory_stimulus eq true; signals.secretory_stimulus gte 0.15."
+        ],
+        [
+          "small",
+          "Timing: granule, 1 / 5 / 15 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: signals.secretory_stimulus positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: stored_release. Resources: cell.stores.granules reserves 0.1; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: stores, field_transport. Evidence context: R07."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 13 to 16",
+      [
+        [
+          "h",
+          "DEATH_COMMITMENT"
+        ],
+        [
+          "p",
+          "Progress from persistent injury to terminal commitment. Eligible types: All modeled cell types. Channel: viability. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq injured; cell.damage gte 0.75; cell.competence.death_execution eq true."
+        ],
+        [
+          "small",
+          "Timing: injury_commitment, 60 / 240 / 720 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: cell.damage positive; cell.programs.survival negative. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.viability becomes death_committed, cancel_incompatible_events. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: death. Evidence context: P contract with no action specific kinetic source."
+        ],
+        [
+          "h",
+          "DEATH_EXECUTION"
+        ],
+        [
+          "p",
+          "Execute committed death. Eligible types: All modeled cell types. Channel: terminal. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq death_committed; cell.competence.death_execution eq true."
+        ],
+        [
+          "small",
+          "Timing: death_execution, 15 / 45 / 120 minutes. Automatic initiation once eligible. Score inputs: intercept only. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.viability becomes dead_present, death_record. Resources: no explicit material debit. Gate loss: continue. Host: death. Evidence context: P contract with no action specific kinetic source."
+        ],
+        [
+          "h",
+          "LIVE_EXTRUSION"
+        ],
+        [
+          "p",
+          "Coordinated live epithelial extrusion. Eligible types: All eligible epithelial types. Channel: mechanics. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; context.epithelial_surface eq true; context.extrusion_trigger eq true; context.extrusion_route eq true."
+        ],
+        [
+          "small",
+          "Timing: extrusion, 5 / 15 / 60 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: context.crowding positive; cell.damage positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: extrusion_transaction. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: epithelial_mechanics, barrier. Evidence context: R15, R16."
+        ],
+        [
+          "h",
+          "DEAD_EXTRUSION"
+        ],
+        [
+          "p",
+          "Remove a dead epithelial body through the surface. Eligible types: All eligible epithelial types. Channel: mechanics. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability eq dead_present; context.epithelial_surface eq true; context.extrusion_route eq true."
+        ],
+        [
+          "small",
+          "Timing: extrusion, 5 / 15 / 60 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: context.extrusion_support positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: extrusion_transaction. Resources: no explicit material debit. Gate loss: pause. Host: epithelial_mechanics, barrier. Evidence context: R15."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 17 to 20",
+      [
+        [
+          "h",
+          "HUMAN_INTRACELLULAR_ALARM"
+        ],
+        [
+          "p",
+          "Human epithelial intracellular inflammasome response. Eligible types: All eligible epithelial types. Channel: inflammasome. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; context.species eq human; cell.competence.CASP4_pathway eq true; context.intracellular_ligand_access eq true."
+        ],
+        [
+          "small",
+          "Timing: inflammasome, 5 / 20 / 90 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.intracellular_alarm positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: inflammasome_response. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: intracellular_sensing, death. Evidence context: R22, R16."
+        ],
+        [
+          "h",
+          "MOUSE_NLRC4_ALARM"
+        ],
+        [
+          "p",
+          "Mouse epithelial NAIP/NLRC4 response. Eligible types: All eligible epithelial types. Channel: inflammasome. Optional extension, disabled by default."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; context.species eq mouse; cell.competence.NLRC4_pathway eq true; context.intracellular_ligand_access eq true."
+        ],
+        [
+          "small",
+          "Timing: inflammasome, 5 / 20 / 90 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.intracellular_alarm positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: inflammasome_response. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: intracellular_sensing, death. Evidence context: R23."
+        ],
+        [
+          "h",
+          "LYTIC_FAILURE"
+        ],
+        [
+          "p",
+          "Progress to terminal lytic failure. Eligible types: All modeled cell types. Channel: viability. Optional extension, disabled by default."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.competence.lytic_execution eq true; context.active_lytic_effector eq true; context.membrane_repair_overwhelmed eq true."
+        ],
+        [
+          "small",
+          "Timing: lytic_failure, 5 / 20 / 90 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.damage positive; cell.programs.survival negative. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: lytic_death_transaction. Resources: no explicit material debit. Gate loss: cancel. Host: death, field_transport. Evidence context: R24."
+        ],
+        [
+          "h",
+          "EFFEROCYTOSIS"
+        ],
+        [
+          "p",
+          "Engulf an accessible apoptotic corpse. Eligible types: resident_macrophage, inflammatory_monocyte. Channel: phagocytosis. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.valid_contact eq true; context.target_kind eq corpse; context.target_unreserved eq true; cell.resources.phagocytic_capacity gte 0.2; context.efferocytic_target_verified eq true."
+        ],
+        [
+          "small",
+          "Timing: engulf, 2 / 10 / 30 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: context.target_accessibility positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: engulf_transaction. Resources: cell.resources.phagocytic_capacity reserves 0.2; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: targets, phagocytosis. Evidence context: R17, R04."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 21 to 24",
+      [
+        [
+          "h",
+          "PHAGOCYTOSIS"
+        ],
+        [
+          "p",
+          "Engulf accessible microbial material. Eligible types: resident_macrophage, inflammatory_monocyte, neutrophil, dendritic. Channel: phagocytosis. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.valid_contact eq true; context.target_kind eq microbial_object; context.target_unreserved eq true; cell.resources.phagocytic_capacity gte 0.2."
+        ],
+        [
+          "small",
+          "Timing: engulf, 2 / 10 / 30 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: context.target_accessibility positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: engulf_transaction. Resources: cell.resources.phagocytic_capacity reserves 0.2; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: targets, phagocytosis. Evidence context: R17, R04."
+        ],
+        [
+          "h",
+          "CARGO_PROCESSING"
+        ],
+        [
+          "p",
+          "Process internal cargo. Eligible types: resident_macrophage, inflammatory_monocyte, neutrophil, dendritic. Channel: cargo_processing. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.intracellular_cargo_present eq true."
+        ],
+        [
+          "small",
+          "Timing: digest, 30 / 120 / 480 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.phagolysosome positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cargo_processing. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: phagocytosis. Evidence context: R17."
+        ],
+        [
+          "h",
+          "MYELOID_TNF_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce TNF output. Eligible types: resident_macrophage, inflammatory_monocyte. Channel: induction_tnf. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.TNF_output eq true; cell.memory.alarm gte 0.25; cell.outputs.TNF lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.inflammation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.TNF becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R17, R19."
+        ],
+        [
+          "h",
+          "MYELOID_CCL2_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce CCL2 output. Eligible types: inflammatory_monocyte. Channel: induction_ccl2. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.CCL2_output eq true; cell.memory.alarm gte 0.25; cell.outputs.CCL2 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.inflammation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.CCL2 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R03, R04."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 25 to 28",
+      [
+        [
+          "h",
+          "MYELOID_OSM_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce OSM output. Eligible types: inflammatory_monocyte. Channel: induction_osm. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.OSM_output eq true; cell.memory.alarm gte 0.25; cell.outputs.OSM lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.inflammation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.OSM becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R18."
+        ],
+        [
+          "h",
+          "MYELOID_IL23_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce IL23 output. Eligible types: inflammatory_monocyte, dendritic. Channel: induction_il23. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL23_output eq true; cell.memory.alarm gte 0.25; cell.outputs.IL23 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.inflammation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IL23 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R03, R14."
+        ],
+        [
+          "h",
+          "MYELOID_IL10_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce IL10 output. Eligible types: resident_macrophage, inflammatory_monocyte. Channel: induction_il10. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL10_output eq true; cell.memory.alarm gte 0.25; context.regulatory_output_verified eq true; cell.outputs.IL10 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.regulation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IL10 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: P contract with no action specific kinetic source."
+        ],
+        [
+          "h",
+          "IL1B_PRIMING"
+        ],
+        [
+          "p",
+          "Accumulate pro IL1B capacity. Eligible types: inflammatory_monocyte, resident_macrophage, neutrophil, dendritic. Channel: induction_il1b. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL1B_output eq true; cell.memory.alarm gte 0.25; cell.programs.pro_IL1B_synthesis lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.inflammation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.programs.pro_IL1B_synthesis becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: stores. Evidence context: R16, R27."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 29 to 32",
+      [
+        [
+          "h",
+          "MATURE_IL1B_RELEASE"
+        ],
+        [
+          "p",
+          "Process and release active IL1B. Eligible types: inflammatory_monocyte, resident_macrophage, neutrophil, dendritic. Channel: exocytosis. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL1B_processing eq true; context.IL1B_processing_signal eq true; cell.stores.pro_IL1B gte 0.1."
+        ],
+        [
+          "small",
+          "Timing: inflammasome, 5 / 20 / 90 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.intracellular_alarm positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: stored_release. Resources: cell.stores.pro_IL1B reserves 0.1; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: stores, field_transport. Evidence context: R16, R27."
+        ],
+        [
+          "h",
+          "MYELOID_ADAPTATION"
+        ],
+        [
+          "p",
+          "Adapt recruited myeloid state. Eligible types: inflammatory_monocyte. Channel: phenotype. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.adaptation_permitted eq true; signals.alarm lte 0.2."
+        ],
+        [
+          "small",
+          "Timing: myeloid_adaptation, 1440 / 4320 / 10080 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: signals.IL10 positive; cell.programs.inflammation negative. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: phenotype_transition. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: phenotype. Evidence context: R03, R04."
+        ],
+        [
+          "h",
+          "NEUTROPHIL_CHEMOTAXIS"
+        ],
+        [
+          "p",
+          "Local gradient guided movement. Eligible types: neutrophil. Channel: motility. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.migration_route eq true; cell.competence.chemotaxis eq true; context.gradient_magnitude gte 0.15."
+        ],
+        [
+          "small",
+          "Timing: short_motion, 1 / 3 / 10 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: context.gradient_magnitude positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: movement_step. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: motility, contact_graph. Evidence context: R04, R19."
+        ],
+        [
+          "h",
+          "MONOCYTE_CHEMOTAXIS"
+        ],
+        [
+          "p",
+          "Local gradient guided movement. Eligible types: inflammatory_monocyte. Channel: motility. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.migration_route eq true; cell.competence.chemotaxis eq true; context.gradient_magnitude gte 0.15."
+        ],
+        [
+          "small",
+          "Timing: short_motion, 1 / 3 / 10 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: context.gradient_magnitude positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: movement_step. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: motility, contact_graph. Evidence context: R04, R19."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 33 to 36",
+      [
+        [
+          "h",
+          "LYMPHOCYTE_MOTILITY"
+        ],
+        [
+          "p",
+          "Local gradient guided movement. Eligible types: th17, th1, regulatory_t, nk. Channel: motility. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.migration_route eq true; cell.competence.chemotaxis eq true; context.gradient_magnitude gte 0.15."
+        ],
+        [
+          "small",
+          "Timing: short_motion, 1 / 3 / 10 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: context.gradient_magnitude positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: movement_step. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: motility, contact_graph. Evidence context: R04, R19."
+        ],
+        [
+          "h",
+          "NEUTROPHIL_DEGRANULATION"
+        ],
+        [
+          "p",
+          "Finite local neutrophil degranulation. Eligible types: neutrophil. Channel: exocytosis. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.target_accessible eq true; cell.stores.granules gte 0.1; cell.competence.degranulation eq true."
+        ],
+        [
+          "small",
+          "Timing: granule, 1 / 5 / 15 minutes. Baseline hazard scale 0.2 per minute before the logistic link. Score inputs: cell.memory.alarm positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: stored_release. Resources: cell.stores.granules reserves 0.1; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: stores, field_transport. Evidence context: R04, R16."
+        ],
+        [
+          "h",
+          "ENDOTHELIAL_ACTIVATION"
+        ],
+        [
+          "p",
+          "Acquire vascular adhesion competence. Eligible types: endothelial. Channel: phenotype. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.TNF_response eq true; cell.memory.TNF gte 0.25; cell.programs.adhesion lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: endothelial, 30 / 120 / 480 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.memory.TNF positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.programs.adhesion becomes 1, endothelial_adhesion_update. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: vascular_recruitment. Evidence context: R19."
+        ],
+        [
+          "h",
+          "VASCULAR_CROSSING"
+        ],
+        [
+          "p",
+          "Cross a licensed vascular interface. Eligible types: inflammatory_monocyte, neutrophil, th17, th1, regulatory_t, nk. Channel: migration. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.compartment eq vascular_reservoir; context.adhesion_verified eq true; context.crossing_slot_available eq true; context.vascular_route eq true; cell.competence.vascular_entry eq true."
+        ],
+        [
+          "small",
+          "Timing: crossing, 5 / 15 / 45 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: context.adhesion_strength positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: vascular_entry_transaction. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: vascular_recruitment, motility. Evidence context: R19."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 37 to 40",
+      [
+        [
+          "h",
+          "STROMAL_ACTIVATION"
+        ],
+        [
+          "p",
+          "Acquire inflammatory stromal program. Eligible types: fibroblast, trophocyte, bmp_stroma. Channel: phenotype. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.inflammatory_stroma eq true; cell.memory.stromal_alarm gte 0.25; cell.programs.inflammation lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: fibroblast_switch, 360 / 1440 / 4320 minutes. Baseline hazard scale 0.005 per minute before the logistic link. Score inputs: signals.OSM positive; signals.IL1B_ACTIVE positive; signals.TNF positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.programs.inflammation becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: phenotype. Evidence context: R18, R05."
+        ],
+        [
+          "h",
+          "STROMAL_CXCL8_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce stromal CXCL8. Eligible types: fibroblast, trophocyte, bmp_stroma. Channel: induction_cxcl8. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.CXCL8_output eq true; cell.programs.inflammation gte 0.5; cell.outputs.CXCL8 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: signals.OSM positive; signals.IL1B_ACTIVE positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.CXCL8 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R18, R05."
+        ],
+        [
+          "h",
+          "STROMAL_CCL2_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce stromal CCL2. Eligible types: fibroblast, trophocyte, bmp_stroma. Channel: induction_ccl2. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.CCL2_output eq true; cell.programs.inflammation gte 0.5; cell.outputs.CCL2 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: signals.OSM positive; signals.IL1B_ACTIVE positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.CCL2 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R18, R05."
+        ],
+        [
+          "h",
+          "STROMAL_IL6_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce stromal IL6. Eligible types: fibroblast, trophocyte, bmp_stroma. Channel: induction_il6. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL6_output eq true; cell.programs.inflammation gte 0.5; cell.outputs.IL6 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: signals.OSM positive; signals.IL1B_ACTIVE positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IL6 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport. Evidence context: R18, R05."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 41 to 44",
+      [
+        [
+          "h",
+          "MATRIX_REMODELING"
+        ],
+        [
+          "p",
+          "Local matrix remodeling. Eligible types: fibroblast, trophocyte, bmp_stroma. Channel: matrix. Optional extension, disabled by default."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.matrix_production eq true; context.active_TGFB_available eq true; cell.memory.matrix_signal gte 0.25."
+        ],
+        [
+          "small",
+          "Timing: matrix_episode, 4320 / 10080 / 30240 minutes. Baseline hazard scale 0.0005 per minute before the logistic link. Score inputs: signals.TGFB_ACTIVE positive; context.stiffness_normalized positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: matrix_increment. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: matrix, mechanics. Evidence context: R05."
+        ],
+        [
+          "h",
+          "DC_ANTIGEN_PROCESSING"
+        ],
+        [
+          "p",
+          "Prepare newly acquired antigen. Eligible types: dendritic. Channel: antigen. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.intracellular_antigen_present eq true."
+        ],
+        [
+          "small",
+          "Timing: antigen_processing, 60 / 180 / 720 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.antigen_processing positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: antigen_presentation_update. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: antigen. Evidence context: R01, R03."
+        ],
+        [
+          "h",
+          "DC_EXIT"
+        ],
+        [
+          "p",
+          "Exit toward an external lymphatic compartment. Eligible types: dendritic. Channel: migration. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.CCR7_response eq true; context.lymphatic_route eq true; context.presentation_ready eq true."
+        ],
+        [
+          "small",
+          "Timing: lymphatic_exit, 60 / 240 / 1440 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.antigen_processing positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: lymphatic_exit_transaction. Resources: cell.resources.energy reserves 0.02. Gate loss: pause. Host: motility, lymphatic_exit. Evidence context: R01."
+        ],
+        [
+          "h",
+          "TH17_IL17_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce IL17A in a competent lymphoid state. Eligible types: th17. Channel: induction_il17a. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL17A_output eq true; context.activation_verified eq true; cell.outputs.IL17A lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: lymphocyte_induce, 60 / 240 / 720 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IL17A becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport, immune_recognition. Evidence context: R14."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 45 to 48",
+      [
+        [
+          "h",
+          "TH1_IFNG_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce IFNG in a competent lymphoid state. Eligible types: th1. Channel: induction_ifng. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IFNG_output eq true; context.activation_verified eq true; cell.outputs.IFNG lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: lymphocyte_induce, 60 / 240 / 720 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IFNG becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport, immune_recognition. Evidence context: R14."
+        ],
+        [
+          "h",
+          "ILC3_IL22_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce IL22 in a competent lymphoid state. Eligible types: ilc3. Channel: induction_il22. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL22_output eq true; context.activation_verified eq true; cell.outputs.IL22 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: lymphocyte_induce, 60 / 240 / 720 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IL22 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport, immune_recognition. Evidence context: R12, R13."
+        ],
+        [
+          "h",
+          "TREG_IL10_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce IL10 in a competent lymphoid state. Eligible types: regulatory_t. Channel: induction_il10. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IL10_output eq true; context.activation_verified eq true; cell.outputs.IL10 lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: lymphocyte_induce, 60 / 240 / 720 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IL10 becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport, immune_recognition. Evidence context: R06."
+        ],
+        [
+          "h",
+          "NK_IFNG_INDUCTION"
+        ],
+        [
+          "p",
+          "Induce IFNG in a competent lymphoid state. Eligible types: nk. Channel: induction_ifng. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.IFNG_output eq true; context.activation_verified eq true; cell.outputs.IFNG lt 0.8."
+        ],
+        [
+          "small",
+          "Timing: lymphocyte_induce, 60 / 240 / 720 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: cell.outputs.IFNG becomes 1. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: field_transport, immune_recognition. Evidence context: R01."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 49 to 52",
+      [
+        [
+          "h",
+          "TREG_CONTACT_REGULATION"
+        ],
+        [
+          "p",
+          "Remove APC costimulatory ligands. Eligible types: regulatory_t. Channel: regulation. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.valid_contact eq true; cell.competence.CTLA4 eq true; context.target_CD80_CD86 eq true; context.activation_verified eq true."
+        ],
+        [
+          "small",
+          "Timing: contact_regulation, 5 / 30 / 120 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: apc_costimulation_reduction. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: immune_recognition, targets. Evidence context: R26."
+        ],
+        [
+          "h",
+          "IEL_CYTOTOXIC_HIT"
+        ],
+        [
+          "p",
+          "Deliver a recognized cytotoxic hit. Eligible types: iel_cd8. Channel: cytotoxic. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.valid_contact eq true; context.TCR_target_verified eq true; cell.competence.cytotoxicity eq true; cell.stores.cytotoxic gte 0.1; cell.stores.cytotoxic gte 0.2."
+        ],
+        [
+          "small",
+          "Timing: cytotoxic_contact, 5 / 15 / 45 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: target_hit. Resources: cell.stores.cytotoxic reserves 0.2; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: immune_recognition, targets, death. Evidence context: R01, R02."
+        ],
+        [
+          "h",
+          "NK_CYTOTOXIC_HIT"
+        ],
+        [
+          "p",
+          "Deliver a recognized cytotoxic hit. Eligible types: nk. Channel: cytotoxic. Enabled by default when all requirements pass."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.valid_contact eq true; context.NK_balance_verified eq true; cell.competence.cytotoxicity eq true; cell.stores.cytotoxic gte 0.1; cell.stores.cytotoxic gte 0.2."
+        ],
+        [
+          "small",
+          "Timing: cytotoxic_contact, 5 / 15 / 45 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: cell.programs.activation positive. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: target_hit. Resources: cell.stores.cytotoxic reserves 0.2; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: immune_recognition, targets, death. Evidence context: R01, R02."
+        ],
+        [
+          "h",
+          "IGA_TRANSCYTOSIS"
+        ],
+        [
+          "p",
+          "Transport polymeric IgA across epithelium. Eligible types: enterocyte, goblet. Channel: transport. Optional extension, disabled by default."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.PIGR_transport eq true; context.basolateral_polymeric_IgA eq true."
+        ],
+        [
+          "small",
+          "Timing: antigen_transcytosis, 5 / 30 / 120 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: intercept only. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: iga_transport. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: antibody, epithelial_transport. Evidence context: R01, R02."
+        ]
+      ]
+    ],
+    [
+      "Action catalogue 53 to 55",
+      [
+        [
+          "h",
+          "M_CELL_TRANSCYTOSIS"
+        ],
+        [
+          "p",
+          "Transport sampled antigen through follicle associated epithelium. Eligible types: m_cell. Channel: transport. Optional extension, disabled by default."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.follicle_associated eq true; context.apical_antigen_access eq true; context.receiving_pocket eq true."
+        ],
+        [
+          "small",
+          "Timing: antigen_transcytosis, 5 / 30 / 120 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: intercept only. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: antigen_transfer. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: antigen, epithelial_transport. Evidence context: R01."
+        ],
+        [
+          "h",
+          "TUFT_TYPE2_SIGNAL"
+        ],
+        [
+          "p",
+          "Release a licensed tuft signal. Eligible types: tuft. Channel: exocytosis. Optional extension, disabled by default."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; cell.competence.type2_output eq true; context.type2_stimulus_verified eq true."
+        ],
+        [
+          "small",
+          "Timing: induce, 30 / 120 / 360 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: intercept only. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: tuft_output. Resources: cell.resources.energy reserves 0.02. Gate loss: cancel. Host: type2_immunity. Evidence context: R01."
+        ],
+        [
+          "h",
+          "EEC_HORMONE_RELEASE"
+        ],
+        [
+          "p",
+          "Release an initialized endocrine subtype output. Eligible types: enteroendocrine. Channel: exocytosis. Optional extension, disabled by default."
+        ],
+        [
+          "small",
+          "Gate: cell.viability in viable or injured; cell.resources.energy gte 0.2; context.nutrient_stimulus eq true; cell.competence.hormone_output eq true; cell.stores.granules gte 0.1."
+        ],
+        [
+          "small",
+          "Timing: granule, 1 / 5 / 15 minutes. Baseline hazard scale 0.03 per minute before the logistic link. Score inputs: intercept only. All numbers are P."
+        ],
+        [
+          "small",
+          "Completion: hormone_release. Resources: cell.stores.granules reserves 0.1; cell.resources.energy reserves 0.02. Gate loss: cancel. Host: endocrine, stores. Evidence context: R01."
+        ]
+      ]
+    ],
+    [
+      "Source files, traceability and remaining gaps",
+      [
+        [
+          "h",
+          "Supplied source documents"
+        ],
+        [
+          "p",
+          "S01. Intestinal_Cell_Decision_Playbook.docx, version 1.0, 19 September 2026, 24 pages, together with Intestinal_Cell_Rule_Registry.json. This source supplied the original human ileal scope, evidence labels, datasets, timing observations, explicit numerical priors and most of the cell contracts."
+        ],
+        [
+          "p",
+          "S02. Intestinal Mucosa ABM: A Cell Type Decision Playbook, 19 September 2026, supplied as Intestinal-Mucosa-ABM-Playbook.docx, 34 pages. This source supplied the expanded licence and kinetics structure, broader cell dictionary, neighborhood and provider framing. Its numerical and biological claims were reconciled explicitly rather than copied unchanged."
+        ],
+        [
+          "p",
+          "S03. vilopolis.html, inspected Library source. The inspected sections contain the cell specific MENU, local allowed checks and heuristic scoring. The final package records migration mappings but does not replace the file."
+        ],
+        [
+          "p",
+          "S04. Cellville_Intestino.html, inspected Library source. The inspected sections contain the batch request to /api/decide using tick, revision and cells, local fallbacks and world.commit. Full application behavior and compatibility were not tested in this consolidation."
+        ],
+        [
+          "h",
+          "Files are bound by content hashes"
+        ],
+        [
+          "p",
+          "The operational registry records SHA256 hashes of the two supplied DOCX sources and the original JSON. This distinguishes the exact inputs used from a later document with the same display name. Source observations remain traceable to their reference identifiers. The generated package has a manifest with hashes for the final files."
+        ],
+        [
+          "h",
+          "What remains unimplemented or unestimated"
+        ],
+        [
+          "p",
+          "No clinical pharmacology, whole wall intestinal mechanics, neural circuit, complete microbiota community, pathogen replication, de novo adaptive priming, B cell selection or patient specific parameter fit is supplied. Optional cell functions need additional evidence and host modules. The default scalar fields are simplified proxies, not measurements of the extracellular proteome."
+        ],
+        [
+          "h",
+          "What counts as the next scientific advance"
+        ],
+        [
+          "p",
+          "The next useful result is not a more animated tissue. It is a reproducible comparison between a small calibrated rule set and held out observations, with competing explanations and uncertainty. An adequate first benchmark could identify a response delay, test a contact dependency or quantify recruitment path timing in a matched experiment. Those results can then justify expanding the network."
+        ],
+        [
+          "h",
+          "Reference register policy"
+        ],
+        [
+          "p",
+          "The following entries retain the supplied source identifiers. Titles are normalized for punctuation. Verification statements refer to this consolidation, not to a claim that every underlying dataset was downloaded. Numerical demonstration settings are not estimates from these papers."
+        ]
+      ]
+    ],
+    [
+      "Reference register 1 to 7",
+      [
+        [
+          "h",
+          "R01  Elmentaite et al. (2021)"
+        ],
+        [
+          "p",
+          "Cells of the human intestinal tract mapped across space and time. Nature 597, 250 to 255."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/s41586-021-03852-1. Human intestinal identities and regional context. ArrayExpress accessions are given in section 4."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R02  Hickey et al. (2023)"
+        ],
+        [
+          "p",
+          "Organization of the human intestine at single cell resolution. Nature 619, 572 to 584."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/s41586-023-05915-x. Human spatial organization and targeted protein imaging. HuBMAP HBM692.JRZB.356; processed CODEX data, Dryad 10.5061/dryad.pk0p2ngrf."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R03  Martin et al. (2019)"
+        ],
+        [
+          "p",
+          "Single Cell Analysis of Crohn’s Disease Lesions Identifies a Pathogenic Cellular Module Associated with Resistance to Anti TNF Therapy. Cell 178, 1493 to 1508.e20."
+        ],
+        [
+          "small",
+          "DOI: 10.1016/j.cell.2019.08.008. Human ileal Crohn associated cell states. GEO GSE134809."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R04  Garrido Trigo et al. (2023)"
+        ],
+        [
+          "p",
+          "Macrophage and neutrophil heterogeneity at single cell spatial resolution in human inflammatory bowel disease. Nature Communications 14, 4506."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/s41467-023-40156-6. Human colonic IBD. GSE214695, GSE235236 and GSE234713. Transfer to ileum requires explicit qualification."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R05  Kong et al. (2025)"
+        ],
+        [
+          "p",
+          "Single cell and spatial transcriptomics of stricturing Crohn’s disease highlights a fibrosis associated network. Nature Genetics."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/s41588-025-02225-y. Stricturing Crohn context. SCP2959; dbGaP phs003943.v1.p1; Zenodo 14509802."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R06  Li et al. (2026)"
+        ],
+        [
+          "p",
+          "Spatial transcriptomics atlas of inflammatory bowel disease to guide implementation in research consortiums and clinical trials. Nature Communications 17, 5808. Published 28 April 2026."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/s41467-026-72482-w. IBD spatial assays. GSE312415 and GSE312420; CellScape and corresponding CosMx, Figshare 10.6084/m9.figshare.31595527."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R07  Ayabe et al. (2000)"
+        ],
+        [
+          "p",
+          "Secretion of microbicidal alpha defensins by intestinal Paneth cells in response to bacteria. Nature Immunology 1, 113 to 118."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/77783. Mouse intestinal crypts. Rapid release from existing antimicrobial granules."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ]
+      ]
+    ],
+    [
+      "Reference register 8 to 14",
+      [
+        [
+          "h",
+          "R08  Sato et al. (2011)"
+        ],
+        [
+          "p",
+          "Paneth cells constitute the niche for Lgr5 stem cells in intestinal crypts. Nature 469, 415 to 418."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/nature09637. Mouse crypt niche and organoid experiments. GSE25109. Online publication was in 2010."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R09  Farin et al. (2016)"
+        ],
+        [
+          "p",
+          "Visualization of a short range Wnt gradient in the intestinal stem cell niche. Nature 530, 340 to 343."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/nature16937. Mouse and organoid Wnt3 localization and local transfer. Do not generalize to free diffusion of all niche ligands."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R10  Ritsma et al. (2014)"
+        ],
+        [
+          "p",
+          "Intestinal crypt homeostasis revealed at single stem cell level by in vivo live imaging. Nature 507, 362 to 365."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/nature12972. Mouse crypt live imaging and position dependent stem cell behavior."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R11  Huelsz Prince et al. (2022)"
+        ],
+        [
+          "p",
+          "Mother cells control daughter cell proliferation in intestinal organoids to minimize proliferation fluctuations. eLife, e80682."
+        ],
+        [
+          "small",
+          "DOI: 10.7554/eLife.80682. Mouse organoid live imaging. Mean full cycle 16.2 hours. Data and code, Zenodo 10.5281/zenodo.7197573."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R12  Lindemans et al. (2015)"
+        ],
+        [
+          "p",
+          "Interleukin 22 promotes intestinal stem cell mediated epithelial regeneration. Nature 528, 560 to 564."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/nature16460. IL22 response across signaling and organoid growth readouts. Distinguish the 20 minute signaling assay from later growth endpoints."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R13  Zwarycz et al. (2019)"
+        ],
+        [
+          "p",
+          "IL22 Inhibits Epithelial Stem Cell Expansion in an Ileal Organoid Model. Cellular and Molecular Gastroenterology and Hepatology 7, 1 to 17."
+        ],
+        [
+          "small",
+          "DOI: 10.1016/j.jcmgh.2018.06.008. Mouse ileal organoids. Context dependent effects on stem and proliferative compartments. Online publication was in 2018."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R14  Biton et al. (2018)"
+        ],
+        [
+          "p",
+          "T Helper Cell Cytokines Modulate Intestinal Stem Cell Renewal and Differentiation. Cell 175, 1307 to 1320.e22."
+        ],
+        [
+          "small",
+          "DOI: 10.1016/j.cell.2018.10.008. Experimental support for immune cytokine effects on epithelial renewal and differentiation."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ]
+      ]
+    ],
+    [
+      "Reference register 15 to 21",
+      [
+        [
+          "h",
+          "R15  Marchiando et al. (2011)"
+        ],
+        [
+          "p",
+          "The epithelial barrier is maintained by in vivo tight junction expansion during pathologic intestinal epithelial shedding. Gastroenterology 140, 1208 to 1218.e2."
+        ],
+        [
+          "small",
+          "DOI: 10.1053/j.gastro.2011.01.004. Mouse live imaging of shedding and junctional rearrangement. No event duration from this paper is fitted in this manual."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R16  Lawrence et al. (2022)"
+        ],
+        [
+          "p",
+          "Human neutrophil IL1β directs intestinal epithelial cell extrusion during Salmonella infection. PLOS Pathogens 18, e1010855."
+        ],
+        [
+          "small",
+          "DOI: 10.1371/journal.ppat.1010855. Human neutrophils and intestinal organoids. The 8 hour observation endpoint is not a universal cell specific induction delay."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R17  Smythies et al. (2005)"
+        ],
+        [
+          "p",
+          "Human intestinal macrophages display profound inflammatory anergy despite avid phagocytic and bacteriocidal activity. Journal of Clinical Investigation 115, 66 to 75."
+        ],
+        [
+          "small",
+          "DOI: 10.1172/JCI19229. Human resident macrophage function. Phagocytosis does not require a matched inflammatory cytokine output."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R18  West et al. (2017)"
+        ],
+        [
+          "p",
+          "Oncostatin M drives intestinal inflammation and predicts response to tumor necrosis factor neutralizing therapy in patients with inflammatory bowel disease. Nature Medicine."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/nm.4307. Human IBD associations and experimental evidence for an OSM responsive stromal circuit."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R19  Ren et al. (2023)"
+        ],
+        [
+          "p",
+          "Macrophage endothelial cell crosstalk orchestrates neutrophil recruitment in inflamed mucosa. Journal of Clinical Investigation 133, e170733."
+        ],
+        [
+          "small",
+          "DOI: 10.1172/JCI170733. Spatial TNF, TNFR2 and ICAM1 recruitment circuit. Mouse experiments, human systems and ulcerative colitis context."
+        ],
+        [
+          "small",
+          "Primary source inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R20  van Es et al. (2005)"
+        ],
+        [
+          "p",
+          "Notch/gamma secretase inhibition turns proliferative cells in intestinal crypts and adenomas into goblet cells. Nature 435, 959 to 963."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/nature03659. Mouse crypt progenitors and Notch perturbation. Supports a context specific goblet associated fate shift, not a complete human differentiation model."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ],
+        [
+          "h",
+          "R21  He et al. (2004)"
+        ],
+        [
+          "p",
+          "BMP signaling inhibits intestinal stem cell self renewal through suppression of Wnt beta catenin signaling. Nature Genetics 36, 1117 to 1121."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/ng1430. Mouse experimental evidence for BMP associated restraint of stem and progenitor renewal."
+        ],
+        [
+          "small",
+          "Retained from supplied version 1 reference register; not independently reverified in this consolidation."
+        ]
+      ]
+    ],
+    [
+      "Reference register 22 to 27",
+      [
+        [
+          "h",
+          "R22  Naseer et al. (2022)"
+        ],
+        [
+          "p",
+          "Salmonella enterica Serovar Typhimurium Induces NAIP/NLRC4 and NLRP3/ASC Independent, Caspase 4 Dependent Inflammasome Activation in Human Intestinal Epithelial Cells. Infection and Immunity 90, e0066321."
+        ],
+        [
+          "small",
+          "DOI: 10.1128/iai.00663-21. Human epithelial systems. Supports a separate human CASP4 route; not a universal human ileal timing distribution."
+        ],
+        [
+          "small",
+          "Primary article or primary abstract inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R23  Fattinger et al. (2021)"
+        ],
+        [
+          "p",
+          "Epithelium autonomous NAIP/NLRC4 prevents TNF driven inflammatory destruction of the gut epithelial barrier in Salmonella infected mice. Mucosal Immunology 14, 615 to 629."
+        ],
+        [
+          "small",
+          "DOI: 10.1038/s41385-021-00381-y. Mouse cecal infection and mouse epithelial cultures. In vivo observation windows are not single cell execution durations. Experimental doses are not included in this operational model."
+        ],
+        [
+          "small",
+          "Primary article or primary abstract inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R24  Ruhl et al. (2018)"
+        ],
+        [
+          "p",
+          "ESCRT dependent membrane repair negatively regulates pyroptosis downstream of GSDMD activation. Science 362, 956 to 960."
+        ],
+        [
+          "small",
+          "DOI: 10.1126/science.aar7607. Membrane repair after gasdermin activation. Supports separating pore formation from terminal membrane failure; not an intestinal repair rate."
+        ],
+        [
+          "small",
+          "Primary article or primary abstract inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R25  McCarthy et al. (2020)"
+        ],
+        [
+          "p",
+          "Distinct Mesenchymal Cell Populations Generate the Essential Intestinal BMP Signaling Gradient. Cell Stem Cell 26, 391 to 402.e5."
+        ],
+        [
+          "small",
+          "DOI: 10.1016/j.stem.2020.01.008. Mouse intestinal stromal populations. Supports trophocyte and BMP source distinction, with explicit transfer to human nomenclature."
+        ],
+        [
+          "small",
+          "Primary article or primary abstract inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R26  Qureshi et al. (2011)"
+        ],
+        [
+          "p",
+          "Trans endocytosis of CD80 and CD86: a molecular basis for the cell extrinsic function of CTLA4. Science 332, 600 to 603."
+        ],
+        [
+          "small",
+          "DOI: 10.1126/science.1202947. CTLA4 on the regulatory cell removes CD80/CD86 from an opposing cell. Does not estimate a human ileal suppression radius."
+        ],
+        [
+          "small",
+          "Primary article or primary abstract inspected in this consolidation."
+        ],
+        [
+          "h",
+          "R27  Naseer et al. (2022)"
+        ],
+        [
+          "p",
+          "Human NAIP/NLRC4 and NLRP3 inflammasomes detect Salmonella type III secretion system activities to restrict intracellular bacterial replication. PLOS Pathogens 18, e1009718."
+        ],
+        [
+          "small",
+          "DOI: 10.1371/journal.ppat.1009718. Human macrophages. Multiple inflammasomes contribute. This is not evidence that the same receptor dependency applies to human enterocytes."
+        ],
+        [
+          "small",
+          "Primary article or primary abstract inspected in this consolidation."
+        ]
+      ]
+    ]
+  ]
+}

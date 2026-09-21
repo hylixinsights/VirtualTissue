@@ -1,0 +1,158 @@
+{
+  "actions": [
+    {
+      "id": "EPITHELIAL_ION_SECRETION",
+      "label": "Respond to enterotoxin with ion and water secretion",
+      "enabled_by_default": true,
+      "cell_types": [
+        "enterocyte"
+      ],
+      "channel": "ion_transport",
+      "exclusive_locks": [
+        "ion_transport"
+      ],
+      "required_host_capabilities": [
+        "field_transport"
+      ],
+      "gate": {
+        "all": [
+          {
+            "path": "cell.viability",
+            "op": "in",
+            "value": [
+              "viable",
+              "injured"
+            ]
+          },
+          {
+            "path": "cell.resources.energy",
+            "op": "gte",
+            "param": "resource_gate"
+          },
+          {
+            "path": "cell.competence.ion_transport",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "path": "signals.enterotoxin",
+            "op": "gte",
+            "param": "gate_signal"
+          },
+          {
+            "path": "context.apical_access",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "path": "cell.outputs.ION_WATER",
+            "op": "lt",
+            "param": "gate_high"
+          }
+        ]
+      },
+      "trigger": {
+        "path": "cell.viability",
+        "op": "in",
+        "value": [
+          "viable",
+          "injured"
+        ]
+      },
+      "hazard": {
+        "base_rate_ref": "rate_fast",
+        "intercept_ref": "score_intercept",
+        "terms": [
+          {
+            "path": "signals.enterotoxin",
+            "weight_ref": "score_positive"
+          }
+        ]
+      },
+      "duration_ref": "etec_transport_response",
+      "refractory_ref": "no_refractory",
+      "continuation": {
+        "on_gate_loss": "cancel",
+        "on_death": "cancel",
+        "recheck_predicate": {
+          "all": [
+            {
+              "path": "cell.viability",
+              "op": "in",
+              "value": [
+                "viable",
+                "injured"
+              ]
+            },
+            {
+              "path": "cell.resources.energy",
+              "op": "gte",
+              "param": "resource_gate"
+            },
+            {
+              "path": "cell.competence.ion_transport",
+              "op": "eq",
+              "value": true
+            },
+            {
+              "path": "signals.enterotoxin",
+              "op": "gte",
+              "param": "gate_signal"
+            },
+            {
+              "path": "context.apical_access",
+              "op": "eq",
+              "value": true
+            }
+          ]
+        },
+        "note": "Local toxin and resources must remain available."
+      },
+      "costs": [
+        {
+          "path": "cell.resources.energy",
+          "amount_ref": "action_energy_cost",
+          "accounting": "reserve_at_start_consume_at_success_release_on_cancel"
+        }
+      ],
+      "completion_effects": [
+        {
+          "op": "set",
+          "path": "cell.outputs.ION_WATER",
+          "value": 1
+        }
+      ],
+      "evidence": {
+        "source_refs": [],
+        "numerical_parameters": "P",
+        "transfer_must_be_recorded": true,
+        "source_support": []
+      },
+      "notes": "ETEC extension: LT/cAMP and ST/cGMP-mediated ion transport and water flux. A coarse host response, not molecular CFTR kinetics. No direct epithelial killing or EPEC lesion is inferred.",
+      "initiation_policy": "hazard",
+      "observation_contract": {
+        "initiation": "A Jev choice after a local enterotoxin gate",
+        "completion": "Accepted host transaction",
+        "state_changes": "Secretion capacity; bounded continuous water transfer afterward",
+        "kinetics_validation": "Duration and rates are explicit proposed priors."
+      }
+    }
+  ],
+  "duration_models": {
+    "etec_transport_response": {
+      "distribution": "triangular",
+      "unit": "minute",
+      "lower": 1,
+      "mode": 3,
+      "upper": 10,
+      "evidence": "P",
+      "calibrated": false,
+      "source_context_only": [],
+      "source_supplies_distribution": false,
+      "clock_origin": "Local enterotoxin response begins",
+      "support_is_biological_bound": false,
+      "sampling": "once_per_started_event",
+      "meaning": "Active elapsed time; no rate calibration claimed."
+    }
+  }
+}

@@ -1,0 +1,42 @@
+name: Offline checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install jsonschema==4.26.0
+      - run: node --test tests/v4_host.test.mjs tests/v5_biology.test.mjs tests/engine.test.mjs tests/manual_contract.test.mjs tests/manual_host.test.mjs tests/ileum_host.test.mjs tests/episodes.test.mjs
+      - run: python3 scripts/check_reference.py
+      - run: python3 tests/test_v4_server.py
+      - run: python3 tests/test_experiment_server.py
+      - run: python3 tests/test_server.py
+      - run: python3 tests/test_typesafe.py
+      - run: python3 tests/test_release.py
+      - run: python3 build.py
+      - run: git diff --exit-code -- Cellville_3D.html player.html docs/manual.html tissues/compiled-pack.json
+      - run: node scripts/reproduce.mjs
+      - run: node scripts/reproduce_ileum.mjs --check
+      - run: python3 scripts/package_release.py
+
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install -r requirements-dev.txt
+      - run: python3 -m playwright install --with-deps chromium
+      - run: python3 build.py
+      - run: python3 tests/v4_browser.test.py
+      - run: python3 tests/v5_browser.test.py
+      - run: python3 tests/episode_browser.test.py

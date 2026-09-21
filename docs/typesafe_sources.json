@@ -1,0 +1,12 @@
+{
+  "checkedOn": "2026-09-21",
+  "sources": [
+    "https://raw.githubusercontent.com/typesafe-ai/skills/main/skills/typesafe-ai/SKILL.md",
+    "https://docs.typesafe.ai/api",
+    "https://docs.typesafe.ai/primitives/choice",
+    "https://docs.typesafe.ai/models",
+    "https://docs.typesafe.ai/cookbooks/function_calling"
+  ],
+  "note": "Official skill and live HTML documentation read. Markdown/index endpoints were unavailable; canonical HTML succeeded. No live inference used.",
+  "version": "6.1.0"
+}

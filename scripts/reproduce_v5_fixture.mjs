@@ -1,0 +1,7 @@
+// Offline integration experiment: fixed-priority fixture, never live Jev.
+import {UnifiedTissue} from '../src/unified-host.mjs';
+const t=new UnifiedTissue();t.inject('epec');t.recordFrame=()=>{};
+const priority=['DEATH_COMMITMENT','DC_ANTIGEN_PROCESSING','PHAGOCYTOSIS','EFFEROCYTOSIS','CARGO_PROCESSING','VASCULAR_CROSSING','NEUTROPHIL_CHEMOTAXIS','MONOCYTE_CHEMOTAXIS','MYELOID_CCL2_INDUCTION','MYELOID_TNF_INDUCTION','EPITHELIAL_CXCL8_INDUCTION','GOBLET_RELEASE','MYELOID_ADAPTATION'];
+const fixture=async r=>({...r,decisions:Object.fromEntries(r.cells.map(c=>{const a=priority.find(a=>c.actions.includes(a))??'WAIT';return [c.id,{action:a,weights:Object.fromEntries(c.actions.map(k=>[k,Number(k===a)])),confidence:1,source:'Jev'}]})),meta:{model:'fixture-scenario-not-live',fixture:true,calls:0}});
+for(let i=0;i<12;i++)await t.advance(60,fixture);
+console.log(JSON.stringify({minutes:t.time_min,distance_um:t.cells.reduce((n,c)=>n+c.v5.distance_um,0),antigens:t.cells.flatMap(c=>c.v5.antigens),presenting:t.cells.filter(c=>c.v5.presented.length).map(c=>c.id),recruited:t.cells.filter(c=>c.lab.recruitedAt!==null).map(c=>c.id),deaths:t.cells.filter(c=>!c.alive).map(c=>c.id),health_min:Math.min(...t.cells.filter(c=>c.slot!==null).map(c=>c.health)),bacteria:t.auditLab().bacteria,CCL2:t.fields.audit().CCL2,completed:[...new Set([...t.kernel.events.values()].filter(e=>e.status==='acknowledged').map(e=>e.action_id))]},null,2));

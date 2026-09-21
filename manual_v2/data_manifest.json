@@ -1,0 +1,115 @@
+{
+  "version": "2.0.0",
+  "status": "Retrieval plan only. No listed matrices, images or trajectories were downloaded or fitted for this package.",
+  "items": [
+    {
+      "id": "healthy_identity",
+      "source_reference": "R01",
+      "accessions": [
+        "E-MTAB-9543",
+        "E-MTAB-9536",
+        "E-MTAB-9532",
+        "E-MTAB-9533",
+        "E-MTAB-10386"
+      ],
+      "assay_and_context": "Human intestinal single cell RNA; filter for adult ileal context",
+      "intended_use": "Cell identity and regional molecular programs",
+      "downloaded": false,
+      "processed": false,
+      "fitted": false,
+      "access_status": "Not independently tested for data download in this consolidation. Accessions retained from supplied source register. Verify exact sample and file versions before use.",
+      "does_not_supply": "The numerical demonstration hazards, thresholds or durations in the operational registry."
+    },
+    {
+      "id": "healthy_spatial_protein",
+      "source_reference": "R02",
+      "accessions": [
+        "HBM692.JRZB.356",
+        "10.5061/dryad.pk0p2ngrf"
+      ],
+      "assay_and_context": "Human intestinal multimodal and targeted CODEX imaging",
+      "intended_use": "Regional spatial organization, candidate contacts and panel protein phenotypes",
+      "downloaded": false,
+      "processed": false,
+      "fitted": false,
+      "access_status": "Not independently tested for data download in this consolidation. Accessions retained from supplied source register. Verify exact sample and file versions before use.",
+      "does_not_supply": "The numerical demonstration hazards, thresholds or durations in the operational registry."
+    },
+    {
+      "id": "ileal_crohn",
+      "source_reference": "R03",
+      "accessions": [
+        "GSE134809"
+      ],
+      "assay_and_context": "Human ileal Crohn single cell RNA",
+      "intended_use": "Patient associated cellular states and coordinated population changes",
+      "downloaded": false,
+      "processed": false,
+      "fitted": false,
+      "access_status": "Not independently tested for data download in this consolidation. Accessions retained from supplied source register. Verify exact sample and file versions before use.",
+      "does_not_supply": "The numerical demonstration hazards, thresholds or durations in the operational registry."
+    },
+    {
+      "id": "colonic_ibd_myeloid",
+      "source_reference": "R04",
+      "accessions": [
+        "GSE214695",
+        "GSE235236",
+        "GSE234713"
+      ],
+      "assay_and_context": "Human colonic IBD single cell RNA, bulk RNA and CosMx",
+      "intended_use": "Inflammatory myeloid states and spatial localization; ileal transfer must be labeled",
+      "downloaded": false,
+      "processed": false,
+      "fitted": false,
+      "access_status": "Not independently tested for data download in this consolidation. Accessions retained from supplied source register. Verify exact sample and file versions before use.",
+      "does_not_supply": "The numerical demonstration hazards, thresholds or durations in the operational registry."
+    },
+    {
+      "id": "stricturing_crohn",
+      "source_reference": "R05",
+      "accessions": [
+        "SCP2959",
+        "phs003943.v1.p1",
+        "14509802"
+      ],
+      "assay_and_context": "Stricturing Crohn single cell and spatial data; the last identifier is a Zenodo record",
+      "intended_use": "Fibrosis associated initial states, tissue depth and neighborhoods",
+      "downloaded": false,
+      "processed": false,
+      "fitted": false,
+      "access_status": "Not independently tested for data download in this consolidation. Accessions retained from supplied source register. Verify exact sample and file versions before use.",
+      "does_not_supply": "The numerical demonstration hazards, thresholds or durations in the operational registry."
+    },
+    {
+      "id": "ibd_spatial_atlas",
+      "source_reference": "R06",
+      "accessions": [
+        "GSE312415",
+        "GSE312420",
+        "10.6084/m9.figshare.31595527"
+      ],
+      "assay_and_context": "IBD spatial atlas and related RNA/protein resources",
+      "intended_use": "Platform and panel effects; verify matched samples and access conditions",
+      "downloaded": false,
+      "processed": false,
+      "fitted": false,
+      "access_status": "Not independently tested for data download in this consolidation. Accessions retained from supplied source register. Verify exact sample and file versions before use.",
+      "does_not_supply": "The numerical demonstration hazards, thresholds or durations in the operational registry."
+    },
+    {
+      "id": "organoid_cycle_tracking",
+      "source_reference": "R11",
+      "accessions": [
+        "10.5281/zenodo.7197573"
+      ],
+      "assay_and_context": "Mouse intestinal organoid live imaging and lineage tracking",
+      "intended_use": "Experimental cycle distributions and daughter dependence in that system",
+      "downloaded": false,
+      "processed": false,
+      "fitted": false,
+      "access_status": "Not independently tested for data download in this consolidation. Accessions retained from supplied source register. Verify exact sample and file versions before use.",
+      "does_not_supply": "The numerical demonstration hazards, thresholds or durations in the operational registry."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "intestinal-virtual-tissue-contracts",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Uncalibrated individual cell rule registry and reference event kernel",
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node test_kernel.mjs", "demo": "node run_demo.mjs" }
+}
