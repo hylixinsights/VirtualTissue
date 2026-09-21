@@ -1,0 +1,36 @@
+name: Portal replay checks
+on:
+  pull_request:
+    paths: ['site/**', 'scripts/build_site.py', 'tests/portal_browser.mjs', '.github/workflows/pages.yml', '.github/workflows/portal-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read pinned LN commit
+        id: ln
+        run: python3 -c 'import json,os; v=json.load(open("site/tissues.json"))["lymph_node"]; open(os.environ["GITHUB_OUTPUT"],"a").write("ref="+v["commit"]+"\n")'
+      - uses: actions/checkout@v4
+        with:
+          repository: hylixinsights/VirtualTissue-LN
+          ref: ${{ steps.ln.outputs.ref }}
+          path: _tissues/ln
+          persist-credentials: false
+      - run: python3 _tissues/ln/scripts/build_site.py
+      - run: python3 scripts/build_site.py --lymph-node-site _tissues/ln/site
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Verify both tissues without inference
+        run: |
+          python3 -m http.server 8021 --bind 127.0.0.1 --directory site &
+          SITE_URL=http://127.0.0.1:8021 node tests/site_browser.test.cjs
+          SITE_URL=http://127.0.0.1:8021 node tests/portal_browser.mjs

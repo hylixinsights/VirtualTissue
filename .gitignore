@@ -10,3 +10,7 @@ Cellville_episode_*.json
 dist/
 
 recordings/runs/
+
+# Built from the pinned independent LN repository
+site/lymph-node/
+_tissues/

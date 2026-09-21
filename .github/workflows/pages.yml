@@ -17,7 +17,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python3 scripts/build_site.py
+      - name: Read pinned lymph-node version
+        id: ln
+        run: python3 -c 'import json,os; v=json.load(open("site/tissues.json"))["lymph_node"]; open(os.environ["GITHUB_OUTPUT"],"a").write("ref="+v["commit"]+"\n")'
+      - uses: actions/checkout@v4
+        with:
+          repository: hylixinsights/VirtualTissue-LN
+          ref: ${{ steps.ln.outputs.ref }}
+          path: _tissues/ln
+          persist-credentials: false
+      - run: python3 _tissues/ln/scripts/build_site.py
+      - run: python3 scripts/build_site.py --lymph-node-site _tissues/ln/site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
