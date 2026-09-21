@@ -1,0 +1,37 @@
+name: Publish VirtualTissue website
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['site/**', 'scripts/build_site.py', 'player.html', 'docs/manual.html', 'recordings/examples/**', '.github/workflows/pages.yml']
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/build_site.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy static website
+        id: deployment
+        uses: actions/deploy-pages@v4

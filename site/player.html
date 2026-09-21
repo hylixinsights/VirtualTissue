@@ -1,0 +1,1699 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'self'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>VirtualTissue · Offline player</title><style>:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;color:#244942;background:#f3f3e9;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,select{border:1px solid #d8dfcd;border-radius:12px;background:#fcfbf3;color:#315c51;padding:10px 14px;cursor:pointer;font-weight:600}button:hover{background:#e6eee1}button:disabled{opacity:.45;cursor:not-allowed}.primary{color:white;background:#307e6b;border-color:#307e6b}.primary:hover{background:#256b5c}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #d49d40;outline-offset:3px}.app{max-width:1720px;margin:auto;padding:24px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px}h1{font-size:30px;margin:0;letter-spacing:-1.2px}h1 span{font-size:16px;background:#dce9d6;border-radius:7px;padding:3px 6px;letter-spacing:0}h1 small{font-size:14px;color:#608371;letter-spacing:0}.top p{margin:6px 0 0;font-size:14px;color:#718877}.headerTools{display:flex;gap:8px;align-items:center}.badge{font-size:12px;padding:9px 12px;border-radius:20px;background:#e2eddb;white-space:nowrap}.badge.ready{background:#d5eedc}.composer{border:1px solid #d9e0cc;background:#fffef7;padding:20px;border-radius:20px;margin-bottom:20px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:#82947d;margin-bottom:10px}.promptRow{display:flex;gap:14px;align-items:stretch}textarea{resize:vertical;min-height:74px;border:1px solid #cbd8c6;border-radius:12px;padding:13px 15px;color:#244942;background:white;flex:1;min-width:0;font-size:17px;line-height:1.4}.promptRow .primary{min-width:174px}.examples{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.examples button{padding:7px 11px;font-size:12px;font-weight:500}.previewRow{display:flex;gap:24px;justify-content:space-between;align-items:center;font-size:13px;color:#69826f}.previewRow p{margin:0;max-width:900px;line-height:1.5}.previewRow label{display:flex;align-items:center;gap:8px;white-space:nowrap}input[type=range]{accent-color:#428773;width:110px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px}main,aside{min-width:0}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.toolbar>div{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.toolbar button,.toolbar select{padding:9px 11px;font-size:13px}.toolbar label{font-size:12px;color:#7b8c76}.stage{height:clamp(420px,52vw,700px);position:relative;background:linear-gradient(150deg,#294f4c,#203f40);border-radius:24px;overflow:hidden;isolation:isolate}.stage canvas{position:absolute;inset:0;width:100%;height:100%}#world{touch-action:none;cursor:grab}#overlay{pointer-events:none}.hud{position:absolute;top:14px;left:14px;display:flex;gap:6px;flex-wrap:wrap;max-width:80%;pointer-events:none}.hud span{background:#1a423fd9;border:1px solid #71968b44;color:#edf2df;font-size:11px;border-radius:20px;padding:6px 9px}.camera{position:absolute;right:12px;top:12px;display:grid;gap:5px}.camera button{background:#163c37b8;color:#e0edd8;border-color:#bad3ad33;padding:6px 10px;font-size:11px}.sceneCaption{position:absolute;bottom:14px;left:14px;max-width:80%;padding:10px 14px;border-radius:12px;background:#193e39de;color:#ecf4dc;pointer-events:none}.sceneCaption strong,.sceneCaption span{display:block}.sceneCaption strong{font-size:13px;margin-bottom:4px}.sceneCaption span{font-size:11px;line-height:1.45}.story{display:grid;grid-template-columns:repeat(4,1fr);margin-top:12px;border:1px solid #dce2d1;border-radius:16px;background:#fcfcf3;overflow:hidden}.story>div{padding:14px;border-right:1px solid #e1e5d5}.story>div:last-child{border:0}.story strong{font-size:12px}.story p{font-size:12px;color:#6d8371;margin:6px 0 0;line-height:1.5}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}.arrival{background:#d38150}.sensed{background:#e4b951}.decision{background:#538eaa}.consequence{background:#74aa80}.inspectRow{display:flex;gap:14px;align-items:center;margin-top:12px}.inspectRow button{font-size:12px}.inspectRow p{font-size:12px;color:#6d826f;line-height:1.5;flex:1}.legend{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.legend button{border:0;background:transparent;font-size:11px;padding:5px}.legend i{width:10px;height:10px;display:inline-block;border-radius:50%;margin-right:5px}.history{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:11px;color:#788b76;padding-top:14px;border-top:1px solid #d8dfd0}.history input{flex:1;min-width:60px}.history button{font-size:11px;padding:7px 10px}#usageText{width:100%}.card{border:1px solid #dce1ce;background:#fffef7;border-radius:20px;padding:20px;margin-bottom:16px}.inspectorHeading{display:flex;align-items:center;justify-content:space-between;gap:8px}.inspectorHeading h2{margin:0;font-size:22px;line-height:1.2}.inspectorHeading button{font-size:11px;padding:6px 9px}#cellIdentity{font-size:12px;color:#79907a;line-height:1.5}.localState{font-size:13px;border-left:3px solid #d7b766;padding:9px 10px;background:#f4f2dd;margin:14px 0;line-height:1.5}.localState.quiet{border-color:#9fbd99;background:#eef3e5}.readings{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;color:#738775}.readings div{padding:6px 0;display:flex;justify-content:space-between;gap:7px}.readings strong{color:#395b4e}.decisionBox{background:#eaf1e1;border-radius:14px;padding:16px;margin:18px 0}.decisionBox h3{font-size:16px;margin:0 0 8px}.decisionBox p{font-size:12px;color:#5d795f;line-height:1.6;margin:0}details{border-top:1px solid #e3e6d8;padding:13px 0;font-size:12px}summary{cursor:pointer;font-weight:650;margin-bottom:8px}.action{padding:8px 0;border-bottom:1px solid #edf0e4}.action small{display:block;color:#8d9986;font-size:10px;margin-top:4px;overflow-wrap:anywhere}.action.blocked{color:#8b9682}.progress{height:5px;border-radius:8px;background:#d7e1c9;margin:6px 0 10px;overflow:hidden}.progress i{display:block;height:100%;background:#7dad85}.eventLabel{font-size:11px;margin-top:10px}.feed{max-height:280px;overflow:auto;font-size:11px;line-height:1.55;color:#687f6d}.feed p{padding:8px 0;border-bottom:1px solid #edf0e4;margin:0}.feed time{display:block;font-size:10px;color:#9ca98e}.connection{border:1px solid #d6b868;background:#fff5d9;border-radius:14px;padding:14px 18px;margin-bottom:16px;font-size:13px}.connection p{margin:5px 0;line-height:1.5}.connection button{padding:6px 10px;font-size:12px}.error{background:#fae4db;border:1px solid #daaa9a;border-radius:12px;padding:14px;margin:12px 0;font-size:13px}.error[hidden],.connection[hidden]{display:none}footer{font-size:11px;color:#8a9a80;line-height:1.6;margin:22px 0;display:flex;align-items:center;gap:12px}footer button{font-size:11px;padding:5px 8px}dialog{border:1px solid #d7dfce;border-radius:22px;background:#fffef6;color:#31594b;max-width:680px;width:calc(100% - 30px);max-height:85vh;padding:24px}dialog::backdrop{background:#173b37a0}dialog header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:15px}dialog h2{font-size:22px;margin:0}dialog p{font-size:13px;line-height:1.7}dialog label{display:block;font-size:13px;margin:15px 0}dialog input[type=number]{padding:8px;border:1px solid #d7dfce;border-radius:8px;width:145px;margin-left:10px}.ruleType{margin:15px 0;padding-top:12px;border-top:1px solid #e1e6d6}.ruleType h3{margin:0 0 6px;font-size:15px}.ruleType p{margin:4px 0}.muted{color:#8a9980}.srOnly{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.cellCallout{position:absolute;top:0;left:0;z-index:4;width:230px;max-width:calc(100% - 24px);border:1px solid #e5d39a;border-radius:14px;background:#fffef1f5;box-shadow:0 5px 20px #163a3933;padding:13px 15px;pointer-events:none;color:#244a42}.cellCallout[hidden]{display:none}.calloutClock{font-size:9px;color:#7b9380;letter-spacing:.5px;font-weight:600}.calloutName{font-size:12px;display:block;margin:5px 0 10px}.calloutRow{border-left:3px solid #b3c49e;padding-left:8px;margin:6px 0;font-size:12px;font-weight:650;line-height:1.4}.calloutRow.preparing{border-color:#d9b253}.calloutRow.active{border-color:#5caf87}.calloutDetail{font-size:10px;display:block;color:#6d866c;font-weight:400;margin-top:4px}.calloutProgress{height:4px;background:#dfe6d2;border-radius:5px;margin-top:6px;overflow:hidden}.calloutProgress i{display:block;height:100%;background:#bea251}.calloutNote{font-size:10px;color:#718771;line-height:1.5;margin:9px 0 0}
+@media(max-width:1150px){.workspace{grid-template-columns:minmax(0,1fr) 290px}.card{padding:15px}.toolbar{flex-wrap:wrap}.speedLabel{display:none}.story{grid-template-columns:repeat(2,1fr)}.story>div:nth-child(2){border-right:0}.story>div:nth-child(-n+2){border-bottom:1px solid #e1e5d5}.previewRow{align-items:flex-start;flex-direction:column;gap:10px}}@media(max-width:800px){.app{padding:14px}.workspace{grid-template-columns:1fr}.top{align-items:flex-start;gap:10px}.top p{font-size:11px;max-width:230px}.headerTools{flex-wrap:wrap;justify-content:flex-end;gap:5px}.headerTools button{font-size:11px;padding:7px 9px}.badge{font-size:10px;padding:6px 9px}.composer{padding:14px}.promptRow{flex-direction:column;gap:10px}.promptRow .primary{padding:12px}.stage{height:490px}.hud{max-width:75%;gap:4px}.hud span{font-size:9px;padding:5px 7px}.inspectRow{align-items:flex-start}.inspectRow p{margin:0}.toolbar button{font-size:12px}.toolbar>div{gap:5px}.toolbar label{font-size:11px}.toolbar select{max-width:130px}.sceneCaption{max-width:86%}.cellCallout{width:200px;padding:10px 12px}footer{display:block}.history{margin-bottom:15px}h1{font-size:25px}}
+
+.processes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}.processes button{text-align:left;display:flex;flex-direction:column;gap:7px;padding:16px;background:#f7f7ed;white-space:normal;min-width:0}.processes span{font-size:12px;color:#59736a}.processes strong{font-size:16px;color:#294d46}.processes small,.processNote{font-size:12px;line-height:1.5;color:#6b7c72}.processNote{padding:0 8px}.cellFate{border-left:3px solid #75b69d;padding:8px 12px;margin:12px 0;font-size:13px}.cellFate p{margin:8px 0;line-height:1.5}.presented{color:#37789a;font-weight:700}@media(max-width:760px){.processes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.tissueReadouts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:8px 0}.tissueReadouts button{text-align:left;font-size:12px;padding:12px;min-width:0}.tissueReadouts strong{display:block;font-size:18px;margin:5px 0;color:#244942}.tissueReadouts small{display:block;font-size:11px;font-weight:400;line-height:1.4}.signalNote{font-size:13px;line-height:1.5;margin:10px 0 14px;color:#42695e}@media(max-width:650px){.tissueReadouts{grid-template-columns:repeat(2,minmax(0,1fr))}.tissueReadouts strong{font-size:15px}}
+
+.player{max-width:1500px;margin:30px auto;padding:20px}.player .stage{height:650px}.player pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;font-size:13px}.player aside{min-width:0}.player input[type=range]{width:100%}.player h1{font-size:28px}#provenance{line-height:1.6}#error{color:#a33}.player .toolbar{flex-wrap:wrap}</style><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><style>.site-return{display:block;padding:18px 24px;background:#091b2b;color:#70e0cf;text-decoration:none;font:15px system-ui}.player{margin-top:0}.player .stage{height:min(650px,65vh);min-height:300px}#error:empty{display:none}@media(max-width:760px){.player{padding:16px}.player .workspace{grid-template-columns:1fr}.player h1{font-size:24px}.player .stage{height:420px}.player .toolbar{gap:8px}}</style></head><body><a class="site-return" href="./#experiments">← VirtualTissue · All experiments</a><div class="player"><h1>VirtualTissue · Offline player</h1><p>Open a saved experiment. This player reads recorded states and decisions; it cannot call Jev or run the simulation.</p><input id="file" type="file" accept=".gz,.json" hidden><button id="open">Open recording</button> <span id="filename">No recording selected</span><h2 id="title">Choose a recording</h2><p id="provenance"></p><p id="error" role="alert"></p><div class="toolbar"><button id="play" class="primary" disabled>Play</button><label>Frames per second <select id="speed"><option>1</option><option selected>2</option><option>5</option><option>10</option></select></label><button id="home">Home</button><button id="front">Front</button><label>Show <select id="signalSelect"><option value="all">All signals</option><option value="BARRIER_DAMAGE">Barrier damage</option><option value="CELL_DAMAGE">Cell damage</option><option value="LT">LT · ETEC toxin</option><option value="ST">ST · ETEC toxin</option><option value="DAMP">DAMP · damage signal</option><option value="CXCL8">CXCL8</option><option value="TNF">TNF</option><option value="none">Cells only</option></select></label></div><p id="signalNote" class="signalNote"></p><input id="timeline" aria-label="Recording timeline" type="range" min="0" max="0" value="0"><div class="workspace"><main><div class="stage"><canvas id="world"></canvas><canvas id="overlay"></canvas><div class="hud"><span id="clock">REPLAY</span><span id="barrier"></span><span id="activeHud"></span></div></div></main><aside class="card"><h2>Individual cell</h2><pre id="inspector">Click a cell after opening a recording.</pre><h3>Recorded decision</h3><label>Decision history <select id="decisionHistory" disabled></select></label><pre id="decision"></pre><details><summary>Exact local snapshot and constraint checks</summary><pre id="constraints"></pre></details><details><summary>Executed physical effects</summary><pre id="effects"></pre></details></aside></div></div><script>(()=>{
+"use strict";
+const __modules={};
+__modules["src/tissue-readouts.mjs"]=(()=>{
+// Read-only display helpers. Recorded states are the sole source of these values.
+const bounded=v=>Math.max(0,Math.min(1,Number.isFinite(v)?v:0));
+const cellDamage=c=>bounded(c.state?.damage??(1-c.health/100));
+const barrierDamage=(frame,c)=>{const slot=frame.slots?.find(s=>s.cell===c.id);return slot?bounded(1-slot.junction):null;};
+const formatReading=(value,percent=false)=>!Number.isFinite(value)?'Not applicable':percent?`${(value*100).toFixed(1)}%`:value===0?'0':Math.abs(value)<.0001?value.toExponential(2):value.toFixed(4);
+function tissueReadouts(frame){
+ const slots=frame.slots??[],cells=frame.cells??[];
+ return {injured:slots.filter(s=>s.junction<.98).length,barrierDamage:Math.max(0,...slots.map(s=>bounded(1-s.junction))),cellDamage:Math.max(0,...cells.map(cellDamage)),LT:Math.max(0,...cells.map(c=>c.unified?.local?.LT??0)),ST:Math.max(0,...cells.map(c=>c.unified?.local?.ST??0)),etec:frame.lab?.bacteria.some(b=>b.species==='ETEC')??false};
+}
+function signalExplanation(frame,signal='all'){
+ const r=tissueReadouts(frame);
+ if(signal==='LT'||signal==='ST'){
+  if(r[signal]>0)return `${signal}: ${formatReading(r[signal])} NCU peak epithelial exposure. Colored rings mark recorded local exposure; field brightness is a display scale.${!frame.fields?.[signal]?' This older recording has no toxin field map.':''}`;
+  return r.etec?`${signal} is still zero: ETEC must reach the epithelium and colonize before releasing toxin. Advance biological time; a paused or budget-limited run cannot progress.`:`${signal} is zero: this toxin is produced by ETEC. Tissue injury and EPEC do not introduce ${signal}.`;
+ }
+ if(signal==='BARRIER_DAMAGE')return `${r.injured} injured junctions; maximum barrier damage ${formatReading(r.barrierDamage,true)}. Red marks locate damaged junctions. Cell damage separately reports loss of cell health.`;
+ if(signal==='CELL_DAMAGE')return `Maximum cell damage ${formatReading(r.cellDamage,true)}. This measures loss of cell health, separately from junction damage. Injury does not imply immediate cell death.`;
+ if(signal==='DAMP')return 'DAMP is a local damage-signal proxy, separate from structural barrier damage. Direct tissue injury creates a local damage cue; cytokines still require cellular responses.';
+ return `Barrier injury: ${r.injured} junctions. Maximum cell damage ${formatReading(r.cellDamage,true)}. LT/ST appear only after local ETEC colonization. Click a readout to inspect its most affected cell.`;
+}
+function mostAffectedCell(frame,signal){
+ const score=c=>signal==='BARRIER_DAMAGE'?(barrierDamage(frame,c)??-1):signal==='CELL_DAMAGE'?cellDamage(c):(c.unified?.local?.[signal]??0);
+ return [...frame.cells].sort((a,b)=>score(b)-score(a))[0];
+}
+
+return {cellDamage,barrierDamage,formatReading,tissueReadouts,signalExplanation,mostAffectedCell};
+})();
+__modules["src/math.mjs"]=(()=>{
+/* Minimal column major linear algebra for the dependency free WebGL renderer. */
+const V3={
+ sub:(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],
+ add:(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]],
+ dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],
+ cross:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],
+ norm:a=>{const n=Math.hypot(...a)||1;return a.map(v=>v/n);}
+};
+const M4={
+ identity:()=>[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+ mul:(a,b)=>{const o=Array(16).fill(0);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)o[c*4+r]+=a[k*4+r]*b[c*4+k];return o;},
+ transform:(m,p)=>{const v=[...p,1];return [0,1,2,3].map(r=>v.reduce((s,x,k)=>s+x*m[k*4+r],0));},
+ trs:(p,s=[1,1,1],rot=0)=>{const c=Math.cos(rot),n=Math.sin(rot);return [c*s[0],n*s[0],0,0,-n*s[1],c*s[1],0,0,0,0,s[2],0,p[0],p[1],p[2],1];},
+ perspective:(fov,aspect,near=.1,far=120)=>{const f=1/Math.tan(fov/2),nf=1/(near-far);return [f/aspect,0,0,0,0,f,0,0,0,0,(far+near)*nf,-1,0,0,2*far*near*nf,0];},
+ lookAt:(eye,target)=>{const z=V3.norm(V3.sub(eye,target)),x=V3.norm(V3.cross([0,1,0],z)),y=V3.cross(z,x);return [x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-V3.dot(x,eye),-V3.dot(y,eye),-V3.dot(z,eye),1];}
+};
+function hexColor(s,alpha=1){const n=parseInt(s.replace('#',''),16);return [(n>>16&255)/255,(n>>8&255)/255,(n&255)/255,alpha];}
+function mixColor(a,b,t){return a.map((v,i)=>v+(b[i]-v)*t);}
+
+return {V3,M4,hexColor,mixColor};
+})();
+__modules["src/activation.mjs"]=(()=>{
+// Operational baseline for the illustrative legacy game, not calibrated biology.
+// Pure local sensing: no RNG, provider call, global scenario or state mutation.
+const ACTIVATION_POLICY = Object.freeze({
+ version:'local-cues-v1', pathogen:.03, danger:.035, chemokine:.006,
+ cytokine:.045, health:94, reserveChemokine:.0025, neighborRadius:.105, repairRadius:.14
+});
+function activationFor(c,o){
+ const reasons=[],p=ACTIVATION_POLICY;
+ const above=(code,label,value,threshold)=>{if(value>threshold)reasons.push({code,label,value,threshold,comparison:'>'});};
+ if(c.reserve){
+  above('chemokine','Chemokine at the vessel',o.chemokine,p.reserveChemokine);
+ }else{
+  above('pathogen','Local pathogen contact',o.pathogen,p.pathogen);
+  above('danger','Local damage signal',o.danger,p.danger);
+  above('chemokine','Local chemokine',o.chemokine,p.chemokine);
+  above('cytokine','Local cytokine',o.cytokine,p.cytokine);
+  if(o.nearbyGap)reasons.push({code:'barrier',label:'Nearby barrier damage'});
+  if(o.health<p.health)reasons.push({code:'injury',label:'Own cell damage',value:o.health,threshold:p.health,comparison:'<'});
+  if(o.nearbyStressedCell)reasons.push({code:'neighbor',label:'Altered neighboring cell',cellId:o.stressedNeighborId});
+  if(o.corpseId!==null&&o.corpseId!==undefined)reasons.push({code:'debris',label:'Nearby cell debris',cellId:o.corpseId});
+ }
+ return {active:reasons.length>0,reasons};
+}
+
+return {ACTIVATION_POLICY,activationFor};
+})();
+__modules["src/engine.mjs"]=(()=>{
+/* Cellville 3D. Illustrative rules only, not a biological predictor.
+ * Pure, seeded simulation. Rendering must never mutate this object.
+ */
+const {activationFor, ACTIVATION_POLICY}=__modules["src/activation.mjs"];
+
+const VERSION = '3.5.0';
+const GRID = {w:64,h:44};
+const clamp = (v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const isEpi = c=>c.type==='enterocyte'||c.type==='goblet';
+const TYPES = {
+ enterocyte:{name:'Enterocyte',color:'#F3BC6A',n:42},
+ goblet:{name:'Goblet cell',color:'#65CDBD',n:8},
+ fibroblast:{name:'Fibroblast',color:'#B59DD9',n:20},
+ macrophage:{name:'Macrophage',color:'#7BAFDF',n:12},
+ neutrophil:{name:'Neutrophil',color:'#BFD675',n:10},
+ nk:{name:'NK cell',color:'#EF9DB5',n:8}
+};
+const ACTIONS = {
+ maintain:{label:'Maintain barrier',effect:'Supports its own junction.',icon:'shield'},
+ reinforce:{label:'Tighten junction',effect:'Repairs the local junction.',icon:'shield'},
+ mucus:{label:'Secrete mucus',effect:'Adds local mucus that limits pathogen contact.',icon:'drop'},
+ alarm:{label:'Release alarm',effect:'Adds danger and chemokine near this cell.',icon:'alarm'},
+ apoptosis:{label:'Enter apoptosis',effect:'Removes the cell and leaves a local gap.',icon:'fade'},
+ rest:{label:'Rest',effect:'Conserves energy.',icon:'rest'},
+ patrol:{label:'Patrol',effect:'Moves a short distance inside the tissue.',icon:'move'},
+ migrate:{label:'Follow chemokine',effect:'Moves along a local chemokine gradient.',icon:'move'},
+ recruit:{label:'Request help',effect:'Adds chemokine. Only vascular reserve cells can enter.',icon:'signal'},
+ phagocytose:{label:'Clear pathogen',effect:'Reduces nearby pathogen.',icon:'eat'},
+ debris:{label:'Clear debris',effect:'Removes one nearby corpse and some local danger.',icon:'eat'},
+ cytokine:{label:'Release cytokine',effect:'Adds a generic inflammatory signal.',icon:'signal'},
+ repair:{label:'Release repair factors',effect:'Repairs nearby junctions and damaged living cells.',icon:'heart'},
+ matrix:{label:'Deposit repair matrix',effect:'Seals a fraction of a nearby gap without replacing its cell.',icon:'mesh'},
+ attack:{label:'Attack marked target',effect:'Damages a nearby marked epithelial target.',icon:'target'},
+ enter:{label:'Enter tissue',effect:'Leaves the vessel in response to local chemokine.',icon:'move'}
+};
+const MENUS = {
+ enterocyte:['maintain','reinforce','alarm','recruit','apoptosis'],
+ goblet:['maintain','mucus','alarm','apoptosis'],
+ fibroblast:['rest','matrix','repair','cytokine'],
+ macrophage:['patrol','migrate','phagocytose','debris','recruit','cytokine','repair'],
+ neutrophil:['rest','patrol','migrate','phagocytose','cytokine','apoptosis'],
+ nk:['rest','patrol','migrate','attack','cytokine']
+};
+const dist = (a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+function surface(x){
+ return .485 - .235*Math.exp(-(((x-.25)/.128)**2)) - .235*Math.exp(-(((x-.755)/.128)**2)) + .075*Math.exp(-(((x-.5)/.102)**2));
+}
+function surfaceNormal(x){
+ const d=(surface(x+.0005)-surface(x-.0005))/.001;
+ // 16 x 10 world dimensions, correct metric for the rendered geometry.
+ const nx=d*10,ny=-16,len=Math.hypot(nx,ny);
+ return {x:nx/len,y:ny/len};
+}
+function surfaceAnchors(n=50){
+ const a=[];let total=0,prev={x:.035,y:surface(.035)};
+ for(let i=0;i<=2400;i++){
+  const x=.035+.93*i/2400,y=surface(x);
+  if(i)total+=Math.hypot((x-prev.x)*16,(y-prev.y)*10);
+  a.push({x,y,s:total});prev={x,y};
+ }
+ let j=0;
+ return Array.from({length:n},(_,i)=>{
+  const s=(i+.5)*total/n;while(j<a.length-2&&a[j+1].s<s)j++;
+  const f=(s-a[j].s)/(a[j+1].s-a[j].s||1);
+  const x=a[j].x+(a[j+1].x-a[j].x)*f;
+  return {x,y:surface(x),spacing:total/n};
+ });
+}
+class RNG {
+ constructor(seed){this.state=seed>>>0;}
+ next(){this.state=(Math.imul(this.state,1664525)+1013904223)>>>0;return this.state/4294967296;}
+ range(a,b){return a+(b-a)*this.next();}
+}
+const bin = v=>v<.03?'absent':v<.2?'low':v<.55?'moderate':'high';
+const fg = ()=>new Float32Array(GRID.w*GRID.h);
+const ix=(x,y)=>y*GRID.w+x;
+function sample(f,x,y){
+ const xx=clamp(x)*(GRID.w-1),yy=clamp(y)*(GRID.h-1),a=Math.floor(xx),b=Math.floor(yy),u=xx-a,v=yy-b;
+ const c=Math.min(a+1,GRID.w-1),d=Math.min(b+1,GRID.h-1);
+ return f[ix(a,b)]*(1-u)*(1-v)+f[ix(c,b)]*u*(1-v)+f[ix(a,d)]*(1-u)*v+f[ix(c,d)]*u*v;
+}
+function splat(f,x,y,amount,r=.047){
+ const gx=x*(GRID.w-1),gy=y*(GRID.h-1);
+ const rx=r*GRID.w,ry=r*GRID.h;
+ for(let j=Math.max(0,Math.floor(gy-ry*2));j<=Math.min(GRID.h-1,Math.ceil(gy+ry*2));j++)
+  for(let i=Math.max(0,Math.floor(gx-rx*2));i<=Math.min(GRID.w-1,Math.ceil(gx+rx*2));i++){
+   const d=((i-gx)/rx)**2+((j-gy)/ry)**2;
+   if(d<4)f[ix(i,j)]+=amount*Math.exp(-d*1.6);
+  }
+}
+function splatLuminal(f,x,y,amount,r=.035){
+ const delta=fg();splat(delta,x,y,amount,r);
+ for(let yy=0;yy<GRID.h;yy++)for(let xx=0;xx<GRID.w;xx++)if(yy/(GRID.h-1)<surface(xx/(GRID.w-1))){const i=ix(xx,yy);f[i]+=delta[i];}
+}
+function normalizeField(f){for(let i=0;i<f.length;i++)f[i]=clamp(f[i]);}
+const deepCopy = v=>JSON.parse(JSON.stringify(v));
+class Tissue {
+ constructor(seed=20260919){
+  this.seed=seed>>>0;this.rng=new RNG(this.seed);this.tick=0;this.revision=0;
+  this.fields={pathogen:fg(),danger:fg(),chemokine:fg(),cytokine:fg()};
+  this.cells=[];this.slots=[];this.sources=[];this.events=[];this.records=[];this.history=[];this.interventions=[];
+  this.providerRequests=[];this.communication=true;this.metrics={};this.totalDecisions=0;this.apiCalls=0;this.apiTokens=0;
+  this.initialize();this.summarize();this.recordFrame();
+ }
+ initialize(){
+  const anchors=surfaceAnchors();let gob=0;
+  anchors.forEach((a,i)=>{
+   const type=([3,9,15,21,28,34,40,46].includes(i))?'goblet':'enterocyte';if(type==='goblet')gob++;
+   const c=this.create(type,a.x,a.y);c.slot=i;c.z=.23;c.health=100;
+   this.slots.push({x:a.x,y:a.y,spacing:a.spacing,cell:c.id,junction:1,seal:0,mucus:.12});
+  });
+  for(const [type,n] of [['fibroblast',20],['macrophage',12],['neutrophil',10],['nk',8]]){
+   for(let i=0;i<n;i++){
+    const reserve=type==='neutrophil'&&i>=4;
+    let x=0,y=0;
+    if(reserve){x=.15+(i-4)*.14;y=.918;}
+    else{
+     let best=-1;
+     for(let k=0;k<45;k++){
+      const px=this.rng.range(.06,.94),py=this.rng.range(surface(px)+.075,.868);
+      let gap=Infinity;for(const c of this.cells.filter(c=>!isEpi(c)))gap=Math.min(gap,dist({x:px,y:py},c));
+      if(gap>best){best=gap;x=px;y=py;}if(gap>.077)break;
+     }
+    }
+    const c=this.create(type,x,y);c.reserve=reserve;c.z=this.rng.range(.10,.38);
+   }
+  }
+  if(this.cells.length!==100||gob!==8)throw new Error('Initial population must be 100.');
+  this.log('A quiet neighborhood. 94 tissue residents and 6 vascular reserves.','start');
+ }
+ create(type,x,y){const c={id:this.cells.length,type,x,y,z:0,slot:null,health:100,energy:1,alive:true,reserve:false,
+  corpse:false,deathTick:null,deathKind:null,targetMarked:false,action:isEpi({type})?'maintain':'rest',source:'Initial state',
+  observation:null,menu:null,weights:null,confidence:null,effect:'No decision yet.',lastDecisionTick:null,cooldown:0};this.cells.push(c);return c;}
+ log(text,kind='action',cell=null){this.events.unshift({tick:this.tick,text,kind,cell});if(this.events.length>120)this.events.length=120;}
+ nearestSlot(x,y=surface(x)){
+  let idx=0,best=Infinity;for(let i=0;i<this.slots.length;i++){const s=this.slots[i],d=Math.hypot(x-s.x,y-s.y);if(d<best){best=d;idx=i;}}return idx;
+ }
+ integrity(i){const s=this.slots[i],c=this.cells[s.cell];return c.alive?s.junction:s.seal;}
+ localBarrier(x,y){return this.integrity(this.nearestSlot(x,y));}
+ permeability(x,y){return .002+.85*(1-this.localBarrier(x,y))**2;}
+ setCommunication(on){this.communication=!!on;this.revision++;this.interventions.push({tick:this.tick,kind:'communication',on:!!on});this.log(on?'Chemical communication restored.':'New chemokine and cytokine secretion disabled. Existing signals still decay.','setting');this.recordFrame(true);}
+ inject(kind,x=.25,strength=.8){
+  if(!['pathogen','flare','tear','particle','resolve'].includes(kind))throw new Error('Unsupported intervention.');
+  if(!Number.isFinite(x)||!Number.isFinite(strength))throw new Error('Invalid intervention position or strength.');
+  x=clamp(x,.055,.945);strength=clamp(strength,.1,1);const y=surface(x);
+  this.interventions.push({tick:this.tick,kind,x,strength});this.revision++;
+  if(kind==='resolve'){
+   this.sources=[];this.log('External triggers removed. Existing pathogen, signals and damage remain.','resolve');
+  }else if(kind==='pathogen'){
+   splatLuminal(this.fields.pathogen,x,y-.047,.9*strength,.033);normalizeField(this.fields.pathogen);
+   this.sources.push({kind,x,y:y-.046,strength,until:this.tick+18,started:this.tick});
+   this.log('Pathogen placed on the luminal side. The intact barrier limits entry.','pathogen');
+  }else if(kind==='tear'){
+   const ids=this.slots.map((s,i)=>({i,d:Math.abs(s.x-x)})).sort((a,b)=>a.d-b.d).slice(0,strength>.6?2:1);
+   for(const {i} of ids){const s=this.slots[i];s.junction=0;s.seal=0;this.kill(this.cells[s.cell],'lysis');}
+   splat(this.fields.danger,x,y+.015,.75*strength,.05);normalizeField(this.fields.danger);
+   this.log('A sterile breach opened. Permeability increased locally; no pathogen was created.','tear');
+  }else if(kind==='flare'){
+   this.sources.push({kind,x,y:y+.07,strength,until:this.tick+60,started:this.tick});
+   splat(this.fields.cytokine,x,y+.07,.65*strength,.09);splat(this.fields.danger,x,y,.24*strength,.08);
+   for(const s of this.slots)if(Math.abs(s.x-x)<.16)s.junction=clamp(s.junction-.3*strength);
+   normalizeField(this.fields.cytokine);normalizeField(this.fields.danger);
+   this.log('Persistent inflammation and junction fragility added. This is a game analogy, not a Crohn disease model.','flare');
+  }else{
+   this.sources.push({kind,x,y:y+.008,strength,until:null,started:this.tick});
+   splat(this.fields.danger,x,y,.55*strength,.035);normalizeField(this.fields.danger);
+   this.log('A persistent particle is irritating this spot under an explicit game rule. No toxicity prediction.','particle');
+  }
+  this.summarize();this.recordFrame(true);
+ }
+ kill(c,kind='apoptosis'){
+  if(!c.alive)return;c.alive=false;c.corpse=true;c.health=0;c.deathKind=kind;c.deathTick=this.tick;
+  if(c.slot!==null){this.slots[c.slot].junction=0;this.slots[c.slot].seal=0;}
+  this.log(`${TYPES[c.type].name} #${c.id} ${kind==='lysis'?'was lost at the breach':'left the active tissue'}.`,kind,c.id);
+ }
+ observe(c){
+  const f=this.fields,loc={pathogen:sample(f.pathogen,c.x,c.y),danger:sample(f.danger,c.x,c.y),chemokine:sample(f.chemokine,c.x,c.y),cytokine:sample(f.cytokine,c.x,c.y)};
+  // Epithelial cells sense contact across their own apical membrane, not distant tissue.
+  if(isEpi(c))loc.pathogen=Math.max(loc.pathogen,sample(f.pathogen,c.x,c.y-.035));
+  const ns=this.cells.filter(n=>n.id!==c.id&&!n.reserve&&dist(n,c)<ACTIVATION_POLICY.neighborRadius).sort((a,b)=>dist(a,c)-dist(b,c));
+  const stressed=ns.find(n=>n.alive&&(n.health<ACTIVATION_POLICY.health||n.targetMarked));
+  const target=ns.find(n=>n.alive&&isEpi(n)&&n.targetMarked&&n.health<50);
+  const corpse=ns.find(n=>!n.alive&&n.corpse);
+  const nearbySlots=this.slots.map((s,i)=>({i,d:Math.hypot(c.x-s.x,c.y-s.y)})).filter(v=>v.d<ACTIVATION_POLICY.repairRadius);
+  const repairSlots=nearbySlots.filter(v=>this.integrity(v.i)<.92).map(v=>v.i);
+  const gradient=this.gradient(c.x,c.y);
+  return {id:c.id,type:c.type,health:c.health,energy:c.energy,reserve:c.reserve,x:c.x,y:c.y,
+   ...loc,nearbyStressedCell:!!stressed,stressedNeighborId:stressed?.id??null,
+   neighbors:[...(stressed?[stressed]:[]),...ns.filter(n=>n.alive&&n!==stressed)].slice(0,3).map(n=>({type:n.type,health:bin(1-n.health/100),status:n.targetMarked?'marked stress':'unmarked'})),
+   deadNeighbors:ns.filter(n=>n.corpse).length,corpseId:corpse?.id??null,targetId:target?.id??null,
+   repairSlots,junction:c.slot!==null?this.slots[c.slot].junction:null,mucus:c.slot!==null?this.slots[c.slot].mucus:null,
+   nearbyGap:repairSlots.length>0,gradient,signalGradient:Math.hypot(gradient.x,gradient.y),cooldown:c.cooldown};
+ }
+ gradient(x,y){const f=this.fields.chemokine,d=.018;return {x:sample(f,x+d,y)-sample(f,x-d,y),y:sample(f,x,y+d)-sample(f,x,y-d)};}
+ menuFor(c,o=this.observe(c)){
+  if(!c.alive)return {};
+  if(c.reserve)return {rest:null,enter:o.chemokine>.0025?null:'No chemokine detected at this vessel position.'};
+  const m=Object.fromEntries(MENUS[c.type].map(a=>[a,null]));
+  const threat=o.pathogen>.055||o.danger>.075;
+  const activated=threat||o.cytokine>.22;
+  const block=(a,reason)=>{if(a in m)m[a]=reason;};
+  if(!threat){block('alarm','No local pathogen contact or damage signal.');block('recruit','No local alarm requiring help.');}
+  if(!activated||o.cooldown>0)block('cytokine',o.cooldown>0?'Secretion is on cooldown.':'No local activation cue.');
+  if(!this.communication){for(const a of ['alarm','recruit','cytokine'])block(a,'Chemical communication is disabled.');}
+  if(o.pathogen<.045)block('phagocytose','No pathogen within reach.');
+  if(o.corpseId===null)block('debris','No debris within reach.');
+  if(o.targetId===null)block('attack','No marked stressed target within reach.');
+  if(!o.nearbyGap&&o.danger<.04&&o.health>=98){block('repair','No local damage that needs repair.');block('matrix','No local gap or damaged junction.');}
+  if(o.signalGradient<.00018)block('migrate','No local chemokine gradient to follow.');
+  if(o.health>28)block('apoptosis','Damage is below the game threshold.');
+  if(o.energy<.16){for(const a of Object.keys(m))if(['cytokine','attack','phagocytose','matrix','recruit'].includes(a))block(a,'Insufficient energy this cycle.');}
+  if(o.health<=12&&'apoptosis'in m){for(const a in m)m[a]=a==='apoptosis'?null:'Critical damage leaves only apoptosis.';}
+  return m;
+ }
+ plan(){
+  const cells=this.cells.filter(c=>c.alive).map(c=>{const observation=this.observe(c),menu=this.menuFor(c,observation),legal=Object.keys(menu).filter(a=>menu[a]===null);
+   if(!legal.length)throw new Error('Empty action menu.');
+   const activation=activationFor(c,observation);
+   return {id:c.id,type:c.type,observation,menu,legal,active:activation.active,activation};
+  });
+  return {tick:this.tick,revision:this.revision,cells};
+ }
+ localChoice(p,rng){
+  const o=p.observation,w=Object.fromEntries(p.legal.map(a=>[a,.01]));
+  const set=(a,v)=>{if(a in w)w[a]=Math.max(.0001,v);};
+  set('maintain',1);set('rest',.5);set('patrol',.7);set('reinforce',.2+(1-(o.junction??1))*5+o.pathogen);
+  set('mucus',.4+o.pathogen*5);set('alarm',o.pathogen*3+o.danger*2);set('recruit',o.pathogen*3+o.danger*2);
+  set('cytokine',.1+o.pathogen*1.5+o.danger*.4);set('apoptosis',o.health<=12?10:3);
+  set('phagocytose',.6+o.pathogen*16);set('debris',2.5);set('migrate',.5+o.chemokine*3+o.signalGradient*100);
+  set('repair',1.8+o.danger*2);set('matrix',2.2);set('attack',2.6);set('enter',5);
+  const sum=Object.values(w).reduce((a,b)=>a+b,0);for(const a in w)w[a]/=sum;
+  let q=rng.next(),action=p.legal.at(-1);for(const a in w){q-=w[a];if(q<=0){action=a;break;}}
+  return {action,weights:w,source:'Local policy',confidence:null};
+ }
+ fixedChoice(p){
+  const def=p.legal.includes('maintain')?'maintain':p.legal.includes('rest')?'rest':p.legal.includes('patrol')?'patrol':p.legal[0];
+  return {action:def,weights:null,source:p.legal.length===1?'Legal constraint':'Quiet cell rule',confidence:null};
+ }
+ step(){const p=this.plan();return this.commit(p,{},'local');}
+ commit(plan,remote={},mode='local',meta={}){
+  if(plan.tick!==this.tick||plan.revision!==this.revision)throw new Error('Stale round rejected.');
+  const trial=new RNG(this.rng.state),selected={};
+  // Entire decision set is validated before the RNG or world is changed.
+  for(const p of plan.cells){
+   let d;
+   if(p.legal.length===1||!p.active)d=this.fixedChoice(p);
+   else if(mode==='local')d=this.localChoice(p,trial);
+   else{
+    d=remote[p.id];if(!d)throw new Error(`Missing decision for cell ${p.id}.`);
+    validateDecision(p,d);d={...d,source:'Jev',weights:d.weights,confidence:d.confidence??null};
+   }
+   if(!p.legal.includes(d.action))throw new Error(`Illegal action for cell ${p.id}.`);
+   selected[p.id]=d;
+  }
+  this.rng.state=trial.state;
+  const deltas={pathogen:fg(),danger:fg(),chemokine:fg(),cytokine:fg()};
+  const health=new Float64Array(100),junction=new Float64Array(50),seal=new Float64Array(50),mucus=new Float64Array(50);
+  const deaths=[],clearCorpses=new Set(),moves=new Map();let active=0;
+  const emit=(f,c,amount,r=.05)=>splat(deltas[f],c.x,c.y,amount,r);
+  const chooseMove=(c,o,follow)=>{
+   let dx,dy;
+   if(follow){const n=Math.hypot(o.gradient.x,o.gradient.y);dx=o.gradient.x/(n||1)*.036;dy=o.gradient.y/(n||1)*.045;}
+   else {dx=this.rng.range(-.012,.012);dy=this.rng.range(-.018,.018);}
+   const nx=clamp(c.x+dx,.045,.955);moves.set(c.id,{x:nx,y:clamp(c.y+dy,surface(nx)+.05,.905)});
+  };
+  for(const p of plan.cells){
+   const c=this.cells[p.id],d=selected[p.id],o=p.observation,a=d.action;
+   c.observation=deepCopy(o);c.activation=deepCopy(p.activation);c.menu={...p.menu};c.weights=d.weights?{...d.weights}:null;c.confidence=d.confidence;
+   c.action=a;c.source=d.source;c.lastDecisionTick=this.tick+1;c.effect='No physical change.';
+   if(p.active)active++;
+   let effect='';
+   switch(a){
+    case 'maintain':junction[c.slot]+=.008;health[c.id]+=.25;effect='Maintained this junction.';break;
+    case 'reinforce':junction[c.slot]+=.09;health[c.id]+=1.5;effect='Strengthened this junction.';break;
+    case 'mucus':mucus[c.slot]+=.14;effect='Mucus increased at this cell.';break;
+    case 'alarm':emit('danger',c,.018);emit('chemokine',c,.15,.083);effect='Released a local alarm and chemokine.';break;
+    case 'recruit':emit('chemokine',c,.22,.085);effect='Added chemokine for nearby cells to sense.';break;
+    case 'cytokine':emit('cytokine',c,.10,.055);c.cooldown=3;effect='Released a local inflammatory signal.';break;
+    case 'phagocytose':emit('pathogen',c,-.27,.045);effect='Reduced pathogen within reach.';break;
+    case 'debris':if(o.corpseId!==null){clearCorpses.add(o.corpseId);emit('danger',c,-.13,.06);effect=`Cleared debris from cell #${o.corpseId}.`;}break;
+    case 'repair':
+     for(const n of this.cells)if(n.alive&&!n.reserve&&dist(n,c)<.14)health[n.id]+=2;
+     for(const i of o.repairSlots){if(this.cells[this.slots[i].cell].alive)junction[i]+=.045;else seal[i]+=.027;}
+     emit('danger',c,-.08,.065);emit('cytokine',c,-.05,.065);effect='Applied repair factors locally. No cells were replaced.';break;
+    case 'matrix':for(const i of o.repairSlots){if(this.cells[this.slots[i].cell].alive)junction[i]+=.06;else seal[i]+=.07;}
+     emit('danger',c,-.09,.075);effect='Added persistent repair material to nearby weak spots.';break;
+    case 'attack':if(o.targetId!==null){health[o.targetId]-=35;effect=`Applied damage to marked target #${o.targetId}.`;}break;
+    case 'apoptosis':deaths.push(c.id);effect='Left the active tissue. The gap remains until it is sealed.';break;
+    case 'migrate':chooseMove(c,o,true);effect='Moved along the local chemokine gradient.';break;
+    case 'patrol':chooseMove(c,o,false);effect='Patrolled a short distance within the tissue.';break;
+    case 'enter':c.reserve=false;moves.set(c.id,{x:c.x,y:.886});effect='Entered from the existing vascular reserve.';this.log(`Neutrophil #${c.id} entered the tissue from the vessel.`,'entry',c.id);break;
+    case 'rest':effect='Conserved energy.';break;
+   }
+   c.effect=effect||'No valid effect was available.';
+   c.energy=clamp(c.energy+(['rest','maintain','patrol'].includes(a)?.07:-.035),.05,1);
+   if(!['rest','maintain','patrol','migrate'].includes(a))this.log(`${TYPES[c.type].name} #${c.id}: ${ACTIONS[a].label.toLowerCase()}. ${c.effect}`,'action',c.id);
+  }
+  // Aggregate simultaneous effects, then enforce world constraints.
+  for(const c of this.cells){if(c.alive){c.health=clamp(c.health+health[c.id],0,100);if(c.cooldown>0)c.cooldown--;}if(clearCorpses.has(c.id))c.corpse=false;}
+  for(let i=0;i<50;i++){const s=this.slots[i];s.junction=clamp(s.junction+junction[i]);s.seal=clamp(s.seal+seal[i],0,.88);s.mucus=clamp(s.mucus*.965+mucus[i]);}
+  for(const id of deaths)this.kill(this.cells[id]);
+  for(const [id,m] of moves)Object.assign(this.cells[id],m);
+  this.resolveCollisions();
+  for(const [name,f] of Object.entries(this.fields)){for(let i=0;i<f.length;i++)f[i]=clamp(f[i]+deltas[name][i]);}
+  this.applySources();this.diffuseAll();this.applyDamage();
+  this.tick++;this.revision++;this.totalDecisions+=plan.cells.length;this.apiCalls+=meta.calls||0;this.apiTokens+=meta.inputTokens||0;
+  this.metrics.active=active;this.summarize();
+  this.records.push({tick:this.tick,provider:mode,model:meta.model??null,usage:meta.usage??null,calls:meta.calls||0,providerMeta:deepCopy(meta),
+   decisions:plan.cells.map(p=>({id:p.id,observation:p.observation,activation:deepCopy(p.activation),legal:p.legal,blocked:p.menu,...selected[p.id],effect:this.cells[p.id].effect}))});
+  // Bounded logs for long running browser sessions; counts remain cumulative.
+  if(this.records.length>600)this.records.shift();this.recordFrame();return selected;
+ }
+ applySources(){
+  this.sources=this.sources.filter(s=>s.until===null||s.until>this.tick);
+  for(const s of this.sources){
+   if(s.kind==='pathogen')splatLuminal(this.fields.pathogen,s.x,s.y,.16*s.strength,.035);
+   if(s.kind==='particle')splat(this.fields.danger,s.x,s.y,.075*s.strength,.043);
+   if(s.kind==='flare'){
+    splat(this.fields.cytokine,s.x,s.y,.07*s.strength,.095);splat(this.fields.danger,s.x,s.y-.03,.025*s.strength,.08);
+    for(const sl of this.slots)if(Math.abs(sl.x-s.x)<.12)sl.junction=clamp(sl.junction-.023*s.strength);
+   }
+  }
+  for(const f of Object.values(this.fields))normalizeField(f);
+ }
+ diffuseField(f,D,decay,barrier=false,substeps=5){
+  let a=f.slice();
+  const mask=new Uint8Array(a.length);
+  if(barrier)for(let y=0;y<GRID.h;y++)for(let x=0;x<GRID.w;x++)mask[ix(x,y)]=+(y/(GRID.h-1)<surface(x/(GRID.w-1)));
+  for(let step=0;step<substeps;step++){
+   const b=a.slice();
+   const exchange=(i,j,x,y)=>{
+    const p=barrier&&mask[i]!==mask[j]?this.permeability(x,y):1;
+    const flow=D*p*(a[j]-a[i]);b[i]+=flow;b[j]-=flow;
+   };
+   for(let y=0;y<GRID.h;y++)for(let x=0;x<GRID.w;x++){
+    const i=ix(x,y);
+    if(x<GRID.w-1)exchange(i,i+1,(x+.5)/(GRID.w-1),y/(GRID.h-1));
+    if(y<GRID.h-1)exchange(i,i+GRID.w,x/(GRID.w-1),(y+.5)/(GRID.h-1));
+   }
+   for(let i=0;i<b.length;i++)b[i]=clamp(b[i]*(1-decay/substeps));a=b;
+  }
+  return a;
+ }
+ diffuseAll(){
+  this.fields.pathogen=this.diffuseField(this.fields.pathogen,.145,.022,true);
+  this.fields.danger=this.diffuseField(this.fields.danger,.14,.13);
+  this.fields.chemokine=this.diffuseField(this.fields.chemokine,.22,.035,false,18);
+  this.fields.cytokine=this.diffuseField(this.fields.cytokine,.15,.11);
+  // Mucus acts only near its secreting surface location.
+  for(const s of this.slots)if(s.mucus>.01)splat(this.fields.pathogen,s.x,s.y-.028,-s.mucus*.045,.022);
+  normalizeField(this.fields.pathogen);
+ }
+ applyDamage(){
+  for(const c of this.cells){
+   if(!c.alive||c.reserve)continue;
+   const o=this.observe(c),m=c.slot!==null?this.slots[c.slot].mucus:0;
+   const exposure=Math.max(0,o.pathogen-.08)*(1-.65*m),inflammation=Math.max(0,o.cytokine-.25);
+   const loss=exposure*(isEpi(c)?7:2.5)+inflammation*2.4;
+   c.health=clamp(c.health-loss+(loss<.08?.4:0),0,100);
+   if(c.slot!==null){const s=this.slots[c.slot];s.junction=clamp(s.junction-exposure*.032-inflammation*.018);}
+   c.targetMarked=isEpi(c)&&c.health<45&&o.danger>.035; // Explicit toy marker, not a receptor model.
+   if(c.health<=0)this.kill(c,'lysis');
+  }
+ }
+ resolveCollisions(){
+  const mobile=this.cells.filter(c=>c.alive&&!isEpi(c)&&!c.reserve);
+  for(let iter=0;iter<5;iter++)for(let i=0;i<mobile.length;i++)for(let j=i+1;j<mobile.length;j++){
+   const a=mobile[i],b=mobile[j],dx=(b.x-a.x)*16,dy=(b.y-a.y)*10,d=Math.hypot(dx,dy),radius={macrophage:.33,neutrophil:.245,nk:.29,fibroblast:.32},min=radius[a.type]+radius[b.type];
+   if(d<min){const ux=d>1e-8?dx/d:1,uy=d>1e-8?dy/d:0,p=(min-d)*.5;
+    const immA=a.type==='fibroblast',immB=b.type==='fibroblast';
+    if(!immA){const w=immB?2:1;a.x-=ux*p*w/16;a.y-=uy*p*w/10;}if(!immB){const w=immA?2:1;b.x+=ux*p*w/16;b.y+=uy*p*w/10;}
+   }
+  }
+  for(const c of mobile){c.x=clamp(c.x,.04,.96);c.y=clamp(c.y,surface(c.x)+.045,.917);}
+ }
+ summarize(){
+  const alive=this.cells.filter(c=>c.alive),mean=f=>f.reduce((a,b)=>a+b,0)/f.length;
+  let tissuePath=0;for(let y=0;y<GRID.h;y++)for(let x=0;x<GRID.w;x++)if(y/(GRID.h-1)>=surface(x/(GRID.w-1)))tissuePath+=this.fields.pathogen[ix(x,y)];
+  this.metrics={...this.metrics,alive:alive.length,inTissue:alive.filter(c=>!c.reserve).length,reserve:alive.filter(c=>c.reserve).length,
+   barrier:this.slots.reduce((sum,s,i)=>sum+this.integrity(i),0)/50,
+   inflammation:mean(this.fields.cytokine),chemokine:mean(this.fields.chemokine),danger:mean(this.fields.danger),
+   pathogen:mean(this.fields.pathogen),tissuePathogen:tissuePath,
+   gaps:this.slots.filter(s=>!this.cells[s.cell].alive&&s.seal<.8).length,
+   dead:100-alive.length,byType:Object.fromEntries(Object.keys(TYPES).map(t=>[t,alive.filter(c=>c.type===t).length]))};
+ }
+ recordFrame(replace=false){
+  const plan=this.plan(),sensing=new Map(plan.cells.map(p=>[p.id,deepCopy({observation:p.observation,menu:p.menu,legal:p.legal,activation:p.activation})]));
+  const active=plan.cells.filter(p=>p.active);
+  this.metrics.active=active.length;
+  if(!this.firstDeparture&&active.length)this.firstDeparture={tick:this.tick,cells:active.map(p=>({id:p.id,x:this.cells[p.id].x,reasons:deepCopy(p.activation.reasons)}))};
+  const frame={tick:this.tick,revision:this.revision,firstDeparture:deepCopy(this.firstDeparture??null),metrics:{...this.metrics},cells:this.cells.map(c=>({id:c.id,type:c.type,x:c.x,y:c.y,z:c.z,slot:c.slot,alive:c.alive,health:c.health,reserve:c.reserve,deathTick:c.deathTick,deathKind:c.deathKind,action:c.action,source:c.source,effect:c.effect,observation:c.observation,activation:deepCopy(c.activation??null),sensing:sensing.get(c.id)??null,menu:c.menu,weights:c.weights,confidence:c.confidence,lastDecisionTick:c.lastDecisionTick,corpse:c.corpse})),
+   slots:deepCopy(this.slots),fields:Object.fromEntries(Object.entries(this.fields).map(([k,f])=>[k,Array.from(f,v=>Math.round(v*10000)/10000)])),sources:deepCopy(this.sources)};
+  if(replace&&this.history.at(-1)?.tick===this.tick)this.history[this.history.length-1]=frame;else this.history.push(frame);
+  if(this.history.length>121)this.history.shift();
+ }
+ export(){return {application:'Cellville 3D',version:VERSION,seed:this.seed,tick:this.tick,interpretation:'Illustrative game rules. Not a biological predictor.',
+  retainedRounds:this.records.length,retainedFrames:this.history.length,logsTruncated:this.tick>600,
+  config:{initialCells:100,types:TYPES,grid:GRID,communication:this.communication,activationPolicy:ACTIVATION_POLICY},firstDeparture:deepCopy(this.firstDeparture??null),interventions:this.interventions,
+  counters:{decisions:this.totalDecisions,apiCalls:this.apiCalls,inputTokens:this.apiTokens},rngState:this.rng.state,metrics:this.metrics,
+  providerRequests:this.providerRequests,records:this.records,events:this.events,frames:this.history};}
+}
+function validateDecision(p,d){
+ if(!d||typeof d!=='object'||!p.legal.includes(d.action))throw new Error(`Illegal decision for cell ${p.id}.`);
+ const w=d.weights;if(!w||typeof w!=='object'||Array.isArray(w))throw new Error('Missing probability distribution.');
+ const keys=Object.keys(w);if(keys.length!==p.legal.length||keys.some(a=>!p.legal.includes(a)))throw new Error('Probability menu mismatch.');
+ if(keys.some(k=>!Number.isFinite(w[k])||w[k]<0||w[k]>1))throw new Error('Invalid probabilities.');
+ const sum=Object.values(w).reduce((a,b)=>a+b,0);if(Math.abs(sum-1)>.02)throw new Error('Probabilities do not sum to one.');
+ if(d.confidence!==null&&d.confidence!==undefined&&(!Number.isFinite(d.confidence)||d.confidence<0||d.confidence>1))throw new Error('Invalid confidence.');
+ if(w[d.action]+1e-6<Math.max(...Object.values(w)))throw new Error('Choice is inconsistent with its probabilities.');
+}
+function parsePrompt(text){
+ const t=text.toLowerCase().trim();
+ let kind=null;
+ if(/remove|resolve|stop the|withdraw/.test(t))kind='resolve';
+ else if(/microplastic|particle/.test(t))kind='particle';
+ else if(/crohn|ibd|colitis|flare|persistent inflammation/.test(t))kind='flare';
+ else if(/pathogen|bacter|salmonella|infection/.test(t))kind='pathogen';
+ else if(/tear|rupture|breach|scratch/.test(t))kind='tear';
+ if(!kind)return {valid:false,error:'This prototype understands pathogen, persistent inflammation, sterile tear, persistent particle, and remove triggers. Choose one, or use a matching example.'};
+ const x=/right/.test(t)?.76:/center|centre|middle/.test(t)?.5:.25;
+ const strength=/mild|small|gentle/.test(t)?.45:/massive|severe|strong/.test(t)?1:.8;
+ const multiple=(/pathogen|bacter/.test(t)&&/tear|rupture|breach/.test(t));
+ return {valid:true,kind,x,strength,description:{pathogen:'Add a luminal pathogen source for 18 cycles.',flare:'Weaken local junctions and add inflammatory input for 60 cycles.',tear:'Remove one or two epithelial cells. Create danger, not pathogen.',particle:'Add a persistent local irritation source until triggers are removed.',resolve:'Remove external sources. Existing signals and damage will not disappear instantly.'}[kind],
+  note:multiple?'Only pathogen arrival is planned. Apply a sterile tear separately to test a combined event.':kind==='flare'?'An illustration of persistent inflammation, not a disease model.':kind==='particle'?'Irritation is a game assumption, not a toxicity prediction.':'The cells will sense local cues, not this prompt.'};
+}
+
+return {VERSION,GRID,clamp,isEpi,TYPES,ACTIONS,MENUS,dist,surface,surfaceNormal,surfaceAnchors,RNG,bin,sample,Tissue,validateDecision,parsePrompt};
+})();
+__modules["manual_v2/virtual_tissue_kernel.mjs"]=(()=>{
+/**
+ * Virtual tissue rule kernel 2.0.0.
+ * Native JavaScript ES module, no network and no dependencies.
+ * This is an event and constraint kernel, NOT a fitted tissue or pathogen model.
+ * Host physics is deliberately represented by typed, acknowledged transactions.
+ */
+class RuleError extends Error {
+  constructor(code, message, details = {}) { super(message); this.name = 'RuleError'; this.code = code; this.details = details; }
+}
+const BAD_KEYS = new Set(['__proto__', 'prototype', 'constructor']);
+const copy = x => JSON.parse(JSON.stringify(x));
+function demand(test, code, text, details) { if (!test) throw new RuleError(code, text, details); }
+function finite(x, name = 'number') { demand(typeof x === 'number' && Number.isFinite(x), 'NONFINITE_VALUE', `${name} must be a finite number`); return x; }
+function nonnegative(x, name) { finite(x, name); demand(x >= 0, 'NEGATIVE_VALUE', `${name} must be nonnegative`); return x; }
+function pathParts(path) { demand(typeof path === 'string' && path.length > 0, 'BAD_PATH', 'A nonempty path is required'); const p = path.split('.'); demand(p.every(k => k && !BAD_KEYS.has(k)), 'UNSAFE_PATH', 'Unsafe object path'); return p; }
+function readPath(object, path) {
+  let x = object;
+  for (const p of pathParts(path)) {
+    if (x === null || typeof x !== 'object' || !Object.hasOwn(x, p)) return undefined;
+    x = x[p];
+  }
+  return x;
+}
+function writePath(object, path, value) {
+  const parts = pathParts(path); let obj = object;
+  for (const p of parts.slice(0, -1)) { if (!Object.hasOwn(obj, p)) obj[p] = {}; demand(obj[p] !== null && typeof obj[p] === 'object', 'BAD_PATH', 'Cannot descend through a scalar'); obj = obj[p]; }
+  obj[parts.at(-1)] = value;
+}
+function seededRandom(seed = 1) {
+  demand(Number.isInteger(seed), 'BAD_SEED', 'Seed must be an integer'); let a = seed >>> 0;
+  return () => { a = (a + 0x6D2B79F5) >>> 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t ^= t + Math.imul(t ^ t >>> 7, 61 | t); return (((t ^ t >>> 14) >>> 0) + 0.5) / 4294967296; };
+}
+function unitRandom(rng) { const u = finite(rng(), 'random draw'); demand(u > 0 && u < 1, 'BAD_RANDOM_DRAW', 'RNG must return an open interval (0,1) value'); return u; }
+function parameter(registry, ref) {
+  demand(Object.hasOwn(registry.parameters, ref), 'UNKNOWN_PARAMETER', `Unknown parameter ${ref}`); return finite(registry.parameters[ref].value, ref);
+}
+function evaluatePredicate(predicate, environment, registry) {
+  if (Object.hasOwn(predicate, 'all')) return predicate.all.every(p => evaluatePredicate(p, environment, registry));
+  if (Object.hasOwn(predicate, 'any')) return predicate.any.some(p => evaluatePredicate(p, environment, registry));
+  const left = readPath(environment, predicate.path);
+  if (left === undefined || left === null) return false; // Missing does not mean biological zero.
+  const right = Object.hasOwn(predicate, 'param') ? parameter(registry, predicate.param) : predicate.value;
+  switch (predicate.op) {
+    case 'eq': return left === right;
+    case 'in': demand(Array.isArray(right), 'BAD_PREDICATE', 'in requires an array'); return right.includes(left);
+    case 'gte': case 'gt': case 'lte': case 'lt':
+      if (typeof left !== 'number' || !Number.isFinite(left)) return false;
+      finite(right, 'predicate threshold');
+      return predicate.op === 'gte' ? left >= right : predicate.op === 'gt' ? left > right : predicate.op === 'lte' ? left <= right : left < right;
+    default: throw new RuleError('UNKNOWN_OPERATOR', `Unknown operator ${predicate.op}`);
+  }
+}
+function logistic(z) { finite(z, 'score'); return z >= 0 ? 1 / (1 + Math.exp(-z)) : Math.exp(z) / (1 + Math.exp(z)); }
+function actionHazard(action, environment, registry) {
+  let score = parameter(registry, action.hazard.intercept_ref);
+  for (const term of action.hazard.terms) {
+    const x = readPath(environment, term.path);
+    demand(typeof x === 'number' && Number.isFinite(x), 'MISSING_SCORE_FEATURE', `Missing or invalid feature ${term.path}`);
+    score += x * parameter(registry, term.weight_ref);
+  }
+  const base = nonnegative(parameter(registry, action.hazard.base_rate_ref), 'base hazard');
+  return { score, hazard_per_minute: base * logistic(score) };
+}
+function eventProbability(totalHazard, dt) { nonnegative(totalHazard, 'hazard'); nonnegative(dt, 'dt'); return -Math.expm1(-totalHazard * dt); }
+function sampleCompeting(candidates, dt, rng = seededRandom()) {
+  nonnegative(dt, 'dt');
+  const H = candidates.reduce((s, c) => s + nonnegative(c.hazard_per_minute, 'hazard'), 0);
+  if (H === 0 || dt === 0) return null;
+  const waiting = -Math.log(unitRandom(rng)) / H;
+  if (waiting > dt) return null;
+  const u = unitRandom(rng) * H; let sum = 0;
+  for (const c of candidates) { sum += c.hazard_per_minute; if (u < sum) return { action_id: c.action_id, waiting_minutes: waiting, total_hazard: H }; }
+  return { action_id: candidates.at(-1).action_id, waiting_minutes: waiting, total_hazard: H };
+}
+function sampleDuration(model, rng = seededRandom()) {
+  demand(model.distribution === 'triangular' && model.unit === 'minute', 'UNSUPPORTED_DURATION', 'Only minute based triangular durations are supported');
+  const a = nonnegative(model.lower, 'lower'), m = finite(model.mode, 'mode'), b = finite(model.upper, 'upper');
+  demand(a <= m && m <= b, 'BAD_DURATION', 'Require lower <= mode <= upper');
+  if (a === b) return a;
+  const u = unitRandom(rng), f = (m - a) / (b - a);
+  return u < f ? a + Math.sqrt(u * (b - a) * (m - a)) : b - Math.sqrt((1 - u) * (b - a) * (b - m));
+}
+function exactMemory(previous, activity, tau, dt) {
+  finite(previous); finite(activity); nonnegative(dt, 'dt'); demand(tau > 0 && Number.isFinite(tau), 'BAD_TAU', 'tau must be positive');
+  demand(previous >= 0 && previous <= 1 && activity >= 0 && activity <= 1, 'UNNORMALIZED_MEMORY', 'Use normalized activity and memory in [0,1]');
+  return activity + (previous - activity) * Math.exp(-dt / tau);
+}
+function receptorActivity(concentration, K, hill = 1, competence = 1) {
+  nonnegative(concentration, 'concentration'); demand(K > 0 && hill > 0 && Number.isFinite(K) && Number.isFinite(hill), 'BAD_RECEPTOR_PARAMETERS', 'K and Hill coefficient must be positive');
+  demand(typeof competence === 'number' && competence >= 0 && competence <= 1, 'UNKNOWN_COMPETENCE', 'Functional competence must be explicitly assigned in [0,1]');
+  return concentration === 0 ? 0 : competence * logistic(hill * Math.log(concentration / K));
+}
+function boundedFlux(rate, capacity, dt, availableSubstrate) {
+  [rate, capacity, dt, availableSubstrate].forEach(x => nonnegative(x, 'flux argument'));
+  const amount = Math.min(rate * capacity * dt, availableSubstrate);
+  return { amount, substrate_used: amount, substrate_remaining: availableSubstrate - amount };
+}
+function diffuse2D(input, width, height, { D, dx, dy = dx, dt, decay = 0 }) {
+  demand(Number.isInteger(width) && width > 0 && Number.isInteger(height) && height > 0 && input.length === width * height, 'BAD_GRID', 'Grid dimensions do not match');
+  nonnegative(D, 'D'); nonnegative(dt, 'dt'); nonnegative(decay, 'decay'); demand(dx > 0 && dy > 0 && Number.isFinite(dx) && Number.isFinite(dy), 'BAD_SPACING', 'Spacing must be positive');
+  let c = Float64Array.from(input); c.forEach(x => nonnegative(x, 'concentration'));
+  // No flux outer boundaries, equal voxel volumes, positivity preserving explicit diffusion.
+  // Compartment interfaces, binding and advection are host extensions, not silently approximated here.
+  const steps = Math.max(1, Math.ceil(dt * D * (2 / dx ** 2 + 2 / dy ** 2) / 0.9));
+  demand(steps <= 1000000, 'EXCESSIVE_SUBSTEPS', 'Refine the solver choice rather than allocating unbounded substeps');
+  const h = dt / steps, loss = Math.exp(-decay * h);
+  const initial = c.reduce((a, b) => a + b, 0);
+  for (let s = 0; s < steps; s++) {
+    const next = new Float64Array(c.length);
+    for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) {
+      const i = y * width + x; let lap = 0;
+      if (x > 0) lap += (c[i - 1] - c[i]) / dx ** 2;
+      if (x + 1 < width) lap += (c[i + 1] - c[i]) / dx ** 2;
+      if (y > 0) lap += (c[i - width] - c[i]) / dy ** 2;
+      if (y + 1 < height) lap += (c[i + width] - c[i]) / dy ** 2;
+      next[i] = (c[i] + D * h * lap) * loss;
+      demand(next[i] >= -1e-14 && Number.isFinite(next[i]), 'NUMERICAL_FAILURE', 'Negative or nonfinite field; no silent clipping applied');
+    }
+    c = next;
+  }
+  return { values: c, substeps: steps, amount_before_proportional: initial, amount_after_proportional: c.reduce((a, b) => a + b, 0), decay_loss_expected: initial * (1 - Math.exp(-decay * dt)) };
+}
+function validateRegistry(r) {
+  demand(r?.metadata?.version === '2.0.0', 'SCHEMA_VERSION', 'This kernel accepts registry 2.0.0');
+  demand(r.metadata.individual_cell_weight === 1 && r.metadata.fixed_population === false, 'CELL_SCALE', 'One agent represents one cell; population is not fixed');
+  const ids = new Set();
+  for (const [k, p] of Object.entries(r.parameters)) { finite(p.value, k); demand(p.evidence === 'P' && p.calibrated === false, 'MISLABELED_PRIOR', 'The distributed demonstration registry must retain its proposed labels'); }
+  for (const a of r.actions) {
+    demand(!ids.has(a.id), 'DUPLICATE_ACTION', a.id); ids.add(a.id);
+    demand(r.duration_models[a.duration_ref], 'UNKNOWN_DURATION', a.duration_ref);
+    parameter(r, a.hazard.base_rate_ref); parameter(r, a.hazard.intercept_ref); parameter(r, a.refractory_ref);
+    a.hazard.terms.forEach(t => { pathParts(t.path); parameter(r, t.weight_ref); });
+    a.costs.forEach(c => { pathParts(c.path); nonnegative(parameter(r, c.amount_ref), 'cost'); });
+    a.cell_types.forEach(t => demand(r.cell_types[t], 'UNKNOWN_CELL_TYPE', t));
+    a.evidence.source_refs.forEach(id => demand(r.references[id], 'UNKNOWN_REFERENCE', id));
+    const check = q => { if (q.all) q.all.forEach(check); else if (q.any) q.any.forEach(check); else { pathParts(q.path); demand(['eq','in','gte','gt','lte','lt'].includes(q.op), 'UNKNOWN_OPERATOR', q.op); if (q.param) parameter(r,q.param); } };
+    check(a.gate); check(a.trigger); check(a.continuation.recheck_predicate);
+    a.completion_effects.forEach(e => { demand(['set','intent'].includes(e.op), 'UNKNOWN_EFFECT', e.op); if (e.op === 'set') pathParts(e.path); });
+  }
+  for (const [name, counts] of Object.entries(r.initial_presets)) {
+    demand(Object.values(counts).every(n => Number.isInteger(n) && n >= 0) && Object.values(counts).reduce((a,b) => a+b, 0) === 100, 'BAD_ROSTER', name);
+    Object.keys(counts).forEach(t => demand(r.cell_types[t], 'UNKNOWN_CELL_TYPE', t));
+  }
+  return { valid: true, actions: ids.size, cell_types: Object.keys(r.cell_types).length, parameters: Object.keys(r.parameters).length };
+}
+class RuleKernel {
+  constructor(registry, { seed = 1, capabilities = [], enabledExtensions = [], profile = 'demonstration' } = {}) {
+    validateRegistry(registry);
+    demand(profile === 'demonstration', 'UNCALIBRATED_RESEARCH_MODE', 'Research mode is not implemented by this uncalibrated reference kernel. Fit and validate a separate version.');
+    this.registry = copy(registry); this.rng = seededRandom(seed); this.capabilities = new Set(capabilities); this.extensions = new Set(enabledExtensions);
+    this.actions = new Map(this.registry.actions.map(a => [a.id, a])); this.events = new Map(); this.targetOwners = new Map(); this.retiredTargets = new Set(); this.nextId = 1; this.minimumRevision = new Map();
+  }
+  action(id) { demand(this.actions.has(id), 'UNKNOWN_ACTION', id); return this.actions.get(id); }
+  checkSnapshot(s) {
+    demand(s?.cell && typeof s.cell.id === 'string' && s.cell.id.length > 0, 'BAD_CELL_ID', 'Snapshot needs a stable cell id');
+    demand(Number.isInteger(s.revision) && s.revision >= 0 && Number.isInteger(s.tick) && s.tick >= 0, 'BAD_REVISION', 'Snapshot needs nonnegative integer revision and tick');
+    nonnegative(s.time_min, 'time_min'); demand(this.registry.cell_types[s.cell.type], 'UNKNOWN_CELL_TYPE', s.cell.type);
+    demand(s.revision >= (this.minimumRevision.get(s.cell.id) ?? 0), 'STALE_SNAPSHOT', 'Snapshot predates an acknowledged transaction');
+  }
+  activeEvents(cellId) { return [...this.events.values()].filter(e => e.cell_id === cellId && ['running','paused','pending'].includes(e.status)); }
+  environment(s, owner = null) {
+    const env = copy(s);
+    for (const e of this.activeEvents(s.cell.id)) if (e.id !== owner) for (const cost of e.reserved_costs) {
+      const total = readPath(env, cost.path); if (typeof total === 'number') writePath(env, cost.path, total - cost.amount);
+    }
+    return env;
+  }
+  eligibility(actionId, s, now = s.time_min) {
+    this.checkSnapshot(s); const a = this.action(actionId); const reasons = [];
+    if (!a.enabled_by_default && !this.extensions.has(a.id)) reasons.push('EXTENSION_DISABLED');
+    if (!a.cell_types.includes(s.cell.type)) reasons.push('LINEAGE_NOT_LICENSED');
+    for (const c of [...this.registry.host_contract.required_for_any_execution, ...a.required_host_capabilities]) if (!this.capabilities.has(c)) reasons.push(`MISSING_CAPABILITY:${c}`);
+    if (s.cell.viability === 'cleared') reasons.push('CELL_CLEARED');
+    const active = this.activeEvents(s.cell.id);
+    if (active.some(e => e.locks.some(l => a.exclusive_locks.includes(l)))) reasons.push('CHANNEL_LOCKED');
+    const previous = [...this.events.values()].filter(e => e.cell_id === s.cell.id && e.action_id === a.id && e.status === 'acknowledged');
+    if (previous.some(e => now < e.acknowledged_at + parameter(this.registry, a.refractory_ref))) reasons.push('REFRACTORY');
+    const env = this.environment(s);
+    if (!evaluatePredicate(a.gate, env, this.registry)) reasons.push('GATE_FAILED_OR_MISSING_INPUT');
+    if (!evaluatePredicate(a.trigger, env, this.registry)) reasons.push('TRIGGER_FAILED_OR_MISSING_INPUT');
+    if (a.exclusive_locks.includes('target')) {
+      const target = s.context?.target_id;
+      if (typeof target !== 'string' || !target) reasons.push('MISSING_TARGET_ID');
+      else if (this.targetOwners.has(target) || this.retiredTargets.has(target)) reasons.push('TARGET_UNAVAILABLE');
+    }
+    if (a.id === 'VASCULAR_CROSSING' && typeof s.context?.crossing_slot_id !== 'string') reasons.push('MISSING_CROSSING_SLOT_ID');
+    if (a.id === 'VASCULAR_CROSSING' && this.targetOwners.has(`vascular:${s.context.crossing_slot_id}`)) reasons.push('CROSSING_SLOT_RESERVED');
+    if (reasons.length) return { action_id: a.id, allowed: false, reasons };
+    const h = actionHazard(a, env, this.registry);
+    return { action_id: a.id, allowed: true, reasons: [], channel: a.channel, initiation_policy: a.initiation_policy, ...h };
+  }
+  candidates(s) { return this.registry.cell_types[s.cell.type].allowed_actions.map(id => this.eligibility(id, s)); }
+  plan(s, dt) {
+    nonnegative(dt,'dt'); const candidates = this.candidates(s).filter(x => x.allowed), grouped = new Map(), proposals = [];
+    for (const c of candidates) {
+      if (c.initiation_policy === 'automatic_when_eligible') proposals.push({ action_id: c.action_id, waiting_minutes: 0, channel: c.channel });
+      else { if (!grouped.has(c.channel)) grouped.set(c.channel,[]); grouped.get(c.channel).push(c); }
+    }
+    for (const [channel, group] of grouped) { const choice = sampleCompeting(group,dt,this.rng); if (choice) proposals.push({ ...choice, channel }); }
+    // All proposals must still pass start(), because different channels can share a resource or lock.
+    return proposals.map(p => ({ ...p, cell_id:s.cell.id, tick:s.tick, revision:s.revision, proposed_start_min:s.time_min+p.waiting_minutes })).sort((a,b) => a.proposed_start_min-b.proposed_start_min || a.action_id.localeCompare(b.action_id));
+  }
+  start(actionId, s, { start_min = s.time_min, proposal = null, initialized_duration = null, initialized_elapsed = 0 } = {}) {
+    demand(start_min >= s.time_min && Number.isFinite(start_min), 'BAD_EVENT_TIME', 'Start cannot predate its sensing snapshot');
+    if (proposal) demand(proposal.cell_id === s.cell.id && proposal.action_id === actionId && proposal.revision === s.revision && proposal.tick === s.tick, 'STALE_PROPOSAL', 'Proposal identity or revision mismatch');
+    const candidate = this.eligibility(actionId,s,start_min); demand(candidate.allowed, 'ACTION_REJECTED', 'Action did not pass legality checks', candidate);
+    const a = this.action(actionId); const env = this.environment(s);
+    const reserved = a.costs.map(c => ({path:c.path,amount:parameter(this.registry,c.amount_ref)}));
+    for (const cost of reserved) demand(readPath(env,cost.path) >= cost.amount, 'INSUFFICIENT_RESOURCE','Resource was already reserved');
+    let duration = initialized_duration === null ? sampleDuration(this.registry.duration_models[a.duration_ref],this.rng) : nonnegative(initialized_duration,'initialized duration');
+    const support = this.registry.duration_models[a.duration_ref];
+    demand(duration >= support.lower && duration <= support.upper, 'DURATION_OUTSIDE_PRIOR', 'Historical full duration must be inside this versioned demonstration support; change the prior explicitly rather than bypassing it');
+    demand(initialized_elapsed >= 0 && initialized_elapsed <= duration && Number.isFinite(initialized_elapsed), 'BAD_INITIAL_ELAPSED','Initialized elapsed time must fall inside its explicitly supplied duration');
+    demand(initialized_duration !== null || initialized_elapsed === 0, 'BAD_INITIAL_EVENT', 'An aged event requires an explicit historical duration');
+    const id = `event_${this.nextId++}`;
+    const target = a.exclusive_locks.includes('target') ? s.context.target_id : a.id === 'VASCULAR_CROSSING' ? `vascular:${s.context.crossing_slot_id}` : null;
+    const event = {id,action_id:actionId,cell_id:s.cell.id,cell_type:s.cell.type,status:'running',started_at:start_min,last_update:start_min,duration_min:duration,active_elapsed_min:initialized_elapsed,locks:[...a.exclusive_locks],reserved_costs:reserved,target_id:target,source_tick:s.tick,source_revision:s.revision,initialization_override:initialized_duration !== null,initial_context:copy(s.context ?? {})};
+    if (target !== null) { demand(!this.targetOwners.has(target) && !this.retiredTargets.has(target),'TARGET_UNAVAILABLE','Target already owned'); this.targetOwners.set(target,id); }
+    this.events.set(id,event); return copy(event);
+  }
+  getEvent(id) { demand(this.events.has(id),'UNKNOWN_EVENT',id); return this.events.get(id); }
+  cancel(id, reason = 'explicit_host_cancellation') {
+    const e = this.getEvent(id); demand(e.status !== 'acknowledged','ALREADY_COMMITTED','Committed events cannot be cancelled');
+    if (e.status === 'cancelled') return copy(e);
+    e.status = 'cancelled'; e.cancel_reason = reason;
+    if (e.target_id && this.targetOwners.get(e.target_id) === id) this.targetOwners.delete(e.target_id);
+    // Inventory never left the cell before completion. Releasing reservations is the refund.
+    return copy(e);
+  }
+  advance(id, s, now = s.time_min) {
+    this.checkSnapshot(s); const e = this.getEvent(id), a = this.action(e.action_id);
+    demand(s.cell.id === e.cell_id,'EVENT_CELL_MISMATCH','Event belongs to another cell');
+    demand(now >= e.last_update && Number.isFinite(now),'TIME_REVERSED','Biological time cannot move backwards');
+    if (['acknowledged','cancelled'].includes(e.status)) return copy(e);
+    if (s.cell.viability === 'cleared') return this.cancel(id,'cell_cleared');
+    if (['death_committed','dead_present'].includes(s.cell.viability) && a.continuation.on_death === 'cancel') return this.cancel(id,'terminal_death_precedence');
+    if (e.target_id && this.targetOwners.get(e.target_id) !== id) return this.cancel(id,'target_ownership_lost');
+    if (a.exclusive_locks.includes('target') && s.context?.target_id !== e.target_id) return this.cancel(id,'target_identity_changed');
+    const pass = evaluatePredicate(a.continuation.recheck_predicate,this.environment(s,id),this.registry);
+    if (!pass && a.continuation.on_gate_loss === 'cancel') return this.cancel(id,'continuation_gate_lost');
+    if (!pass && a.continuation.on_gate_loss === 'pause') { e.last_update=now; e.status=e.status==='pending'?'pending':'paused'; e.completion_blocked=true; return copy(e); }
+    e.completion_blocked=false;
+    if (e.status === 'pending') return this.completionPlan(id);
+    const step = now - e.last_update, remaining = e.duration_min-e.active_elapsed_min;
+    e.active_elapsed_min = Math.min(e.duration_min,e.active_elapsed_min+step); e.last_update=now;
+    if (e.active_elapsed_min >= e.duration_min) { e.status='pending'; e.ready_at = now - Math.max(0,step-remaining); return this.completionPlan(id); }
+    e.status='running'; return copy(e);
+  }
+  completionPlan(id) {
+    const e=this.getEvent(id),a=this.action(e.action_id);
+    demand(e.status==='pending' && !e.completion_blocked,'EVENT_NOT_COMPLETE','Event has not completed active time or its continuation is blocked');
+    return {transaction_id:`${id}:complete`,event_id:id,cell_id:e.cell_id,action_id:e.action_id,target_id:e.target_id,source_revision:e.source_revision,ready_at:e.ready_at,reserved_costs:copy(e.reserved_costs),effects:copy(a.completion_effects),event_duration_min:e.duration_min,initial_context:copy(e.initial_context),required_host_capabilities:[...a.required_host_capabilities],instruction:'Recheck physical preconditions, apply all effects and resource consumption atomically, increment revision, then acknowledge. Failed transactions change nothing.'};
+  }
+  acknowledge(id, receipt) {
+    const e=this.getEvent(id);
+    if (e.status==='acknowledged') { demand(receipt?.transaction_id===`${id}:complete`,'BAD_RECEIPT','Receipt mismatch'); return {already_acknowledged:true,event:copy(e)}; }
+    demand(e.status==='pending' && !e.completion_blocked,'EVENT_NOT_COMPLETE','No pending completion');
+    demand(receipt?.committed===true && receipt.transaction_id===`${id}:complete` && Number.isInteger(receipt.next_revision) && receipt.next_revision>e.source_revision,'BAD_RECEIPT','An atomic host receipt with an advanced revision is required');
+    demand(Number.isFinite(receipt.applied_at) && receipt.applied_at>=e.ready_at,'BAD_RECEIPT','Commit time precedes readiness');
+    e.status='acknowledged';e.acknowledged_at=receipt.applied_at;e.receipt=copy(receipt);
+    this.minimumRevision.set(e.cell_id,Math.max(this.minimumRevision.get(e.cell_id)??0,receipt.next_revision));
+    if(e.target_id){if(e.action_id==='EFFEROCYTOSIS'||e.action_id==='PHAGOCYTOSIS')this.retiredTargets.add(e.target_id);this.targetOwners.delete(e.target_id);}
+    return {already_acknowledged:false,event:copy(e)};
+  }
+}
+function validateProviderResponse(batch,response){
+  demand(response?.tick===batch.tick&&response?.revision===batch.revision,'STALE_PROVIDER_RESPONSE','Provider response does not match tick and revision');
+  demand(Array.isArray(batch.cells)&&Array.isArray(response.decisions),'BAD_PROVIDER_RESPONSE','Cells and decisions must be arrays');
+  const cells=new Map(batch.cells.map(c=>[c.id,c])),seen=new Set();
+  for(const d of response.decisions){demand(cells.has(d.id)&&!seen.has(d.id),'BAD_PROVIDER_CELL','Unknown or duplicate cell');seen.add(d.id);const c=cells.get(d.id);demand(c.allowed.includes(d.choice),'PROVIDER_UNLICENSED_ACTION','Choice is outside allowed actions');if(c.channels?.[d.choice])demand(d.channel===c.channels[d.choice],'PROVIDER_CHANNEL_MISMATCH','Wrong action channel');demand(!Object.hasOwn(d,'duration')&&!Object.hasOwn(d,'hazard')&&!Object.hasOwn(d,'latency'),'PROVIDER_OWNS_FORBIDDEN_FIELD','Provider cannot set biological clocks or hazards');}
+  return true;
+}
+
+return {RuleError,readPath,writePath,seededRandom,parameter,evaluatePredicate,logistic,actionHazard,eventProbability,sampleCompeting,sampleDuration,exactMemory,receptorActivity,boundedFlux,diffuse2D,validateRegistry,RuleKernel,validateProviderResponse};
+})();
+__modules["integration/manual_contract.mjs"]=(()=>{
+/**
+ * Cellville manual preintegration boundary, 0.1.0.
+ * This is NOT a physical host and is deliberately not imported by app.mjs.
+ * It prepares advisory per-channel questions and validates complete replies.
+ * Reference hazards, event clocks and transactions stay in RuleKernel + host.
+ * run_id is an explicit engineering addition, not a biological registry field.
+ */
+const { RuleError }=__modules["manual_v2/virtual_tissue_kernel.mjs"];
+
+const fail = (code, message) => { throw new RuleError(code, message); };
+const insist = (condition, code, message) => { if (!condition) fail(code, message); };
+const clone = value => structuredClone(value);
+const pairKey = (id, channel) => JSON.stringify([id, channel]);
+const record = v => v !== null && typeof v === 'object' && !Array.isArray(v);
+const finite = n => typeof n === 'number' && Number.isFinite(n);
+const safeText = x => typeof x === 'string' && x.length > 0 && x.length <= 160 && !/[\u0000-\u001f]/.test(x);
+
+function freezeSnapshot(snapshot) {
+  const frozen = clone(snapshot);
+  const visit = value => {
+    if (value && typeof value === 'object') {
+      Object.values(value).forEach(visit);
+      Object.freeze(value);
+    }
+  };
+  visit(frozen);
+  return frozen;
+}
+
+function checkEpoch(epoch) {
+  insist(record(epoch) && safeText(epoch.run_id), 'BAD_RUN_ID', 'A fresh run_id is required for every reset.');
+  for (const key of ['tick', 'revision']) {
+    insist(Number.isSafeInteger(epoch[key]) && epoch[key] >= 0, 'BAD_EPOCH', `Invalid ${key}.`);
+  }
+  insist(finite(epoch.time_min) && epoch.time_min >= 0, 'BAD_TIME', 'Biological time must be supplied in minutes.');
+}
+
+/** No legacy generic field or macrophage label is translated automatically. */
+function prepareAdvisoryBatch(kernel, snapshots, epoch) {
+  checkEpoch(epoch);
+  insist(Array.isArray(snapshots), 'BAD_SNAPSHOTS', 'Expected a snapshot array.');
+  const ids = new Set(), cells = [], diagnostics = [];
+  for (const raw of snapshots) {
+    const s = freezeSnapshot(raw);
+    kernel.checkSnapshot(s);
+    insist(s.tick === epoch.tick && s.revision === epoch.revision && s.time_min === epoch.time_min,
+      'INCONSISTENT_SNAPSHOT', 'All cells must share one sensing epoch.');
+    insist(safeText(s.cell.id) && !ids.has(s.cell.id), 'DUPLICATE_CELL', 'Cell identifiers must be unique.');
+    ids.add(s.cell.id);
+    insist(record(s.provenance) && ['source_kind', 'scope', 'uncertainty'].every(k => safeText(s.provenance[k])),
+      'MISSING_PROVENANCE', 'Source kind, scope and uncertainty are required.');
+    const rows = kernel.candidates(s);
+    diagnostics.push({ id: s.cell.id, candidates: rows });
+    const legal = rows.filter(x => x.allowed);
+    if (!legal.length) continue;
+    const allowed = legal.map(x => x.action_id);
+    const channels = Object.fromEntries(legal.map(x => [x.action_id, x.channel]));
+    // Only features needed by these legal actions are exposed. Each field is
+    // already a local host observation; the host must verify that locality.
+    const needed = new Set();
+    const paths = p => {
+      if (p.all) p.all.forEach(paths);
+      else if (p.any) p.any.forEach(paths);
+      else needed.add(p.path);
+    };
+    for (const id of allowed) {
+      const a = kernel.action(id);
+      paths(a.gate); paths(a.trigger);
+      a.hazard.terms.forEach(t => needed.add(t.path));
+    }
+    const get = path => {
+      let v = s;
+      for (const key of path.split('.')) {
+        if (!record(v) || !Object.hasOwn(v, key)) return undefined;
+        v = v[key];
+      }
+      return v;
+    };
+    const sensed_features = Object.fromEntries([...needed].filter(p => get(p) !== undefined).map(p => [p, clone(get(p))]));
+    cells.push({ id: s.cell.id, type: s.cell.type, allowed, channels, sensed_features });
+  }
+  return { batch: { ...clone(epoch), policy: 'advisory_only', cells }, diagnostics };
+}
+
+/**
+ * Enforces completeness PER (cell id, channel), unlike the reference helper
+ * which allows omitted cells and disallows multiple decisions for one cell.
+ * This function validates data only. It never starts or commits an event.
+ */
+function validateCompleteChannelReply(batch, response, currentEpoch) {
+  checkEpoch(batch); checkEpoch(currentEpoch);
+  insist(record(response), 'BAD_REPLY', 'Expected a reply object.');
+  const topKeys = new Set(['run_id', 'tick', 'revision', 'decisions']);
+  insist(Object.keys(response).every(k => topKeys.has(k)), 'FORBIDDEN_REPLY_FIELD', 'Unexpected top-level reply field.');
+  for (const key of ['run_id', 'tick', 'revision']) {
+    insist(response[key] === batch[key] && currentEpoch[key] === batch[key], 'STALE_REPLY', 'Reply belongs to a different run or tissue revision.');
+  }
+  insist(currentEpoch.time_min === batch.time_min, 'STALE_TIME', 'Biological time advanced while the reply was pending.');
+  insist(Array.isArray(batch.cells) && Array.isArray(response.decisions), 'BAD_REPLY', 'Expected cells and decisions arrays.');
+  const expected = new Map(), ids = new Set();
+  for (const cell of batch.cells) {
+    insist(safeText(cell.id) && !ids.has(cell.id), 'DUPLICATE_REQUEST_CELL', 'Duplicate cell in request.');
+    ids.add(cell.id);
+    insist(Array.isArray(cell.allowed) && cell.allowed.length > 0 && record(cell.channels), 'BAD_REQUEST_MENU', 'Missing menu or channel map.');
+    insist(new Set(cell.allowed).size === cell.allowed.length, 'BAD_REQUEST_MENU', 'Duplicate action in request.');
+    for (const action of cell.allowed) {
+      const channel = cell.channels[action];
+      insist(safeText(action) && safeText(channel), 'BAD_REQUEST_MENU', 'Invalid action or channel identifier.');
+      const key = pairKey(cell.id, channel);
+      if (!expected.has(key)) expected.set(key, new Set());
+      expected.get(key).add(action);
+    }
+  }
+  const seen = new Set(), decisions = [];
+  const decisionKeys = new Set(['id', 'choice', 'channel', 'confidence', 'probabilities']);
+  for (const d of response.decisions) {
+    insist(record(d) && Object.keys(d).every(k => decisionKeys.has(k)), 'FORBIDDEN_DECISION_FIELD', 'Provider cannot supply clocks, rates, effects or arbitrary fields.');
+    insist(safeText(d.id) && safeText(d.channel), 'BAD_DECISION', 'Invalid cell id or channel.');
+    const key = pairKey(d.id, d.channel), menu = expected.get(key);
+    insist(menu && !seen.has(key), 'UNKNOWN_OR_DUPLICATE_CHANNEL', 'Unknown or duplicate cell/channel decision.');
+    insist(menu.has(d.choice), 'UNLICENSED_ACTION', 'Choice is outside this channel menu.');
+    seen.add(key);
+    if (Object.hasOwn(d, 'confidence')) {
+      insist(finite(d.confidence) && d.confidence >= 0 && d.confidence <= 1, 'BAD_CONFIDENCE', 'Invalid reported confidence.');
+    }
+    if (Object.hasOwn(d, 'probabilities')) {
+      const p = d.probabilities;
+      insist(record(p) && Object.keys(p).length === menu.size && [...menu].every(a => Object.hasOwn(p,a)),
+        'BAD_DISTRIBUTION', 'Probability keys must equal this channel menu.');
+      insist(Object.values(p).every(v => finite(v) && v >= 0 && v <= 1), 'BAD_DISTRIBUTION', 'Invalid probability value.');
+      insist(Math.abs(Object.values(p).reduce((a,b) => a+b,0)-1) <= 0.002, 'BAD_DISTRIBUTION', 'Probabilities must sum to one.');
+    }
+    decisions.push(clone(d));
+  }
+  insist(seen.size === expected.size, 'INCOMPLETE_REPLY', 'One reply is required for each requested cell/channel.');
+  return { ...clone(currentEpoch), decisions, causal_execution_permitted: false };
+}
+
+return {freezeSnapshot,checkEpoch,prepareAdvisoryBatch,validateCompleteChannelReply};
+})();
+__modules["src/ileum-parameters.mjs"]=(()=>{
+const {freezeSnapshot}=__modules["integration/manual_contract.mjs"];
+
+// Every number here is an illustrative P prior. Papers support mechanisms only.
+const ILEUM_MANIFEST = freezeSnapshot({
+  version:'cellville.ileum.1.0.0', evidence:'P', calibrated:false,
+  scope:'Human ileal cutaway; innate–epithelium–barrier experiment. Not a Crohn subtype, autoantigen model or full intestinal tract.',
+  reference:'Two original Manual v2 handlers retained. ILEUM_* events and transport are separate proposed host extensions, not additional validated registry handlers.',
+  population:'100 initial cells on the preserved six-class roster. Generic macrophages receive explicit synthetic innate competence, without a resident/inflammatory subtype mapping. NK and fibroblasts remain visual-only in this experiment.',
+  species:'Escherichia coli, enteropathogenic (EPEC), E2348/69-inspired phenotype',
+  pathogenesis:'Apical attachment, Tir–intimin intimate adhesion and attaching/effacing brush-border injury. No Shiga toxin, active intracellular invasion, or EPEC-specific clinical calibration.',
+  ibd:'Local initial junction injury plus reduced resolution competence; background luminal microbial products can leak through damaged junctions and sustain a proposed myeloid TNF–injury loop. No external TNF source is required. Not a complete IBD model.',
+  units:{time:'min',position:'normalized 2D tissue coordinates, converted to µm in snapshots',
+    water:'NWU (normalized excess water amount); downstream water is a secretion proxy, not mL or stool output',
+    innate:'PAMP, DAMP and resolution are normalized local activities on 50 epithelial patches, not molar cytokine concentrations',
+    TNF_CXCL8:'Original NAU/NCU compartment accounting'},
+  controls:{epec_count:24,initial_junction:.60,reduced_resolution:.08},
+  bacteria:{attach_rate:.06,adhesion_min:10,replicate_rate:.004,replication_budget:72,max_agents:256,washout_rate:.0015,
+    drift:.00035,brush_injury_rate:.009,junction_injury_rate:.0006,contact_radius:.028},
+  innate:{activation_tau:15,tnf_rate:.065,tnf_budget_NAU:12,event_energy:.05,tnf_K:.035,damage_rate:.005,repair_rate:.007,
+    brush_repair_rate:.003,luminal_PAMP:.50,signal_decay:.035,signal_diffusion:.06,reach:.05,speed:.0025,
+    phagocytosis_min:6,processing_min:18,crossing_min:12,apical_crossing_min:8,efferocytosis_min:10,
+    event_rate:.25,death_health:12,neutrophil_lifetime:240},
+  fluid:{transit_rate:.12,water_reabsorption_rate:.035,initial_water_reservoir:100},
+  numerical:'One minute operator splitting. Reference host advances first, extension responses become input to the next reference interval. All extension proposals use one snapshot; targets are revalidated and exclusively reserved before start. Display never consumes RNG.',
+  references:[
+    {id:'Shaw2005',url:'https://journals.asm.org/doi/10.1128/iai.73.2.1243-1251.2005',supports:'EPEC effectors, brush-border remodeling and A/E lesions in human small-intestinal organ culture; not kinetic values.'},
+    {id:'Martin2019',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC7060942/',supports:'Human ileal inflammatory cellular associations. Does not establish or fit the reduced feedback circuit.'},
+    {id:'Shen2023',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC10309577/',supports:'Human neutrophil segmented nuclear morphology.'},
+    {id:'Honda2020',url:'https://www.nature.com/articles/s41467-020-15068-4',supports:'Intestinal macrophage spatial organization in mice; transfer to human depiction is T.'}
+  ]
+});
+const ILEUM_ACTIONS = freezeSnapshot({
+  ILEUM_ADHESION:'Build Tir–intimin attachment',ILEUM_PHAGOCYTOSIS:'Engulf one EPEC',
+  ILEUM_CARGO_PROCESSING:'Kill internalized EPEC',ILEUM_VASCULAR_CROSSING:'Cross the vascular boundary',
+  ILEUM_APICAL_CROSSING:'Cross toward the luminal focus',ILEUM_EFFEROCYTOSIS:'Clear one dead cell'
+});
+function parseIleumPrompt(text){
+  const t=text.toLowerCase(),x=/right/.test(t)?.76:/center|centre/.test(t)?.5:.25;
+  let kind=null;
+  if(/cas[p]?4|shiga|salmonella|autoantigen/.test(t))return {valid:false,error:'This experiment implements EPEC attachment, innate ileitis only.'};
+  if(/restore|resolution control/.test(t))kind='regulation';
+  else if(/remove|stop|withdraw/.test(t))kind='resolve';
+  else if(/epec|e\.?\s*coli/.test(t))kind=/adhesion.off|attachment.off/.test(t)?'epec_control':'epec';
+  else if(/ileitis|ibd|persistent.*inflamm/.test(t))kind='ileitis';
+  const descriptions={
+    epec:['EPEC · attaching and effacing','Place 24 EPEC agents in the lumen. Intimate Tir–intimin attachment precedes brush-border injury.'],
+    epec_control:['EPEC · attachment disabled','Matched bolus of 24 agents with the modeled intimate attachment route disabled; a mechanism control, not a named mutant.'],
+    ileitis:['Persistent ileal inflammation','Apply one local junction injury and reduce local resolution competence. Background microbial products may sustain the innate–barrier feedback. No TNF source is added.'],
+    regulation:['Restore local resolution','Restore resolution competence in the selected region. Existing injury, mediators and bacteria remain.'],
+    resolve:['Stop further input','Stop reference stimulus sources and future bacterial replication. Existing bacteria, inflammation remain; the ileitis susceptibility is retained.']
+  };
+  if(!kind)return {valid:false,error:'Choose EPEC, persistent ileitis, restore resolution, or remove inputs.'};
+  return {valid:true,kind,x,strength:1,title:descriptions[kind][0],description:descriptions[kind][1],note:'P: uncalibrated mechanistic experiment. Compare separate reset episodes with the same seed.'};
+}
+
+return {ILEUM_MANIFEST,ILEUM_ACTIONS,parseIleumPrompt};
+})();
+__modules["src/decision-callout.mjs"]=(()=>{
+const {ILEUM_ACTIONS}=__modules["src/ileum-parameters.mjs"];
+
+const {TYPES,ACTIONS,clamp}=__modules["src/engine.mjs"];
+
+// Presentation only: read the displayed snapshot, including during replay.
+const eventNames={EPITHELIAL_CXCL8_INDUCTION:'Prepare CXCL8 capacity',GOBLET_RELEASE:'Prepare mucus release'};
+function cellDecision(c,frame,replay=false){
+ const model={name:`${TYPES[c.type].name} · ${c.id}`,clock:`${replay?'REPLAY':'LIVE'} · Cycle ${frame.tick}${frame.mode==='manual'?` · ${frame.time_min} min`:''}`,rows:[],note:''};
+ if(c.unified){
+  model.clock=`${replay?'REPLAY':'LIVE'} · ${frame.time_min} biological min`;
+  if(c.v5)model.name=`${c.v5.phenotype.replaceAll('_',' ')} · ${c.id}`;
+  const u=c.unified,events=c.manual.events.filter(e=>['running','paused','pending'].includes(e.status));
+  model.rows.push({text:!c.alive?'Dead · awaiting clearance':c.state.viability==='death_committed'?'Committed death':u.active?`Detects ${u.reasons[0].toLowerCase()}`:'Within local baseline',tone:u.active?'preparing':'quiet'});
+  for(const e of events)model.rows.push({text:e.action_id.replaceAll('_',' ').toLowerCase(),tone:'preparing',progress:clamp(e.active_elapsed_min/e.duration_min),detail:`${e.active_elapsed_min.toFixed(0)} / ${e.duration_min.toFixed(0)} biological min`});
+  if(c.v5?.presented.length)model.rows.push({text:'Presenting acquired antigen',tone:'active'});
+  if(c.v5?.phenotype==='resident_like')model.rows.push({text:'Adapted · monocyte origin retained',tone:'active'});
+  if(c.manual.secreting)model.rows.push({text:'Secreting CXCL8',tone:'active'});
+  model.note=u.last?`Jev · ${u.last.time_min} min · ${u.last.rejection?'choice not started':u.last.action.replaceAll('_',' ').toLowerCase()}`:u.active?'Waiting for an eligible cellular choice.':'No Jev question needed.';
+  return model;
+ }
+ if(!c.alive){model.rows.push({text:'Cell removed',tone:'quiet'});return model;}
+ if(!c.manual){
+  const decided=c.lastDecisionTick!==null&&c.lastDecisionTick!==undefined;
+  const cue=c.sensing?.activation;
+  if(cue)model.rows.push({text:cue.active?`Detects: ${cue.reasons[0].label.toLowerCase()}${cue.reasons.length>1?` + ${cue.reasons.length-1} more`:''}`:'Within local baseline',tone:cue.active?'preparing':'quiet'});
+  model.rows.push({text:decided?(ACTIONS[c.action]?.label??c.action):'Waiting for first decision',tone:decided?'active':'quiet'});
+  model.note=decided?`${c.lastDecisionTick===frame.tick?'This cycle':`Last decision · cycle ${c.lastDecisionTick}`} · ${c.source} · ${c.effect}`:cue?.active?'Local change detected. Advance one cycle to execute a response.':'Routine maintenance only until a local cue is detected.';
+  return model;
+ }
+ const m=c.manual,active=m.events.filter(e=>['running','paused','pending'].includes(e.status));
+ for(const e of active){
+  const progress=e.duration_min>0?clamp(e.active_elapsed_min/e.duration_min):0;
+  model.rows.push({text:eventNames[e.action_id]??e.action_id,tone:e.status==='running'?'preparing':'quiet',progress,
+   detail:`${e.status==='running'?'Preparing':e.status==='paused'?'Paused':'Awaiting acceptance'} · ${e.active_elapsed_min.toFixed(1)} / ${e.duration_min.toFixed(1)} active min`});
+ }
+ if(m.secreting)model.rows.push({text:'Secreting CXCL8 → basal',tone:'active'});
+ if(!model.rows.length){
+  const supported=['enterocyte','goblet'].includes(c.type);
+  const eligible=m.candidates.some(row=>eventNames[row.action_id]&&row.allowed);
+  model.rows.push({text:!supported?'No implemented host action':eligible?'Waiting for event initiation':'Waiting for eligible signals',tone:'quiet'});
+ }
+ const latest=m.events.filter(e=>e.status==='acknowledged').sort((a,b)=>b.acknowledged_at-a.acknowledged_at)[0];
+ model.note=latest?`Last accepted · ${latest.acknowledged_at.toFixed(1)} min: ${latest.action_id==='GOBLET_RELEASE'?'mucus released apically':'CXCL8 capacity increased'}.`:
+  ['enterocyte','goblet'].includes(c.type)?'Reference events use biological time.':'Visible in this reduced host; no decision is simulated.';
+ if(c.lab){
+  model.rows=model.rows.filter(row=>!['No implemented host action','Waiting for eligible signals'].includes(row.text));
+  if(c.lab.event){const e=c.lab.event;model.rows.unshift({text:ILEUM_ACTIONS[e.action_id],tone:'preparing',progress:clamp(e.active_elapsed_min/e.duration_min),detail:`${e.active_elapsed_min.toFixed(1)} / ${e.duration_min} min · ${e.target_id??'boundary'}`});}
+  else model.rows.unshift({text:['nk','fibroblast'].includes(c.type)?'Visible only in this innate experiment':c.lab.activity,tone:'quiet'});
+  if(c.lab.last)model.note=`Last accepted · ${c.lab.last.time_min.toFixed(1)} min: ${ILEUM_ACTIONS[c.lab.last.action_id]}.`;
+  else model.note='Ileum extension · P assumptions. Readings belong to the displayed cycle.';
+ }
+ return model;
+}
+
+return {cellDecision};
+})();
+__modules["src/renderer.mjs"]=(()=>{
+const {cellDamage}=__modules["src/tissue-readouts.mjs"];
+
+const {M4,V3,hexColor,mixColor}=__modules["src/math.mjs"];
+
+const {TYPES,ACTIONS,GRID,clamp,surface,surfaceNormal,sample,isEpi}=__modules["src/engine.mjs"];
+
+const {cellDecision}=__modules["src/decision-callout.mjs"];
+
+/* Genuine perspective 3D meshes, depth testing and instanced rendering.
+ * Animation uses analytical phase functions only. No engine RNG is called.
+ */
+const VS=`#version 300 es
+precision highp float;
+layout(location=0) in vec3 position;
+layout(location=1) in vec3 normal;
+layout(location=2) in mat4 model;
+layout(location=6) in vec4 color;
+layout(location=7) in float unlit;
+uniform mat4 vp;
+out vec3 N;out vec3 world;out vec4 C;out float U;
+void main(){vec4 w=model*vec4(position,1.);world=w.xyz;N=normalize(transpose(inverse(mat3(model)))*normal);C=color;U=unlit;gl_Position=vp*w;}`;
+const FS=`#version 300 es
+precision highp float;
+in vec3 N;in vec3 world;in vec4 C;in float U;
+uniform vec3 eye;
+out vec4 outColor;
+void main(){
+ vec3 n=normalize(N);
+ vec3 L=normalize(vec3(-.5,.85,1.));
+ float key=max(0.,dot(n,L));float fill=max(0.,dot(n,normalize(vec3(1.,.3,-.2))));
+ float hemi=.12+.14*(n.y*.5+.5);
+ float spec=pow(max(0.,dot(n,normalize(L+normalize(eye-world)))),32.)*.16;
+ vec3 lit=C.rgb*(.47+key*.5+fill*.12+hemi)+spec;
+ outColor=vec4(mix(lit,C.rgb,U),C.a);
+}`;
+const quadVS=`#version 300 es
+precision highp float;
+layout(location=0) in vec3 position;
+uniform mat4 vp;out vec2 uv;
+void main(){uv=vec2((position.x+8.)/16.,(5.-position.y)/10.);gl_Position=vp*vec4(position,1.);}`;
+const quadFS=`#version 300 es
+precision highp float;in vec2 uv;uniform sampler2D field;out vec4 outColor;
+void main(){outColor=texture(field,uv);}`;
+function shaderProgram(gl,vs,fs){
+ const mk=(type,s)=>{const sh=gl.createShader(type);gl.shaderSource(sh,s);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(sh));return sh;};
+ const p=gl.createProgram(),v=mk(gl.VERTEX_SHADER,vs),f=mk(gl.FRAGMENT_SHADER,fs);gl.attachShader(p,v);gl.attachShader(p,f);gl.linkProgram(p);gl.deleteShader(v);gl.deleteShader(f);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));return p;
+}
+function meshBuilder(){
+ const positions=[],normals=[],indices=[];
+ return {positions,normals,indices,vertex(p,n){positions.push(...p);normals.push(...n);return positions.length/3-1;},
+ tri(a,b,c,n){const base=positions.length/3;const norm=n??V3.norm(V3.cross(V3.sub(b,a),V3.sub(c,a)));for(const p of [a,b,c]){positions.push(...p);normals.push(...norm);}indices.push(base,base+1,base+2);},
+ quad(a,b,c,d,n){this.tri(a,b,c,n);this.tri(a,c,d,n);}};
+}
+function sphereMesh(seg=18,rings=12){
+ const m=meshBuilder();
+ for(let j=0;j<=rings;j++){const t=j/rings*Math.PI;for(let i=0;i<=seg;i++){const a=i/seg*Math.PI*2;const p=[Math.sin(t)*Math.cos(a),Math.cos(t),Math.sin(t)*Math.sin(a)];m.vertex(p,p);}}
+ for(let j=0;j<rings;j++)for(let i=0;i<seg;i++){const a=j*(seg+1)+i,b=a+seg+1;m.indices.push(a,b,a+1,b,b+1,a+1);}return m;
+}
+function latheMesh(profile,seg=18){
+ const m=meshBuilder();
+ for(let j=0;j<profile.length;j++){
+  const [r,y]=profile[j],p=profile[Math.max(0,j-1)],q=profile[Math.min(profile.length-1,j+1)];
+  const dy=q[1]-p[1],dr=q[0]-p[0];
+  for(let i=0;i<=seg;i++){const a=i/seg*Math.PI*2,c=Math.cos(a),s=Math.sin(a);m.vertex([r*c,y,r*s],V3.norm([dy*c,-dr,dy*s]));}
+ }
+ for(let j=0;j<profile.length-1;j++)for(let i=0;i<seg;i++){const a=j*(seg+1)+i,b=a+seg+1;m.indices.push(a,a+1,b,b,a+1,b+1);}return m;
+}
+function cubeMesh(){
+ const m=meshBuilder();const pts=[[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1],[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1]];
+ for(const f of [[0,1,2,3],[5,4,7,6],[4,0,3,7],[1,5,6,2],[3,2,6,7],[4,5,1,0]])m.quad(...f.map(i=>pts[i]));return m;
+}
+function roundBoxMesh(){
+ // Subdivided cube projected onto a rounded box: soft toy edges.
+ const m=meshBuilder(),n=5,core=.72;
+ const faces=[[0,1,2,1],[0,1,2,-1],[1,0,2,1],[1,0,2,-1],[2,0,1,1],[2,0,1,-1]];
+ for(const [axis,u,v,sign]of faces){
+  const start=m.positions.length/3;
+  for(let j=0;j<=n;j++)for(let i=0;i<=n;i++){
+   const p=[0,0,0];p[axis]=sign;p[u]=-1+2*i/n;p[v]=-1+2*j/n;
+   const c=p.map(v=>Math.max(-core,Math.min(core,v))),normal=V3.norm(V3.sub(p,c));m.vertex(c.map((v,k)=>v+normal[k]*(1-core)),normal);
+  }
+  for(let j=0;j<n;j++)for(let i=0;i<n;i++){const a=start+j*(n+1)+i,b=a+n+1;m.indices.push(a,a+1,b,a+1,b+1,b);}
+ }return m;
+}
+function tissueMesh(){
+ const m=meshBuilder(),N=150,bottom=-4.58,z0=-2.0,z1=0;
+ for(let i=0;i<N;i++){
+  const xa=i/N,xb=(i+1)/N,x=-8+xa*16,xx=-8+xb*16,y=5-surface(xa)*10,yy=5-surface(xb)*10;
+  m.quad([x,bottom,z1],[xx,bottom,z1],[xx,yy,z1],[x,y,z1],[0,0,1]);
+  m.quad([xx,bottom,z0],[x,bottom,z0],[x,y,z0],[xx,yy,z0],[0,0,-1]);
+  const nn=V3.norm([-(yy-y),xx-x,0]);
+  m.quad([x,y,z1],[xx,yy,z1],[xx,yy,z0],[x,y,z0],nn);
+ }
+ const yl=5-surface(0)*10,yr=5-surface(1)*10;
+ m.quad([-8,bottom,z0],[-8,bottom,z1],[-8,yl,z1],[-8,yl,z0],[-1,0,0]);
+ m.quad([8,bottom,z1],[8,bottom,z0],[8,yr,z0],[8,yr,z1],[1,0,0]);
+ m.quad([-8,bottom,z0],[8,bottom,z0],[8,bottom,z1],[-8,bottom,z1],[0,-1,0]);return m;
+}
+const worldPos=(x,y,z=0)=>[-8+x*16,5-y*10,z];
+const ink=hexColor('#34494C'),white=hexColor('#FFFAF1'),pink=hexColor('#EB9097');
+class Diorama {
+ constructor(canvas,overlay,onPick){
+  this.canvas=canvas;this.overlay=overlay;this.ctx=overlay.getContext('2d');this.onPick=onPick;
+  const gl=canvas.getContext('webgl2',{alpha:true,antialias:true,premultipliedAlpha:false,preserveDrawingBuffer:true});
+  if(!gl)throw new Error('WebGL 2 is unavailable. Open this file in a browser with hardware graphics enabled.');
+  this.gl=gl;this.program=shaderProgram(gl,VS,FS);this.vpLoc=gl.getUniformLocation(this.program,'vp');this.eyeLoc=gl.getUniformLocation(this.program,'eye');
+  this.batches={};this.addGeometry('sphere',sphereMesh());this.addGeometry('box',roundBoxMesh());this.addGeometry('cube',cubeMesh());
+  this.addGeometry('goblet',latheMesh([[.04,-1],[.24,-.96],[.27,-.65],[.35,-.3],[.76,.06],[.95,.45],[.98,.75],[.86,.96],[.25,1],[.02,1.02]],20));
+  this.addGeometry('nk',latheMesh([[.08,-1],[.72,-.9],[1,-.52],[1,.52],[.72,.9],[.08,1]],6));
+  this.addGeometry('tissue',tissueMesh());
+  this.phases=new Map();this.drawn=new Map();this.selected=null;this.current=null;this.previous=null;this.transitionAt=0;this.transitionMs=850;
+  this.yaw=.22;this.pitch=.21;this.zoom=1;this.target=[0,-.6,-.35];this.sceneTime=0;this.lastTick=-1;this.fades=new Map();
+  this.options={faces:true,labels:true,signals:'chemokine',arrows:true,actions:true,reduced:matchMedia('(prefers-reduced-motion: reduce)').matches};
+  this.pending=null;this.fieldKey='';this.displayPoints=[];
+  this.callout=document.createElement('div');this.callout.id='cellCallout';this.callout.className='cellCallout';this.callout.hidden=true;
+  this.callout.setAttribute('role','status');this.callout.setAttribute('aria-live','polite');this.callout.setAttribute('aria-atomic','true');
+  canvas.parentElement.append(this.callout);
+  this.createField();this.controls();
+  this.observer=new ResizeObserver(()=>this.resize());this.observer.observe(canvas.parentElement);this.resize();
+  this.lost=false;canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.lost=true;});canvas.addEventListener('webglcontextrestored',()=>location.reload());
+ }
+ addGeometry(name,m){
+  const gl=this.gl,vao=gl.createVertexArray();gl.bindVertexArray(vao);
+  for(const [loc,data] of [[0,m.positions],[1,m.normals]]){const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.STATIC_DRAW);gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,3,gl.FLOAT,false,0,0);}
+  const idx=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,idx);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint32Array(m.indices),gl.STATIC_DRAW);
+  const inst=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,inst);
+  for(let j=0;j<4;j++){gl.enableVertexAttribArray(2+j);gl.vertexAttribPointer(2+j,4,gl.FLOAT,false,21*4,j*16);gl.vertexAttribDivisor(2+j,1);}
+  gl.enableVertexAttribArray(6);gl.vertexAttribPointer(6,4,gl.FLOAT,false,84,64);gl.vertexAttribDivisor(6,1);
+  gl.enableVertexAttribArray(7);gl.vertexAttribPointer(7,1,gl.FLOAT,false,84,80);gl.vertexAttribDivisor(7,1);
+  gl.bindVertexArray(null);this.batches[name]={vao,inst,count:m.indices.length,instances:[],alpha:[]};
+ }
+ createField(){
+  const gl=this.gl;this.fieldProgram=shaderProgram(gl,quadVS,quadFS);this.fieldVao=gl.createVertexArray();gl.bindVertexArray(this.fieldVao);
+  const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-8,5,.075,8,5,.075,8,-5,.075,-8,5,.075,8,-5,.075,-8,-5,.075]),gl.STATIC_DRAW);gl.enableVertexAttribArray(0);gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+  this.tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,this.tex);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.bindVertexArray(null);
+ }
+ resize(){
+  const r=this.canvas.parentElement.getBoundingClientRect();this.w=r.width;this.h=r.height;this.dpr=Math.min(devicePixelRatio||1,2);
+  this.canvas.width=Math.round(this.w*this.dpr);this.canvas.height=Math.round(this.h*this.dpr);this.overlay.width=this.canvas.width;this.overlay.height=this.canvas.height;
+  this.ctx.setTransform(this.dpr,0,0,this.dpr,0,0);
+ }
+ controls(){
+  const cv=this.canvas;let ptr=null,pinch=0;const points=new Map();
+  cv.addEventListener('pointerdown',e=>{points.set(e.pointerId,{x:e.clientX,y:e.clientY});cv.setPointerCapture(e.pointerId);ptr={id:e.pointerId,x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,moved:false};if(points.size===2){const p=[...points.values()];pinch=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);}});
+  cv.addEventListener('pointermove',e=>{
+   if(!points.has(e.pointerId))return;points.set(e.pointerId,{x:e.clientX,y:e.clientY});
+   if(points.size===2){const p=[...points.values()],d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);if(pinch)this.zoom=clamp(this.zoom*d/pinch,.72,2.7);pinch=d;if(ptr)ptr.moved=true;return;}
+   if(!ptr)return;const dx=e.clientX-ptr.x,dy=e.clientY-ptr.y;if(Math.hypot(e.clientX-ptr.startX,e.clientY-ptr.startY)>5)ptr.moved=true;
+   if(ptr.moved){this.yaw=clamp(this.yaw+dx*.004,-.6,.6);this.pitch=clamp(this.pitch+dy*.003,-.04,.48);}ptr.x=e.clientX;ptr.y=e.clientY;
+  });
+  const end=e=>{points.delete(e.pointerId);if(ptr&&!ptr.moved&&points.size===0){const r=cv.getBoundingClientRect();this.pick(e.clientX-r.left,e.clientY-r.top);}ptr=null;pinch=0;};
+  cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',()=>{ptr=null;points.clear();});
+  cv.addEventListener('wheel',e=>{e.preventDefault();this.zoom=clamp(this.zoom*Math.exp(-e.deltaY*.001),.72,2.7);},{passive:false});
+  cv.addEventListener('dblclick',()=>this.home());
+ }
+ home(){this.yaw=.22;this.pitch=.21;this.zoom=1;this.target=[0,-.6,-.35];}
+ front(){this.yaw=0;this.pitch=0;this.zoom=1;}
+ focus(c){this.target=worldPos(c.x,c.y,0);this.zoom=1.9;}
+ setFrame(frame,instant=false){
+  const now=performance.now(),progress=this.options.reduced?1:clamp((now-this.transitionAt)/this.transitionMs),ease=1-Math.pow(1-progress,3);
+  // Several biological minutes can arrive before the next display frame.
+  // Continue from the on-screen position instead of swallowing intermediate moves.
+  const visible=(this.current?.cells??[]).map(c=>{const old=this.previousById.get(c.id)??c;return {...c,x:old.x+(c.x-old.x)*ease,y:old.y+(c.y-old.y)*ease};});
+  this.previous=this.current;this.current=frame;this.transitionAt=now;if(instant)this.previous=frame;
+  this.currentById=new Map(frame.cells.map(c=>[c.id,c]));
+  this.previousById=new Map((instant?frame.cells:visible).map(c=>[c.id,c]));
+  this.fieldKey='';
+  for(const c of frame.cells)if(!c.alive&&(!this.previousById.get(c.id)||this.previousById.get(c.id).alive))this.fades.set(c.id,performance.now());
+ }
+ project(p){const q=M4.transform(this.vp,p);return {x:(q[0]/q[3]+1)*this.w/2,y:(1-q[1]/q[3])*this.h/2,z:q[2]/q[3]};}
+ pick(x,y){
+  if(this.pending){
+   let best=null,bestD=Infinity;for(let i=0;i<=500;i++){const u=.04+i/500*.92,q=this.project(worldPos(u,surface(u),.3)),d=Math.hypot(q.x-x,q.y-y);if(d<bestD){bestD=d;best=u;}}
+   if(bestD<Math.max(120,this.h*.35))this.onPick({placeX:best});return;
+  }
+  let best=null;
+  for(const p of this.displayPoints){const d=Math.hypot(x-p.s.x,y-p.s.y);if(d<p.r+8&&(!best||d/(p.r+8)<best.score))best={id:p.id,score:d/(p.r+8)};}
+  this.onPick({cell:best?.id??null});
+ }
+ instance(name,pos,scale,color,angle=0,parent=null,unlit=0){
+  let model=M4.trs(pos,scale,angle);if(parent)model=M4.mul(parent,model);
+  const data=[...model,...color,unlit];const b=this.batches[name];(color[3]<.99?b.alpha:b.instances).push(...data);
+ }
+ rod(a,b,r,color,parent=null){
+  const d=V3.sub(b,a),len=Math.hypot(...d);if(len<.00001)return;
+  const y=V3.norm(d),x=V3.norm(V3.cross(Math.abs(y[2])>.95?[0,1,0]:[0,0,1],y)),z=V3.cross(x,y),p=a.map((v,i)=>(v+b[i])/2);
+  let m=[x[0]*r,x[1]*r,x[2]*r,0,y[0]*len/2,y[1]*len/2,y[2]*len/2,0,z[0]*r,z[1]*r,z[2]*r,0,...p,1];if(parent)m=M4.mul(parent,m);
+  const arr=[...m,...color,0];(color[3]<.99?this.batches.sphere.alpha:this.batches.sphere.instances).push(...arr);
+ }
+ render(time){
+  if(!this.current||this.lost)return;const gl=this.gl;
+  this.sceneTime=time;const aspect=this.w/this.h,fit=Math.max(20.4,19/aspect/Math.tan(.28)/2),radius=fit/this.zoom;
+  this.eye=[this.target[0]+Math.sin(this.yaw)*radius*Math.cos(this.pitch),this.target[1]+Math.sin(this.pitch)*radius,this.target[2]+Math.cos(this.yaw)*radius*Math.cos(this.pitch)];
+  this.vp=M4.mul(M4.perspective(.56,aspect),M4.lookAt(this.eye,this.target));
+  for(const b of Object.values(this.batches)){b.instances.length=0;b.alpha.length=0;}
+  this.displayPoints.length=0;
+  this.buildScene(time);
+  gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.depthMask(true);
+  gl.useProgram(this.program);gl.uniformMatrix4fv(this.vpLoc,false,this.vp);gl.uniform3fv(this.eyeLoc,this.eye);
+  for(const b of Object.values(this.batches))this.drawBatch(b,false);
+  gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
+  this.drawField();
+  gl.useProgram(this.program);gl.uniformMatrix4fv(this.vpLoc,false,this.vp);gl.uniform3fv(this.eyeLoc,this.eye);
+  for(const b of Object.values(this.batches))this.drawBatch(b,true);
+  gl.depthMask(true);gl.bindVertexArray(null);
+  this.drawOverlay(time);
+ }
+ drawBatch(b,alpha){const data=alpha?b.alpha:b.instances;if(!data.length)return;const gl=this.gl;gl.bindVertexArray(b.vao);gl.bindBuffer(gl.ARRAY_BUFFER,b.inst);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.DYNAMIC_DRAW);gl.drawElementsInstanced(gl.TRIANGLES,b.count,gl.UNSIGNED_INT,0,data.length/21);}
+ buildScene(time){
+  const f=this.current,t=time*.001,quiet=this.options.reduced;
+  this.instance('box',[0,-4.83,-.6],[8.42,.3,1.9],hexColor('#D1DBBE'));
+  this.instance('box',[0,-5.15,-.65],[8.53,.12,2],hexColor('#829D91'));
+  this.instance('tissue',[0,0,0],[1,1,1],hexColor('#E8B2A2'));
+  // Delicate basement line, sculpted into the cutaway surface.
+  for(let i=0;i<100;i++){
+   const x=i/100,xx=(i+1)/100;
+   this.rod(worldPos(x,surface(x)+.039,.07),worldPos(xx,surface(xx)+.039,.07),.025,hexColor('#CE8C88'));
+  }
+  // A visible vascular tube. Red disks are decorative, not extra model agents.
+  this.instance('box',[0,-4.25,.04],[7.85,.22,.27],hexColor('#B75672'));
+  this.instance('box',[0,-4.18,.12],[7.79,.11,.27],hexColor('#E67A8C'));
+  for(let i=0;i<18;i++){const x=((i*.829+t*.26)%15.1)-7.55;this.instance('sphere',[x,-4.18+Math.sin(i*2)*.027,.41],[.105,.065,.035],hexColor('#FFB1B7'));}
+  // Matrix fibers are anchored decorations and have no influence on the engine.
+  for(let i=0;i<28;i++){
+   const x=.06+((i*.381966)%1)*.88,y=surface(x)+.12+((i*.618033)%1)*(.78-surface(x));
+   if(y>.91)continue;const a=worldPos(x,y,.035),b=[a[0]+.29,a[1]+.045,a[2]];this.rod(a,b,.013,hexColor('#D19795'));
+  }
+  const interp=quiet?1:clamp((time-this.transitionAt)/this.transitionMs),ease=1-Math.pow(1-interp,3);
+  for(const c of f.cells){
+   const old=this.previousById.get(c.id)??c;
+   const x=old.x+(c.x-old.x)*ease,y=old.y+(c.y-old.y)*ease;
+   let fade=1,extrude=0;
+   if(!c.alive&&c.v5){if(!c.corpse)continue;fade=.64;}else if(!c.alive){
+    const when=this.fades.get(c.id);fade=when!==undefined?clamp(1-(time-when)/1500):0;
+    if(this.previous===this.current)fade=0;
+    if(!c.corpse)fade=0;
+    extrude=c.deathKind==='apoptosis'?(1-fade)*.7:0;
+    if(fade<.015)continue;
+   }
+   let pos=worldPos(x,y,c.z+.19),angle=0;
+   if(isEpi(c)){const n=surfaceNormal(x);angle=Math.atan2(-n.x,-n.y);pos[0]+=n.x*(.32+extrude);pos[1]-=n.y*(.32+extrude);pos[2]=.38;}
+   else if(!quiet)pos[1]+=Math.sin(t*2+(c.visualIndex??c.id)*1.73)*.022;
+   // Lift selection in display depth only, so nearby cells cannot hide its nucleus.
+   if(c.id===this.selected&&!isEpi(c))pos[2]+=1.15;
+   const parent=M4.trs(pos,[fade,fade,fade],angle);
+   let widthFactor=1;
+   if(isEpi(c)){const centers=f.slots.map(s=>{const n=surfaceNormal(s.x);return [-8+s.x*16+n.x*.32,5-s.y*10-n.y*.32];});const at=centers[c.slot];let gap=Infinity;for(const j of [c.slot-1,c.slot+1])if(centers[j])gap=Math.min(gap,Math.hypot(at[0]-centers[j][0],at[1]-centers[j][1]));widthFactor=Math.min(1,gap/.49);}
+   if(c.v5&&['dendritic','inflammatory_monocyte'].includes(c.state.type)&&c.v5.phenotype!=='resident_like')this.myeloidCell(c,parent);else this.cell(c,parent,time,widthFactor);
+   if(c.v5){
+    for(let j=1;j<c.v5.trail.length;j++){const a=c.v5.trail[j-1],b=c.v5.trail[j];this.rod(worldPos(a.x,a.y,.5),worldPos(b.x,b.y,.5),.018,hexColor(c.state.type==='inflammatory_monocyte'?'#DBAA71':'#B4D477',.7));}
+    if(c.state.viability==='death_committed'||!c.alive){this.rod([pos[0]-.16,pos[1]-.16,pos[2]+.34],[pos[0]+.16,pos[1]+.16,pos[2]+.34],.035,hexColor('#BA555E'));this.rod([pos[0]+.16,pos[1]-.16,pos[2]+.34],[pos[0]-.16,pos[1]+.16,pos[2]+.34],.035,hexColor('#BA555E'));}
+    if(c.v5.presented.length)for(let j=0;j<3;j++){const xx=pos[0]-.2+j*.2;this.instance('box',[xx,pos[1]+.42,pos[2]+.2],[.035,.10,.025],hexColor('#8CD8EC'));this.instance('sphere',[xx,pos[1]+.53,pos[2]+.2],[.048,.027,.028],hexColor('#D38454'));}
+   }
+   if(c.manual&&this.options.actions){
+    // Amber beads stay at the cell during preparation; green extracellular
+    // beads appear only with an accepted capacity and available substrate.
+    if(c.manual.preparing){
+     const phase=quiet?0:t*2;
+     const size=c.id===this.selected ? .10 : .075;
+     for(let j=0;j<3;j++){const a=phase+j*Math.PI*2/3;this.instance('sphere',[pos[0]+Math.cos(a)*.3,pos[1]+.6,pos[2]+Math.sin(a)*.12],[size,size,size],hexColor('#F2CD78'));}
+    }
+    if(c.manual.secreting){
+     const q=quiet?.5:(t*.7+(c.visualIndex??0)*.13)%1;
+     const p=worldPos(c.x,c.y+.055+q*.045,.5);
+     const size=(.085+q*.05)*(c.id===this.selected?1.5:1);
+     this.instance('sphere',p,[size,size,size],hexColor('#69D8AD',1-q*.45));
+    }
+    if(c.manual.mucus>0){
+     const n=surfaceNormal(c.x),p=worldPos(c.x,c.y,.48),opacity=1-Math.exp(-c.manual.mucus*80);
+     this.instance('sphere',[p[0]+n.x*.85,p[1]-n.y*.85,p[2]],[.28,.10,.15],hexColor('#99DED9',.15+opacity*.65));
+    }
+   }
+   const ss=this.project(pos),rr=this.project([pos[0]+.36,pos[1],pos[2]]);this.displayPoints.push({id:c.id,s:ss,r:Math.abs(rr.x-ss.x),world:pos});
+  }
+  if(f.lab){
+   for(const b of f.lab.bacteria){
+    if(!['free','attached'].includes(b.state))continue;
+    const p=worldPos(b.x,b.y,.72),a=b.state==='attached'?0:(Number(b.id.split('-')[1])*.61);
+    this.instance('sphere',p,[f.unified?.14:.078,f.unified?.05:.031,f.unified?.05:.034],hexColor(b.species==='ETEC'?(b.state==='attached'?'#168F9B':'#66DDE4'):(b.state==='attached'?'#B35A35':'#DD8858')),a);
+    if(b.state==='attached')this.instance('sphere',[p[0],p[1]-.035,p[2]-.025],[.095,.027,.035],hexColor('#EDD09B'));
+   }
+   for(const q of f.lab.patches){
+    if(q.water<.015)continue;
+    const p=worldPos(q.x,surface(q.x)-.14,.78),amount=1-Math.exp(-q.water);
+    this.instance('sphere',p,[.27,.04+amount*.22,.13],hexColor('#64C9DB',.35+amount*.4));
+   }
+  }
+  if(f.unified)for(const slot of f.slots){if(slot.junction<.98){const p=worldPos(slot.x,slot.y,.69);this.instance('sphere',p,[.16,.045,.06],hexColor('#B96862',.3+.7*(1-slot.junction)));}}
+  // Broken slots expose the tissue. Repair appears as a mint patch, not a new cell.
+  for(const s of f.slots){const c=this.currentById.get(s.cell);if(!c.alive){
+   const pos=worldPos(s.x,s.y,.095);this.instance('sphere',pos,[.27,.13,.055],hexColor('#9F676D'));
+   if(s.seal>.005){this.instance('box',[pos[0],pos[1]+.05,.18],[.25,.055,.14],hexColor('#91C5B3',.2+s.seal*.65));}
+  }}
+  // Visible pathogen particles sample the actual simulated concentration.
+  if(this.options.signals!=='none'){
+   let num=0;
+   for(let j=0;j<GRID.h;j+=2)for(let i=0;i<GRID.w;i+=2){
+    const value=f.fields.pathogen[j*GRID.w+i];if(value<.013||num>75)continue;
+    const px=(i+.25)/GRID.w,py=(j+.35)/GRID.h,pp=worldPos(px,py,.41),s=.055+Math.sqrt(value)*.11;
+    const a=t*.4+i;pp[0]+=Math.sin(a)*.018;pp[1]+=Math.cos(a)*.018;
+    this.instance('sphere',pp,[s*1.6,s*.72,s*.7],hexColor('#CC726B'),.6+i*.38);
+    this.instance('sphere',[pp[0]+s*.4,pp[1]+s*.2,pp[2]+s*.65],[s*.13,s*.13,s*.09],ink);num++;
+   }
+  }
+  for(const s of f.sources)if(s.kind==='particle'){const p=worldPos(s.x,s.y-.04,.55);this.instance('nk',p,[.14,.23,.12],hexColor('#ADC6E2'),.45);}
+  if(this.pending?.valid&&this.pending.kind!=='resolve'){
+   const p=worldPos(this.pending.x,surface(this.pending.x)-.085,.6);
+   this.instance('sphere',p,[.14,.14,.14],hexColor('#FAE0A1'),0,null,1);
+  }
+ }
+ myeloidCell(c,parent){
+  const dc=c.state.type==='dendritic',color=hexColor(dc?'#68B6B4':'#D3A277'),nucleus=hexColor('#79618C');
+  this.instance('sphere',[0,0,0],dc?[.24,.21,.20]:[.25,.26,.24],color,0,parent);
+  if(dc){for(let i=0;i<5;i++){const a=i*1.27+.25,x=Math.cos(a),y=Math.sin(a);this.rod([x*.15,y*.15,0],[x*.53,y*.48,-.02],.025,color,parent);this.rod([x*.38,y*.35,0],[x*.48-y*.12,y*.43+x*.12,0],.015,color,parent);}}
+  this.instance('sphere',[-.055,.04,.20],dc?[.10,.11,.04]:[.13,.16,.04],nucleus,-.35,parent);
+  if(!dc)this.instance('sphere',[.025,.06,.231],[.085,.105,.025],color,-.4,parent);
+  for(let j=0;j<(c.lab?.cargo?.length??0);j++)this.instance('sphere',[.1,.0+j*.055,.22],[.045,.022,.027],hexColor('#C96D4D'),0,parent);
+ }
+ cell(c,parent,time,widthFactor=1){
+  if(isEpi(c))parent=M4.mul(parent,M4.trs([0,0,0],[widthFactor,1,1]));
+  const color=hexColor(TYPES[c.type].color),dark=mixColor(color,ink,.2),light=mixColor(color,white,.35);
+  let faceZ=.27,faceScale=1;
+  const add=(shape,p,s,col=color,rot=0)=>this.instance(shape,p,s,col,rot,parent);
+  const nucleus=hexColor('#77628E'),nuclearLight=hexColor('#A695B7');
+  if(c.type==='enterocyte'){
+   add('box',[0,0,0],[.232,.39,.30]);
+   add('box',[0,.36,0],[.24,.035,.30],light);
+   add('sphere',[0,-.19,.287],[.095,.12,.038],nucleus);
+   const brush=c.lab?.patch?.brush??1;
+   for(let i=-3;i<=3;i++)for(const z of [-.12,.13])add('sphere',[i*.064,.40+.05*brush,z],[.018,.015+.085*brush,.022],light);
+   faceZ=.306;faceScale=.72;
+  }else if(c.type==='goblet'){
+   add('goblet',[0,-.013,0],[.25,.365,.27]);faceZ=.257;faceScale=.66;
+   add('sphere',[0,-.22,.16],[.064,.09,.032],nucleus);
+   for(let j=0;j<9;j++){const x=((j%3)-1)*.105,y=.12+Math.floor(j/3)*.069;add('sphere',[x,y,.20],[.055,.049,.04],j%2?light:hexColor('#E0EFDE'));}
+  }else if(c.type==='fibroblast'){
+   add('sphere',[0,0,0],[.35,.115,.15]);faceZ=.16;faceScale=.6;
+   this.rod([-.16,0,0],[-.59,-.055,-.02],.047,color,parent);this.rod([.16,0,0],[.60,.10,-.02],.038,color,parent);
+   add('sphere',[-.06,.026,.139],[.15,.057,.026],nucleus);
+  }else if(c.type==='macrophage'){
+   add('sphere',[0,0,0],[.37,.29,.27]);faceZ=.278;faceScale=.72;
+   // Broad asymmetric lamellipodium and a few tapering processes, not radial beads.
+   add('sphere',[-.25,.08,-.035],[.20,.21,.14],light,-.4);
+   this.rod([-.29,.17,0],[-.52,.31,-.015],.050,color,parent);
+   this.rod([-.30,-.08,0],[-.54,-.17,-.03],.037,color,parent);
+   this.rod([.25,.10,0],[.45,.20,-.02],.045,color,parent);
+   this.rod([.20,-.17,0],[.35,-.35,-.03],.035,color,parent);
+   add('sphere',[-.085,.10,.254],[.18,.117,.036],nucleus,-.35);
+   add('sphere',[-.015,.153,.283],[.083,.048,.022],color,-.4);
+   for(let j=0;j<4;j++)add('sphere',[.14+(j%2)*.105,-.05+Math.floor(j/2)*.13,.252],[.043,.05,.026],light);
+   for(let j=0;j<(c.lab?.cargo?.length??0);j++)add('sphere',[.14+j*.1,.0,.288],[.055,.027,.026],hexColor('#C96D4D'));
+  }else if(c.type==='neutrophil'){
+   add('sphere',[0,0,0],[.26,.25,.24]);faceZ=.25;faceScale=.57;
+   const lobes=[[-.14,.06,.219],[-.075,.145,.204],[.065,.11,.219],[.13,.01,.228]];
+   for(let i=0;i<lobes.length;i++){if(i)this.rod(lobes[i-1],lobes[i],.029,nucleus,parent);add('sphere',lobes[i],[.065,.063,.027],nucleus);}
+   for(let j=0;j<14;j++){const a=j*2.399,r=.17+(j%3)*.012;add('sphere',[Math.cos(a)*r,Math.sin(a)*r,.22],[.012,.013,.010],j%2?nuclearLight:light);}
+  }else{
+   add('sphere',[0,0,0],[.265,.27,.25]);faceZ=.264;faceScale=.59;
+   add('sphere',[-.025,.055,.23],[.172,.156,.035],nucleus);
+   for(let i=0;i<7;i++){const a=Math.PI*1.12+i*.14;add('sphere',[Math.cos(a)*.21,Math.sin(a)*.21,.224],[.025,.023,.018],nuclearLight);}
+  }
+  if(!this.options.faces)return;
+  const s=faceScale,eyesY=c.type==='enterocyte'?.095:c.type==='goblet'?-.05:c.type==='fibroblast'?-.035:-.115;
+  add('sphere',[-.079*s,eyesY,faceZ],[.031*s,.039*s,.018],ink);add('sphere',[.079*s,eyesY,faceZ],[.031*s,.039*s,.018],ink);
+  add('sphere',[-.084*s,eyesY+.013,faceZ+.015],[.009,.010,.006],white);add('sphere',[.074*s,eyesY+.013,faceZ+.015],[.009,.010,.006],white);
+  add('sphere',[-.14*s,eyesY-.057,faceZ-.008],[.040*s,.019,.012],pink);add('sphere',[.14*s,eyesY-.057,faceZ-.008],[.040*s,.019,.012],pink);
+  const stressed=c.health<65||['alarm','cytokine','recruit'].includes(c.action);
+  if(stressed)add('sphere',[0,eyesY-.092,faceZ+.005],[.030,.038,.009],ink);
+  else for(let i=0;i<5;i++){const a=Math.PI*1.14+i*.18*Math.PI;add('sphere',[Math.cos(a)*.053*s,eyesY-.061+Math.sin(a)*.042,faceZ+.006],[.012,.011,.009],ink);}
+ }
+ drawField(){
+  const key=`${this.current.tick}:${this.current.revision??0}:${this.options.signals}:${this.current.sources.length}`;
+  if(this.fieldKey!==key){
+   this.fieldKey=key;const f=this.current.fields,name=this.options.signals;
+   const a=new Uint8Array(GRID.w*GRID.h*4),palette=this.current.mode==='manual'?{CCL2:[218,167,101],CXCL8:[85,206,173],MUCUS:[132,216,229],TNF:[211,145,188],SECRETORY_STIMULUS:[249,203,110],WATER:[81,193,223],LT:[67,221,240],ST:[190,152,255],DAMP:[250,142,98],PAMP:[223,177,109]}:{pathogen:[244,137,116],danger:[255,183,111],chemokine:[85,206,173],cytokine:[168,137,226]};
+   for(let i=0;i<GRID.w*GRID.h;i++){
+    let rgb=[0,0,0],alpha=0;
+    const names=name==='all'?Object.keys(palette):name==='none'?[]:[name].filter(k=>palette[k]);
+    for(const k of names){const v=clamp(f[k]?.[i]??0);if(v>.003){const aa=Math.sqrt(v)*.70;for(let j=0;j<3;j++)rgb[j]+=palette[k][j]*aa;alpha+=aa;}}
+    if(alpha>0)for(let j=0;j<3;j++)a[i*4+j]=rgb[j]/alpha;a[i*4+3]=Math.min(160,alpha*180);
+   }
+   const gl=this.gl;gl.bindTexture(gl.TEXTURE_2D,this.tex);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,GRID.w,GRID.h,0,gl.RGBA,gl.UNSIGNED_BYTE,a);
+  }
+  const gl=this.gl;gl.useProgram(this.fieldProgram);gl.uniformMatrix4fv(gl.getUniformLocation(this.fieldProgram,'vp'),false,this.vp);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,this.tex);gl.uniform1i(gl.getUniformLocation(this.fieldProgram,'field'),0);gl.bindVertexArray(this.fieldVao);gl.drawArrays(gl.TRIANGLES,0,6);
+ }
+ label(text,p,color='#D8E8DD',size=11){
+  const q=this.project(p),ct=this.ctx;ct.font=`600 ${size}px system-ui, sans-serif`;ct.textAlign='left';ct.fillStyle=color;ct.fillText(text,q.x,q.y);return q;
+ }
+ drawOverlay(time){
+  const ct=this.ctx,w=this.w,h=this.h;ct.clearRect(0,0,w,h);ct.lineCap='round';
+  if(this.options.labels){
+   this.label('LUMEN',[-7.75,3.75,0],'#C3D8D1',10);
+   this.label('LAMINA PROPRIA',[-7.67,-3.66,.12],'#9B616B',9);
+   this.label('VASCULAR RESERVE',[-7.7,-4.53,.6],'#795866',9);
+  }
+  if(this.current.lab?.audit.water.retained>.05){
+   const wet=this.current.lab.patches.reduce((a,b)=>a.water>b.water?a:b);
+   this.label('OSMOTIC WATER',worldPos(wet.x,surface(wet.x)-.21,.8),'#BFEFF3',11);
+  }
+  if(this.options.arrows&&['chemokine','CXCL8','CCL2','all'].includes(this.options.signals)){
+   ct.strokeStyle='rgba(32,132,105,.62)';ct.fillStyle='rgba(32,132,105,.7)';ct.lineWidth=1.35;
+   const f=this.current.fields[this.options.signals==='CCL2'?'CCL2':this.current.mode==='manual'?'CXCL8':'chemokine'];
+   for(let x=.08;x<.96;x+=.075)for(let y=.32;y<.9;y+=.09){
+    if(y<surface(x)+.05)continue;const gx=sample(f,x+.02,y)-sample(f,x-.02,y),gy=sample(f,x,y+.02)-sample(f,x,y-.02),n=Math.hypot(gx,gy);if(n<.002)continue;
+    const a=this.project(worldPos(x,y,.42)),b=this.project(worldPos(x+gx/n*.025,y+gy/n*.035,.42));
+    this.arrow(ct,a.x,a.y,b.x,b.y);
+   }
+  }
+  // Activation is the current local sensing state, independent of last action.
+  // Persistent rings also appear immediately after Apply, before any decision.
+  if(this.options.actions&&(this.current.mode!=='manual'||this.current.unified))for(const p of this.displayPoints){
+   if(!this.currentById.get(p.id).sensing?.activation.active&&!this.currentById.get(p.id).unified?.active)continue;
+   ct.strokeStyle='#EFBE69';ct.lineWidth=2.5;ct.beginPath();ct.arc(p.s.x,p.s.y,p.r+4,0,Math.PI*2);ct.stroke();
+   ct.fillStyle='#EFBE69';ct.strokeStyle='#173F40';ct.lineWidth=1.5;ct.beginPath();ct.arc(p.s.x,p.s.y-p.r-5,3.5,0,Math.PI*2);ct.fill();ct.stroke();
+  }
+  this.diagnosticMarkers=[];
+  if(this.current.unified){
+   const layer=this.options.signals;
+   if(['all','BARRIER_DAMAGE'].includes(layer))for(const slot of this.current.slots){
+    const damage=Math.max(0,1-slot.junction);if(damage<=.02)continue;
+    const p=this.project(worldPos(slot.x,slot.y,.78));ct.strokeStyle='#FF8175';ct.lineWidth=3+damage*3;
+    ct.beginPath();ct.moveTo(p.x-5,p.y-6);ct.lineTo(p.x,p.y);ct.lineTo(p.x-3,p.y+6);ct.stroke();
+    const cellPoint=this.displayPoints.find(q=>q.id===slot.cell);
+    if(layer==='BARRIER_DAMAGE'&&cellPoint){
+     ct.setLineDash([9,5]);ct.beginPath();ct.arc(cellPoint.s.x,cellPoint.s.y,cellPoint.r+13,0,Math.PI*2);ct.stroke();ct.setLineDash([]);
+    }
+    this.diagnosticMarkers.push({cell:slot.cell,kind:'BARRIER_DAMAGE',value:damage});
+   }
+   if(['CELL_DAMAGE','LT','ST'].includes(layer))for(const p of this.displayPoints){
+    const c=this.currentById.get(p.id),value=layer==='CELL_DAMAGE'?cellDamage(c):(c.unified?.local?.[layer]??0);
+    if(value<=0)continue;
+    ct.strokeStyle=layer==='LT'?'#43DDF0':layer==='ST'?'#BE98FF':'#FF8175';ct.lineWidth=2+Math.min(1,layer==='CELL_DAMAGE'?value:value*15)*3;
+    ct.beginPath();ct.arc(p.s.x,p.s.y,p.r+11,0,Math.PI*2);ct.stroke();
+    this.diagnosticMarkers.push({cell:c.id,kind:layer,value});
+   }
+  }
+  const sel=this.displayPoints.find(p=>p.id===this.selected);
+  if(sel){
+   const pulse=this.options.reduced?0:(1+Math.sin(time*.004))*2;
+   ct.strokeStyle='#143F40';ct.lineWidth=6;ct.beginPath();ct.arc(sel.s.x,sel.s.y,sel.r+8+pulse,0,Math.PI*2);ct.stroke();
+   ct.strokeStyle='#FFF2BD';ct.lineWidth=3;ct.stroke();
+  }
+  if(this.arrival&&!this.replay){
+   const dt=(time-this.arrival.start)/1000;
+   if(dt>=0&&dt<5){const p=this.project(worldPos(this.arrival.x,surface(this.arrival.x)-.1,.9));
+    ct.strokeStyle=`rgba(248,219,139,${Math.max(0,1-dt/5)})`;ct.lineWidth=3;ct.beginPath();ct.arc(p.x,p.y,24+(dt%1.5)*25,0,Math.PI*2);ct.stroke();
+    this.bubble(this.arrival.title,p.x,p.y-45,'#F5DE9F','#3A5847');}
+  }
+  this.drawCallout(sel);
+  if(this.options.actions){
+   // Persistent screen-space markers stay readable even when zoomed out.
+   for(const p of this.displayPoints){const m=this.currentById.get(p.id).manual;if(!m)continue;
+    const preparing=m.events.some(e=>e.status==='running')||!!this.currentById.get(p.id).lab?.event,secreting=m.secreting;
+    if(!preparing&&!secreting)continue;
+    const pulse=this.options.reduced?0:(1+Math.sin(time*.004))*2;
+    ct.fillStyle=secreting?'#69EDB9':'#FFDA78';ct.strokeStyle='#173F40';ct.lineWidth=2;
+    ct.beginPath();ct.arc(p.s.x,p.s.y-p.r-7,4+pulse,0,Math.PI*2);ct.fill();ct.stroke();
+   }
+   const age=(time-this.transitionAt)/1000;
+   if(age<4){
+    let n=0;for(const p of this.displayPoints){const c=this.currentById.get(p.id);if(c.lastDecisionTick!==this.current.tick||['rest','maintain','patrol','migrate'].includes(c.action))continue;
+     if(n++>20&&c.id!==this.selected)continue;
+     const alpha=this.options.reduced?1:clamp(1-(age-2)/2);ct.globalAlpha=alpha;const cy=p.s.y-p.r-7-(this.options.reduced?0:Math.min(age,2)*10);
+     this.drawGlyph(ACTIONS[c.action]?.icon??'signal',p.s.x,cy,hexColor(TYPES[c.type].color));ct.globalAlpha=1;
+    }
+   }
+  }
+  if(this.pending?.valid&&this.pending.kind!=='resolve'){
+   const p=this.project(worldPos(this.pending.x,surface(this.pending.x)-.01,.5));ct.strokeStyle='#F5DA96';ct.lineWidth=2;ct.setLineDash([5,5]);ct.beginPath();ct.ellipse(p.x,p.y,28,18,0,0,Math.PI*2);ct.stroke();ct.setLineDash([]);
+   this.bubble('Click to place here',p.x,p.y-38,'#FCF0CD','#725A40');
+  }
+ }
+ drawCallout(point){
+  const c=this.currentById.get(this.selected),box=this.callout;
+  box.hidden=!c||!point||this.pending!==null||point.s.z>1||point.s.z< -1||point.s.x<0||point.s.x>this.w||point.s.y<0||point.s.y>this.h;
+  if(box.hidden)return;
+  if(this.calloutFrame!==this.current||this.calloutCell!==c.id||this.calloutReplay!==this.replay){
+   this.calloutFrame=this.current;this.calloutCell=c.id;this.calloutReplay=this.replay;
+   const model=cellDecision(c,this.current,this.replay),nodes=[];
+   const el=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
+   nodes.push(el('div','calloutClock',model.clock),el('strong','calloutName',model.name));
+   for(const row of model.rows){const n=el('div',`calloutRow ${row.tone}`,row.text);
+    if(row.detail)n.append(el('small','calloutDetail',row.detail));
+    if(row.progress!==undefined){const track=el('div','calloutProgress',''),fill=el('i','','');fill.style.width=`${row.progress*100}%`;track.append(fill);n.append(track);}
+    nodes.push(n);
+   }
+   if(model.note)nodes.push(el('p','calloutNote',model.note));
+   box.replaceChildren(...nodes);
+  }
+  const bw=box.offsetWidth,bh=box.offsetHeight,gap=point.r+22,pad=10;
+  const x=clamp(point.s.x-bw/2,pad,Math.max(pad,this.w-bw-pad));
+  // Keep the HUD and camera controls free. Flip below near the top edge.
+  let y=point.s.y-gap-bh;if(y<70)y=point.s.y+gap;
+  y=clamp(y,70,Math.max(70,this.h-bh-48));
+  box.style.transform=`translate(${Math.round(x)}px,${Math.round(y)}px)`;
+  const above=y+bh/2<point.s.y,endY=above?y+bh:y,endX=clamp(point.s.x,x+16,x+bw-16);
+  const ct=this.ctx;ct.strokeStyle='#FFF2BD';ct.lineWidth=2;ct.beginPath();ct.moveTo(point.s.x,point.s.y+(above?-1:1)*(point.r+10));ct.lineTo(endX,endY);ct.stroke();
+ }
+ drawGlyph(kind,x,y){
+  const c=this.ctx;c.fillStyle='#FFFCF2';c.strokeStyle='#FFFFFF';c.lineWidth=1;c.beginPath();c.arc(x,y,10,0,Math.PI*2);c.fill();c.save();c.translate(x,y);c.strokeStyle='#536D60';c.fillStyle='#536D60';c.lineWidth=1.5;c.beginPath();
+  if(kind==='shield'){c.moveTo(0,-5);c.lineTo(4,-3);c.lineTo(3,3);c.lineTo(0,5);c.lineTo(-3,3);c.lineTo(-4,-3);c.closePath();c.stroke();}
+  else if(kind==='drop'){c.moveTo(0,-5);c.bezierCurveTo(7,3,2,7,0,5);c.bezierCurveTo(-5,5,-4,0,0,-5);c.fill();}
+  else if(kind==='alarm'){c.moveTo(0,-5);c.lineTo(0,1);c.stroke();c.beginPath();c.arc(0,4,1,0,7);c.fill();}
+  else if(kind==='heart'){c.moveTo(0,4);c.bezierCurveTo(-8,-1,-3,-6,0,-2);c.bezierCurveTo(3,-6,8,-1,0,4);c.fill();}
+  else if(kind==='target'){c.arc(0,0,5,0,7);c.moveTo(-6,0);c.lineTo(6,0);c.moveTo(0,-6);c.lineTo(0,6);c.stroke();}
+  else if(kind==='eat'){c.arc(0,0,5,.5,Math.PI*2-.5);c.lineTo(0,0);c.closePath();c.fill();}
+  else if(kind==='mesh'){for(let i=-3;i<=3;i+=3){c.moveTo(i,-5);c.lineTo(i,5);c.moveTo(-5,i);c.lineTo(5,i);}c.stroke();}
+  else if(kind==='fade'){c.arc(0,0,4,0,7);c.stroke();c.moveTo(-2,0);c.lineTo(2,0);c.stroke();}
+  else{for(let i=1;i<=3;i++){c.moveTo(-3+i*2,0);c.arc(-3,0,i*2,-.85,.85);c.stroke();}}
+  c.restore();
+ }
+ bubble(text,x,y,bg,fg){
+  const c=this.ctx;c.font='600 10px system-ui, sans-serif';const width=c.measureText(text).width+16;
+  c.fillStyle=bg;c.beginPath();c.roundRect(x-width/2,y-9,width,21,7);c.fill();c.fillStyle=fg;c.textAlign='center';c.fillText(text,x,y+5);
+ }
+ arrow(c,x,y,xx,yy){const a=Math.atan2(yy-y,xx-x);c.beginPath();c.moveTo(x,y);c.lineTo(xx,yy);c.moveTo(xx-4*Math.cos(a-.5),yy-4*Math.sin(a-.5));c.lineTo(xx,yy);c.lineTo(xx-4*Math.cos(a+.5),yy-4*Math.sin(a+.5));c.stroke();}
+}
+
+return {Diorama};
+})();
+__modules["src/episode.mjs"]=(()=>{
+// Portable data only. This module has no provider, network or simulation dependency.
+const clone=v=>JSON.parse(JSON.stringify(v));
+const bytes=s=>new TextEncoder().encode(s);
+const ensure=(ok,message)=>{if(!ok)throw new Error(message);};
+const EPISODE_LIMIT=256*1024*1024;
+function compactFrame(frame){
+ const f=clone(frame);
+ for(const c of f.cells){delete c.manual.snapshot;delete c.observation;delete c.menu;delete c.weights;c.manual.events=c.manual.events.filter(e=>['running','paused','pending'].includes(e.status));}
+ return f;
+}
+class EpisodeRecorder {
+ constructor(tissue,{scenario=null,provider='jev',duration_min=null,frame_interval_min=tissue.pack.definition.recording.frame_interval_min,max_bytes=tissue.pack.definition.recording.max_bytes}={}){
+  ensure(tissue.time_min===0&&tissue.interventions.length===0,'Recording must start on a fresh tissue before any input.');
+  ensure(['jev','fixture'].includes(provider),'Unknown recording provider.');
+  ensure(Number.isInteger(frame_interval_min)&&frame_interval_min>=1&&frame_interval_min<=60,'Invalid frame interval.');
+  this.tissue=tissue;this.limit=max_bytes;this.size=0;this.closed=false;
+  this.data={format:'virtualtissue.episode.v1',metadata:{run_id:tissue.run_id,seed:tissue.seed,created_at:new Date().toISOString(),provider,scenario:clone(scenario),requested_duration_min:duration_min,frame_interval_min,status:'recording',pack_fingerprint:tissue.pack.fingerprint,integrity_note:'SHA-256 checks file integrity, not authorship or biological validation.'},pack:clone(tissue.pack),frames:[],rounds:[]};
+  tissue.recorder=this;this.capture(tissue.history.at(-1),true);
+ }
+ check(){if(this.size>this.limit)throw new Error('Recording size limit reached. Save this partial experiment before starting another.');}
+ capture(frame,force=false){
+  if(this.closed)return;
+  const prev=this.data.frames.at(-1);
+  // Preserve time-zero baseline and post-input states as separate revisions.
+  if(!force&&prev&&frame.time_min!==0&&frame.time_min-prev.time_min<this.data.metadata.frame_interval_min)return;
+  if(prev&&prev.time_min===frame.time_min&&prev.revision===frame.revision&&(!force||JSON.stringify(prev)===JSON.stringify(compactFrame(frame))))return;
+  const f=compactFrame(frame);this.data.frames.push(f);this.size+=bytes(JSON.stringify(f)).length;this.check();
+ }
+ decisionRound(plan,response){
+  if(this.closed)return;
+  if(response.meta?.fixture||/fixture/i.test(response.meta?.model??''))this.data.metadata.provider='fixture';
+  const row={epoch:clone(plan.epoch),request:clone(plan.request),observations:plan.entries.filter(e=>e.eligible).map(e=>({cell_id:e.id,snapshot:clone(e.snapshot),eligibility:clone(e.rows)})),response:clone(response)};
+  this.data.rounds.push(row);this.size+=bytes(JSON.stringify(row)).length;this.check();
+ }
+ finish(status='complete',reason=null){
+  if(this.closed)return clone(this.data);
+  ensure(['complete','partial'].includes(status),'Invalid completion status.');
+  // Keep the final accepted state even if the stop was caused by a size limit.
+  const limit=this.limit;this.limit=Infinity;this.tissue.recordFrame(true);this.capture(this.tissue.history.at(-1),true);this.limit=limit;
+  const t=this.tissue;
+  Object.assign(this.data,{decisions:clone(t.decisions),events:clone([...t.kernel.events.values()]),transactions:clone([...t.appliedTransactions.values()]),physical_events:clone(t.lab.events),interventions:clone(t.interventions),request_audit:clone(t.requestAudit),event_log:clone(t.eventLog),final_audit:clone(t.auditLab())});
+  Object.assign(this.data.metadata,{status,stop_reason:reason,duration_min:t.time_min,calls:t.apiCalls,input_tokens:t.apiTokens,cell_questions:t.decisions.length,models:[...new Set(t.decisions.map(d=>d.model))]});
+  this.closed=true;t.recorder=null;return clone(this.data);
+ }
+}
+const digest=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes(text))),b=>b.toString(16).padStart(2,'0')).join('');
+const encodeEpisode=async episode=>{
+ validateEpisode(episode);
+ const payload=JSON.stringify(episode);ensure(bytes(payload).length<EPISODE_LIMIT,'Episode exceeds the portable file limit.');
+ const envelope=JSON.stringify({format:'virtualtissue.archive.v1',sha256:await digest(payload),payload});ensure(bytes(envelope).length<EPISODE_LIMIT,'Archive envelope exceeds the portable file limit.');
+ return new Uint8Array(await new Response(new Blob([envelope]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+};
+function validateEpisode(e){
+ ensure(e?.format==='virtualtissue.episode.v1'&&['complete','partial'].includes(e.metadata?.status),'Unsupported or unfinished episode.');
+ ensure(e.pack?.definition?.renderer_adapter==='ileum-cutaway-v1'&&e.pack.fingerprint===e.metadata.pack_fingerprint,'Unsupported or mismatched tissue pack.');
+ ensure(['jev','fixture'].includes(e.metadata.provider),'Missing decision provenance.');
+ ensure(Array.isArray(e.frames)&&e.frames.length>0&&e.frames.length<=20000,'Invalid frame count.');
+ let previous=-1;const ids=new Set(e.pack.population.map(c=>c.id));ensure(ids.size>=2&&ids.size<=500,'Invalid population.');
+ for(const f of e.frames){ensure(f.time_min>=previous&&f.run_id===e.metadata.run_id&&f.cells?.length===ids.size,'Invalid frame sequence.');previous=f.time_min;
+  ensure(new Set(f.cells.map(c=>c.id)).size===ids.size&&f.cells.every(c=>ids.has(c.id)&&c.manual&&c.unified&&c.v5),'Invalid recorded cell state.');
+  ensure(f.fields&&f.lab&&f.metrics&&f.slots,'Incomplete visual frame.');
+ }
+ ensure(e.frames[0].time_min===0&&e.frames.at(-1).time_min===e.metadata.duration_min,'Recording endpoints are missing.');
+ ensure(Array.isArray(e.rounds)&&Array.isArray(e.decisions)&&Array.isArray(e.transactions),'Missing decision audit.');
+ for(const r of e.rounds){ensure(r.epoch?.run_id===e.metadata.run_id&&Array.isArray(r.request?.cells)&&Array.isArray(r.observations)&&r.response?.decisions,'Invalid decision round.');}
+ ensure(e.decisions.length===e.metadata.cell_questions,'Decision count mismatch.');
+ return e;
+}
+const decodeEpisode=async input=>{
+ ensure(input.byteLength<=EPISODE_LIMIT,'Compressed recording is too large.');
+ const raw=new Uint8Array(input),gzip=raw[0]===31&&raw[1]===139;
+ const stream=gzip?new Blob([raw]).stream().pipeThrough(new DecompressionStream('gzip')):new Blob([raw]).stream();
+ const reader=stream.getReader(),parts=[];let length=0;
+ while(true){const {done,value}=await reader.read();if(done)break;length+=value.length;if(length>EPISODE_LIMIT){await reader.cancel();throw new Error('Expanded recording is too large.');}parts.push(value);}
+ const joined=new Uint8Array(length);let off=0;for(const p of parts){joined.set(p,off);off+=p.length;}
+ const parse=s=>JSON.parse(s,(k,v)=>{ensure(!['__proto__','prototype','constructor'].includes(k),'Unsafe data key.');ensure(typeof v!=='number'||Number.isFinite(v),'Nonfinite recorded value.');return v;});
+ const envelope=parse(new TextDecoder().decode(joined));ensure(envelope.format==='virtualtissue.archive.v1'&&typeof envelope.payload==='string','Unsupported recording file.');
+ ensure(await digest(envelope.payload)===envelope.sha256,'Recording checksum failed.');
+ return validateEpisode(parse(envelope.payload));
+};
+const saveEpisode=async episode=>{
+ const blob=new Blob([await encodeEpisode(episode)],{type:'application/gzip'}),a=document.createElement('a'),url=URL.createObjectURL(blob);
+ a.href=url;a.download=`${episode.metadata.scenario?.id??'experiment'}-${episode.metadata.run_id}.vt.json.gz`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+
+return {EPISODE_LIMIT,compactFrame,EpisodeRecorder,encodeEpisode,validateEpisode,decodeEpisode,saveEpisode};
+})();
+__modules["src/player.mjs"]=(()=>{
+const {barrierDamage,cellDamage,formatReading,signalExplanation}=__modules["src/tissue-readouts.mjs"];
+
+const {Diorama}=__modules["src/renderer.mjs"];
+
+const {decodeEpisode}=__modules["src/episode.mjs"];
+
+const $=id=>document.getElementById(id);
+let episode=null,index=0,selected=null,playing=false,previous=0;
+const view=new Diorama($('world'),$('overlay'),p=>{if(p.cell!==undefined){selected=p.cell;view.selected=selected;inspect();}});view.options.faces=false;view.replay=true;
+function inspect(choice=null){
+ const f=episode?.frames[index],c=f?.cells.find(c=>c.id===selected);
+ $('inspector').textContent=c?`${c.id} · ${c.state.type} · ${c.state.viability}\n\nCell damage: ${formatReading(cellDamage(c),true)} · Barrier damage: ${formatReading(barrierDamage(f,c),true)}\n\nLocal inputs at ${f.time_min} min:\n${JSON.stringify(c.unified.local,null,2)}\n\n${c.unified.reasons.join('; ')||'Within local baseline.'}`:'Click a cell to inspect its recorded local view.';
+ const last=c?.unified.last,rounds=episode?.rounds.filter(r=>last&&(r.epoch.time_min<last.time_min||r.epoch.time_min===last.time_min&&r.epoch.revision<=last.revision)&&r.observations.some(o=>o.cell_id===selected))??[];
+ const chosen=Number.isInteger(choice)&&choice>=0&&choice<rounds.length?choice:rounds.length-1,round=rounds[chosen],observation=round?.observations.find(o=>o.cell_id===selected),question=round?.request.cells.find(q=>q.id===c?.visualIndex),answer=question?round.response.decisions[question.id]:null;
+ $('decisionHistory').replaceChildren(...rounds.map((r,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${r.epoch.time_min} min · ${r.response.decisions[c.visualIndex].action}`;return o;}));$('decisionHistory').disabled=!rounds.length;$('decisionHistory').value=chosen;
+ $('decision').textContent=answer?`Recorded at ${round.epoch.time_min} min · ${round.response.meta.model}\n\n${JSON.stringify(answer,null,2)}`:'No decision had been recorded for this cell at this time.';
+ $('constraints').textContent=observation?JSON.stringify(observation,null,2):'No decision snapshot for this cell yet.';
+ $('effects').textContent=c?JSON.stringify(episode.transactions.filter(t=>t.plan.cell_id===c.id&&t.receipt.applied_at<=f.time_min),null,2):'Select a cell.';
+}
+function show(instant=true){const f=episode.frames[index];view.setFrame(f,instant);$('signalNote').textContent=signalExplanation(f,view.options.signals);$('timeline').value=index;$('clock').textContent=`REPLAY · ${f.time_min} min`;$('barrier').textContent=`Barrier ${Math.round(f.metrics.barrier*100)}%`;$('activeHud').textContent=`${f.metrics.active} sensing change`;inspect();}
+async function load(file){
+ playing=false;$('play').textContent='Play';$('error').textContent='';
+ try{const next=await decodeEpisode(await file.arrayBuffer());$('filename').textContent=file.name;episode=next;index=0;selected=null;view.selected=null;$('timeline').max=episode.frames.length-1;$('play').disabled=false;
+  const m=episode.metadata;$('title').textContent=m.scenario?.title??'Recorded experiment';$('provenance').textContent=`${m.provider==='fixture'?'OFFLINE FIXTURE — not Jev-generated':'Recorded Jev responses'} · ${m.status} · ${m.duration_min} biological min · ${m.cell_questions} cell decisions · ${m.calls} original API calls. Playback uses zero API calls.${m.stop_reason?' Stopped: '+m.stop_reason:''}`;show();view.home();
+ }catch(e){$('error').textContent=e.message;}
+}
+$('decisionHistory').onchange=()=>inspect(Number($('decisionHistory').value));
+$('open').onclick=()=>$('file').click();
+$('file').onchange=()=>{if($('file').files[0])load($('file').files[0]);};
+$('play').onclick=()=>{if(!episode)return;if(index===episode.frames.length-1){index=0;show();}playing=!playing;$('play').textContent=playing?'Pause':'Play';previous=0;};
+$('timeline').oninput=()=>{if(!episode)return;playing=false;$('play').textContent='Play';index=Number($('timeline').value);show();};
+$('home').onclick=()=>view.home();$('front').onclick=()=>view.front();
+function animate(now){if(episode)view.render(now);if(playing&&now-previous>1000/Number($('speed').value)){previous=now;if(index<episode.frames.length-1){index++;show(false);}else{playing=false;$('play').textContent='Play';}}requestAnimationFrame(animate);}requestAnimationFrame(animate);
+window.VirtualTissuePlayer={load,get episode(){return episode;},get index(){return index;},view};
+
+$('signalSelect').onchange=()=>{view.options.signals=$('signalSelect').value;view.fieldKey='';if(episode)$('signalNote').textContent=signalExplanation(episode.frames[index],view.options.signals);};
+
+return {};
+})();
+})();</script><script src="replay.js"></script></body></html>

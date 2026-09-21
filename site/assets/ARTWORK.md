@@ -1,0 +1,13 @@
+# Conceptual artwork
+
+Generated with the built-in imagegen tool. No user API key or Jev call was used.
+Images are conceptual metaphors, not biological data or simulation screenshots.
+Optimized WebP assets are used by the site; original PNG files are retained.
+
+## tissue-agents.png / tissue-agents.webp
+
+Use case: scientific-educational. Asset type: landscape conceptual illustration for VirtualTissue research landing page, 1536x1024. Primary request: visually explain a virtual gut tissue in which each individual cell is represented by its own AI agent. A beautiful precise editorial 3D cutaway of a small intestinal epithelial sheet, amber translucent columnar epithelial cells with teal goblet cells above a deep navy stromal compartment containing scattered violet, coral and cyan immune cells. Each cell contains its own small luminous branching node network as a visual metaphor for its individual AI agent; these internal networks must remain clearly separate. A few fine cyan local signal arcs connect close neighbors, never a central brain or remote hub. One epithelial cell glows brighter after a nearby local signal while distant cells remain quiet. Dark midnight blue backdrop #091b2b. Elegant scientific publication aesthetic, organic translucent membranes, fine texture, restrained light, dramatic but clean, no robots, no brains, no chips, no text, no labels, no interface, no watermark. Wide composition with complete tissue specimen comfortably inside frame. This is conceptual artwork, not microscopy or a data plot.
+
+## cell-agent.png / cell-agent.webp
+
+Use case: scientific-educational. Asset type: conceptual explanatory illustration for a research website, landscape 1536x1024. Primary request: show one virtual biological cell as one independent AI agent that observes its nearby environment and chooses among constrained actions. Dark midnight navy #091b2b background. One large translucent teal rounded immune cell in center, with a small luminous branching node network inside as a metaphor for the individual AI agent. A few amber signal particles arrive from the left; three delicate branching paths exit to the right, two terminate at small muted closed gates and one highlighted cyan path continues to a small local signal release. Subtle faint neighboring cells at edges show limited spatial neighborhood. Exquisite clean scientific editorial 3D illustration, generous negative space, translucent membranes, restrained glowing lines, no centralized brain, no robot, no microchips. No text, letters, numbers, watermark, axes, UI, decorative HUDs. This is conceptual artwork, not experimental data. Composition should clearly communicate local sensing, constrained individual choice, and local action.
