@@ -1,9 +1,9 @@
 {
   "lymph_node": {
     "repository": "hylixinsights/VirtualTissue-LN",
-    "release": "v0.2.0",
-    "commit": "1f9dee19ae5f73823af2e44164843d460afaced1",
-    "recording_sha256": "d07be097832f8cb33c5802a6aec854a376553ba518898cd58f884f34dc3b0173",
+    "release": "main",
+    "commit": "ff8fde3fae0267645ab75a7e4412e03ae74f4726",
+    "recording_sha256": "3604242276b4c69fe2ef131ecc6988d83cd650d8f2be0ccdc2827ee50b52b566",
     "destination": "lymph-node"
   }
 }
